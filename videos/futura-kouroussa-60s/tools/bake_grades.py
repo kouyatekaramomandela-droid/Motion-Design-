@@ -21,7 +21,10 @@ PHOTOS = ROOT / "assets/photos"
 OUT = PHOTOS / "graded"
 WORK = ROOT / ".hyperframes/bake"
 JOBS = [("A-pont-niger", "land"), ("A-pont-niger", "land-dark"), ("C-mine", "mine"), ("C-mine", "mine-sunk"),
-        ("D-forage", "people"), ("D-forage", "dry"), ("D-forage", "gold"), ("R-reunion", "office")]
+        ("D-forage", "people"), ("D-forage", "dry"), ("D-forage", "gold"), ("R-reunion", "office"),
+        ("C2-usine", "mine"), ("C3-mine", "mine"), ("C3-mine", "mine-sunk"), ("B-village", "people"),
+        ("K-classe", "dry"), ("K-classe", "gold"), ("S-hopital", "dry"), ("S-hopital", "gold"),
+        ("Q-maison-jeunes", "people"), ("F-femmes", "people"), ("F-anciens", "office")]
 
 
 def size(path):
@@ -35,7 +38,8 @@ def snap(src, payload, dest):
     w, h = size(src)
     key = hashlib.sha1((json.dumps(payload, sort_keys=True) + src.name).encode()).hexdigest()[:12]
     d = WORK / key
-    if (d / "graded.png").exists():
+    digest = hashlib.sha1(src.read_bytes()).hexdigest()
+    if (d / "graded.png").exists() and (d / "source.sha1").exists() and (d / "source.sha1").read_text() == digest:
         shutil.copy(d / "graded.png", dest); return
     shutil.rmtree(d, ignore_errors=True); d.mkdir(parents=True)
     shutil.copy(src, d / src.name)
@@ -53,6 +57,7 @@ def snap(src, payload, dest):
                    check=True, capture_output=True, text=True)
     shot = next((d / "snap").glob("frame-*.png"))
     shutil.copy(shot, d / "graded.png")
+    (d / "source.sha1").write_text(digest)
     shutil.copy(shot, dest)
 
 

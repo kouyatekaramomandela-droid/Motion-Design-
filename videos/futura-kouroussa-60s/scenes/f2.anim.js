@@ -1,5 +1,6 @@
 // F2 — La terre et les gens (4.4–15.6). One shot per idea, each on its word, joined by a gold line
-// that sweeps the frame: the river (photo A, 2.5D), a quarter, a market (gold line illustrations).
+// that sweeps the frame: the river (photo A, 2.5D), the Maison des Jeunes de Kouroussa, the women of an
+// association (client photos; group photos get a slow camera move without a detached plane).
 const shots = [$(".p1"), $(".p2"), $(".p3")], lines = $$(".wipe-line");
 const cuts = [4.6, 7.7, 10.2];
 shots.forEach((s, i) => {
@@ -21,22 +22,6 @@ tl.fromTo(D, { t: 0 }, { t: 4, duration: 4, ease: "none", onUpdate: () => FK.dra
   tl.fromTo(rule, { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.out", transformOrigin: "0% 50%" }, at(t + 0.1));
 });
 
-// shots 2 and 3 — the line art draws itself, its three planes drift at different speeds, windows and stalls light up
-function drawIll(box, t0, dur, hold) {
-  const strokes = Array.from(box.querySelectorAll(".ink > *"));
-  prepDraw(strokes);
-  const each = 0.7, stag = (dur - each) / Math.max(1, strokes.length - 1);
-  tl.fromTo(strokes, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: each, ease: "power2.inOut", stagger: stag }, at(t0));
-  tl.fromTo(Array.from(box.querySelectorAll(".lit")), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, at(t0 + dur));
-  const depth = { back: 8, mid: 16, front: 34 };
-  Object.keys(depth).forEach((k) => {
-    const g = box.querySelector(".layer." + k);
-    if (g) tl.fromTo(g, { x: depth[k] }, { x: -depth[k], duration: hold, ease: "none" }, at(t0));
-  });
-  tl.fromTo(box, { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.05, duration: hold, ease: "none", transformOrigin: "50% 60%" }, at(t0));
-}
-drawIll($(".p2 .ill-box"), 7.75, 1.3, 2.9);
-drawIll($(".p3 .ill-box"), 10.25, 1.5, 5.3);
-// the woman carrying the basin walks on, the child follows
-tl.fromTo($(".p3 .carrier"), { x: -14 }, { x: 10, duration: 5.2, ease: "sine.inOut" }, at(10.3));
-tl.fromTo($(".p3 .child"), { x: -8 }, { x: 8, duration: 5.2, ease: "sine.inOut" }, at(10.3));
+// shots 2 and 3 — slow camera moves on the photos
+camera($(".plate.q2"), at(7.7), 2.9, [1.0, 0, 0], [1.07, 0, -8], 1.0, "none");
+camera($(".plate.fm3"), at(10.2), 5.4, [1.04, 34, 0], [1.09, -34, 0], 1.0, "none");

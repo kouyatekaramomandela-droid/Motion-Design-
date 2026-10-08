@@ -33,6 +33,11 @@ MARKINGS = {
                  (900, 984, 1185, 1000, "patch", -330),  # coloured band of the source graphic
                  (276, 626, 482, 774, "blur")],   # safety sign (small print)
     "S-hopital": [(842, 429, 871, 453, "all")],   # motorbike number plate
+    # batch 3: news-site watermark on the lattice wall (copied from the same lattice, one period-aligned
+    # patch per half), phone-brand stamp, baseball-team logo on a cap
+    "Q-maison-jeunes": [(472, 489, 556, 555, "patch", 260), (552, 489, 638, 555, "patch", 182)],
+    "F-femmes": [(24, 420, 124, 444, "all")],
+    "F-anciens": [(1042, 272, 1076, 298, "all")],
 }
 
 # Nearest-plane seeds (source pixels) for GrabCut: one or more polygons per photo.
@@ -59,6 +64,8 @@ POLYS = {
     # third mine: the band of trees in front of the pit is the near plane
     "C3-mine": [[(0, 769), (0, 585), (120, 600), (230, 640), (380, 700), (500, 728), (640, 742),
                  (760, 700), (900, 640), (975, 560), (1000, 480), (1100, 440), (1100, 769)]],
+    # batch 3: group photos get no near plane (a cut through a crowd of heads shows); a slow camera move only
+    "Q-maison-jeunes": [], "F-femmes": [], "F-anciens": [],
     "C2-usine": [[(0, 1000), (0, 846), (150, 838), (300, 845), (430, 850), (560, 845), (700, 850),
                   (860, 855), (1000, 860), (1100, 880), (1200, 905), (1300, 925), (1400, 930),
                   (1500, 940), (1500, 1000)]],
@@ -80,8 +87,8 @@ def erase_markings(img, boxes):
             h, w = img.shape[:2]
             ya, yb, xa, xb = max(0, y0 - pad), min(h, y1 + pad), max(0, x0 - pad), min(w, x1 + pad)
             m = np.zeros((yb - ya, xb - xa), np.float32)
-            cv2.ellipse(m, ((x0 + x1) // 2 - xa, (y0 + y1) // 2 - ya), ((x1 - x0) // 2 + 4, (y1 - y0) // 2 + 4), 0, 0, 360, 1, -1)
-            m = cv2.GaussianBlur(m, (0, 0), 6)[..., None]
+            m[y0 - ya:y1 - ya, x0 - xa:x1 - xa] = 1
+            m = cv2.GaussianBlur(cv2.dilate(m, np.ones((9, 9), np.uint8)), (0, 0), 3)[..., None]
             src = img[ya:yb, xa + dx:xb + dx].astype(np.float32)
             img[ya:yb, xa:xb] = (img[ya:yb, xa:xb] * (1 - m) + src * m).astype(np.uint8)
     for x0, y0, x1, y1, mode, *arg in boxes:
@@ -118,6 +125,8 @@ def upscale(img, interp=cv2.INTER_LANCZOS4):
 
 def grabcut_alpha(img, polys):
     h, w = img.shape[:2]
+    if not polys:
+        return np.zeros((h, w), np.uint8)
     seed = np.zeros((h, w), np.uint8)
     cv2.fillPoly(seed, [np.array(p, np.int32) for p in polys], 255)
     mask = np.full((h, w), cv2.GC_BGD, np.uint8)

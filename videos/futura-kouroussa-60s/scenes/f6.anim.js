@@ -1,5 +1,5 @@
 // F6 — Signature (51.4–60). The three lacks of F4 come back recoloured in gold: the well where gold water
-// flows, the school lit, the health post lit. Then the gold lines settle into the tricolour band, the logo
+// flows, the classroom, the health post (each a cross-fade from the grey to the gold treatment). Then the gold lines settle into the tricolour band, the logo
 // returns at the centre and « L'or de Kouroussa, au service de Kouroussa. » holds to 60 s.
 const line = $(".wipe-line");
 tl.fromTo($(".reveal"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, at(51.6));
@@ -8,11 +8,10 @@ tl.set(line, { opacity: 0 }, at(52.22));
 
 const panels = [$(".pa"), $(".pb"), $(".pc")];
 tl.fromTo(panels, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12 }, at(51.8));
-camera($(".plate.pd0"), at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none");
-camera($(".plate.pd1"), at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none");
+$$(".panel .plate").forEach((p) => camera(p, at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none"));
 
 // 1 — the well turns gold (cross-fade between the dry and the gold treatment) and gold water flows
-tl.fromTo($(".gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(52.4));
+tl.fromTo($(".pa .gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(52.4));
 const pl = $(".plate.pd0"), pw = parseFloat(pl.style.width), ph = parseFloat(pl.style.height);
 const px = parseFloat(pl.style.left), py = parseFloat(pl.style.top);
 const cv = $("canvas.stream"), panel = $(".pa");
@@ -40,11 +39,10 @@ function drawStream(t) {
 }
 tl.fromTo(S, { t: 0 }, { t: 3.2, duration: 3.2, ease: "none", onUpdate: () => drawStream(S.t) }, at(52.5));
 
-// 2 and 3 — the school and the health post light up (ink turns gold, lights on)
+// 2 and 3 — the classroom and the health post turn gold
 [[".pb", 53.2], [".pc", 54.0]].forEach(([sel, t]) => {
-  const p = $(sel), inks = Array.from(p.querySelectorAll(".ink")), lits = Array.from(p.querySelectorAll(".lit"));
-  tl.fromTo(inks, { stroke: "#A9B3BC" }, { stroke: "#F8DF7A", duration: 0.5, ease: "sine.out" }, at(t));
-  tl.fromTo(lits, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.out", stagger: 0.08 }, at(t + 0.1));
+  const p = $(sel);
+  tl.fromTo(p.querySelector(".gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(t));
   tl.fromTo(p, { boxShadow: "0 0 0px rgba(245,197,24,0)" }, { boxShadow: "0 0 50px rgba(245,197,24,0.45)", duration: 0.6 }, at(t));
 });
 tl.fromTo($(".pa"), { boxShadow: "0 0 0px rgba(245,197,24,0)" }, { boxShadow: "0 0 50px rgba(245,197,24,0.45)", duration: 0.6 }, at(52.4));

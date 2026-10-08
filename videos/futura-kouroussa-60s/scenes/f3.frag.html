@@ -1,31 +1,41 @@
 <style>
   .f3 .mineshot { clip-path: inset(0% 0% 100% 0%); }
+  .f3 .heroshot { opacity: 0; }
   .f3 .wipe-line.horz { top: 0; }
-  .f3 .map-box { position: absolute; left: 150px; top: 150px; width: 660px; }
-  .f3 .map-box svg { width: 100%; height: auto; display: block; overflow: visible; }
-  .f3 .cn { position: absolute; left: 930px; top: 300px; width: 200px; height: 300px; font-size: 300px; }
-  .f3 .cn b { position: absolute; left: 0; top: 0; font-weight: 900; }
-  .f3 .cu { position: absolute; left: 1130px; top: 445px; font-size: 110px; }
-  .f3 .cu b { position: absolute; left: 0; top: 0; font-weight: 700; white-space: nowrap; }
-  .f3 .hero { position: absolute; left: 880px; top: 250px; white-space: nowrap; }
+  .f3 .mpanel { position: absolute; top: 110px; width: 560px; height: 560px; overflow: hidden; border-radius: 18px;
+    border: 3px solid var(--gold); background: var(--black); box-shadow: 0 0 40px rgba(245,197,24,0.35); }
+  .f3 .m1 { left: 80px; } .f3 .m2 { left: 680px; } .f3 .m3 { left: 1280px; }
+  .f3 .mpanel .pbox { position: absolute; inset: 0; }
+  .f3 .nb { position: absolute; left: 18px; top: 18px; width: 84px; height: 84px; border-radius: 50%; background: var(--gold);
+    color: var(--night-deep); font-family: var(--serif); font-weight: 900; font-size: 54px; line-height: 84px; text-align: center;
+    box-shadow: 0 4px 18px rgba(7,12,18,0.5); }
+  .f3 .count { position: absolute; left: 0; right: 0; top: 700px; height: 170px; }
+  .f3 .cl { position: absolute; left: 0; right: 0; top: 0; text-align: center; white-space: nowrap;
+    font-family: var(--serif); font-weight: 700; font-size: 96px; line-height: 170px; color: var(--ivory); }
+  .f3 .cl b { font-weight: 900; font-size: 150px; color: var(--gold); margin-right: 22px; }
+  .f3 .hero { position: absolute; left: 0; right: 0; top: 270px; text-align: center; white-space: nowrap; }
   .f3 .hero-pre { font-family: var(--sans); font-weight: 700; font-size: 60px; color: var(--ivory); }
   .f3 .hero-line { margin-top: 6px; }
   .f3 .hero-num { font-size: 260px; }
   .f3 .hero-mil { font-size: 120px; margin-left: 24px; }
   .f3 .hero-usd { margin-top: 18px; font-family: var(--sans); font-weight: 700; font-size: 76px; color: var(--gold-pale); letter-spacing: 0.02em; }
   .f3 .hero-usd .per { color: var(--ivory); margin-left: 14px; }
-  .f3 svg.flows { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
-  .v .f3 .map-box { left: 140px; top: 160px; width: 800px; }
-  .v .f3 .cn { left: 230px; top: 930px; }
-  .v .f3 .cu { left: 430px; top: 1075px; }
-  .v .f3 .hero { left: 90px; top: 930px; }
+  .v .f3 .mpanel { left: 70px; width: 940px; height: 360px; }
+  .v .f3 .m1 { top: 120px; } .v .f3 .m2 { top: 510px; } .v .f3 .m3 { top: 900px; }
+  .v .f3 .count { top: 1290px; }
+  .v .f3 .cl { font-size: 100px; }
+  .v .f3 .cl b { font-size: 160px; }
+  .v .f3 .hero { top: 700px; }
   .v .f3 .hero-num { font-size: 240px; }
   .v .f3 .hero-mil { font-size: 110px; }
   .v .f3 .hero-usd { font-size: 70px; }
-  .s .f3 .map-box { left: 40px; top: 190px; width: 500px; }
-  .s .f3 .cn { left: 600px; top: 250px; height: 260px; font-size: 260px; }
-  .s .f3 .cu { left: 780px; top: 380px; font-size: 96px; }
-  .s .f3 .hero { left: 560px; top: 210px; }
+  .s .f3 .mpanel { top: 90px; width: 320px; height: 520px; }
+  .s .f3 .m1 { left: 30px; } .s .f3 .m2 { left: 380px; } .s .f3 .m3 { left: 730px; }
+  .s .f3 .nb { width: 72px; height: 72px; line-height: 72px; font-size: 46px; left: 14px; top: 14px; }
+  .s .f3 .count { top: 640px; height: 150px; }
+  .s .f3 .cl { font-size: 84px; line-height: 150px; }
+  .s .f3 .cl b { font-size: 130px; }
+  .s .f3 .hero { top: 200px; }
   .s .f3 .hero-pre { font-size: 50px; }
   .s .f3 .hero-num { font-size: 220px; }
   .s .f3 .hero-mil { display: block; margin-left: 0; margin-top: 4px; font-size: 92px; }
@@ -37,13 +47,21 @@
     <div class="fill warm">{{plate:c1|C-mine|mine|h=0.5,0.42,1.05|v=0.52,0.42,1.04|s=0.52,0.42,1.05}}</div>
     <div class="fill sunk">{{plate:c1s|C-mine|mine-sunk|h=0.5,0.42,1.05|v=0.52,0.42,1.04|s=0.52,0.42,1.05}}</div>
     <div class="sweep"></div>
-    <canvas class="dust"></canvas>
   </div>
+  <div class="shot heroshot">
+    <div class="black"></div>
+    {{plate:c3s|C3-mine|mine-sunk|h=0.5,0.6,1.05|v=0.5,0.62,1.04|s=0.5,0.6,1.05}}
+  </div>
+  <canvas class="dust"></canvas>
   <div class="wipe-line horz w"></div>
-  <div class="map-box">{{svg:map}}</div>
-  <svg class="flows"></svg>
-  <div class="cn t-hero" data-layout-allow-overlap><b class="n1">1</b><b class="n2">2</b><b class="n3">3</b></div>
-  <div class="cu t-title" data-layout-allow-overlap><b class="u1">mine</b><b class="u2">mines</b></div>
+  <div class="mpanel m1"><div class="pbox">{{plate:pm1|C-mine|mine|h=0.52,0.42,1.06,560,560|v=0.5,0.42,1.06,940,360|s=0.56,0.42,1.06,320,520}}</div><div class="nb">1</div></div>
+  <div class="mpanel m2"><div class="pbox">{{plate:pm2|C2-usine|mine|h=0.62,0.5,1.06,560,560|v=0.55,0.5,1.06,940,360|s=0.62,0.5,1.06,320,520}}</div><div class="nb">2</div></div>
+  <div class="mpanel m3"><div class="pbox">{{plate:pm3|C3-mine|mine|h=0.5,0.6,1.06,560,560|v=0.5,0.62,1.06,940,360|s=0.5,0.6,1.06,320,520}}</div><div class="nb">3</div></div>
+  <div class="count" data-layout-allow-overlap>
+    <div class="cl q1"><b>1</b>mine</div>
+    <div class="cl q2"><b>2</b>mines</div>
+    <div class="cl q3"><b>3</b>mines</div>
+  </div>
   <div class="hero">
     <div class="hero-pre">plus de</div>
     <div class="hero-line"><span class="hero-num t-hero">2</span><span class="hero-mil t-hero">milliards</span></div>

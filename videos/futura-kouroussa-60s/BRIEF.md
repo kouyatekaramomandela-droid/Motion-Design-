@@ -32,8 +32,15 @@ Structure client (verrouillée) : 0:00–0:05 Ouverture · 0:05–0:15 La terre 
 - assets/photos/src/D-forage.jpg — forage communautaire, femmes et enfants (catégorie D), 1100×665.
 - assets/photos/src/R-reunion.jpg — réunion de travail (hors catégories), 1020×768 ; utilisée en « La réponse ».
 - assets/photos/src/E-logo.jpg — logo FUTURA-Kouroussa (catégorie E) ; version vectorielle redessinée dans assets/logo/.
-- Catégories manquantes (B quartiers/marché, mines 2 et 3, école, poste de santé, jeunes, maraîchères) :
-  illustrations vectorielles stylisées, jamais d'image de banque étrangère (consigne client).
+- Lot 2 (8 oct.) : assets/photos/src/C2-usine.jpg (usine de traitement, mine 2 ; sceau du ministère,
+  logo « Simandou 2040 » et logo « Guinée » effacés, petit texte du panneau flouté), C3-mine.jpg
+  (vue aérienne, mine 3), B-village.jpg (cases dans les champs), S-hopital.jpg (hôpital ; plaque de
+  moto effacée), K-classe.jpg (salle de classe).
+- Lot 3 (8 oct.) : Q-maison-jeunes.jpg (Maison des Jeunes de Kouroussa ; filigrane « MediaGuinée »
+  effacé), F-femmes.jpg (assemblée de femmes ; marque du téléphone effacée), F-anciens.jpg (assemblée
+  des anciens ; logo de casquette effacé). X-foule.jpg (foule devant une grille) n'est pas utilisée :
+  consigne « pas de cliché de foule », et c'est une capture d'écran (icône de recherche d'image).
+- Les illustrations au trait (quartier, marché, école, poste de santé, carte) ne sont plus utilisées.
 
 ## Customizations
 

@@ -90,86 +90,24 @@
 <div class="fk s">
 <style>
   .f4 .dwrap { position: absolute; inset: 0; }
-  .f4 .navy-dry { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 80% at 50% 42%, #1B2631 0%, #141D26 55%, #0B1117 100%); }
-  .f4 .ill-box { position: absolute; left: 560px; top: 150px; width: 800px; }
-  .v .f4 .ill-box { left: 90px; top: 420px; width: 900px; }
-  .s .f4 .ill-box { left: 190px; top: 130px; width: 700px; }
-  .f4 .question { position: absolute; left: 1000px; top: 380px; width: 820px; font-size: 104px; }
-  .v .f4 .question { left: 60px; right: 60px; width: auto; top: 1130px; text-align: center; font-size: 104px; }
-  .s .f4 .question { left: 40px; right: 40px; width: auto; top: 640px; text-align: center; font-size: 84px; white-space: nowrap; }
+  .f4 .village, .f4 .well, .f4 .ecole, .f4 .sante { opacity: 0; }
+  .f4 .qscrim { position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    background: linear-gradient(180deg, rgba(7,12,18,0.82) 0%, rgba(7,12,18,0.45) 26%, rgba(7,12,18,0) 46%); }
+  .v .f4 .qscrim { background: linear-gradient(180deg, rgba(7,12,18,0.82) 0%, rgba(7,12,18,0.45) 20%, rgba(7,12,18,0) 34%); }
+  .f4 .question { position: absolute; left: 60px; right: 60px; top: 110px; text-align: center; font-size: 104px; white-space: nowrap; }
+  .v .f4 .question { top: 230px; white-space: normal; }
+  .s .f4 .question { top: 70px; font-size: 84px; }
 </style>
 <div class="scene f4">
   <div class="black"></div>
+  <div class="shot village"><div class="plate bv" style="left:-282.5px;top:-43.2px;width:1713.6px;height:1123.2px" data-ox="822.5" data-oy="673.9"><img class="pl pl-bg" src="assets/photos/graded/B-village.people-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/B-village.people-fg.png" alt=""></div></div>
   <div class="shot well">
     <div class="dwrap col"><div class="plate dc" style="left:-537.6px;top:-43.2px;width:1857.9px;height:1123.2px" data-ox="1077.6" data-oy="584.1"><img class="pl pl-bg" src="assets/photos/graded/D-forage.people-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/D-forage.people-fg.png" alt=""></div></div>
     <div class="dwrap dry"><div class="plate dd" style="left:-537.6px;top:-43.2px;width:1857.9px;height:1123.2px" data-ox="1077.6" data-oy="584.1"><img class="pl pl-bg" src="assets/photos/graded/D-forage.dry-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/D-forage.dry-fg.png" alt=""></div></div>
   </div>
-  <div class="shot ecole">
-    <div class="navy-dry"></div>
-    <div class="ill-box dry"><svg class="ill ill-classe" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <g class="ink" stroke="#A9B3BC">
-    <path class="ground" d="M24 262 H376"/>
-    <rect class="board" x="92" y="30" width="216" height="114" rx="6"/>
-    <path class="ledge" d="M100 152 H300"/>
-    <path class="desk1" d="M58 214 H182 M70 214 V262 M170 214 V262"/>
-    <path class="desk2" d="M218 214 H342 M230 214 V262 M330 214 V262"/>
-  </g>
-  <g class="ink figure" stroke="#A9B3BC">
-    <circle cx="118" cy="166" r="13"/>
-    <path d="M100 212 Q100 186 118 184 Q136 186 136 212"/>
-    <path class="arm-down" d="M134 196 L148 210"/>
-  </g>
-  <g class="lit chalk" stroke="#F8DF7A" stroke-width="4">
-    <path d="M118 62 H196"/><path d="M118 86 H250"/><path d="M118 110 H176"/>
-    <path d="M226 104 L246 120 L278 70"/>
-  </g>
-  <g class="lit kit" stroke="#F5C518" stroke-width="4">
-    <rect x="142" y="196" width="30" height="12" rx="2"/>
-    <rect x="146" y="184" width="26" height="12" rx="2"/>
-    <path d="M238 210 L262 200 L286 210 L262 214 Z"/>
-    <circle cx="316" cy="188" r="13"/><path d="M303 188 H329 M316 175 Q324 188 316 201 Q308 188 316 175"/>
-    <path d="M316 201 V212"/>
-  </g>
-  <g class="lit arm-up" stroke="#F8DF7A" stroke-width="5">
-    <path d="M134 194 L146 160"/>
-  </g>
-</svg>
-</div>
-  </div>
-  <div class="shot sante">
-    <div class="navy-dry"></div>
-    <div class="ill-box dry"><svg class="ill ill-sante" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <g class="lit solar" stroke="#F5C518" stroke-width="4">
-    <path d="M226 98 L240 74 H296 L282 98 Z"/><path d="M254 74 L240 98 M268 74 L254 98 M282 74 L268 98 M233 86 H289"/>
-  </g>
-  <g class="ink" stroke="#A9B3BC">
-    <path class="ground" d="M24 262 H376"/>
-    <rect class="roof" x="84" y="98" width="232" height="14" rx="3"/>
-    <rect class="wall" x="96" y="112" width="208" height="150"/>
-    <rect class="door" x="182" y="192" width="36" height="70" rx="2"/>
-    <rect class="win1" x="116" y="140" width="46" height="38" rx="2"/>
-    <rect class="win2" x="238" y="140" width="46" height="38" rx="2"/>
-    <circle class="sign" cx="200" cy="152" r="18"/>
-    <path class="cross" d="M200 142 V162 M190 152 H210"/>
-    <path class="lamp-arm" d="M174 196 H160 V204"/>
-    <circle class="bulb" cx="160" cy="212" r="7"/>
-  </g>
-  <g class="ink figure" stroke="#A9B3BC">
-    <circle cx="50" cy="194" r="12"/>
-    <path d="M37 214 Q50 205 63 214 L72 262 H28 Z"/>
-    <circle cx="80" cy="224" r="8"/>
-    <path d="M71 238 Q80 232 89 238 L90 262 H70 Z"/>
-  </g>
-  <g class="lit light" stroke="none">
-    <circle class="halo" cx="160" cy="212" r="26" fill="#F5C518" opacity="0.28"/>
-    <circle class="bulb-on" cx="160" cy="212" r="6" fill="#F8DF7A"/>
-    <rect class="win1-on" x="119" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
-    <rect class="win2-on" x="241" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
-    <path class="cross-on" d="M200 142 V162 M190 152 H210" stroke="#F5C518" stroke-width="5"/>
-  </g>
-</svg>
-</div>
-  </div>
+  <div class="shot ecole"><div class="plate kc" style="left:-107.0px;top:0.0px;width:1540.5px;height:1123.2px" data-ox="647.0" data-oy="449.3"><img class="pl pl-bg" src="assets/photos/graded/K-classe.dry-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/K-classe.dry-fg.png" alt=""></div></div>
+  <div class="shot sante"><div class="plate sh" style="left:-100.6px;top:0.0px;width:1525.3px;height:1123.2px" data-ox="640.6" data-oy="471.7"><img class="pl pl-bg" src="assets/photos/graded/S-hopital.dry-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/S-hopital.dry-fg.png" alt=""></div></div>
+  <div class="qscrim"></div>
   <div class="question t-title">Et les <span style="white-space: nowrap">communautés&nbsp;?</span></div>
 </div>
 
@@ -319,30 +257,23 @@ function camera(plate, t0, dur, a, b, k, ease) {
   tl.fromTo(fg, { scale: fs(a[0]), x: a[1] * k, y: a[2] * k, transformOrigin: ox },
     { scale: fs(b[0]), x: b[1] * k, y: b[2] * k, duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
 }
-// F4 — Le contraste (27.4–38.6). No more gold lines. The village well (photo D, soft community grade)
-// loses its colour while « l'eau potable manque encore » is said; then the school and the health post,
-// drawn in grey; the question « Et les communautés ? » holds to the end of the scene.
-const well = $(".well");
-tl.fromTo(well, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.out" }, at(27.6));
-camera($(".plate.dc"), at(27.6), 5.2, [1.0, 0, 0], [1.08, 0, -12], 2.0, "none");
-camera($(".plate.dd"), at(27.6), 5.2, [1.0, 0, 0], [1.08, 0, -12], 2.0, "none");
-// the colour withdraws (cross-fade between the two treatments of the same photo)
-tl.fromTo($(".dwrap.dry"), { opacity: 0 }, { opacity: 1, duration: 2.4, ease: "sine.inOut" }, at(29.5));
+// F4 — Le contraste (27.4–38.6). No more gold lines. « dans beaucoup de villages » : a village among its
+// fields (soft community grade); « l'eau potable manque encore » : the well loses its colour; then the
+// classroom and the health post, already grey; « Et les communautés ? » holds to the end of the scene.
+// the four shots, each on its words, joined by short dissolves
+[[".village", 27.6, 0.8], [".well", 30.2, 0.5], [".ecole", 32.4, 0.35], [".sante", 34.85, 0.35]].forEach(([sel, t, d]) => {
+  tl.fromTo($(sel), { opacity: 0 }, { opacity: 1, duration: d, ease: "sine.inOut" }, at(t));
+});
+camera($(".plate.bv"), at(27.6), 3.2, [1.0, 24, 0], [1.07, -24, 0], 1.8, "none");
+camera($(".plate.dc"), at(30.2), 2.8, [1.0, 0, 0], [1.06, 0, -10], 2.0, "none");
+camera($(".plate.dd"), at(30.2), 2.8, [1.0, 0, 0], [1.06, 0, -10], 2.0, "none");
+// the colour withdraws from the well (cross-fade between two treatments of the same photo)
+tl.fromTo($(".dwrap.dry"), { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "sine.inOut" }, at(30.7));
+camera($(".plate.kc"), at(32.4), 2.8, [1.0, 0, 0], [1.06, 0, 0], 1.7, "none");
+camera($(".plate.sh"), at(34.85), 3.8, [1.0, 0, 0], [1.07, 0, 6], 1.8, "none");
 
-function drawDry(shot, t0, hold) {
-  const box = shot.querySelector(".ill-box");
-  const strokes = Array.from(box.querySelectorAll(".ink > *"));
-  prepDraw(strokes);
-  tl.fromTo(shot, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "sine.out" }, at(t0 - 0.15));
-  tl.fromTo(strokes, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.5 / Math.max(1, strokes.length - 1) }, at(t0));
-  tl.fromTo(box, { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.04, duration: hold, ease: "none", transformOrigin: "50% 60%" }, at(t0));
-}
-drawDry($(".ecole"), 32.5, 2.6);
-drawDry($(".sante"), 34.9, 0.9);
-
-// « Et les communautés ? » — the health post steps aside, the question holds 2.6 s
-const ill = $(".sante .ill-box");
-tl.to(ill, { ...pick({ x: -360, scale: 0.86 }, { y: -150, scale: 0.86 }, { y: -40, scale: 0.8 }), duration: 0.8, ease: "power2.inOut" }, at(35.8));
+// « Et les communautés ? » over the health post, held 2.4 s
+tl.fromTo($(".qscrim"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, at(35.6));
 const q = $(".question");
 const words = splitWords(q);
 tl.fromTo(words, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12 }, at(35.9));

@@ -7,7 +7,6 @@
     border: 3px solid var(--gold-deep); background: var(--night-deep); }
   .f6 .pa { left: 80px; } .f6 .pb { left: 680px; } .f6 .pc { left: 1280px; }
   .f6 .panel .pbox { position: absolute; inset: 0; }
-  .f6 .panel .ill-box { position: absolute; left: 30px; right: 30px; top: 200px; }
   .f6 canvas.stream { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
   .f6 svg.waves { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
   .f6 .band { position: absolute; left: 0; right: 0; bottom: 0; height: 20px; display: flex; }
@@ -20,7 +19,6 @@
   .f6 .signature { position: absolute; left: 96px; right: 96px; top: 720px; text-align: center; font-size: 66px; }
   .v .f6 .panel { left: 70px; width: 940px; height: 480px; }
   .v .f6 .pa { top: 170px; } .v .f6 .pb { top: 690px; } .v .f6 .pc { top: 1210px; }
-  .v .f6 .panel .ill-box { left: 250px; right: 250px; top: 50px; }
   .v .f6 .band { height: 28px; }
   .v .f6 .lockup { top: 400px; }
   .v .f6 .emb { width: 520px; }
@@ -28,7 +26,6 @@
   .v .f6 .signature { left: 60px; right: 60px; top: 1120px; font-size: 76px; }
   .s .f6 .panel { top: 170px; width: 320px; height: 640px; }
   .s .f6 .pa { left: 30px; } .s .f6 .pb { left: 380px; } .s .f6 .pc { left: 730px; }
-  .s .f6 .panel .ill-box { left: 12px; right: 12px; top: 210px; }
   .s .f6 .lockup { top: 110px; }
   .s .f6 .emb { width: 300px; }
   .s .f6 .word { font-size: 76px; }
@@ -43,8 +40,14 @@
       <div class="pbox gold1">{{plate:pd1|D-forage|gold|h=0.62,0.56,1.04,560,700|v=0.6,0.6,1.04,940,480|s=0.63,0.56,1.04,320,640}}</div>
       <canvas class="stream"></canvas>
     </div>
-    <div class="panel pb"><div class="ill-box dry">{{svg:classe}}</div></div>
-    <div class="panel pc"><div class="ill-box dry">{{svg:sante}}</div></div>
+    <div class="panel pb">
+      <div class="pbox dry0">{{plate:pk0|K-classe|dry|h=0.42,0.4,1.04,560,700|v=0.42,0.45,1.04,940,480|s=0.42,0.42,1.04,320,640}}</div>
+      <div class="pbox gold1">{{plate:pk1|K-classe|gold|h=0.42,0.4,1.04,560,700|v=0.42,0.45,1.04,940,480|s=0.42,0.42,1.04,320,640}}</div>
+    </div>
+    <div class="panel pc">
+      <div class="pbox dry0">{{plate:ps0|S-hopital|dry|h=0.42,0.42,1.04,560,700|v=0.4,0.42,1.04,940,480|s=0.4,0.42,1.04,320,640}}</div>
+      <div class="pbox gold1">{{plate:ps1|S-hopital|gold|h=0.42,0.42,1.04,560,700|v=0.4,0.42,1.04,940,480|s=0.4,0.42,1.04,320,640}}</div>
+    </div>
     <svg class="waves"></svg>
     <div class="band"><i class="r"></i><i class="y"></i><i class="g"></i></div>
     <div class="lockup">

@@ -97,7 +97,6 @@
     border: 3px solid var(--gold-deep); background: var(--night-deep); }
   .f6 .pa { left: 80px; } .f6 .pb { left: 680px; } .f6 .pc { left: 1280px; }
   .f6 .panel .pbox { position: absolute; inset: 0; }
-  .f6 .panel .ill-box { position: absolute; left: 30px; right: 30px; top: 200px; }
   .f6 canvas.stream { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
   .f6 svg.waves { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
   .f6 .band { position: absolute; left: 0; right: 0; bottom: 0; height: 20px; display: flex; }
@@ -110,7 +109,6 @@
   .f6 .signature { position: absolute; left: 96px; right: 96px; top: 720px; text-align: center; font-size: 66px; }
   .v .f6 .panel { left: 70px; width: 940px; height: 480px; }
   .v .f6 .pa { top: 170px; } .v .f6 .pb { top: 690px; } .v .f6 .pc { top: 1210px; }
-  .v .f6 .panel .ill-box { left: 250px; right: 250px; top: 50px; }
   .v .f6 .band { height: 28px; }
   .v .f6 .lockup { top: 400px; }
   .v .f6 .emb { width: 520px; }
@@ -118,7 +116,6 @@
   .v .f6 .signature { left: 60px; right: 60px; top: 1120px; font-size: 76px; }
   .s .f6 .panel { top: 170px; width: 320px; height: 640px; }
   .s .f6 .pa { left: 30px; } .s .f6 .pb { left: 380px; } .s .f6 .pc { left: 730px; }
-  .s .f6 .panel .ill-box { left: 12px; right: 12px; top: 210px; }
   .s .f6 .lockup { top: 110px; }
   .s .f6 .emb { width: 300px; }
   .s .f6 .word { font-size: 76px; }
@@ -133,66 +130,14 @@
       <div class="pbox gold1"><div class="plate pd1" style="left:-533.6px;top:-25.6px;width:1101.0px;height:665.6px" data-ox="693.6" data-oy="372.7"><img class="pl pl-bg" src="assets/photos/graded/D-forage.gold-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/D-forage.gold-fg.png" alt=""></div></div>
       <canvas class="stream"></canvas>
     </div>
-    <div class="panel pb"><div class="ill-box dry"><svg class="ill ill-classe" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <g class="ink" stroke="#A9B3BC">
-    <path class="ground" d="M24 262 H376"/>
-    <rect class="board" x="92" y="30" width="216" height="114" rx="6"/>
-    <path class="ledge" d="M100 152 H300"/>
-    <path class="desk1" d="M58 214 H182 M70 214 V262 M170 214 V262"/>
-    <path class="desk2" d="M218 214 H342 M230 214 V262 M330 214 V262"/>
-  </g>
-  <g class="ink figure" stroke="#A9B3BC">
-    <circle cx="118" cy="166" r="13"/>
-    <path d="M100 212 Q100 186 118 184 Q136 186 136 212"/>
-    <path class="arm-down" d="M134 196 L148 210"/>
-  </g>
-  <g class="lit chalk" stroke="#F8DF7A" stroke-width="4">
-    <path d="M118 62 H196"/><path d="M118 86 H250"/><path d="M118 110 H176"/>
-    <path d="M226 104 L246 120 L278 70"/>
-  </g>
-  <g class="lit kit" stroke="#F5C518" stroke-width="4">
-    <rect x="142" y="196" width="30" height="12" rx="2"/>
-    <rect x="146" y="184" width="26" height="12" rx="2"/>
-    <path d="M238 210 L262 200 L286 210 L262 214 Z"/>
-    <circle cx="316" cy="188" r="13"/><path d="M303 188 H329 M316 175 Q324 188 316 201 Q308 188 316 175"/>
-    <path d="M316 201 V212"/>
-  </g>
-  <g class="lit arm-up" stroke="#F8DF7A" stroke-width="5">
-    <path d="M134 194 L146 160"/>
-  </g>
-</svg>
-</div></div>
-    <div class="panel pc"><div class="ill-box dry"><svg class="ill ill-sante" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <g class="lit solar" stroke="#F5C518" stroke-width="4">
-    <path d="M226 98 L240 74 H296 L282 98 Z"/><path d="M254 74 L240 98 M268 74 L254 98 M282 74 L268 98 M233 86 H289"/>
-  </g>
-  <g class="ink" stroke="#A9B3BC">
-    <path class="ground" d="M24 262 H376"/>
-    <rect class="roof" x="84" y="98" width="232" height="14" rx="3"/>
-    <rect class="wall" x="96" y="112" width="208" height="150"/>
-    <rect class="door" x="182" y="192" width="36" height="70" rx="2"/>
-    <rect class="win1" x="116" y="140" width="46" height="38" rx="2"/>
-    <rect class="win2" x="238" y="140" width="46" height="38" rx="2"/>
-    <circle class="sign" cx="200" cy="152" r="18"/>
-    <path class="cross" d="M200 142 V162 M190 152 H210"/>
-    <path class="lamp-arm" d="M174 196 H160 V204"/>
-    <circle class="bulb" cx="160" cy="212" r="7"/>
-  </g>
-  <g class="ink figure" stroke="#A9B3BC">
-    <circle cx="50" cy="194" r="12"/>
-    <path d="M37 214 Q50 205 63 214 L72 262 H28 Z"/>
-    <circle cx="80" cy="224" r="8"/>
-    <path d="M71 238 Q80 232 89 238 L90 262 H70 Z"/>
-  </g>
-  <g class="lit light" stroke="none">
-    <circle class="halo" cx="160" cy="212" r="26" fill="#F5C518" opacity="0.28"/>
-    <circle class="bulb-on" cx="160" cy="212" r="6" fill="#F8DF7A"/>
-    <rect class="win1-on" x="119" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
-    <rect class="win2-on" x="241" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
-    <path class="cross-on" d="M200 142 V162 M190 152 H210" stroke="#F5C518" stroke-width="5"/>
-  </g>
-</svg>
-</div></div>
+    <div class="panel pb">
+      <div class="pbox dry0"><div class="plate pk0" style="left:-223.4px;top:0.0px;width:912.9px;height:665.6px" data-ox="383.4" data-oy="279.6"><img class="pl pl-bg" src="assets/photos/graded/K-classe.dry-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/K-classe.dry-fg.png" alt=""></div></div>
+      <div class="pbox gold1"><div class="plate pk1" style="left:-223.4px;top:0.0px;width:912.9px;height:665.6px" data-ox="383.4" data-oy="279.6"><img class="pl pl-bg" src="assets/photos/graded/K-classe.gold-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/K-classe.gold-fg.png" alt=""></div></div>
+    </div>
+    <div class="panel pc">
+      <div class="pbox dry0"><div class="plate ps0" style="left:-201.6px;top:0.0px;width:903.9px;height:665.6px" data-ox="361.6" data-oy="279.6"><img class="pl pl-bg" src="assets/photos/graded/S-hopital.dry-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/S-hopital.dry-fg.png" alt=""></div></div>
+      <div class="pbox gold1"><div class="plate ps1" style="left:-201.6px;top:0.0px;width:903.9px;height:665.6px" data-ox="361.6" data-oy="279.6"><img class="pl pl-bg" src="assets/photos/graded/S-hopital.gold-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/S-hopital.gold-fg.png" alt=""></div></div>
+    </div>
     <svg class="waves"></svg>
     <div class="band"><i class="r"></i><i class="y"></i><i class="g"></i></div>
     <div class="lockup">
@@ -351,7 +296,7 @@ function camera(plate, t0, dur, a, b, k, ease) {
     { scale: fs(b[0]), x: b[1] * k, y: b[2] * k, duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
 }
 // F6 — Signature (51.4–60). The three lacks of F4 come back recoloured in gold: the well where gold water
-// flows, the school lit, the health post lit. Then the gold lines settle into the tricolour band, the logo
+// flows, the classroom, the health post (each a cross-fade from the grey to the gold treatment). Then the gold lines settle into the tricolour band, the logo
 // returns at the centre and « L'or de Kouroussa, au service de Kouroussa. » holds to 60 s.
 const line = $(".wipe-line");
 tl.fromTo($(".reveal"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, at(51.6));
@@ -360,11 +305,10 @@ tl.set(line, { opacity: 0 }, at(52.22));
 
 const panels = [$(".pa"), $(".pb"), $(".pc")];
 tl.fromTo(panels, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12 }, at(51.8));
-camera($(".plate.pd0"), at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none");
-camera($(".plate.pd1"), at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none");
+$$(".panel .plate").forEach((p) => camera(p, at(51.8), 3.6, [1.0, 0, 0], [1.07, 0, -6], 1.8, "none"));
 
 // 1 — the well turns gold (cross-fade between the dry and the gold treatment) and gold water flows
-tl.fromTo($(".gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(52.4));
+tl.fromTo($(".pa .gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(52.4));
 const pl = $(".plate.pd0"), pw = parseFloat(pl.style.width), ph = parseFloat(pl.style.height);
 const px = parseFloat(pl.style.left), py = parseFloat(pl.style.top);
 const cv = $("canvas.stream"), panel = $(".pa");
@@ -392,11 +336,10 @@ function drawStream(t) {
 }
 tl.fromTo(S, { t: 0 }, { t: 3.2, duration: 3.2, ease: "none", onUpdate: () => drawStream(S.t) }, at(52.5));
 
-// 2 and 3 — the school and the health post light up (ink turns gold, lights on)
+// 2 and 3 — the classroom and the health post turn gold
 [[".pb", 53.2], [".pc", 54.0]].forEach(([sel, t]) => {
-  const p = $(sel), inks = Array.from(p.querySelectorAll(".ink")), lits = Array.from(p.querySelectorAll(".lit"));
-  tl.fromTo(inks, { stroke: "#A9B3BC" }, { stroke: "#F8DF7A", duration: 0.5, ease: "sine.out" }, at(t));
-  tl.fromTo(lits, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.out", stagger: 0.08 }, at(t + 0.1));
+  const p = $(sel);
+  tl.fromTo(p.querySelector(".gold1"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(t));
   tl.fromTo(p, { boxShadow: "0 0 0px rgba(245,197,24,0)" }, { boxShadow: "0 0 50px rgba(245,197,24,0.45)", duration: 0.6 }, at(t));
 });
 tl.fromTo($(".pa"), { boxShadow: "0 0 0px rgba(245,197,24,0)" }, { boxShadow: "0 0 50px rgba(245,197,24,0.45)", duration: 0.6 }, at(52.4));

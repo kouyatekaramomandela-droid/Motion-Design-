@@ -7,10 +7,10 @@ message: "L'or de Kouroussa, au service de Kouroussa : un fonds clair, suivi, au
 arc: Lieu → Gens → Or → Manque → Réponse → Promesse
 audience: habitants de Kouroussa et partenaires institutionnels
 mode: collaborative
-version: v2
+version: v4
 ---
 
-# FUTURA-Kouroussa 60 s — storyboard v2 (construit)
+# FUTURA-Kouroussa 60 s — storyboard v4 (toutes les photos du client)
 
 ## Décisions
 
@@ -31,12 +31,10 @@ version: v2
   rendu, il est donc calculé une fois par HyperFrames sur chaque photo (tools/bake_grades.py) et les
   changements d'étalonnage se font par fondu entre deux versions. Grain de film léger ajouté à
   l'encodage final (tools/finish.sh).
-- **Images manquantes** (consigne client) : quartiers, marché, deux mines, école, poste de santé →
-  illustrations vectorielles au trait doré, même style que le film de 2 min. Aucune banque d'images.
-- **Trois mines avec une seule photo** : la photo réelle porte la scène ; les trois mines
-  apparaissent comme trois points sur la silhouette de la préfecture, avec un compteur 1 → 3
-  (« 1 mine », « 2 mines », « 3 mines »).
-  Jamais la même photo présentée comme trois sites.
+- **Images** : uniquement des photos du client (lots 1 à 3). Les photos de groupe (Maison des Jeunes,
+  assemblée de femmes, assemblée des anciens) ont un mouvement de caméra lent sans plan détouré.
+- **Trois mines** : trois photos du client (fosse avec engins, usine de traitement, vue aérienne),
+  présentées une à une avec le compteur « 1 mine · 2 mines · 3 mines ».
 - **Rythme** : ample et lent (0–15 s), plus vif (15–38 s), apaisé (52–60 s).
 - **Interdits** : foules, pelleteuses menaçantes (engins vus de haut, plan calme, sans poussée
   dramatique), noms ou logos de sociétés (logo du gilet et marquages des engins masqués), plaques,
@@ -66,8 +64,8 @@ plongée lente (photo A, 2.5D : le pont glisse sur l'eau). « KOUROUSSA » se gr
 
 Trois plans en parallaxe douce, chacun sur son mot :
 1. **4,6–7,7** photo A recadrée sur l'eau scintillante : « Un fleuve. »
-2. **7,7–10,2** illustration au trait doré : un quartier (maisons, case, arbres) : « Des quartiers. »
-3. **10,2–15,0** illustration au trait doré : un marché, une femme portant une bassine, un enfant : « Des familles. »
+2. **7,7–10,2** photo : la Maison des Jeunes de Kouroussa : « Des quartiers. »
+3. **10,2–15,0** photo : une assemblée de femmes : « Des familles. »
 Transitions : une ligne d'or balaie le cadre et révèle le plan suivant.
 
 ## Frame 3 — L'or
@@ -78,11 +76,11 @@ Transitions : une ligne d'or balaie le cadre et révèle le plan suivant.
 - src: compositions/f3.html (source : scenes/f3.frag.html + scenes/f3.anim.js)
 - voiceover: "Et sous cette terre, il y a de l'or. Trois mines, et plus de deux milliards de dollars chaque année."
 
-Photo C (site minier vu du dessus), étalonnage or chaud contrasté, zoom lent ; les engins forment le
-plan détouré, calmes. Sur « Trois mines » : la silhouette de la préfecture se dessine en or sur la
-photo (qui s'assombrit et se floute), trois points s'allument à 18,9 / 19,4 / 19,9 s avec le
-compteur (tintements) ; « 3 mines » tenu 2 s. Puis « plus de 2 milliards USD par an » (compteur
-0 → 2 de 22,1 à 23,3 s), tenu jusqu'à 27 s ; trois lignes d'or relient les mines au chiffre.
+Photo de la mine 1 (étalonnage or chaud contrasté, zoom lent, engins en plan détouré, calmes). Sur
+« Trois mines », la photo s'assombrit et les trois sites apparaissent en trois vignettes numérotées à
+18,9 / 19,4 / 19,9 s (tintements) avec le compteur ; « 3 mines » tenu 2 s. Puis la vue aérienne de la
+mine 3 remplit l'écran, assombrie, sous « plus de 2 milliards USD par an » (compteur 0 → 2 de 22,1 à
+23,3 s), tenu jusqu'à 27 s.
 
 ## Frame 4 — Le contraste
 
@@ -92,10 +90,10 @@ compteur (tintements) ; « 3 mines » tenu 2 s. Puis « plus de 2 milliards USD 
 - src: compositions/f4.html (source : scenes/f4.frag.html + scenes/f4.anim.js)
 - voiceover: "Pourtant, dans beaucoup de villages, l'eau potable manque encore. Des écoles attendent d'être équipées. Des centres de santé n'ont même pas d'électricité."
 
-Les lignes d'or quittent l'écran par les bords. Photo D (forage) : la couleur se retire doucement
-pendant « l'eau potable manque encore ». Puis la classe (vectoriel, trait gris) sur « Des écoles… »,
-puis le poste de santé (vectoriel, lampe éteinte) sur « Des centres de santé… ». « Et les
-communautés ? » (Playfair 700) tenu ≥ 2 s en fin de scène.
+Les lignes d'or ont quitté l'écran. « dans beaucoup de villages » : le village (cases dans les
+champs, tons doux). « l'eau potable manque encore » : le forage perd sa couleur. « Des écoles… » :
+la salle de classe, en gris. « Des centres de santé… » : l'hôpital, en gris. « Et les communautés ? »
+(Playfair 700) en haut de l'image, tenu ≥ 2 s en fin de scène.
 
 ## Frame 5 — La réponse
 
@@ -108,7 +106,8 @@ communautés ? » (Playfair 700) tenu ≥ 2 s en fin de scène.
 Les lignes d'or reviennent et dessinent le logo (pépite, main, rayons) sur « FUTURA-Kouroussa ».
 Badges « Issu du rapport de mission parlementaire » et « Société Anonyme OHADA ». Puis la photo de
 réunion (R) en fond doux, et trois icônes s'allument une à une sur les mots : « Contributions
-suivies » (suivie), « Comptes audités » (audités), « Communautés associées » (mot à dire).
+suivies » (suivie), « Comptes audités » (audités), « Communautés associées » (communautés) ; sur ce
+dernier mot, le fond passe à l'assemblée des anciens.
 
 ## Frame 6 — Signature
 
@@ -119,6 +118,6 @@ suivies » (suivie), « Comptes audités » (audités), « Communautés associé
 - voiceover: "L'or de Kouroussa, au service de Kouroussa."
 
 52–55,5 : triptyque qui se recolore en or chaud : le forage (photo D) où coule une eau dorée, la
-classe éclairée, le poste de santé allumé. 55,5–60 : les lignes d'or se posent en bande tricolore
+salle de classe et l'hôpital (photos du lot 2), chacun passant du gris à l'or. 55,5–60 : les lignes d'or se posent en bande tricolore
 (rouge, jaune, vert) en bas ; logo centré ; « L'or de Kouroussa, au service de Kouroussa. » tenu
 jusqu'à 60 s.

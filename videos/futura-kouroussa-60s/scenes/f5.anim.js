@@ -1,6 +1,7 @@
 // F5 — La réponse (37.4–52.6). The gold lines come back from the edges and draw the logo on
 // « Futura Kouroussa » (41.5); the two badges; then the meeting photo as a soft background and the
-// three guarantees, each lit on its word: « suivie » 46.98, « audités » 48.6, « communautés » 49.84.
+// three guarantees, each lit on its word: « suivie » 46.98, « audités » 48.6, « communautés » 49.84
+// (the background turns to the elders' assembly on that last one).
 const L = pick({ top: 90, w: 380 }, { top: 250, w: 560 }, { top: 56, w: 300 });
 const cx = W / 2 + (204 - 200) / 400 * L.w, cy = L.top + 162 / 400 * L.w;
 
@@ -40,6 +41,9 @@ tl.to($(".badges"), { opacity: 0, y: 20, duration: 0.5, ease: "power2.in" }, at(
 tl.to($(".lockup"), { ...pick({ scale: 0.5, y: -50 }, { scale: 0.45, y: -110 }, { scale: 0.55, y: -26 }), transformOrigin: "50% 0%", duration: 0.9, ease: "power2.inOut" }, at(44.6));
 tl.fromTo($(".office"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.inOut" }, at(44.6));
 camera($(".plate.r1"), at(44.6), 8.0, [1.02, 20, 0], [1.08, -20, 0], 1.8, "none");
+// « et où les communautés ont leur mot à dire » : the elders' assembly takes over the background
+tl.fromTo($(".elders"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(49.5));
+camera($(".plate.r2"), at(49.5), 3.1, [1.02, 0, 0], [1.06, 0, -6], 1.0, "none");
 
 // the three guarantees: dim first, then lit on their word
 const cards = [$(".k1"), $(".k2"), $(".k3")];
