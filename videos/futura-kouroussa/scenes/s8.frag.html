@@ -10,6 +10,8 @@
   .s8 .s8-band { position: absolute; left: 0; right: 0; bottom: 0; height: 20px; display: flex; }
   .s8 .s8-band i { flex: 1; }
   .s8 .s8-band .r { background: var(--flag-red); } .s8 .s8-band .y { background: var(--gold); } .s8 .s8-band .g { background: var(--flag-green); }
+  .s8 svg.s8-waves { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+  .v .s8 svg.s8-waves { width: 1080px; height: 1920px; }
   .v .s8 .s8-glow { left: 40px; top: 120px; }
   .v .s8 .s8-lockup { top: 300px; }
   .v .s8 .s8-emblem { width: 540px; }
@@ -21,6 +23,7 @@
 <div class="scene s8">
   <div class="bg"></div>
   <div class="glow s8-glow"></div>
+  {{waves:s8}}
   <div class="s8-lockup">
     <div class="s8-emblem">{{svg:emblem}}</div>
     <div class="t-brand s8-word">FUTURA - Kouroussa</div>

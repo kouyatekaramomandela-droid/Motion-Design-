@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s1">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s1-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s1-root" data-composition-id="s1" data-width="1920" data-height="1080" data-duration="10.6">
+<div class="fk h">
+<style>
+  .s1 .s1-glow { width: 1200px; height: 1200px; left: 360px; top: -130px; }
+  .s1 canvas.s1-particles { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+  .s1 .s1-stack { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+  .s1 .s1-count { font-size: 250px; font-variant-numeric: tabular-nums lining-nums; }
+  .s1 .s1-black { position: absolute; inset: 0; background: #070C12; }
+  .s1 .s1-unit { margin-top: 6px; font-family: var(--sans); font-weight: 700; font-size: 62px; letter-spacing: 0.02em; color: var(--ivory); }
+  .s1 .s1-per { margin-top: 16px; }
+  .s1 .s1-line { margin: 64px auto 0; max-width: 1300px; }
+  .v .s1 .s1-glow { left: -60px; top: 360px; }
+  .v .s1 .s1-stack { top: 540px; }
+  .v .s1 .s1-count { font-size: 230px; }
+  .v .s1 .s1-unit { font-size: 66px; }
+  .v .s1 .s1-line { max-width: 900px; font-size: 46px; }
+</style>
+<div class="scene s1">
+  
+  <div class="s1-black"></div>
+  <div class="glow s1-glow"></div>
+  <canvas class="s1-particles"></canvas>
+  <div class="s1-stack">
+    <div class="s1-count t-hero"><span class="s1-num">2,35</span></div>
+    <div class="s1-unit">milliards USD</div>
+    <div class="s1-per t-label">par an</div>
+    <div class="s1-line t-body">C’est la valeur de l’or extrait chaque année à Kouroussa.</div>
+  </div>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+/* FUTURA-Kouroussa — deterministic gold particle field.
+   Every draw is a pure function of (t, options): no Math.random, no clocks, seek-safe. */
+(function () {
+  var FK = (window.FK = window.FK || {});
+
+  FK.rng = function (seed) {
+    var s = seed >>> 0;
+    return function () {
+      s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  };
+
+  var GOLDS = ["245,197,24", "248,223,122", "184,134,11", "245,197,24", "243,238,227"];
+
+  function smooth(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function easeOut(x) { x = Math.max(0, Math.min(1, x)); return 1 - Math.pow(1 - x, 3); }
+
+  /* Build the particle table once (index-seeded). */
+  FK.makeField = function (n, seed) {
+    var r = FK.rng(seed || 7), out = [];
+    for (var i = 0; i < n; i++) {
+      out.push({
+        k: i / n,
+        ang: i * 2.39996323 + r() * 0.35,
+        rad: Math.sqrt(r()),
+        size: 0.7 + Math.pow(r(), 3) * 2.6,
+        tw: 0.6 + r() * 2.2,
+        ph: r() * 6.283,
+        col: GOLDS[(r() * GOLDS.length) | 0],
+        drift: 0.4 + r() * 1.2,
+        lx: r(),
+        ly: r() - 0.5
+      });
+    }
+    return out;
+  };
+
+  /* Scene 1: one spark (0.8 s) → thousands (1.6–4.6 s) → slow drift → collapse into a
+     horizontal gold thread (9.0–10.4 s) that becomes the map outline of scene 2.
+     o: {cx, cy, maxR, line:{x0,x1,y}} in canvas pixels. */
+  FK.drawGenesis = function (ctx, field, t, o) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    if (t < 0.8) return;
+    ctx.globalCompositeOperation = "lighter";
+    var n = field.length;
+    var born = t < 1.6 ? 1 : Math.max(1, Math.floor(n * Math.pow(Math.min(1, (t - 1.6) / 3.0), 1.7)));
+    var collapse = smooth((t - 9.0) / 1.3);
+    for (var i = 0; i < born; i++) {
+      var p = field[i];
+      var b = 1.6 + 3.0 * Math.pow(p.k, 1 / 1.7);
+      var age = Math.max(0, t - b);
+      var grow = easeOut(age / 2.2);
+      var ang = p.ang + 0.18 * grow + 0.012 * age * p.drift;
+      var rr = o.maxR * p.rad * grow + 7 * age * p.drift;
+      var x = o.cx + Math.cos(ang) * rr * 1.25;
+      var y = o.cy + Math.sin(ang) * rr * 0.82;
+      if (collapse > 0) {
+        var tx = o.line.x0 + (o.line.x1 - o.line.x0) * p.lx;
+        var ty = o.line.y + p.ly * 6 * (1 - collapse);
+        x += (tx - x) * collapse; y += (ty - y) * collapse;
+      }
+      var a = (0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * p.tw + p.ph))) * Math.min(1, age * 3 + (i === 0 ? 1 : 0));
+      var s = p.size * (i === 0 ? 1.8 : 1);
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, s, 0, 6.2832); ctx.fill();
+    }
+    // the first spark keeps a halo while it is alone
+    if (t < 3.2) {
+      var ha = t < 1.0 ? (t - 0.8) / 0.2 : 1 - smooth((t - 2.0) / 1.2);
+      var g = ctx.createRadialGradient(o.cx, o.cy, 0, o.cx, o.cy, 90);
+      g.addColorStop(0, "rgba(248,223,122," + (0.9 * ha).toFixed(3) + ")");
+      g.addColorStop(0.15, "rgba(245,197,24," + (0.45 * ha).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(245,197,24,0)");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(o.cx, o.cy, 90, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+
+  /* Ambient dust (any scene): slow drifting motes, pure function of t. */
+  FK.drawDust = function (ctx, field, t, alpha) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "lighter";
+    for (var i = 0; i < field.length; i++) {
+      var p = field[i];
+      var x = ((p.lx * W + t * 9 * p.drift) % (W + 40)) - 20;
+      var y = ((p.rad * H - t * 5 * p.drift) % H + H) % H;
+      var a = alpha * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * p.tw * 0.6 + p.ph)));
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, p.size * 0.8, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+})();
+const FMT = "h", W = 1920, H = 1080, T0 = 0.0, DUR = 10.6, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s1"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 1 — L'accroche (0–10.6). One spark → thousands → counter 2,35 → collapse into a gold thread.
+const canvas = $("canvas.s1-particles");
+canvas.width = W; canvas.height = H;
+const ctx = canvas.getContext("2d");
+const field = FK.makeField(H_ ? 2600 : 2300, 11);
+const geo = pick(
+  { cx: 960, cy: 500, maxR: 640, line: { x0: 230, x1: 930, y: 433 } },
+  { cx: 540, cy: 860, maxR: 500, line: { x0: 90, x1: 990, y: 540 } });
+const P = { t: 0 };
+tl.fromTo(P, { t: 0 }, { t: DUR, duration: DUR, ease: "none", onUpdate: () => FK.drawGenesis(ctx, field, P.t, geo) }, 0);
+
+// the black opens onto the night as the gold multiplies
+tl.fromTo($(".s1-black"), { opacity: 1 }, { opacity: 0, duration: 3.4, ease: "sine.inOut" }, at(0.9));
+tl.fromTo($(".s1-glow"), { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: 2.6, ease: "power2.out" }, at(0.8));
+tl.to($(".s1-glow"), { scale: 1.07, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 3 }, at(3.4));
+
+// counter 0,00 → 2,35 (counting-dynamic-scale)
+const num = $(".s1-num"), C = { v: 0 };
+tl.fromTo($(".s1-count"), { opacity: 0, y: 40, scale: 0.88 }, { opacity: 1, y: 0, scale: 1, duration: 3.0, ease: "power2.out" }, at(2.6));
+tl.fromTo(C, { v: 0 }, { v: 2.35, duration: 3.0, ease: "power2.out",
+  onUpdate: () => { num.textContent = C.v.toFixed(2).replace(".", ","); } }, at(2.6));
+tl.fromTo($(".s1-unit"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, at(3.6));
+tl.fromTo($(".s1-per"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, at(4.2));
+tl.fromTo($(".s1-line"), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, at(6.7));
+
+// exit: the figures dissolve while the particles collapse into the thread (drawGenesis 9.0–10.3)
+tl.to($(".s1-stack"), { opacity: 0, y: -24, filter: "blur(10px)", duration: 1.0, ease: "power2.in" }, at(8.9));
+tl.to($(".s1-glow"), { opacity: 0, duration: 1.2, ease: "sine.in" }, at(9.2));
+tl.to(canvas, { opacity: 0, duration: 0.5, ease: "sine.in" }, at(10.05));
+
+window.__timelines["s1"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

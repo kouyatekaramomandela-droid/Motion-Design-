@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s3">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s3-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="15.2">
+<div class="fk h">
+<style>
+  .s3 .s3-map { position: absolute; left: 110px; top: 250px; width: 420px; opacity: .85; }
+  .s3 .s3-map svg { width: 100%; height: auto; display: block; }
+  .s3 svg.s3-lines { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .s3 .s3-horizon { position: absolute; left: 560px; right: 0; top: 560px; height: 2px;
+    background: linear-gradient(90deg, rgba(169,179,188,.35), rgba(169,179,188,0)); }
+  .s3 svg.s3-qmark { position: absolute; left: 1250px; top: 90px; width: 300px; height: 460px; overflow: visible; }
+  .s3 .s3-q { position: absolute; left: 960px; width: 860px; top: 600px; text-align: center; font-size: 84px; }
+  .v .s3 .s3-map { left: 80px; top: 140px; width: 560px; }
+  .v .s3 svg.s3-lines { width: 1080px; height: 1920px; }
+  .v .s3 .s3-horizon { left: 0; top: 1010px; }
+  .v .s3 svg.s3-qmark { left: 390px; top: 560px; width: 300px; height: 460px; }
+  .v .s3 .s3-q { left: 54px; width: 972px; top: 1080px; font-size: 80px; }
+</style>
+<div class="scene s3">
+  
+  <div class="s3-map"><svg class="ill ill-map" viewBox="0 0 600 520" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs><clipPath id="s3-map-clip"><path d="M210 40 C260 30 300 58 332 48 C382 36 424 72 442 110 C470 152 522 170 526 222 C530 272 500 302 505 342 C510 392 470 430 420 446 C370 462 330 490 280 480 C230 470 208 440 170 430 C120 418 80 390 76 340 C72 290 96 260 90 220 C84 170 110 140 140 110 C165 84 172 50 210 40 Z"/></clipPath></defs><path class="hatch" clip-path="url(#s3-map-clip)" d="M150 150 L470 150 M120 210 L500 210 M100 270 L510 270 M95 330 L505 330 M120 390 L470 390 M180 450 L390 450" stroke="#B8860B" stroke-width="1.5" opacity="0.25"/>
+  <path class="outline" d="M210 40 C260 30 300 58 332 48 C382 36 424 72 442 110 C470 152 522 170 526 222 C530 272 500 302 505 342 C510 392 470 430 420 446 C370 462 330 490 280 480 C230 470 208 440 170 430 C120 418 80 390 76 340 C72 290 96 260 90 220 C84 170 110 140 140 110 C165 84 172 50 210 40 Z" stroke="#F5C518" stroke-width="4"/>
+  <path class="river" d="M96 500 C150 440 196 392 236 352 C276 312 300 276 338 236 C376 196 420 150 486 70" stroke="#F8DF7A" stroke-width="3" opacity="0.8"/>
+  <g class="town"><rect x="279" y="267" width="12" height="12" fill="#F3EEE3" transform="rotate(45 285 273)"/></g>
+  <g class="mines" fill="#F5C518">
+    <circle class="mine m1" cx="186" cy="182" r="9"/>
+    <circle class="mine m2" cx="392" cy="176" r="9"/>
+    <circle class="mine m3" cx="366" cy="384" r="9"/>
+  </g>
+  <g class="mine-rings" stroke="#F5C518" stroke-width="2.5">
+    <circle class="ring r1" cx="186" cy="182" r="22" opacity="0.6"/>
+    <circle class="ring r2" cx="392" cy="176" r="22" opacity="0.6"/>
+    <circle class="ring r3" cx="366" cy="384" r="22" opacity="0.6"/>
+  </g>
+</svg>
+</div>
+  <div class="s3-horizon"></div>
+  <svg class="s3-lines only-h" viewBox="0 0 1920 1080" fill="none"><defs><linearGradient id="s3-fade-h" gradientUnits="userSpaceOnUse" x1="300" y1="0" x2="1780" y2="0"><stop offset="0" stop-color="#F5C518" stop-opacity="1"/><stop offset="0.55" stop-color="#F5C518" stop-opacity="0.45"/><stop offset="1" stop-color="#F5C518" stop-opacity="0"/></linearGradient></defs><path class="flow f1" d="M240.2 377.4 C744 257 1332 588 1930 548" stroke="url(#s3-fade-h)" stroke-width="4" stroke-dasharray="14 12"/><path class="flow f2" d="M384.4 373.2 C845 313 1383 566 1930 556" stroke="url(#s3-fade-h)" stroke-width="4" stroke-dasharray="14 12"/><path class="flow f3" d="M366.2 518.8 C832 519 1376 546 1930 566" stroke="url(#s3-fade-h)" stroke-width="4" stroke-dasharray="14 12"/></svg><svg class="s3-lines only-v" viewBox="0 0 1080 1920" fill="none"><defs><linearGradient id="s3-fade-v" gradientUnits="userSpaceOnUse" x1="260" y1="0" x2="1040" y2="0"><stop offset="0" stop-color="#F5C518" stop-opacity="1"/><stop offset="0.55" stop-color="#F5C518" stop-opacity="0.45"/><stop offset="1" stop-color="#F5C518" stop-opacity="0"/></linearGradient></defs><path class="flow f1" d="M253.6 309.9 C502 190 791 1036 1090 996" stroke="url(#s3-fade-v)" stroke-width="4" stroke-dasharray="14 12"/><path class="flow f2" d="M445.9 304.3 C636 244 858 1016 1090 1006" stroke="url(#s3-fade-v)" stroke-width="4" stroke-dasharray="14 12"/><path class="flow f3" d="M421.6 498.4 C619 498 850 996 1090 1016" stroke="url(#s3-fade-v)" stroke-width="4" stroke-dasharray="14 12"/></svg>
+  <svg class="s3-qmark" viewBox="0 0 300 460" fill="none" stroke-linecap="round">
+    <path class="q-path" d="M62 128 C62 46 238 40 238 132 C238 206 150 214 150 300" stroke="#B8860B" stroke-width="16" stroke-dasharray="0 30"/>
+    <circle class="q-dot" cx="150" cy="392" r="12" fill="#F5C518"/>
+  </svg>
+  <div class="s3-q t-display">Où va la part des communautés&nbsp;?</div>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 27.4, DUR = 15.2, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s3"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 3 — Le fil perdu (27.4–42.6). Gold lines leave and fade toward the horizon; a question forms.
+tl.fromTo($(".s3-map"), { opacity: 0, scale: 1.25, transformOrigin: "50% 50%" }, { opacity: 0.85, scale: 1, duration: 1.2, ease: "power2.out", transformOrigin: "50% 50%" }, at(27.6));
+tl.fromTo($(".s3-horizon"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.6, ease: "power2.out", transformOrigin: "0% 50%" }, at(28.4));
+const lines = $(".s3-lines.only-" + FMT);
+const flows = Array.from(lines.querySelectorAll(".flow"));
+tl.fromTo(lines, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 4.2, ease: "power1.inOut" }, at(28.9));
+tl.fromTo(flows, { strokeDashoffset: 0 }, { strokeDashoffset: -560, duration: 13.6, ease: "none" }, at(28.9));
+tl.to(flows, { opacity: 0.3, duration: 4.0, ease: "sine.inOut", stagger: 0.4 }, at(34.0));
+tl.fromTo($(".s3-map .mines"), { opacity: 1 }, { opacity: 0.45, duration: 3.0 }, at(33.5));
+
+// the question mark assembles in the void
+const q = $("svg.s3-qmark");
+tl.fromTo(q.querySelector(".q-path"), { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 2.0, ease: "power1.inOut" }, at(33.0));
+tl.fromTo(q.querySelector(".q-dot"), { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.6, ease: "back.out(3)", transformOrigin: "50% 50%" }, at(35.0));
+const words = splitWords($(".s3-q"));
+tl.fromTo(words, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.07 }, at(34.5));
+// held frame 38.5–41.5: only the question breathes
+tl.fromTo(q, { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.045, duration: 3.0, ease: "sine.inOut", yoyo: true, repeat: 1, transformOrigin: "50% 60%" }, at(35.6));
+// exit: the void is covered by the page of scene 4
+tl.to($$(".s3-map, .s3-horizon, .s3-q, svg.s3-qmark"), { opacity: 0, duration: 0.9, ease: "sine.in" }, at(41.3));
+tl.to(lines, { opacity: 0, duration: 0.9, ease: "sine.in" }, at(41.3));
+
+window.__timelines["s3"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s5">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s5-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s5-root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="18.2">
+<div class="fk h">
+<style>
+  .s5 .s5-glow { width: 1000px; height: 1000px; left: -10px; top: -80px; }
+  .s5 .s5-emblem { position: absolute; left: 170px; top: 160px; width: 620px; }
+  .s5 .s5-emblem svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .s5 .s5-text { position: absolute; left: 870px; top: 270px; width: 960px; }
+  .s5 .s5-word { font-size: 90px; line-height: 1; white-space: nowrap; }
+  .s5 .s5-name { margin-top: 26px; font-size: 38px; max-width: 900px; }
+  .s5 .s5-badges { margin-top: 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .s5 .s5-seed { position: absolute; left: 946px; top: 456px; width: 28px; height: 28px; border-radius: 50%; background: var(--gold-pale);
+    box-shadow: 0 0 30px 10px rgba(245,197,24,.55); }
+  .s5 .s5-sparks { position: absolute; inset: 0; }
+  .s5 .s5-sparks i { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--gold-pale); box-shadow: 0 0 10px rgba(245,197,24,.8); }
+  .v .s5 .s5-seed { left: 526px; top: 636px; }
+  .s5 svg.s5-trace { position: absolute; left: 136px; top: 61px; width: 700px; height: 700px; opacity: 0; }
+  .v .s5 svg.s5-trace { left: 196px; top: 81px; }
+  .v .s5 .s5-glow { left: 40px; top: 60px; }
+  .v .s5 .s5-emblem { left: 230px; top: 180px; width: 620px; }
+  .v .s5 .s5-text { left: 54px; width: 972px; top: 760px; text-align: center; }
+  .v .s5 .s5-word { font-size: 84px; }
+  .v .s5 .s5-name { margin: 26px auto 0; font-size: 36px; max-width: 860px; }
+  .v .s5 .s5-badges { align-items: center; margin-top: 46px; }
+</style>
+<div class="scene s5">
+  
+  <div class="lattice"></div>
+  <div class="glow s5-glow"></div>
+  <svg class="s5-trace" viewBox="-350 -350 700 700" fill="none"><circle class="trace-ring" r="300" stroke="#F5C518" stroke-width="5" stroke-dasharray="1 22" stroke-linecap="round"/><circle class="node n0" cx="0.0" cy="-300.0" r="10" fill="#F5C518"/><circle class="node n1" cx="259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="node n2" cx="259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n3" cx="0.0" cy="300.0" r="10" fill="#F5C518"/><circle class="node n4" cx="-259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n5" cx="-259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="mover m0" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m1" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m2" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m3" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m4" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m5" cx="0" cy="0" r="7" fill="#F8DF7A"/></svg>
+  <div class="s5-sparks"></div>
+  <div class="s5-seed"></div>
+  <div class="s5-emblem"><svg class="emblem" viewBox="0 0 400 330" width="400" height="330"><g class="rays"><path class="ray" d="M200.8 16.0 L203.3 104.0 L204.7 104.0 L207.2 16.0 Z" fill="#C9A44A"/><path class="ray" d="M125.2 35.6 L171.4 112.3 L172.6 111.7 L130.8 32.4 Z" fill="#C9A44A"/><path class="ray" d="M277.2 32.4 L235.4 111.7 L236.6 112.3 L282.8 35.6 Z" fill="#C9A44A"/><path class="ray" d="M68.4 88.7 L144.6 131.6 L145.4 130.4 L71.6 83.3 Z" fill="#C9A44A"/><path class="ray" d="M336.4 83.3 L262.6 130.4 L263.4 131.6 L339.6 88.7 Z" fill="#C9A44A"/></g><g class="nugget"><path d="M158 152 L168 131 L192 120 L220 122 L241 133 L253 153 L250 177 L234 195 L206 201 L178 197 L160 184 L153 167 Z" fill="#D4A93A"/><path class="facet" d="M168 131 L192 120 L200 140 L178 150 Z" fill="#F8DF7A"/><path class="facet" d="M192 120 L220 122 L214 141 L200 140 Z" fill="#F5C518"/><path class="facet" d="M220 122 L241 133 L232 152 L214 141 Z" fill="#E0B02A"/><path class="facet" d="M241 133 L253 153 L250 177 L232 152 Z" fill="#B8860B"/><path class="facet" d="M158 152 L168 131 L178 150 L170 168 L153 167 Z" fill="#E9C24A"/><path class="facet" d="M178 150 L200 140 L214 141 L232 152 L222 172 L190 172 Z" fill="#D9A92A"/><path class="facet" d="M153 167 L170 168 L190 172 L178 197 L160 184 Z" fill="#C99A1E"/><path class="facet" d="M190 172 L222 172 L232 152 L250 177 L234 195 L206 201 L178 197 Z" fill="#A87A0B"/></g><g class="hand" fill="none" stroke="#F3EEE3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path class="hand-outline" d="M 30 246 C 80 232 120 206 168 202 C 200 199 232 210 258 222 C 290 206 330 188 356 186 C 374 185 383 200 368 209 C 345 222 320 233 302 240 C 330 229 360 217 373 221 C 386 226 381 240 368 244 C 330 264 290 286 240 297 C 190 307 120 300 45 318"/><path class="hand-thumb" d="M 176 240 C 214 228 258 226 271 242 C 281 256 263 267 238 265 C 212 263 190 268 162 275"/></g></svg></div>
+  <div class="s5-text">
+    <div class="t-brand s5-word">FUTURA - Kouroussa</div>
+    <div class="t-brand-sub s5-name">Fonds d’Utilisation Transparente des Ressources Aurifères pour l’Avenir de Kouroussa</div>
+    <div class="s5-badges"><span class="badge b1">Société Anonyme OHADA</span><span class="badge b2">Issu du Rapport de Mission Parlementaire</span></div>
+  </div>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 57.4, DUR = 18.2, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s5"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 5 — La naissance (57.4–75.6). The point becomes the nugget, the open hand draws itself to receive it.
+const emb = $(".s5-emblem svg");
+const nug = emb.querySelector(".nugget"), rays = Array.from(emb.querySelectorAll(".ray"));
+const handOutline = emb.querySelector(".hand-outline"), thumb = emb.querySelector(".hand-thumb");
+prepDraw([handOutline, thumb]);
+// floating position of the nugget before it lands (60 svg units above its seat)
+const seat = pick({ x: 486, y: 411 }, { x: 546, y: 431 });
+const float = { x: seat.x, y: seat.y - 93 };
+const start = pick({ x: 960, y: 470 }, { x: 540, y: 650 });
+tl.fromTo($(".s5 .lattice"), { opacity: 0 }, { opacity: 0.1, duration: 1.4 }, at(57.8));
+const seed = $(".s5-seed");
+tl.fromTo(seed, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, at(57.6));
+tl.fromTo(seed, { x: 0, y: 0 }, { x: float.x - start.x, y: float.y - start.y, duration: 0.6, ease: "power2.in" }, at(58.0));
+tl.to(seed, { scale: 2.2, opacity: 0, duration: 0.35, ease: "power2.out" }, at(58.6));
+
+// particle-burst: fixed pool, index-seeded, pure function of time
+const sparks = $(".s5-sparks");
+const N = 34;
+for (let i = 0; i < N; i++) {
+  const s = document.createElement("i");
+  s.style.left = float.x + "px"; s.style.top = float.y + "px";
+  sparks.appendChild(s);
+  const a = (i / N) * Math.PI * 2 + ((i * 7919) % 13) * 0.02;
+  const r = 150 + ((i * 37) % 110);
+  tl.fromTo(s, { x: 0, y: 0, scale: 1 }, { x: Math.cos(a) * r, y: Math.sin(a) * r * 0.85, scale: 0.3, duration: 1.3, ease: "power3.out" }, at(58.6));
+  tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.08 }, at(58.6));
+  tl.to(s, { opacity: 0, duration: 1.0, ease: "power1.in" }, at(58.85));
+}
+tl.fromTo($(".s5-glow"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" }, at(58.6));
+
+// the nugget crystallises, floats, then lands in the hand (chime 61.0)
+tl.fromTo(nug, { scale: 0, rotation: -25, y: -60, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, rotation: 0, y: -60, opacity: 1, duration: 0.8, ease: "back.out(2)", transformOrigin: "50% 50%" }, at(58.65));
+tl.fromTo(handOutline, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.8, ease: "power2.inOut" }, at(58.9));
+tl.fromTo(thumb, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, at(59.7));
+tl.to(nug, { y: 0, duration: 0.8, ease: "power2.in" }, at(60.2));
+tl.to(nug, { y: -6, duration: 0.16, ease: "power1.out", yoyo: true, repeat: 1 }, at(61.0));
+rays.forEach((r, i) => {
+  const order = [0, 1, 2, 3, 4][i];
+  tl.fromTo(r, { scale: 0.15, opacity: 0, svgOrigin: "204 162" }, { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out", svgOrigin: "204 162" }, at(61.0 + Math.abs(order - 0) * 0.05));
+});
+tl.to(rays, { opacity: 0.72, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 3, stagger: 0.12 }, at(67.6));
+tl.to($(".s5-glow"), { scale: 1.08, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 3 }, at(62.0));
+
+// name, letter by letter, on « Futura Kouroussa » (59.5)
+const wordChars = splitChars($(".s5-word"), true);
+tl.fromTo(wordChars, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.045 }, at(59.5));
+const nameChars = splitChars($(".s5-name"), false);
+tl.fromTo(nameChars, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "none", stagger: 0.02 }, at(61.6));
+// badges on « OHADA » (64.4) and « né du rapport » (65.4)
+const org = H_ ? "0% 50%" : "50% 50%";
+tl.fromTo($(".badge.b1"), { opacity: 0, scale: 0.7, transformOrigin: org }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2.2)", transformOrigin: org }, at(64.4));
+tl.fromTo($(".badge.b2"), { opacity: 0, scale: 0.7, transformOrigin: org }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2.2)", transformOrigin: org }, at(65.4));
+
+// « centraliser et redistribuer… de manière traçable » (68.2–71.8)
+const trace = $("svg.s5-trace");
+const tNodes = Array.from(trace.querySelectorAll(".node")), movers = Array.from(trace.querySelectorAll(".mover"));
+const nodeXY = tNodes.map((n) => [+n.getAttribute("cx"), +n.getAttribute("cy")]);
+tl.fromTo(trace, { opacity: 0, rotation: -20 }, { opacity: 0.85, rotation: 0, duration: 1.2, ease: "power2.out" }, at(67.3));
+tl.fromTo(tNodes, { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "back.out(3)", stagger: 0.08, transformOrigin: "50% 50%" }, at(67.7));
+movers.forEach((m, i) => {
+  const [x, y] = nodeXY[i];
+  tl.fromTo(m, { attr: { cx: x, cy: y }, opacity: 0 }, { attr: { cx: x, cy: y }, opacity: 1, duration: 0.2 }, at(68.1));
+  tl.to(m, { attr: { cx: 0, cy: 0 }, duration: 0.7, ease: "power2.in" }, at(68.2 + i * 0.04));
+  tl.to(m, { attr: { cx: x, cy: y }, duration: 0.8, ease: "power2.out" }, at(69.3 + i * 0.04));
+  tl.to(m, { opacity: 0, duration: 0.3 }, at(70.3));
+});
+tl.to(nug, { scale: 1.1, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "50% 50%" }, at(68.95));
+tl.to(tNodes, { scale: 1.45, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1, stagger: 0.04, transformOrigin: "50% 50%" }, at(70.0));
+tl.fromTo(trace.querySelector(".trace-ring"), { strokeDashoffset: 0 }, { strokeDashoffset: -230, duration: 6.0, ease: "none" }, at(67.4));
+tl.to(trace, { opacity: 0, duration: 0.6, ease: "power2.in" }, at(73.4));
+
+// exit: the text clears, the nugget glides to the heart of the governance ring
+tl.to($$(".s5-text > *"), { opacity: 0, y: -16, duration: 0.6, ease: "power2.in", stagger: 0.1 }, at(73.4));
+tl.to([handOutline, thumb], { opacity: 0, duration: 0.6 }, at(73.8));
+tl.to(rays, { opacity: 0, scale: 0.4, duration: 0.6, ease: "power2.in", svgOrigin: "204 162" }, at(73.8));
+const ring = pick({ x: 560, y: 490, s: 0.586 }, { x: 540, y: 560, s: 0.66 });
+tl.to($(".s5-emblem"), { x: ring.x - seat.x, y: ring.y - seat.y, scale: ring.s, duration: 1.2, ease: "power2.inOut", transformOrigin: "316.2px 251.1px" }, at(74.0));
+tl.to($(".s5-glow"), { opacity: 0, duration: 0.8 }, at(74.4));
+tl.to($(".s5 .lattice"), { opacity: 0, duration: 0.8 }, at(74.6));
+tl.to($(".s5-emblem"), { opacity: 0, duration: 0.3 }, at(75.25));
+
+window.__timelines["s5"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

@@ -6,6 +6,13 @@
   .s5 .s5-word { font-size: 90px; line-height: 1; white-space: nowrap; }
   .s5 .s5-name { margin-top: 26px; font-size: 38px; max-width: 900px; }
   .s5 .s5-badges { margin-top: 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .s5 .s5-seed { position: absolute; left: 946px; top: 456px; width: 28px; height: 28px; border-radius: 50%; background: var(--gold-pale);
+    box-shadow: 0 0 30px 10px rgba(245,197,24,.55); }
+  .s5 .s5-sparks { position: absolute; inset: 0; }
+  .s5 .s5-sparks i { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--gold-pale); box-shadow: 0 0 10px rgba(245,197,24,.8); }
+  .v .s5 .s5-seed { left: 526px; top: 636px; }
+  .s5 svg.s5-trace { position: absolute; left: 136px; top: 61px; width: 700px; height: 700px; opacity: 0; }
+  .v .s5 svg.s5-trace { left: 196px; top: 81px; }
   .v .s5 .s5-glow { left: 40px; top: 60px; }
   .v .s5 .s5-emblem { left: 230px; top: 180px; width: 620px; }
   .v .s5 .s5-text { left: 54px; width: 972px; top: 760px; text-align: center; }
@@ -17,6 +24,9 @@
   <div class="bg"></div>
   <div class="lattice"></div>
   <div class="glow s5-glow"></div>
+  <svg class="s5-trace" viewBox="-350 -350 700 700" fill="none"><circle class="trace-ring" r="300" stroke="#F5C518" stroke-width="5" stroke-dasharray="1 22" stroke-linecap="round"/><circle class="node n0" cx="0.0" cy="-300.0" r="10" fill="#F5C518"/><circle class="node n1" cx="259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="node n2" cx="259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n3" cx="0.0" cy="300.0" r="10" fill="#F5C518"/><circle class="node n4" cx="-259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n5" cx="-259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="mover m0" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m1" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m2" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m3" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m4" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m5" cx="0" cy="0" r="7" fill="#F8DF7A"/></svg>
+  <div class="s5-sparks"></div>
+  <div class="s5-seed"></div>
   <div class="s5-emblem">{{svg:emblem}}</div>
   <div class="s5-text">
     <div class="t-brand s5-word">FUTURA - Kouroussa</div>

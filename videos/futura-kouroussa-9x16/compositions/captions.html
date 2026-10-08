@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="captionsv">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+.fk-caption { opacity: 0; }
+#captionsv-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="captionsv-root" data-composition-id="captionsv" data-width="1080" data-height="1920" data-duration="120.0">
+<div class="fk v">
+<div class="fk-caption cue c0"><span>Chaque année, l'or de Kouroussa représente plus de deux milliards de dollars.</span></div>
+<div class="fk-caption cue c1"><span>Et pourtant, sur cette même terre, des familles attendent encore l'eau potable,</span></div>
+<div class="fk-caption cue c2"><span>des écoles équipées, des centres de santé alimentés en énergie.</span></div>
+<div class="fk-caption cue c3"><span>Le Code minier prévoit des obligations envers les communautés locales.</span></div>
+<div class="fk-caption cue c4"><span>Mais sans cadre dédié, leur suivi reste difficile à vérifier.</span></div>
+<div class="fk-caption cue c5"><span>La loi fixe le principe.</span></div>
+<div class="fk-caption cue c6"><span>Il manquait l'instrument pour l'appliquer, avec rigueur et transparence.</span></div>
+<div class="fk-caption cue c7"><span>FUTURA-Kouroussa : un fonds constitué sous forme de société anonyme OHADA,</span></div>
+<div class="fk-caption cue c8"><span>né du rapport de la mission parlementaire,</span></div>
+<div class="fk-caption cue c9"><span>pour centraliser et redistribuer ces ressources de manière traçable.</span></div>
+<div class="fk-caption cue c10"><span>Les collectivités y détiennent la majorité.</span></div>
+<div class="fk-caption cue c11"><span>Chaque décision est encadrée, chaque dépense est auditée,</span></div>
+<div class="fk-caption cue c12"><span>chaque comptabilité est publique.</span></div>
+<div class="fk-caption cue c13"><span>De l'eau, des écoles, des soins :</span></div>
+<div class="fk-caption cue c14"><span>des résultats que chaque communauté pourra suivre et vérifier.</span></div>
+</div>
+</div>
+<script>
+(function () {
+const FMT = "v", W = 1080, H = 1920, T0 = 0, DUR = 120.0, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="captionsv"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+tl.fromTo($(".c0"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 1.08);
+tl.to($(".c0"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 6.470);
+tl.fromTo($(".c1"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 12.88);
+tl.to($(".c1"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 17.920);
+tl.fromTo($(".c2"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 18.14);
+tl.to($(".c2"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 22.910);
+tl.fromTo($(".c3"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 28.88);
+tl.to($(".c3"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 33.660);
+tl.fromTo($(".c4"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 33.88);
+tl.to($(".c4"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 37.970);
+tl.fromTo($(".c5"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 43.88);
+tl.to($(".c5"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 45.760);
+tl.fromTo($(".c6"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 45.98);
+tl.to($(".c6"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 50.610);
+tl.fromTo($(".c7"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 59.38);
+tl.to($(".c7"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 65.020);
+tl.fromTo($(".c8"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 65.24);
+tl.to($(".c8"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 67.620);
+tl.fromTo($(".c9"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 67.84);
+tl.to($(".c9"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 72.030);
+tl.fromTo($(".c10"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 76.88);
+tl.to($(".c10"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 79.960);
+tl.fromTo($(".c11"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 80.18);
+tl.to($(".c11"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 84.160);
+tl.fromTo($(".c12"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 84.38);
+tl.to($(".c12"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 86.550);
+tl.fromTo($(".c13"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 96.38);
+tl.to($(".c13"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 98.641);
+tl.fromTo($(".c14"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 98.861);
+tl.to($(".c14"), { opacity: 0, duration: 0.18, ease: "power2.in" }, 102.711);
+window.__timelines["captionsv"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

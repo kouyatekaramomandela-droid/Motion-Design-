@@ -70,7 +70,7 @@ FK.drawGenesis(c.getContext('2d'),f,{cell['t']},{{cx:{W/2},cy:{H*0.43 if fmt=='h
 </script>"""
     doc = f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../assets/film.css">
-<style>html,body{{margin:0;background:#0F1A25}} .frame{{width:{W}px;height:{H}px}} {phase_css}</style>
+<style>html,body{{margin:0;background:#0F1A25}} .s1-black,.s5-seed,.s5-sparks,.s7-drop,.s8-waves,.halo-ring{{display:none!important}} .frame{{width:{W}px;height:{H}px}} {phase_css}</style>
 <script src="../assets/particles.js"></script></head>
 <body><div class="frame fk {fmt}">{frag}{cap_html}</div>{script}</body></html>"""
     name = f"{cell['id']}-{fmt}"

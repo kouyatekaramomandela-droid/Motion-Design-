@@ -1,6 +1,6 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../assets/film.css">
-<style>html,body{margin:0;background:#0F1A25} .frame{width:1080px;height:1920px} </style>
+<style>html,body{margin:0;background:#0F1A25} .s1-black,.s5-seed,.s5-sparks,.s7-drop,.s8-waves,.halo-ring{display:none!important} .frame{width:1080px;height:1920px} </style>
 <script src="../assets/particles.js"></script></head>
 <body><div class="frame fk v"><style>
   .s7 .s7-glow { width: 1500px; height: 900px; left: 210px; top: -200px; }
@@ -17,6 +17,9 @@
   .s7 .kpi .lab { font-weight: 700; font-size: 28px; }
   .s7 .kpi svg { margin-top: 14px; width: 100%; height: 150px; display: block; overflow: visible; }
   .s7 .s7-title { position: absolute; left: 96px; right: 96px; top: 790px; text-align: center; font-size: 64px; }
+  .s7 .s7-drop { position: absolute; left: 297px; top: -40px; width: 20px; height: 20px; border-radius: 50% 50% 50% 0; transform-origin: 50% 50%;
+    background: var(--gold-pale); box-shadow: 0 0 18px rgba(245,197,24,.8); }
+  .v .s7 .s7-drop { left: 213px; }
   .v .s7 .s7-glow { left: -210px; top: 0; }
   .v .s7 .s7-tri { left: 54px; right: 54px; top: 90px; flex-direction: column; gap: 22px; }
   .v .s7 .tri { width: 100%; display: flex; align-items: center; gap: 32px; text-align: left; }
@@ -31,6 +34,7 @@
 <div class="scene s7">
   <div class="bg"></div>
   <div class="glow s7-glow"></div>
+  <div class="s7-drop"></div>
   <div class="s7-tri lit-state">
     <figure class="tri tri1"><svg class="ill ill-forage" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
   <g class="ink" stroke="#A9B3BC">
@@ -129,7 +133,7 @@
       <div class="kpi k3"><div class="lab">Accès aux soins</div><svg class="spark sp3" viewBox="0 0 300 150" preserveAspectRatio="none" fill="none"><path class="grid" d="M0 140 H300 M0 95 H300 M0 50 H300" stroke="#A9B3BC" stroke-width="1" opacity="0.25"/><path class="area" d="M0 120 L40 116 L80 108 L120 88 L160 82 L200 62 L240 50 L280 30 L280 140 L0 140 Z" fill="#F5C518" opacity="0.14"/><path class="line" d="M0 120 L40 116 L80 108 L120 88 L160 82 L200 62 L240 50 L280 30" stroke="#F5C518" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="arrow" d="M266 34 L284 24 L274 44" stroke="#F8DF7A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
   </div>
-  <div class="s7-title t-display">Chaque franc suivi. <span class="gold">Chaque résultat visible.</span></div>
+  <div class="s7-title t-display"><span class="t1">Chaque franc suivi.</span> <span class="gold t2">Chaque résultat visible.</span></div>
   <div class="vignette"></div>
 </div>
 </div></body></html>

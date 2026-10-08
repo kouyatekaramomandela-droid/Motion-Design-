@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s4">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s4-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s4-root" data-composition-id="s4" data-width="1920" data-height="1080" data-duration="17.2">
+<div class="fk h">
+<style>
+  .s4 .s4-glow { width: 1300px; height: 1000px; left: 310px; top: -40px; }
+  .s4 .s4-book { position: absolute; left: 380px; top: 100px; width: 1160px; height: 740px; perspective: 2400px; }
+  .s4 .page { position: absolute; top: 0; width: 580px; height: 740px; padding: 54px 56px; background: var(--night-raised);
+    border: 3px solid var(--gold-deep); }
+  .s4 .page.left { left: 0; border-radius: 18px 0 0 18px; }
+  .s4 .page.right { left: 580px; border-radius: 0 18px 18px 0; }
+  .s4 .spine { position: absolute; left: 578px; top: 0; width: 4px; height: 740px; background: var(--gold-deep); }
+  .s4 .bars i { display: block; height: 10px; margin: 0 0 20px; border-radius: 5px; background: rgba(169,179,188,.28); }
+  .s4 .bars i:nth-child(3n) { width: 72%; } .s4 .bars i:nth-child(3n+1) { width: 94%; } .s4 .bars i:nth-child(3n+2) { width: 86%; }
+  .s4 .page .t-label { margin-bottom: 38px; }
+  .s4 .art { margin: 26px -24px; padding: 26px 24px 30px; border-radius: 12px; background: rgba(245,197,24,.10);
+    box-shadow: 0 0 60px rgba(245,197,24,.18); }
+  .s4 .art-title { font-size: 54px; color: var(--gold); }
+  .s4 .art-sub { margin-top: 12px; font-weight: 700; font-size: 30px; line-height: 1.25; }
+  .s4 .art-pct { margin-top: 18px; font-size: 168px; }
+  .s4 .art-desc { margin-top: 6px; font-size: 32px; line-height: 1.3; }
+  .s4 .art165 { margin-top: 40px; }
+  .s4 svg.s4-converge { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .v .s4 .s4-glow { left: -110px; top: 260px; }
+  .v .s4 .s4-book { left: 60px; top: 200px; width: 960px; height: 900px; }
+  .v .s4 .page { width: 480px; height: 900px; padding: 40px 34px; }
+  .v .s4 .page.right { left: 480px; }
+  .v .s4 .spine { left: 478px; height: 900px; }
+  .v .s4 .art { margin: 20px -14px; padding: 20px 14px 24px; }
+  .v .s4 .art-title { font-size: 46px; }
+  .v .s4 .art-sub { font-size: 27px; }
+  .v .s4 .art-pct { font-size: 140px; }
+  .v .s4 .art-desc { font-size: 28px; }
+  .v .s4 svg.s4-converge { width: 1080px; height: 1920px; }
+</style>
+<div class="scene s4">
+  
+  <div class="lattice"></div>
+  <div class="glow s4-glow"></div>
+  <div class="s4-book">
+    <div class="page left">
+      <div class="t-label">Code minier</div>
+      <div class="bars"><i></i><i></i><i></i></div>
+      <div class="art art130">
+        <div class="t-display art-title">Article 130</div>
+        <div class="art-sub">Contribution au Développement Local</div>
+        <div class="t-hero art-pct">1&#8239;%</div>
+        <div class="art-desc">du chiffre d’affaires pour l’or</div>
+      </div>
+      <div class="bars"><i></i><i></i></div>
+    </div>
+    <div class="page right">
+      <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="art art165"><div class="t-display art-title">Article 165</div></div>
+      <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="spine"></div>
+  </div>
+  <svg class="s4-converge only-h" viewBox="0 0 1920 1080" fill="none"><path class="back b1" d="M1940 300 C1560 300 1280 410 960 470" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b2" d="M1940 560 C1560 560 1280 502 960 470" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b3" d="M1940 820 C1560 820 1280 592 960 470" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b4" d="M1940 120 C1560 120 1280 348 960 470" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><circle class="focus" cx="960" cy="470" r="10" fill="#F8DF7A"/><circle class="focus-halo" cx="960" cy="470" r="46" fill="#F5C518" opacity="0.25"/></svg><svg class="s4-converge only-v" viewBox="0 0 1080 1920" fill="none"><path class="back b1" d="M1100 380 C720 380 860 556 540 650" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b2" d="M1100 900 C720 900 860 738 540 650" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b3" d="M1100 1400 C720 1400 860 912 540 650" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><path class="back b4" d="M1100 160 C720 160 860 478 540 650" stroke="#F5C518" stroke-width="4" stroke-linecap="round"/><circle class="focus" cx="540" cy="650" r="10" fill="#F8DF7A"/><circle class="focus-halo" cx="540" cy="650" r="46" fill="#F5C518" opacity="0.25"/></svg>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 41.4, DUR = 17.2, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s4"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 4 — Le socle légal (41.4–58.6). The book opens, the articles light up, the lines come back and converge.
+tl.fromTo($(".s4 .lattice"), { opacity: 0 }, { opacity: 0.1, duration: 1.6 }, at(41.8));
+tl.fromTo($(".s4-glow"), { opacity: 0 }, { opacity: 0.9, duration: 1.6 }, at(42.2));
+const right = $(".page.right"), left = $(".page.left");
+tl.fromTo(right, { x: pick(900, 700), opacity: 0 }, { x: 0, opacity: 1, duration: 1.3, ease: "power3.out" }, at(41.3));
+tl.fromTo(left, { rotationY: -105, opacity: 0, transformOrigin: "100% 50%" }, { rotationY: 0, opacity: 1, duration: 1.4, ease: "power2.out", transformOrigin: "100% 50%", transformPerspective: 2200 }, at(42.3));
+tl.fromTo($(".s4 .spine"), { opacity: 0 }, { opacity: 1, duration: 0.6 }, at(42.8));
+tl.fromTo($$(".s4 .bars i"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.out", stagger: 0.03, transformOrigin: "0% 50%" }, at(43.0));
+tl.fromTo($(".s4 .page.left .t-label"), { opacity: 0 }, { opacity: 1, duration: 0.6 }, at(43.1));
+
+function lightUp(block, g) {
+  tl.fromTo(block, { backgroundColor: "rgba(245,197,24,0)", boxShadow: "0 0 0px rgba(245,197,24,0)" },
+    { backgroundColor: "rgba(245,197,24,0.10)", boxShadow: "0 0 60px rgba(245,197,24,0.18)", duration: 1.0, ease: "sine.inOut" }, at(g));
+}
+const a130 = $(".art130"), a165 = $(".art165");
+lightUp(a130, 44.3);
+tl.fromTo(a130.querySelector(".art-title"), { opacity: 0.18 }, { opacity: 1, duration: 0.7 }, at(44.5));
+tl.fromTo(a130.querySelector(".art-sub"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, at(45.0));
+tl.fromTo(a130.querySelector(".art-pct"), { opacity: 0, scale: 0.7, transformOrigin: "0% 70%" }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.8)", transformOrigin: "0% 70%" }, at(45.6));
+tl.fromTo(a130.querySelector(".art-desc"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, at(46.0));
+lightUp(a165, 47.6);
+tl.fromTo(a165.querySelector(".art-title"), { opacity: 0.18 }, { opacity: 1, duration: 0.7 }, at(47.8));
+
+// the gold lines turn back and converge on one point
+const conv = $(".s4-converge.only-" + FMT);
+const backs = Array.from(conv.querySelectorAll(".back"));
+prepDraw(backs);
+tl.fromTo(backs, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2.6, ease: "power2.inOut", stagger: 0.3 }, at(49.8));
+tl.fromTo(conv.querySelector(".focus"), { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 1.0, ease: "back.out(2)", transformOrigin: "50% 50%" }, at(52.8));
+tl.fromTo(conv.querySelector(".focus-halo"), { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 0.25, duration: 1.2, ease: "power2.out", transformOrigin: "50% 50%" }, at(53.0));
+tl.to(conv.querySelector(".focus"), { scale: 2.0, duration: 2.4, ease: "sine.inOut", transformOrigin: "50% 50%" }, at(54.2));
+tl.to(conv.querySelector(".focus-halo"), { scale: 2.4, opacity: 0.4, duration: 2.4, ease: "sine.inOut", transformOrigin: "50% 50%" }, at(54.2));
+tl.to($(".s4-book"), { opacity: 0.3, scale: 0.95, duration: 3.0, ease: "sine.inOut" }, at(52.0));
+// exit: everything is drawn into the point (inhale 55.6–57.4)
+tl.to($$(".s4-book, .s4 .lattice, .s4-glow"), { opacity: 0, duration: 1.0, ease: "power2.in" }, at(56.6));
+tl.to(backs, { opacity: 0, duration: 0.8, ease: "power2.in" }, at(56.8));
+tl.to(conv.querySelector(".focus-halo"), { scale: 0.6, opacity: 0, duration: 0.8, ease: "power2.in", transformOrigin: "50% 50%" }, at(57.0));
+tl.to(conv.querySelector(".focus"), { scale: 1.2, duration: 0.6, ease: "power2.in", transformOrigin: "50% 50%" }, at(57.0));
+tl.to(conv.querySelector(".focus"), { opacity: 0, duration: 0.3 }, at(58.0));
+
+window.__timelines["s4"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

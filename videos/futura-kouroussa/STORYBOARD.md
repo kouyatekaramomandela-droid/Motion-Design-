@@ -49,6 +49,14 @@ version: v2
 - **Sous-titres en scène 8** : la voix dit exactement le texte affiché à l'écran ; je propose de
   ne pas doubler ce texte en sous-titre (évite la redite). À confirmer.
 
+## Locked
+
+- Planche v2 validée par le client (« Je valide ») : mises en page, textes, logo, timecodes.
+- Montage final : scènes en sous-compositions qui se chevauchent de 1,2 s (morphing), 120,0 s exactes.
+  Emplacements : 0–10,6 · 9,4–28,6 · 27,4–42,6 · 41,4–58,6 · 57,4–75,6 · 74,4–95,6 · 94,4–110,6 · 109,4–120.
+- Ajout au build : en 5, « centraliser / redistribuer / traçable » est figuré par des points qui
+  convergent vers la pépite, repartent vers six relais, et un anneau pointillé qui tourne.
+
 ## Changements depuis v1
 
 - **Logo client** reçu : main ouverte, pépite d'or, cinq rayons, « FUTURA - Kouroussa » et
@@ -70,7 +78,7 @@ version: v2
 - start: 0
 - poster: 7s
 - transition_in: none
-- status: built
+- status: animated
 - src: compositions/s1-accroche.html
 - blueprint: dataviz-countup (cold-open counter burst)
 - rules: particle-burst, counting-dynamic-scale, ambient-glow-bloom
@@ -100,7 +108,7 @@ mesure d'abord la richesse, sans la juger.
 - start: 10
 - poster: 22s
 - transition_in: morph (trait doré → contour de carte)
-- status: built
+- status: animated
 - src: compositions/s2-territoire.html
 - blueprint: grid-card-assemble (triptyque) ; carte composée de règles
 - rules: svg-path-draw, sine-wave-loop, viewport-change, waterfall-entry
@@ -131,7 +139,7 @@ mesure d'abord la richesse, sans la juger.
 - start: 28
 - poster: 38s
 - transition_in: morph (la carte réduit, les mines émettent les lignes)
-- status: built
+- status: animated
 - src: compositions/s3-fil-perdu.html
 - blueprint: kinetic-type-beats (question isolée) ; lignes composées de règles
 - rules: svg-path-draw, depth-scatter-assemble, sine-wave-loop
@@ -159,7 +167,7 @@ vide.
 - start: 42
 - poster: 50s
 - transition_in: morph (la page devient la couverture)
-- status: built
+- status: animated
 - src: compositions/s4-socle-legal.html
 - blueprint: titlecard-reveal (adapté : carte = livre) ; convergence composée de règles
 - rules: ambient-glow-bloom, svg-path-draw, center-outward-expansion (inversé)
@@ -189,7 +197,7 @@ lui indique le chemin.
 - start: 58
 - poster: 70s
 - transition_in: morph (point → éclatement)
-- status: built
+- status: animated
 - src: compositions/s5-naissance.html
 - blueprint: logo-assemble-lockup (Product_Intro)
 - rules: svg-path-draw, particle-burst, waterfall-entry, spring-pop-entrance
@@ -221,7 +229,7 @@ et une main ouverte se dessine pour la recevoir. L'or est tenu, offert, pas extr
 - start: 75
 - poster: 84s
 - transition_in: morph (anneau de l'emblème → anneau des collèges)
-- status: built
+- status: animated
 - src: compositions/s6-gouvernance.html
 - blueprint: dataviz-countup (anneau, adapté sans caméra) + constellation-hub (couches concentriques)
 - rules: stat-bars-and-fills, svg-path-draw, spring-pop-entrance, ambient-glow-bloom
@@ -253,7 +261,7 @@ cercles de contrôle. Apogée musicale.
 - start: 95
 - poster: 104s
 - transition_in: morph (jeton → goutte qui tombe dans le forage)
-- status: built
+- status: animated
 - src: compositions/s7-resultats.html
 - blueprint: grid-card-assemble (rappel du triptyque) + titlecard-reveal
 - rules: stat-bars-and-fills, ambient-glow-bloom, spring-pop-entrance
@@ -282,7 +290,7 @@ désormais.
 - start: 110
 - poster: 116s
 - transition_in: morph (ondes → bande)
-- status: built
+- status: animated
 - src: compositions/s8-signature.html
 - blueprint: logo-assemble-lockup (Brand_Outro) + titlecard-reveal (tenue finale)
 - rules: svg-path-draw, ambient-glow-bloom

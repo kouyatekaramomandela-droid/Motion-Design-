@@ -2,7 +2,8 @@
   .s1 .s1-glow { width: 1200px; height: 1200px; left: 360px; top: -130px; }
   .s1 canvas.s1-particles { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
   .s1 .s1-stack { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
-  .s1 .s1-count { font-size: 250px; }
+  .s1 .s1-count { font-size: 250px; font-variant-numeric: tabular-nums lining-nums; }
+  .s1 .s1-black { position: absolute; inset: 0; background: #070C12; }
   .s1 .s1-unit { margin-top: 6px; font-family: var(--sans); font-weight: 700; font-size: 62px; letter-spacing: 0.02em; color: var(--ivory); }
   .s1 .s1-per { margin-top: 16px; }
   .s1 .s1-line { margin: 64px auto 0; max-width: 1300px; }
@@ -14,6 +15,7 @@
 </style>
 <div class="scene s1">
   <div class="bg"></div>
+  <div class="s1-black"></div>
   <div class="glow s1-glow"></div>
   <canvas class="s1-particles"></canvas>
   <div class="s1-stack">

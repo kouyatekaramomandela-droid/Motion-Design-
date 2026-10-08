@@ -11,6 +11,10 @@ colors:
   ivory-dim: "#A9B3BC"    # texte secondaire, traits « manque » (scènes 2 et 3)
   flag-red: "#CE1126"     # bande tricolore, scène 8 uniquement
   flag-green: "#009A44"   # bande tricolore, scène 8 uniquement
+  night-black: "#070C12"  # écran noir d'ouverture (scène 1, 0–4 s)
+  # couleurs du logo client (pépite et rayons), utilisées uniquement dans l'emblème
+  logo-ray: "#C9A44A"
+  logo-nugget: ["#D4A93A", "#E9C24A", "#E0B02A", "#D9A92A", "#C99A1E", "#A87A0B"]
 typography:
   display:
     family: "Playfair Display"
@@ -21,6 +25,10 @@ typography:
     family: "Montserrat"
     weights: [400, 700]
     use: textes, étiquettes, badges, sous-titres
+  brand:
+    family: "Roboto"
+    weights: [400, 700]
+    use: logo uniquement (« FUTURA - Kouroussa » et nom complet), fidèle au logo fourni
   label:
     family: "Montserrat"
     weight: 700

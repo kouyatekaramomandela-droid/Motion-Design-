@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s6">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s6-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s6-root" data-composition-id="s6" data-width="1920" data-height="1080" data-duration="21.2">
+<div class="fk h">
+<style>
+  .s6 .s6-glow { width: 1100px; height: 1100px; left: 10px; top: -60px; }
+  .s6 svg.s6-ring { position: absolute; left: 160px; top: 90px; width: 800px; height: 800px; overflow: visible; }
+  .s6 .s6-legend { position: absolute; left: 1060px; top: 200px; width: 780px; }
+  .s6 .row { display: flex; align-items: center; gap: 30px; height: 132px; }
+  .s6 .row .pct { width: 230px; font-family: var(--serif); font-weight: 900; font-size: 84px; letter-spacing: -0.02em; }
+  .s6 .row .lab { font-weight: 700; font-size: 36px; line-height: 1.2; }
+  .s6 .ctl-row { display: flex; align-items: center; gap: 30px; height: 150px; }
+  .s6 .ctl-row .ico { width: 74px; height: 74px; flex: none; border-radius: 50%; border: 3px solid var(--gold); display: grid; place-items: center; }
+  .s6 .ctl-row .lab { font-weight: 700; font-size: 38px; }
+  .s6 .ctl-row .sub { margin-top: 6px; font-size: 28px; color: var(--ivory-dim); }
+  .s6 .ok { margin-left: auto; font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--night);
+    background: var(--gold); border-radius: 999px; padding: 10px 18px; }
+  .v .s6 .s6-glow { left: -10px; top: 120px; }
+  .v .s6 svg.s6-ring { left: 90px; top: 110px; width: 900px; height: 900px; }
+  .v .s6 .s6-legend { left: 54px; width: 972px; top: 1030px; }
+  .v .s6 .colleges { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  .v .s6 .row { height: 150px; gap: 18px; }
+  .v .s6 .row .pct { width: auto; font-size: 72px; }
+  .v .s6 .row .lab { font-size: 32px; }
+  .v .s6 .ctl-row { height: 110px; gap: 22px; }
+  .v .s6 .ctl-row .ico { width: 62px; height: 62px; }
+  .v .s6 .ctl-row .lab { font-size: 34px; }
+  .v .s6 .ctl-row .sub { font-size: 26px; }
+</style>
+<div class="scene s6">
+  
+  <div class="lattice"></div>
+  <div class="glow s6-glow"></div>
+  <svg class="s6-ring" viewBox="-440 -440 880 880" fill="none"><g class="ctl-rings"><circle class="ctl c1" r="300" stroke="#B8860B" stroke-width="3" stroke-dasharray="4 10" opacity="0.7"/><circle class="ctl-on c1" r="300" stroke="#F5C518" stroke-width="4"/><circle class="ctl c2" r="350" stroke="#B8860B" stroke-width="3" stroke-dasharray="4 10" opacity="0.7"/><circle class="ctl-on c2" r="350" stroke="#F5C518" stroke-width="4"/><circle class="ctl c3" r="400" stroke="#B8860B" stroke-width="3" stroke-dasharray="4 10" opacity="0.7"/><circle class="ctl-on c3" r="400" stroke="#F5C518" stroke-width="4"/></g><circle class="halo-ring" r="233" stroke="#F5C518" stroke-width="66" transform="rotate(-90)"/><g class="gates"><g class="gate g1" transform="translate(259.8 -150.0)"><circle r="17" fill="#1A2A3A" stroke="#F5C518" stroke-width="3"/><path class="tick" d="M-8 0 L-2 7 L9 -7" stroke="#F5C518" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g class="gate g2" transform="translate(303.1 -175.0)"><circle r="17" fill="#1A2A3A" stroke="#F5C518" stroke-width="3"/><path class="tick" d="M-8 0 L-2 7 L9 -7" stroke="#F5C518" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g class="gate g3" transform="translate(346.4 -200.0)"><circle r="17" fill="#1A2A3A" stroke="#F5C518" stroke-width="3"/><path class="tick" d="M-8 0 L-2 7 L9 -7" stroke="#F5C518" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g></g><g class="arcs"><path class="arc a1" d="M7.43 -265.90 A266 266 0 0 1 162.30 210.75 L122.03 158.46 A200 200 0 0 0 5.58 -199.92 Z" fill="#F5C518"/><text class="arc-pct p1" x="221.6" y="-72.0" text-anchor="middle" dominant-baseline="central" font-family="Montserrat" font-weight="700" font-size="28" fill="#1A2A3A">40&#8239;%</text><path class="arc a2" d="M150.28 219.48 A266 266 0 0 1 -210.75 162.30 L-158.46 122.03 A200 200 0 0 0 112.99 165.02 Z" fill="#F8DF7A"/><text class="arc-pct p2" x="-36.4" y="230.1" text-anchor="middle" dominant-baseline="central" font-family="Montserrat" font-weight="700" font-size="28" fill="#1A2A3A">25&#8239;%</text><path class="arc a3" d="M-219.48 150.28 A266 266 0 0 1 -162.30 -210.75 L-122.03 -158.46 A200 200 0 0 0 -165.02 112.99 Z" fill="#B8860B"/><text class="arc-pct p3" x="-230.1" y="-36.4" text-anchor="middle" dominant-baseline="central" font-family="Montserrat" font-weight="700" font-size="28" fill="#1A2A3A">25&#8239;%</text><path class="arc a4" d="M-150.28 -219.48 A266 266 0 0 1 -7.43 -265.90 L-5.58 -199.92 A200 200 0 0 0 -112.99 -165.02 Z" fill="#A9B3BC"/><text class="arc-pct p4" x="-72.0" y="-221.6" text-anchor="middle" dominant-baseline="central" font-family="Montserrat" font-weight="700" font-size="28" fill="#1A2A3A">10&#8239;%</text></g><g class="core" transform="translate(-204 -162) scale(1)"><circle cx="204" cy="162" r="120" fill="#F5C518" opacity="0.10"/><g class="nugget"><path d="M158 152 L168 131 L192 120 L220 122 L241 133 L253 153 L250 177 L234 195 L206 201 L178 197 L160 184 L153 167 Z" fill="#D4A93A"/><path class="facet" d="M168 131 L192 120 L200 140 L178 150 Z" fill="#F8DF7A"/><path class="facet" d="M192 120 L220 122 L214 141 L200 140 Z" fill="#F5C518"/><path class="facet" d="M220 122 L241 133 L232 152 L214 141 Z" fill="#E0B02A"/><path class="facet" d="M241 133 L253 153 L250 177 L232 152 Z" fill="#B8860B"/><path class="facet" d="M158 152 L168 131 L178 150 L170 168 L153 167 Z" fill="#E9C24A"/><path class="facet" d="M178 150 L200 140 L214 141 L232 152 L222 172 L190 172 Z" fill="#D9A92A"/><path class="facet" d="M153 167 L170 168 L190 172 L178 197 L160 184 Z" fill="#C99A1E"/><path class="facet" d="M190 172 L222 172 L232 152 L250 177 L234 195 L206 201 L178 197 Z" fill="#A87A0B"/></g></g><path class="token-path" d="M103.9 -60.0 L381.1 -220.0" stroke="#F5C518" stroke-width="2" stroke-dasharray="2 12" opacity="0.6"/><circle class="token" cx="103.9" cy="-60.0" r="13" fill="#F8DF7A"/></svg>
+  <div class="s6-legend colleges">
+    <div class="row r1"><span class="pct" style="color:#F5C518">40&#8239;%</span><span class="lab">Collectivités locales</span></div>
+    <div class="row r2"><span class="pct" style="color:#F8DF7A">25&#8239;%</span><span class="lab">Société civile</span></div>
+    <div class="row r3"><span class="pct" style="color:#B8860B">25&#8239;%</span><span class="lab">Partenaires institutionnels</span></div>
+    <div class="row r4"><span class="pct" style="color:#A9B3BC">10&#8239;%</span><span class="lab">Partenaires miniers</span></div>
+  </div>
+  <div class="s6-legend controls">
+    <div class="ctl-row c1"><span class="ico"><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round"><ellipse cx="20" cy="21" rx="11" ry="7"/><circle cx="7" cy="12" r="3"/><circle cx="33" cy="12" r="3"/><circle cx="20" cy="7" r="3"/><circle cx="20" cy="35" r="3"/></svg></span><div><div class="lab">Conseil d’administration</div><div class="sub">Chaque décision encadrée</div></div><span class="ok">Validé</span></div>
+    <div class="ctl-row c2"><span class="ico"><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round"><circle cx="17" cy="17" r="10"/><path d="M25 25 L35 35"/><path d="M12 17 L16 21 L23 13"/></svg></span><div><div class="lab">Comité d’audit</div><div class="sub">Chaque dépense auditée</div></div><span class="ok">Validé</span></div>
+    <div class="ctl-row c3"><span class="ico"><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="26" height="30" rx="3"/><path d="M13 13 H27 M13 19 H27 M13 25 H21"/></svg></span><div><div class="lab">Commissaire aux comptes</div><div class="sub">Comptabilité publique</div></div><span class="ok">Validé</span></div>
+  </div>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 74.4, DUR = 21.2, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s6"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 6 — Une gouvernance partagée (74.4–95.6). The halo becomes the ring, four colleges, three circles of control.
+const svg = $("svg.s6-ring");
+const q = (s) => svg.querySelector(s), qa = (s) => Array.from(svg.querySelectorAll(s));
+tl.fromTo($(".s6 .lattice"), { opacity: 0 }, { opacity: 0.1, duration: 1.0 }, at(74.6));
+tl.fromTo($(".s6-glow"), { opacity: 0 }, { opacity: 1, duration: 1.4 }, at(75.0));
+tl.fromTo(q(".core"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, at(75.0));
+const halo = q(".halo-ring");
+prepDraw(halo);
+tl.fromTo(halo, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, at(75.0));
+tl.to(halo, { opacity: 0, duration: 0.5 }, at(75.9));
+tl.fromTo(qa(".arc"), { opacity: 0, scale: 0.96, svgOrigin: "0 0" }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)", stagger: 0.12, svgOrigin: "0 0" }, at(75.8));
+tl.fromTo(qa(".arc-pct"), { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 0.1 }, at(76.3));
+const rows = $$(".colleges .row");
+const fromRow = H_ ? { opacity: 0, x: 40 } : { opacity: 0, y: 30 };
+tl.fromTo(rows, fromRow, { opacity: 1, x: 0, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.25 }, at(76.2));
+// « la majorité » (79.1)
+tl.to(q(".arc.a1"), { scale: 1.05, duration: 0.5, ease: "power2.out", svgOrigin: "0 0" }, at(79.0));
+tl.to(rows.slice(1), { opacity: 0.4, duration: 0.4 }, at(79.0));
+tl.to(rows[0], { scale: 1.05, duration: 0.5, ease: "power2.out", transformOrigin: "0% 50%" }, at(79.0));
+tl.to(q(".arc.a1"), { scale: 1, duration: 0.6, ease: "power2.inOut", svgOrigin: "0 0" }, at(80.4));
+tl.to(rows, { opacity: 0, x: H_ ? -30 : 0, duration: 0.5, ease: "power2.in", stagger: 0.08 }, at(80.3));
+
+// circles of control, on « encadrée » (81.3), « auditée » (83.5), « publique » (85.8)
+tl.fromTo(qa(".ctl"), { opacity: 0, scale: 0.9, svgOrigin: "0 0" }, { opacity: 0.7, scale: 1, duration: 0.8, ease: "power2.out", stagger: 0.1, svgOrigin: "0 0" }, at(80.2));
+const ctlRows = $$(".controls .ctl-row"), ons = qa(".ctl-on"), gates = qa(".gate"), oks = $$(".controls .ok");
+prepDraw(ons);
+const ticks = gates.map((g) => g.querySelector(".tick"));
+prepDraw(ticks);
+[[80.6, 81.0, 81.7], [82.7, 83.2, 83.9], [84.9, 85.4, 86.1]].forEach(([rowT, ringT, gateT], i) => {
+  tl.fromTo(ctlRows[i], H_ ? { opacity: 0, x: 40 } : { opacity: 0, y: 24 }, { opacity: 1, x: 0, y: 0, duration: 0.7, ease: "power3.out" }, at(rowT));
+  tl.fromTo(ons[i], { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, at(ringT));
+  tl.fromTo(gates[i], { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.5)", transformOrigin: "50% 50%" }, at(gateT));
+});
+tl.fromTo(oks, { opacity: 0, scale: 0.6 }, { opacity: 0, scale: 0.6, duration: 0.01 }, 0);
+
+// the token passes three validation steps (chimes 88.6 / 90.1 / 91.6)
+const token = q(".token"), tpath = q(".token-path");
+const A = -Math.PI / 6, T = { r: 120 };
+const place = () => { token.setAttribute("cx", (T.r * Math.cos(A)).toFixed(1)); token.setAttribute("cy", (T.r * Math.sin(A)).toFixed(1)); };
+tl.fromTo(tpath, { opacity: 0 }, { opacity: 0.6, duration: 0.6 }, at(87.2));
+tl.fromTo(token, { opacity: 0 }, { opacity: 1, duration: 0.4 }, at(87.4));
+tl.fromTo(T, { r: 120 }, { r: 300, duration: 1.0, ease: "power1.inOut", onUpdate: place, immediateRender: true }, at(87.6));
+tl.to(T, { r: 350, duration: 1.0, ease: "power1.inOut", onUpdate: place }, at(89.1));
+tl.to(T, { r: 400, duration: 1.0, ease: "power1.inOut", onUpdate: place }, at(90.6));
+tl.to(T, { r: 470, duration: 0.8, ease: "power1.in", onUpdate: place }, at(92.0));
+[88.6, 90.1, 91.6].forEach((g, i) => {
+  tl.fromTo(ticks[i], { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, at(g));
+  tl.to(gates[i], { scale: 1.35, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "50% 50%" }, at(g));
+  tl.to(oks[i], { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.4)" }, at(g));
+});
+tl.to(q(".core circle"), { opacity: 0.22, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 5 }, at(81.0));
+
+// exit: the token drops toward the land
+tl.to(token, { attr: { cy: 900 }, duration: 1.0, ease: "power2.in" }, at(93.6));
+tl.to($$(".controls .ctl-row"), { opacity: 0, duration: 0.5, stagger: 0.08 }, at(93.4));
+tl.to(svg, { opacity: 0, scale: 0.92, duration: 1.2, ease: "power2.in", transformOrigin: "50% 50%" }, at(94.0));
+tl.to($$(".s6-glow, .s6 .lattice"), { opacity: 0, duration: 1.0 }, at(94.4));
+
+window.__timelines["s6"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

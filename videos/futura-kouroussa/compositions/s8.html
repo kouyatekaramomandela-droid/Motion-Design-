@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s8">
+<style>
+/* FUTURA-Kouroussa — shared film styles (tokens from frame.md) */
+:root {
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .abs { position: absolute; }
+.fk .bg { position: absolute; inset: 0; background: var(--night); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk .vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(15, 26, 37, 0) 55%, rgba(15, 26, 37, 0.65) 100%); }
+.fk .lattice { position: absolute; inset: 0; opacity: 0.10; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--gold-deep) 49.5%, var(--gold-deep) 50.5%, transparent 51.5%);
+  background-size: 120px 120px; }
+
+/* type roles */
+.fk .t-label { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; color: var(--gold); }
+.fk .t-label.dim { color: var(--ivory-dim); }
+.fk .t-display { font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums; }
+.fk .t-body { font-family: var(--sans); font-weight: 400; font-size: 40px; line-height: 1.35; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .t-brand-sub { font-family: var(--brand); font-weight: 400; color: var(--ivory-dim); line-height: 1.25; }
+.fk .gold { color: var(--gold); }
+
+/* illustration line style */
+.fk .ill { overflow: visible; }
+.fk .ill .ink { stroke: var(--ivory-dim); }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+.fk .lit-state .ill .ink.accent { stroke: var(--gold); }
+.fk .dry .lit { opacity: 0; }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; height: 64px; padding: 0 30px; border: 3px solid var(--gold);
+  border-radius: 999px; font-family: var(--sans); font-weight: 700; font-size: 24px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); background: rgba(26, 42, 58, 0.6); white-space: nowrap; }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 54px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1500px; padding: 14px 30px 16px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.3; color: var(--ivory);
+  background: rgba(15, 26, 37, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 54px; right: 54px; bottom: auto; top: 1380px; }
+.v .fk-caption span { max-width: 972px; font-size: 46px; }
+
+/* format switches: one composition, two canvases */
+.h .only-v, .v .only-h { display: none; }
+
+#s8-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s8-root" data-composition-id="s8" data-width="1920" data-height="1080" data-duration="10.6">
+<div class="fk h">
+<style>
+  .s8 .s8-glow { width: 1000px; height: 1000px; left: 460px; top: -260px; }
+  .s8 .s8-lockup { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+  .s8 .s8-emblem { width: 400px; margin: 0 auto; }
+  .s8 .s8-emblem svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .s8 .s8-word { margin-top: 18px; font-size: 92px; line-height: 1; }
+  .s8 .s8-name { margin-top: 20px; font-size: 32px; }
+  .s8 .s8-name span { display: block; }
+  .s8 .s8-sign { position: absolute; left: 96px; right: 96px; top: 770px; text-align: center; font-size: 62px; }
+  .s8 .s8-band { position: absolute; left: 0; right: 0; bottom: 0; height: 20px; display: flex; }
+  .s8 .s8-band i { flex: 1; }
+  .s8 .s8-band .r { background: var(--flag-red); } .s8 .s8-band .y { background: var(--gold); } .s8 .s8-band .g { background: var(--flag-green); }
+  .s8 svg.s8-waves { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+  .v .s8 svg.s8-waves { width: 1080px; height: 1920px; }
+  .v .s8 .s8-glow { left: 40px; top: 120px; }
+  .v .s8 .s8-lockup { top: 300px; }
+  .v .s8 .s8-emblem { width: 540px; }
+  .v .s8 .s8-word { margin-top: 30px; font-size: 86px; }
+  .v .s8 .s8-name { font-size: 34px; padding: 0 60px; }
+  .v .s8 .s8-sign { left: 54px; right: 54px; top: 1200px; font-size: 66px; }
+  .v .s8 .s8-band { height: 28px; }
+</style>
+<div class="scene s8">
+  
+  <div class="glow s8-glow"></div>
+  <svg class="s8-waves only-h" viewBox="0 0 1920 1080" fill="none"><path class="wave w1" d="M-20 500.0 L0 511.0 L20 521.4 L40 530.5 L60 537.9 L80 543.0 L100 545.7 L120 545.7 L140 543.0 L160 537.9 L180 530.5 L200 521.4 L220 511.0 L240 500.0 L260 489.0 L280 478.6 L300 469.5 L320 462.1 L340 457.0 L360 454.3 L380 454.3 L400 457.0 L420 462.1 L440 469.5 L460 478.6 L480 489.0 L500 500.0 L520 511.0 L540 521.4 L560 530.5 L580 537.9 L600 543.0 L620 545.7 L640 545.7 L660 543.0 L680 537.9 L700 530.5 L720 521.4 L740 511.0 L760 500.0 L780 489.0 L800 478.6 L820 469.5 L840 462.1 L860 457.0 L880 454.3 L900 454.3 L920 457.0 L940 462.1 L960 469.5 L980 478.6 L1000 489.0 L1020 500.0 L1040 511.0 L1060 521.4 L1080 530.5 L1100 537.9 L1120 543.0 L1140 545.7 L1160 545.7 L1180 543.0 L1200 537.9 L1220 530.5 L1240 521.4 L1260 511.0 L1280 500.0 L1300 489.0 L1320 478.6 L1340 469.5 L1360 462.1 L1380 457.0 L1400 454.3 L1420 454.3 L1440 457.0 L1460 462.1 L1480 469.5 L1500 478.6 L1520 489.0 L1540 500.0 L1560 511.0 L1580 521.4 L1600 530.5 L1620 537.9 L1640 543.0 L1660 545.7 L1680 545.7 L1700 543.0 L1720 537.9 L1740 530.5 L1760 521.4 L1780 511.0 L1800 500.0 L1820 489.0 L1840 478.6 L1860 469.5 L1880 462.1 L1900 457.0 L1920 454.3 L1940 454.3" stroke="#F5C518" stroke-width="5" stroke-linecap="round"/><path class="wave w2" d="M-20 572.8 L0 574.0 L20 572.3 L40 567.9 L60 561.2 L80 552.6 L100 543.0 L120 533.1 L140 523.8 L160 515.9 L180 510.0 L200 506.7 L220 506.2 L240 508.5 L260 513.5 L280 520.8 L300 529.7 L320 539.5 L340 549.3 L360 558.3 L380 565.8 L400 571.1 L420 573.7 L440 573.5 L460 570.5 L480 564.8 L500 557.1 L520 547.9 L540 538.0 L560 528.3 L580 519.6 L600 512.6 L620 508.0 L640 506.0 L660 507.0 L680 510.7 L700 516.9 L720 525.1 L740 534.5 L760 544.4 L780 554.0 L800 562.3 L820 568.8 L840 572.8 L860 574.0 L880 572.3 L900 567.9 L920 561.2 L940 552.6 L960 543.0 L980 533.1 L1000 523.8 L1020 515.9 L1040 510.0 L1060 506.7 L1080 506.2 L1100 508.5 L1120 513.5 L1140 520.8 L1160 529.7 L1180 539.5 L1200 549.3 L1220 558.3 L1240 565.8 L1260 571.1 L1280 573.7 L1300 573.5 L1320 570.5 L1340 564.8 L1360 557.1 L1380 547.9 L1400 538.0 L1420 528.3 L1440 519.6 L1460 512.6 L1480 508.0 L1500 506.0 L1520 507.0 L1540 510.7 L1560 516.9 L1580 525.1 L1600 534.5 L1620 544.4 L1640 554.0 L1660 562.3 L1680 568.8 L1700 572.8 L1720 574.0 L1740 572.3 L1760 567.9 L1780 561.2 L1800 552.6 L1820 543.0 L1840 533.1 L1860 523.8 L1880 515.9 L1900 510.0 L1920 506.7 L1940 506.2" stroke="#F8DF7A" stroke-width="4" stroke-linecap="round"/><path class="wave w3" d="M-20 597.6 L0 593.3 L20 588.4 L40 583.2 L60 577.9 L80 572.6 L100 567.7 L120 563.2 L140 559.5 L160 556.7 L180 554.8 L200 554.0 L220 554.3 L240 555.7 L260 558.1 L280 561.5 L300 565.6 L320 570.3 L340 575.5 L360 580.8 L380 586.1 L400 591.1 L420 595.7 L440 599.6 L460 602.7 L480 604.8 L500 605.9 L520 605.8 L540 604.7 L560 602.6 L580 599.4 L600 595.5 L620 590.9 L640 585.8 L660 580.5 L680 575.2 L700 570.1 L720 565.4 L740 561.3 L760 558.0 L780 555.6 L800 554.3 L820 554.0 L840 554.9 L860 556.8 L880 559.7 L900 563.4 L920 567.9 L940 572.9 L960 578.1 L980 583.5 L1000 588.7 L1020 593.5 L1040 597.8 L1060 601.3 L1080 603.9 L1100 605.5 L1120 606.0 L1140 605.4 L1160 603.8 L1180 601.1 L1200 597.6 L1220 593.3 L1240 588.4 L1260 583.2 L1280 577.9 L1300 572.6 L1320 567.7 L1340 563.2 L1360 559.5 L1380 556.7 L1400 554.8 L1420 554.0 L1440 554.3 L1460 555.7 L1480 558.1 L1500 561.5 L1520 565.6 L1540 570.3 L1560 575.5 L1580 580.8 L1600 586.1 L1620 591.1 L1640 595.7 L1660 599.6 L1680 602.7 L1700 604.8 L1720 605.9 L1740 605.8 L1760 604.7 L1780 602.6 L1800 599.4 L1820 595.5 L1840 590.9 L1860 585.8 L1880 580.5 L1900 575.2 L1920 570.1 L1940 565.4" stroke="#B8860B" stroke-width="3" stroke-linecap="round"/></svg><svg class="s8-waves only-v" viewBox="0 0 1080 1920" fill="none"><path class="wave w1" d="M-20 920.0 L0 931.0 L20 941.4 L40 950.5 L60 957.9 L80 963.0 L100 965.7 L120 965.7 L140 963.0 L160 957.9 L180 950.5 L200 941.4 L220 931.0 L240 920.0 L260 909.0 L280 898.6 L300 889.5 L320 882.1 L340 877.0 L360 874.3 L380 874.3 L400 877.0 L420 882.1 L440 889.5 L460 898.6 L480 909.0 L500 920.0 L520 931.0 L540 941.4 L560 950.5 L580 957.9 L600 963.0 L620 965.7 L640 965.7 L660 963.0 L680 957.9 L700 950.5 L720 941.4 L740 931.0 L760 920.0 L780 909.0 L800 898.6 L820 889.5 L840 882.1 L860 877.0 L880 874.3 L900 874.3 L920 877.0 L940 882.1 L960 889.5 L980 898.6 L1000 909.0 L1020 920.0 L1040 931.0 L1060 941.4 L1080 950.5 L1100 957.9" stroke="#F5C518" stroke-width="5" stroke-linecap="round"/><path class="wave w2" d="M-20 992.8 L0 994.0 L20 992.3 L40 987.9 L60 981.2 L80 972.6 L100 963.0 L120 953.1 L140 943.8 L160 935.9 L180 930.0 L200 926.7 L220 926.2 L240 928.5 L260 933.5 L280 940.8 L300 949.7 L320 959.5 L340 969.3 L360 978.3 L380 985.8 L400 991.1 L420 993.7 L440 993.5 L460 990.5 L480 984.8 L500 977.1 L520 967.9 L540 958.0 L560 948.3 L580 939.6 L600 932.6 L620 928.0 L640 926.0 L660 927.0 L680 930.7 L700 936.9 L720 945.1 L740 954.5 L760 964.4 L780 974.0 L800 982.3 L820 988.8 L840 992.8 L860 994.0 L880 992.3 L900 987.9 L920 981.2 L940 972.6 L960 963.0 L980 953.1 L1000 943.8 L1020 935.9 L1040 930.0 L1060 926.7 L1080 926.2 L1100 928.5" stroke="#F8DF7A" stroke-width="4" stroke-linecap="round"/><path class="wave w3" d="M-20 1017.6 L0 1013.3 L20 1008.4 L40 1003.2 L60 997.9 L80 992.6 L100 987.7 L120 983.2 L140 979.5 L160 976.7 L180 974.8 L200 974.0 L220 974.3 L240 975.7 L260 978.1 L280 981.5 L300 985.6 L320 990.3 L340 995.5 L360 1000.8 L380 1006.1 L400 1011.1 L420 1015.7 L440 1019.6 L460 1022.7 L480 1024.8 L500 1025.9 L520 1025.8 L540 1024.7 L560 1022.6 L580 1019.4 L600 1015.5 L620 1010.9 L640 1005.8 L660 1000.5 L680 995.2 L700 990.1 L720 985.4 L740 981.3 L760 978.0 L780 975.6 L800 974.3 L820 974.0 L840 974.9 L860 976.8 L880 979.7 L900 983.4 L920 987.9 L940 992.9 L960 998.1 L980 1003.5 L1000 1008.7 L1020 1013.5 L1040 1017.8 L1060 1021.3 L1080 1023.9 L1100 1025.5" stroke="#B8860B" stroke-width="3" stroke-linecap="round"/></svg>
+  <div class="s8-lockup">
+    <div class="s8-emblem"><svg class="emblem" viewBox="0 0 400 330" width="400" height="330"><g class="rays"><path class="ray" d="M200.8 16.0 L203.3 104.0 L204.7 104.0 L207.2 16.0 Z" fill="#C9A44A"/><path class="ray" d="M125.2 35.6 L171.4 112.3 L172.6 111.7 L130.8 32.4 Z" fill="#C9A44A"/><path class="ray" d="M277.2 32.4 L235.4 111.7 L236.6 112.3 L282.8 35.6 Z" fill="#C9A44A"/><path class="ray" d="M68.4 88.7 L144.6 131.6 L145.4 130.4 L71.6 83.3 Z" fill="#C9A44A"/><path class="ray" d="M336.4 83.3 L262.6 130.4 L263.4 131.6 L339.6 88.7 Z" fill="#C9A44A"/></g><g class="nugget"><path d="M158 152 L168 131 L192 120 L220 122 L241 133 L253 153 L250 177 L234 195 L206 201 L178 197 L160 184 L153 167 Z" fill="#D4A93A"/><path class="facet" d="M168 131 L192 120 L200 140 L178 150 Z" fill="#F8DF7A"/><path class="facet" d="M192 120 L220 122 L214 141 L200 140 Z" fill="#F5C518"/><path class="facet" d="M220 122 L241 133 L232 152 L214 141 Z" fill="#E0B02A"/><path class="facet" d="M241 133 L253 153 L250 177 L232 152 Z" fill="#B8860B"/><path class="facet" d="M158 152 L168 131 L178 150 L170 168 L153 167 Z" fill="#E9C24A"/><path class="facet" d="M178 150 L200 140 L214 141 L232 152 L222 172 L190 172 Z" fill="#D9A92A"/><path class="facet" d="M153 167 L170 168 L190 172 L178 197 L160 184 Z" fill="#C99A1E"/><path class="facet" d="M190 172 L222 172 L232 152 L250 177 L234 195 L206 201 L178 197 Z" fill="#A87A0B"/></g><g class="hand" fill="none" stroke="#F3EEE3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path class="hand-outline" d="M 30 246 C 80 232 120 206 168 202 C 200 199 232 210 258 222 C 290 206 330 188 356 186 C 374 185 383 200 368 209 C 345 222 320 233 302 240 C 330 229 360 217 373 221 C 386 226 381 240 368 244 C 330 264 290 286 240 297 C 190 307 120 300 45 318"/><path class="hand-thumb" d="M 176 240 C 214 228 258 226 271 242 C 281 256 263 267 238 265 C 212 263 190 268 162 275"/></g></svg></div>
+    <div class="t-brand s8-word">FUTURA - Kouroussa</div>
+    <div class="t-brand-sub s8-name"><span>Fonds d’Utilisation Transparente des</span><span>Ressources Aurifères pour l’Avenir de Kouroussa</span></div>
+  </div>
+  <div class="s8-sign t-display">L’or de Kouroussa, au service de <span class="gold">Kouroussa</span>.</div>
+  <div class="s8-band"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+  
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 109.4, DUR = 10.6, H_ = FMT === "h";
+const root = document.querySelector('[data-composition-id="s8"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (H_ ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitText(el, perChar, block) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap";
+          if (perChar) {
+            Array.from(p).forEach((ch) => {
+              const c = document.createElement("span");
+              c.textContent = ch;
+              if (block) c.style.display = "inline-block";
+              w.appendChild(c); out.push(c);
+            });
+          } else { w.textContent = p; out.push(w); }
+          frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+const splitWords = (el) => splitText(el, false, true);
+const splitChars = (el, block) => splitText(el, true, block);
+// Scene 8 — La signature (109.4–120). Gold waves settle into the tricolour band; the logo; the closing line.
+const waves = $(".s8-waves.only-" + FMT);
+const wv = Array.from(waves.querySelectorAll(".wave"));
+prepDraw(wv);
+tl.fromTo(wv, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.out", stagger: 0.15 }, at(109.4));
+tl.fromTo(waves, { x: -60 }, { x: 0, duration: 2.6, ease: "sine.out" }, at(109.4));
+const drop = pick(1080 - 10 - 540, 1920 - 14 - 960);
+tl.to(waves, { y: drop, scaleY: 0.04, duration: 1.4, ease: "power2.inOut", transformOrigin: "50% 50%" }, at(110.8));
+tl.to(waves, { opacity: 0, duration: 0.4 }, at(112.0));
+const band = $$(".s8-band i");
+tl.fromTo(band, { scaleX: 0, transformOrigin: "50% 50%" }, { scaleX: 1, duration: 0.8, ease: "power3.out", stagger: 0.15, transformOrigin: "50% 50%" }, at(111.6));
+tl.fromTo($(".s8-glow"), { opacity: 0 }, { opacity: 1, duration: 1.6 }, at(110.8));
+tl.to($(".s8-glow"), { scale: 1.08, duration: 1.8, ease: "sine.inOut", yoyo: true, repeat: 2 }, at(113.0));
+
+// the logo reforms on « Futura Kouroussa » (111.5)
+const emb = $(".s8-emblem svg");
+const nug = emb.querySelector(".nugget"), rays = Array.from(emb.querySelectorAll(".ray"));
+const ho = emb.querySelector(".hand-outline"), th = emb.querySelector(".hand-thumb");
+prepDraw([ho, th]);
+tl.fromTo(nug, { scale: 0, rotation: -20, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, rotation: 0, opacity: 1, duration: 0.7, ease: "back.out(2)", transformOrigin: "50% 50%" }, at(111.2));
+tl.fromTo(ho, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.3, ease: "power2.inOut" }, at(111.4));
+tl.fromTo(th, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, at(111.9));
+tl.fromTo(rays, { scale: 0.15, opacity: 0, svgOrigin: "204 162" }, { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.06, svgOrigin: "204 162" }, at(112.2));
+tl.fromTo($(".s8-word"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, at(111.7));
+tl.fromTo($(".s8-name"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, at(112.3));
+// closing line on « L'or de Kouroussa… » (113.9)
+const words = splitWords($(".s8-sign"));
+tl.fromTo(words, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.06 }, at(113.9));
+// final hold: only a slow breath (no fade before 120 s)
+tl.fromTo($(".s8-lockup"), { scale: 1, transformOrigin: "50% 40%" }, { scale: 1.025, duration: 6.0, ease: "none", transformOrigin: "50% 40%" }, at(114.0));
+
+window.__timelines["s8"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

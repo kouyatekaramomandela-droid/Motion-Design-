@@ -24,7 +24,7 @@ def _arc(r0, r1, a0, a1):
             f"A{r0} {r0} 0 {large} 0 {pt(r0, a0)} Z")
 
 COLLEGES = [(40, "#F5C518", "Collectivités locales"), (25, "#F8DF7A", "Société civile"),
-            (25, "#D9A520", "Partenaires institutionnels"), (10, "#C9CFD4", "Partenaires miniers")]
+            (25, "#B8860B", "Partenaires institutionnels"), (10, "#A9B3BC", "Partenaires miniers")]
 CTL_R = [300, 350, 400]
 GATE_ANGLE = -math.pi / 6  # token leaves the core up-right
 
@@ -34,7 +34,7 @@ def _ring(uid):
     for i, r in enumerate(CTL_R):
         parts.append(f'<circle class="ctl c{i+1}" r="{r}" stroke="#B8860B" stroke-width="3" stroke-dasharray="4 10" opacity="0.7"/>')
         parts.append(f'<circle class="ctl-on c{i+1}" r="{r}" stroke="#F5C518" stroke-width="4"/>')
-    parts.append('</g><g class="gates">')
+    parts.append('</g><circle class="halo-ring" r="233" stroke="#F5C518" stroke-width="66" transform="rotate(-90)"/><g class="gates">')
     for i, r in enumerate(CTL_R):
         x, y = r * math.cos(GATE_ANGLE), r * math.sin(GATE_ANGLE)
         parts.append(f'<g class="gate g{i+1}" transform="translate({x:.1f} {y:.1f})"><circle r="17" fill="#1A2A3A" stroke="#F5C518" stroke-width="3"/>'
@@ -110,6 +110,20 @@ def _lines(which, uid):
             out.append("".join(s))
     return "".join(out)
 
+def _waves(uid):
+    out = []
+    for fmt, (w, h), cy in (("h", (1920, 1080), 540), ("v", (1080, 1920), 960)):
+        s = [f'<svg class="s8-waves only-{fmt}" viewBox="0 0 {w} {h}" fill="none">']
+        for i, (amp, per, ph, col) in enumerate(((46, 520, 0.0, "#F5C518"), (34, 430, 1.3, "#F8DF7A"), (26, 610, 2.4, "#B8860B"))):
+            pts = []
+            for k in range(0, w + 41, 20):
+                y = cy + (i - 1) * 40 + amp * math.sin(2 * math.pi * k / per + ph)
+                pts.append(f"{k - 20} {y:.1f}")
+            s.append(f'<path class="wave w{i+1}" d="M{" L".join(pts)}" stroke="{col}" stroke-width="{5 - i}" stroke-linecap="round"/>')
+        s.append("</svg>")
+        out.append("".join(s))
+    return "".join(out)
+
 def expand(fragment, uid):
     def rep(m):
         kind, arg = m.group(1), m.group(2)
@@ -118,5 +132,6 @@ def expand(fragment, uid):
         if kind == "icon": return ICONS[arg]
         if kind == "spark": return _spark(int(arg), uid)
         if kind == "lines": return _lines(arg, uid)
+        if kind == "waves": return _waves(uid)
         raise ValueError(m.group(0))
     return re.sub(r"\{\{(\w+):(\w+)\}\}", rep, fragment)

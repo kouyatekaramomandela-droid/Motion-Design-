@@ -1,6 +1,6 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../assets/film.css">
-<style>html,body{margin:0;background:#0F1A25} .frame{width:1080px;height:1920px} </style>
+<style>html,body{margin:0;background:#0F1A25} .s1-black,.s5-seed,.s5-sparks,.s7-drop,.s8-waves,.halo-ring{display:none!important} .frame{width:1080px;height:1920px} </style>
 <script src="../assets/particles.js"></script></head>
 <body><div class="frame fk v"><style>
   .s5 .s5-glow { width: 1000px; height: 1000px; left: -10px; top: -80px; }
@@ -10,6 +10,13 @@
   .s5 .s5-word { font-size: 90px; line-height: 1; white-space: nowrap; }
   .s5 .s5-name { margin-top: 26px; font-size: 38px; max-width: 900px; }
   .s5 .s5-badges { margin-top: 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .s5 .s5-seed { position: absolute; left: 946px; top: 456px; width: 28px; height: 28px; border-radius: 50%; background: var(--gold-pale);
+    box-shadow: 0 0 30px 10px rgba(245,197,24,.55); }
+  .s5 .s5-sparks { position: absolute; inset: 0; }
+  .s5 .s5-sparks i { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--gold-pale); box-shadow: 0 0 10px rgba(245,197,24,.8); }
+  .v .s5 .s5-seed { left: 526px; top: 636px; }
+  .s5 svg.s5-trace { position: absolute; left: 136px; top: 61px; width: 700px; height: 700px; opacity: 0; }
+  .v .s5 svg.s5-trace { left: 196px; top: 81px; }
   .v .s5 .s5-glow { left: 40px; top: 60px; }
   .v .s5 .s5-emblem { left: 230px; top: 180px; width: 620px; }
   .v .s5 .s5-text { left: 54px; width: 972px; top: 760px; text-align: center; }
@@ -21,6 +28,9 @@
   <div class="bg"></div>
   <div class="lattice"></div>
   <div class="glow s5-glow"></div>
+  <svg class="s5-trace" viewBox="-350 -350 700 700" fill="none"><circle class="trace-ring" r="300" stroke="#F5C518" stroke-width="5" stroke-dasharray="1 22" stroke-linecap="round"/><circle class="node n0" cx="0.0" cy="-300.0" r="10" fill="#F5C518"/><circle class="node n1" cx="259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="node n2" cx="259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n3" cx="0.0" cy="300.0" r="10" fill="#F5C518"/><circle class="node n4" cx="-259.8" cy="150.0" r="10" fill="#F5C518"/><circle class="node n5" cx="-259.8" cy="-150.0" r="10" fill="#F5C518"/><circle class="mover m0" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m1" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m2" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m3" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m4" cx="0" cy="0" r="7" fill="#F8DF7A"/><circle class="mover m5" cx="0" cy="0" r="7" fill="#F8DF7A"/></svg>
+  <div class="s5-sparks"></div>
+  <div class="s5-seed"></div>
   <div class="s5-emblem"><svg class="emblem" viewBox="0 0 400 330" width="400" height="330"><g class="rays"><path class="ray" d="M200.8 16.0 L203.3 104.0 L204.7 104.0 L207.2 16.0 Z" fill="#C9A44A"/><path class="ray" d="M125.2 35.6 L171.4 112.3 L172.6 111.7 L130.8 32.4 Z" fill="#C9A44A"/><path class="ray" d="M277.2 32.4 L235.4 111.7 L236.6 112.3 L282.8 35.6 Z" fill="#C9A44A"/><path class="ray" d="M68.4 88.7 L144.6 131.6 L145.4 130.4 L71.6 83.3 Z" fill="#C9A44A"/><path class="ray" d="M336.4 83.3 L262.6 130.4 L263.4 131.6 L339.6 88.7 Z" fill="#C9A44A"/></g><g class="nugget"><path d="M158 152 L168 131 L192 120 L220 122 L241 133 L253 153 L250 177 L234 195 L206 201 L178 197 L160 184 L153 167 Z" fill="#D4A93A"/><path class="facet" d="M168 131 L192 120 L200 140 L178 150 Z" fill="#F8DF7A"/><path class="facet" d="M192 120 L220 122 L214 141 L200 140 Z" fill="#F5C518"/><path class="facet" d="M220 122 L241 133 L232 152 L214 141 Z" fill="#E0B02A"/><path class="facet" d="M241 133 L253 153 L250 177 L232 152 Z" fill="#B8860B"/><path class="facet" d="M158 152 L168 131 L178 150 L170 168 L153 167 Z" fill="#E9C24A"/><path class="facet" d="M178 150 L200 140 L214 141 L232 152 L222 172 L190 172 Z" fill="#D9A92A"/><path class="facet" d="M153 167 L170 168 L190 172 L178 197 L160 184 Z" fill="#C99A1E"/><path class="facet" d="M190 172 L222 172 L232 152 L250 177 L234 195 L206 201 L178 197 Z" fill="#A87A0B"/></g><g class="hand" fill="none" stroke="#F3EEE3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path class="hand-outline" d="M 30 246 C 80 232 120 206 168 202 C 200 199 232 210 258 222 C 290 206 330 188 356 186 C 374 185 383 200 368 209 C 345 222 320 233 302 240 C 330 229 360 217 373 221 C 386 226 381 240 368 244 C 330 264 290 286 240 297 C 190 307 120 300 45 318"/><path class="hand-thumb" d="M 176 240 C 214 228 258 226 271 242 C 281 256 263 267 238 265 C 212 263 190 268 162 275"/></g></svg></div>
   <div class="s5-text">
     <div class="t-brand s5-word">FUTURA - Kouroussa</div>

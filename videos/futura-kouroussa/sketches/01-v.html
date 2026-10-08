@@ -1,12 +1,13 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../assets/film.css">
-<style>html,body{margin:0;background:#0F1A25} .frame{width:1080px;height:1920px} </style>
+<style>html,body{margin:0;background:#0F1A25} .s1-black,.s5-seed,.s5-sparks,.s7-drop,.s8-waves,.halo-ring{display:none!important} .frame{width:1080px;height:1920px} </style>
 <script src="../assets/particles.js"></script></head>
 <body><div class="frame fk v"><style>
   .s1 .s1-glow { width: 1200px; height: 1200px; left: 360px; top: -130px; }
   .s1 canvas.s1-particles { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
   .s1 .s1-stack { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
-  .s1 .s1-count { font-size: 250px; }
+  .s1 .s1-count { font-size: 250px; font-variant-numeric: tabular-nums lining-nums; }
+  .s1 .s1-black { position: absolute; inset: 0; background: #070C12; }
   .s1 .s1-unit { margin-top: 6px; font-family: var(--sans); font-weight: 700; font-size: 62px; letter-spacing: 0.02em; color: var(--ivory); }
   .s1 .s1-per { margin-top: 16px; }
   .s1 .s1-line { margin: 64px auto 0; max-width: 1300px; }
@@ -18,6 +19,7 @@
 </style>
 <div class="scene s1">
   <div class="bg"></div>
+  <div class="s1-black"></div>
   <div class="glow s1-glow"></div>
   <canvas class="s1-particles"></canvas>
   <div class="s1-stack">
