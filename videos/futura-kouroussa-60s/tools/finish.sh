@@ -8,5 +8,5 @@ in="$1"; out="$2"
 ffmpeg -v error -y -i "$in" \
   -vf "noise=c0s=5:c0f=t+u:all_seed=20261008,format=yuv420p" \
   -c:v libx264 -preset slow -crf 17 -profile:v high -movflags +faststart \
-  -c:a aac -b:a 192k "$out"
+  -c:a copy "$out"
 echo "finished: $out ($(ffprobe -v error -show_entries format=duration -of csv=p=0 "$out") s)"
