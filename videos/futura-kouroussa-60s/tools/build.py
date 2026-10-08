@@ -207,6 +207,7 @@ def setup_sibling(fmt):
     pkg = json.loads((ROOT / "package.json").read_text()); pkg["name"] = proj.name
     (proj / "package.json").write_text(json.dumps(pkg, indent=2) + "\n")
     (proj / "meta.json").write_text(json.dumps({"id": proj.name, "name": proj.name}, indent=2) + "\n")
+    (proj / ".gitignore").write_text("renders/\n.hyperframes/\n")
     (proj / "README.md").write_text(f"Version {LABEL[fmt]} du film 60 s FUTURA-Kouroussa. Généré par ../{ROOT.name}/tools/build.py ; "
                                     f"ne pas éditer à la main. `assets/` pointe vers le projet 16:9.\n")
 
