@@ -11,7 +11,7 @@ audience: habitants de Kouroussa et partenaires institutionnels
 length: 60s
 angle: narrative
 narration: yes
-voice: elevenlabs:Vza9yt3uSx3RXnRx6YfI
+voice: elevenlabs:296ArNMXC82lzWBz0g98
 fps: 30
 ---
 
@@ -37,8 +37,9 @@ Structure client (verrouillée) : 0:00–0:05 Ouverture · 0:05–0:15 La terre 
 
 ## Customizations
 
-- Voix off : ElevenLabs « Fatou — Radiant and Gentle » (Vza9yt3uSx3RXnRx6YfI), choisie par le client
-  après écoute de 4 essais. Naturelle, proche, ~130 mots/min, vraies pauses.
+- Voix off : voix créée sur mesure (ElevenLabs Voice Design, « FUTURA-Kouroussa — voix naturelle »,
+  296ArNMXC82lzWBz0g98) à partir de la direction d'acteur du client ; voix A retenue après écoute
+  (Fatou écartée : le client veut « une autre humaine qui parle normal »). Modèle eleven_v3.
 - Visages : le client dispose des autorisations, les visages restent visibles. Logos d'entreprise et
   plaques : masqués dans tous les cas (gilet de la photo réunion, engins de la photo mine).
 - Musique douce et ample 96 BPM (nappes, percussions légères, kora discrète), baisse d'environ 15 dB

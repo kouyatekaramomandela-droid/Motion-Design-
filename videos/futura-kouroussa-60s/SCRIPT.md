@@ -1,6 +1,6 @@
 # SCRIPT — futura-kouroussa-60s
 
-**Voice:** Fatou — Radiant and Gentle (ElevenLabs, `Vza9yt3uSx3RXnRx6YfI`), `eleven_multilingual_v2`
+**Voice:** FUTURA-Kouroussa — voix naturelle (ElevenLabs Voice Design, `296ArNMXC82lzWBz0g98`), `eleven_v3`
 **Voice settings:** stabilité moyenne, style faible, vitesse 1.0 (le connecteur n'expose pas ces
 réglages : rythme piloté par la ponctuation et des pauses explicites)
 **Voice direction:** Quelqu'un qui parle calmement à ses voisins. Naturel, chaleureux, sincère,
