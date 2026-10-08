@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill ill-forage" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <g class="ink" stroke="#A9B3BC">
+    <path class="ground" d="M24 262 H376"/>
+    <path class="apron" d="M112 262 L128 240 H272 L288 262"/>
+    <rect class="column" x="182" y="112" width="34" height="128" rx="5"/>
+    <rect class="pump-head" x="170" y="96" width="58" height="20" rx="6"/>
+    <path class="handle" d="M226 104 L320 72"/>
+    <circle class="grip" cx="325" cy="70" r="6"/>
+    <path class="spout" d="M182 150 H154 Q144 150 144 160 V168"/>
+    <path class="bucket" d="M118 206 L126 240 H164 L172 206"/>
+    <ellipse class="bucket-rim" cx="145" cy="206" rx="27" ry="6"/>
+    <path class="bucket-handle" d="M120 205 Q145 178 170 205"/>
+  </g>
+  <g class="ink figure" stroke="#A9B3BC">
+    <circle cx="300" cy="148" r="14"/>
+    <path d="M286 172 Q300 163 314 172 L328 250 H272 Z"/>
+    <path d="M287 186 L264 214"/>
+    <rect x="242" y="214" width="26" height="32" rx="4"/>
+  </g>
+  <g class="lit water" stroke="none">
+    <path class="stream" d="M140 170 C141 182 142 194 142 204 H148 C148 194 149 182 150 170 Z" fill="#F8DF7A"/>
+    <ellipse class="fill" cx="145" cy="207" rx="22" ry="4.5" fill="#F5C518"/>
+    <circle class="drop d1" cx="126" cy="226" r="3.5" fill="#F8DF7A"/>
+    <circle class="drop d2" cx="168" cy="222" r="3" fill="#F8DF7A"/>
+    <circle class="drop d3" cx="160" cy="236" r="2.5" fill="#F8DF7A"/>
+  </g>
+</svg>

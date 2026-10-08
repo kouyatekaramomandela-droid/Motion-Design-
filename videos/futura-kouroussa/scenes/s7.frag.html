@@ -1,0 +1,45 @@
+<style>
+  .s7 .s7-glow { width: 1500px; height: 900px; left: 210px; top: -200px; }
+  .s7 .s7-tri { position: absolute; left: 210px; right: 210px; top: 50px; display: flex; justify-content: space-between; }
+  .s7 .tri { width: 400px; margin: 0; text-align: center; }
+  .s7 .tri svg { width: 100%; height: auto; display: block; }
+  .s7 .tri figcaption { margin-top: 12px; color: var(--gold); }
+  .s7 .s7-dash { position: absolute; left: 250px; right: 250px; top: 440px; height: 310px; padding: 30px 46px; border-radius: 18px;
+    background: rgba(34,54,74,.92); border: 2px solid rgba(184,134,11,.55); }
+  .s7 .dash-head { display: flex; align-items: center; justify-content: space-between; }
+  .s7 .chip { font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--night); background: var(--gold); border-radius: 999px; padding: 10px 20px; }
+  .s7 .dash-cols { margin-top: 26px; display: flex; gap: 46px; }
+  .s7 .kpi { flex: 1; }
+  .s7 .kpi .lab { font-weight: 700; font-size: 28px; }
+  .s7 .kpi svg { margin-top: 14px; width: 100%; height: 150px; display: block; overflow: visible; }
+  .s7 .s7-title { position: absolute; left: 96px; right: 96px; top: 790px; text-align: center; font-size: 64px; }
+  .v .s7 .s7-glow { left: -210px; top: 0; }
+  .v .s7 .s7-tri { left: 54px; right: 54px; top: 90px; flex-direction: column; gap: 22px; }
+  .v .s7 .tri { width: 100%; display: flex; align-items: center; gap: 32px; text-align: left; }
+  .v .s7 .tri svg { width: 330px; flex: none; }
+  .v .s7 .tri figcaption { margin-top: 0; font-size: 32px; }
+  .v .s7 .s7-dash { left: 54px; right: 54px; top: 900px; height: 300px; padding: 26px 30px; }
+  .v .s7 .dash-cols { gap: 26px; }
+  .v .s7 .kpi .lab { font-size: 24px; min-height: 60px; }
+  .v .s7 .kpi svg { height: 120px; }
+  .v .s7 .s7-title { left: 54px; right: 54px; top: 1225px; font-size: 62px; }
+</style>
+<div class="scene s7">
+  <div class="bg"></div>
+  <div class="glow s7-glow"></div>
+  <div class="s7-tri lit-state">
+    <figure class="tri tri1">{{svg:forage}}<figcaption class="t-label">Eau potable</figcaption></figure>
+    <figure class="tri tri2">{{svg:classe}}<figcaption class="t-label">École équipée</figcaption></figure>
+    <figure class="tri tri3">{{svg:sante}}<figcaption class="t-label">Centre de santé</figcaption></figure>
+  </div>
+  <div class="s7-dash">
+    <div class="dash-head"><span class="t-label">Tableau de bord</span><span class="chip">Suivi public</span></div>
+    <div class="dash-cols">
+      <div class="kpi k1"><div class="lab">Accès à l’eau</div>{{spark:1}}</div>
+      <div class="kpi k2"><div class="lab">Équipement scolaire</div>{{spark:2}}</div>
+      <div class="kpi k3"><div class="lab">Accès aux soins</div>{{spark:3}}</div>
+    </div>
+  </div>
+  <div class="s7-title t-display">Chaque franc suivi. <span class="gold">Chaque résultat visible.</span></div>
+  <div class="vignette"></div>
+</div>

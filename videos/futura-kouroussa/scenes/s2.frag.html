@@ -1,0 +1,47 @@
+<style>
+  .s2 .s2-glow { width: 1100px; height: 1100px; left: 30px; top: -60px; }
+  .s2 .s2-map { position: absolute; left: 230px; top: 130px; width: 700px; }
+  .s2 .s2-map svg { width: 100%; height: auto; display: block; }
+  .s2 .s2-labels { position: absolute; left: 1040px; top: 270px; width: 760px; }
+  .s2 .s2-region { margin-top: 14px; font-size: 32px; color: var(--ivory-dim); }
+  .s2 .s2-mines { margin-top: 80px; display: flex; gap: 22px; }
+  .s2 .s2-mines i { width: 26px; height: 26px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 24px rgba(245,197,24,.7); }
+  .s2 .s2-minetitle { margin-top: 22px; font-size: 92px; }
+  .s2 .s2-town { position: absolute; left: 582px; top: 432px; font-size: 26px; font-weight: 700; letter-spacing: .06em; color: var(--ivory); }
+  .s2 .s2-river { position: absolute; left: 330px; top: 600px; font-size: 24px; letter-spacing: .3em; color: var(--gold-pale); transform: rotate(-44deg); text-transform: uppercase; }
+  .s2 .s2-tri { position: absolute; left: 120px; right: 120px; top: 170px; display: flex; justify-content: space-between; }
+  .s2 .tri { width: 520px; margin: 0; text-align: center; }
+  .s2 .tri svg { width: 100%; height: auto; display: block; }
+  .s2 .tri figcaption { margin-top: 26px; }
+  .v .s2 .s2-glow { left: -10px; top: 80px; }
+  .v .s2 .s2-map { left: 90px; top: 150px; width: 900px; }
+  .v .s2 .s2-labels { left: 90px; top: 1010px; width: 900px; }
+  .v .s2 .s2-mines { margin-top: 48px; }
+  .v .s2 .s2-town { left: 540px; top: 548px; font-size: 32px; }
+  .v .s2 .s2-river { left: 210px; top: 820px; font-size: 28px; }
+  .v .s2 .s2-tri { left: 54px; right: 54px; top: 130px; flex-direction: column; gap: 34px; }
+  .v .s2 .tri { width: 100%; display: flex; align-items: center; gap: 36px; text-align: left; }
+  .v .s2 .tri svg { width: 470px; flex: none; }
+  .v .s2 .tri figcaption { margin-top: 0; font-size: 34px; line-height: 1.3; }
+</style>
+<div class="scene s2">
+  <div class="bg"></div>
+  <div class="glow s2-glow"></div>
+  <div class="s2-mapgroup">
+    <div class="s2-map">{{svg:map}}</div>
+    <div class="s2-town">Kouroussa</div>
+    <div class="s2-river">Niger</div>
+    <div class="s2-labels">
+      <div class="t-label">Préfecture de Kouroussa</div>
+      <div class="s2-region">Région de Kankan · Guinée</div>
+      <div class="s2-mines"><i></i><i></i><i></i></div>
+      <div class="t-display s2-minetitle">Trois mines</div>
+    </div>
+  </div>
+  <div class="s2-tri dry">
+    <figure class="tri tri1">{{svg:forage}}<figcaption class="t-label dim">Eau potable</figcaption></figure>
+    <figure class="tri tri2">{{svg:classe}}<figcaption class="t-label dim">École équipée</figcaption></figure>
+    <figure class="tri tri3">{{svg:sante}}<figcaption class="t-label dim">Centre de santé</figcaption></figure>
+  </div>
+  <div class="vignette"></div>
+</div>

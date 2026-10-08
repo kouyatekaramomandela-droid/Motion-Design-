@@ -7,10 +7,10 @@ message: "L'or de Kouroussa doit servir Kouroussa."
 arc: Valeur → Manque → Perte → Loi → Instrument → Gouvernance → Résultats → Signature
 audience: autorités préfectorales et communales, communautés, partenaires institutionnels, sociétés minières
 mode: collaborative
-version: v1
+version: v2
 ---
 
-# FUTURA-Kouroussa — storyboard v1
+# FUTURA-Kouroussa — storyboard v2
 
 ## Décisions
 
@@ -49,6 +49,20 @@ version: v1
 - **Sous-titres en scène 8** : la voix dit exactement le texte affiché à l'écran ; je propose de
   ne pas doubler ce texte en sous-titre (évite la redite). À confirmer.
 
+## Changements depuis v1
+
+- **Logo client** reçu : main ouverte, pépite d'or, cinq rayons, « FUTURA - Kouroussa » et
+  « Fonds d'Utilisation Transparente des Ressources Aurifères pour l'Avenir de Kouroussa ».
+  Redessiné en vectoriel (`assets/logo/`), version négative (traits blanc cassé) sur fond marine.
+  Le nom complet affiché suit le logo (« pour l'Avenir »). Typo du logo : Roboto.
+- La rosace v1 est remplacée : en 5, le point de convergence **devient la pépite**, la main se
+  dessine dessous pour la recevoir, les rayons jaillissent. En 6, le halo de la pépite devient
+  l'anneau des collèges (la pépite reste au cœur de l'anneau). En 8, logo officiel centré.
+- Voix off réelle (prise A, ElevenLabs Florian) : lignes placées à 1,2 · 13,0 · 29,0 · 44,0 ·
+  59,5 · 77,0 · 96,5 · 111,5 s. Les apparitions sont calées sur les mots (voir `assets/audio/vo_meta.json`).
+- Pages du livre (4) : bleu nuit relevé, pas blanc cassé (cohérence de la charte).
+- Article 165 affiché seul ; pas de sous-titre en scène 8 (texte déjà à l'écran).
+
 ## Frame 1 — L'accroche
 
 - scene: Une particule d'or s'allume dans le noir, se multiplie en milliers, et un compteur monte jusqu'à « 2,35 milliards USD par an ».
@@ -56,7 +70,7 @@ version: v1
 - start: 0
 - poster: 7s
 - transition_in: none
-- status: outline
+- status: built
 - src: compositions/s1-accroche.html
 - blueprint: dataviz-countup (cold-open counter burst)
 - rules: particle-burst, counting-dynamic-scale, ambient-glow-bloom
@@ -86,7 +100,7 @@ mesure d'abord la richesse, sans la juger.
 - start: 10
 - poster: 22s
 - transition_in: morph (trait doré → contour de carte)
-- status: outline
+- status: built
 - src: compositions/s2-territoire.html
 - blueprint: grid-card-assemble (triptyque) ; carte composée de règles
 - rules: svg-path-draw, sine-wave-loop, viewport-change, waterfall-entry
@@ -117,7 +131,7 @@ mesure d'abord la richesse, sans la juger.
 - start: 28
 - poster: 38s
 - transition_in: morph (la carte réduit, les mines émettent les lignes)
-- status: outline
+- status: built
 - src: compositions/s3-fil-perdu.html
 - blueprint: kinetic-type-beats (question isolée) ; lignes composées de règles
 - rules: svg-path-draw, depth-scatter-assemble, sine-wave-loop
@@ -133,7 +147,7 @@ vide.
   point d'interrogation (Playfair, contour pointillé `gold-deep`), à droite.
 - 34,5 : texte Playfair 700 72px `ivory` : « Où va la part des communautés ? »
 - **38,5–41,5 : plan fixe**, seul le point d'interrogation respire.
-- **Sortie 41,0–42,5** : une page blanc cassé glisse depuis la droite et recouvre le vide :
+- **Sortie 41,0–42,5** : une page glisse depuis la droite et recouvre le vide :
   c'est la couverture du livre (scène 4). Souffle.
 - **Pourquoi** : nomme le problème de traçabilité que FUTURA résout.
 - **Non** : pas de flèches vers un coupable, pas de cartes de flux financier inventées.
@@ -145,7 +159,7 @@ vide.
 - start: 42
 - poster: 50s
 - transition_in: morph (la page devient la couverture)
-- status: outline
+- status: built
 - src: compositions/s4-socle-legal.html
 - blueprint: titlecard-reveal (adapté : carte = livre) ; convergence composée de règles
 - rules: ambient-glow-bloom, svg-path-draw, center-outward-expansion (inversé)
@@ -175,27 +189,28 @@ lui indique le chemin.
 - start: 58
 - poster: 70s
 - transition_in: morph (point → éclatement)
-- status: outline
+- status: built
 - src: compositions/s5-naissance.html
 - blueprint: logo-assemble-lockup (Product_Intro)
 - rules: svg-path-draw, particle-burst, waterfall-entry, spring-pop-entrance
 - voiceover: "FUTURA-Kouroussa : un fonds constitué sous forme de société anonyme OHADA, né du rapport de la mission parlementaire, pour centraliser et redistribuer ces ressources de manière traçable."
 
-**Concept.** L'instrument naît de la convergence : ce qui se dispersait devient une forme.
-L'emblème est une rosace à huit pétales dans un anneau : quatre paires (les quatre collèges),
-un cœur d'or (la ressource).
+**Concept.** L'instrument naît de la convergence : le point d'or devient la pépite du logo,
+et une main ouverte se dessine pour la recevoir. L'or est tenu, offert, pas extrait.
 
-- 58,0–59,5 : le point se charge, puis éclate (particle-burst) ; tintement + souffle.
-- 59,5–63,5 : l'emblème se dessine à gauche (centre x≈560) : cercle, arcs, huit pétales qui
-  se déplient, anneau qui se ferme, cœur `gold`.
-- 61,5–64,5 : à droite, « FUTURA » (Playfair 900 150px `ivory`, lettre par lettre) puis
-  « KOUROUSSA » (Montserrat 700 48px `gold`, interlettrage large).
-- 64,0–68,5 : nom complet, lettre par lettre, Montserrat 400 34px : « Fonds d'Utilisation
-  Transparente des Ressources Aurifères de Kouroussa ».
-- 66,5 et 69,0 : badges en pilule contour or : « Société Anonyme OHADA » ; « Issu du Rapport
-  de Mission Parlementaire ».
-- **Sortie 73,5–75,5** : textes et badges s'effacent ; l'anneau extérieur de l'emblème se
-  détache et s'agrandit au centre-gauche : il devient l'anneau de gouvernance.
+- 58,0–58,6 : le point se charge au centre, puis glisse vers la gauche et éclate (particle-burst) ;
+  tintements + souffle (58,6 s).
+- 58,8–61,0 : la pépite se cristallise (facettes), la main se dessine dessous (tracé de la ligne),
+  la pépite s'y pose à 61,0 (tintement) ; les cinq rayons jaillissent.
+- 59,5 : sur « Futura Kouroussa », « FUTURA - Kouroussa » (Roboto 700 90px) s'écrit lettre par lettre.
+- 61,6–63,5 : nom complet (Roboto 400 38px) : « Fonds d'Utilisation Transparente des Ressources
+  Aurifères pour l'Avenir de Kouroussa ».
+- 64,4 (« OHADA ») : badge « Société Anonyme OHADA » ; 65,4 (« né du rapport ») : badge « Issu
+  du Rapport de Mission Parlementaire ».
+- 68,2–71,8 (« centraliser et redistribuer… traçable ») : de fins pointillés d'or partent de la
+  pépite et reviennent, comme des flux tracés.
+- **Sortie 73,4–75,5** : textes et badges s'effacent ; le halo de la pépite s'élargit en anneau
+  au centre-gauche : il devient l'anneau de gouvernance, la pépite en son cœur.
 - **Pourquoi** : c'est la réponse, le cœur du film.
 - **Non** : pas de logo d'entreprise, pas d'effet chromé, pas de texte en dégradé.
 
@@ -206,7 +221,7 @@ un cœur d'or (la ressource).
 - start: 75
 - poster: 84s
 - transition_in: morph (anneau de l'emblème → anneau des collèges)
-- status: outline
+- status: built
 - src: compositions/s6-gouvernance.html
 - blueprint: dataviz-countup (anneau, adapté sans caméra) + constellation-hub (couches concentriques)
 - rules: stat-bars-and-fills, svg-path-draw, spring-pop-entrance, ambient-glow-bloom
@@ -238,7 +253,7 @@ cercles de contrôle. Apogée musicale.
 - start: 95
 - poster: 104s
 - transition_in: morph (jeton → goutte qui tombe dans le forage)
-- status: outline
+- status: built
 - src: compositions/s7-resultats.html
 - blueprint: grid-card-assemble (rappel du triptyque) + titlecard-reveal
 - rules: stat-bars-and-fills, ambient-glow-bloom, spring-pop-entrance
@@ -267,7 +282,7 @@ désormais.
 - start: 110
 - poster: 116s
 - transition_in: morph (ondes → bande)
-- status: outline
+- status: built
 - src: compositions/s8-signature.html
 - blueprint: logo-assemble-lockup (Brand_Outro) + titlecard-reveal (tenue finale)
 - rules: svg-path-draw, ambient-glow-bloom
@@ -275,12 +290,12 @@ désormais.
 
 **Concept.** Le fil d'or se pose : il devient le pays. Résolution calme.
 
-- 110,0–112,5 : trois ondes dorées ralentissent et se posent en bas du cadre, puis prennent
+- 110,0–112,5 : les ondes dorées ralentissent et se posent en bas du cadre, puis prennent
   leurs couleurs : rouge #CE1126, jaune #F5C518, vert #009A44 (bande pleine largeur, 14px,
   dans la marge basse).
-- 111,0–113,5 : emblème centré (x 960, y≈400, 300px), il se reforme en une respiration ; sous
-  lui « FUTURA-Kouroussa » (Playfair 900 96px + Montserrat 700).
-- 114,0 : signature Playfair 700 60px `ivory` : « L'or de Kouroussa, au service de
+- 111,5 (« Futura Kouroussa ») : logo officiel centré (main + pépite + rayons, 400px), puis
+  « FUTURA - Kouroussa » (Roboto 700 92px) et le nom complet en deux lignes.
+- 113,9 : signature Playfair 700 62px `ivory` : « L'or de Kouroussa, au service de
   Kouroussa. » (« Kouroussa » final en `gold`).
 - 116,5–120,0 : tenue finale, seul le halo respire ; la musique se résout.
 - **Pourquoi** : rappel du message, mot de la fin.

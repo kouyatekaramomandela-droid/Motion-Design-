@@ -1,0 +1,235 @@
+{
+ "chimes": [
+  {
+   "t": 0.8,
+   "label": "s1 first particle"
+  },
+  {
+   "t": 1.9,
+   "label": "s1 particles multiply"
+  },
+  {
+   "t": 2.3,
+   "label": "s1"
+  },
+  {
+   "t": 2.8,
+   "label": "s1"
+  },
+  {
+   "t": 5.6,
+   "label": "s1 counter lands"
+  },
+  {
+   "t": 14.0,
+   "label": "s2 mine 1"
+  },
+  {
+   "t": 14.7,
+   "label": "s2 mine 2"
+  },
+  {
+   "t": 15.4,
+   "label": "s2 mine 3"
+  },
+  {
+   "t": 58.6,
+   "label": "s5 burst"
+  },
+  {
+   "t": 58.75,
+   "label": "s5 burst"
+  },
+  {
+   "t": 58.9,
+   "label": "s5 burst"
+  },
+  {
+   "t": 61.0,
+   "label": "s5 nugget lands in the hand"
+  },
+  {
+   "t": 88.6,
+   "label": "s6 validation 1"
+  },
+  {
+   "t": 90.1,
+   "label": "s6 validation 2"
+  },
+  {
+   "t": 91.6,
+   "label": "s6 validation 3"
+  },
+  {
+   "t": 96.6,
+   "label": "s7 water"
+  },
+  {
+   "t": 97.35,
+   "label": "s7 school"
+  },
+  {
+   "t": 98.35,
+   "label": "s7 health post"
+  },
+  {
+   "t": 111.5,
+   "label": "s8 logo"
+  }
+ ],
+ "whooshes": [
+  {
+   "t": 8.9,
+   "label": "s1\u2192s2",
+   "reversed": false
+  },
+  {
+   "t": 26.8,
+   "label": "s2\u2192s3",
+   "reversed": false
+  },
+  {
+   "t": 40.8,
+   "label": "s3\u2192s4",
+   "reversed": false
+  },
+  {
+   "t": 55.6,
+   "label": "s4 convergence (inhale)",
+   "reversed": true
+  },
+  {
+   "t": 73.4,
+   "label": "s5\u2192s6",
+   "reversed": false
+  },
+  {
+   "t": 93.6,
+   "label": "s6\u2192s7",
+   "reversed": false
+  },
+  {
+   "t": 108.6,
+   "label": "s7\u2192s8",
+   "reversed": false
+  }
+ ],
+ "chords": [
+  {
+   "t": 0.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 14.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 19.0,
+   "chord": "F"
+  },
+  {
+   "t": 23.5,
+   "chord": "C"
+  },
+  {
+   "t": 28.0,
+   "chord": "Gm"
+  },
+  {
+   "t": 31.5,
+   "chord": "Dm"
+  },
+  {
+   "t": 35.0,
+   "chord": "Bb"
+  },
+  {
+   "t": 38.5,
+   "chord": "Asus"
+  },
+  {
+   "t": 42.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 46.0,
+   "chord": "Bb"
+  },
+  {
+   "t": 50.0,
+   "chord": "C"
+  },
+  {
+   "t": 54.0,
+   "chord": "A"
+  },
+  {
+   "t": 58.5,
+   "chord": "F"
+  },
+  {
+   "t": 62.5,
+   "chord": "C"
+  },
+  {
+   "t": 66.5,
+   "chord": "Dm"
+  },
+  {
+   "t": 70.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 75.0,
+   "chord": "F"
+  },
+  {
+   "t": 78.3,
+   "chord": "C"
+  },
+  {
+   "t": 81.6,
+   "chord": "Dm"
+  },
+  {
+   "t": 85.0,
+   "chord": "Bb"
+  },
+  {
+   "t": 88.3,
+   "chord": "F"
+  },
+  {
+   "t": 91.6,
+   "chord": "C"
+  },
+  {
+   "t": 95.0,
+   "chord": "F"
+  },
+  {
+   "t": 98.7,
+   "chord": "Bb"
+  },
+  {
+   "t": 102.4,
+   "chord": "Dm"
+  },
+  {
+   "t": 106.1,
+   "chord": "C"
+  },
+  {
+   "t": 110.0,
+   "chord": "Bb"
+  },
+  {
+   "t": 112.5,
+   "chord": "C"
+  },
+  {
+   "t": 115.0,
+   "chord": "F"
+  }
+ ]
+}

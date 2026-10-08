@@ -1,0 +1,35 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/film.css">
+<style>html,body{margin:0;background:#0F1A25} .frame{width:1080px;height:1920px} </style>
+<script src="../assets/particles.js"></script></head>
+<body><div class="frame fk v"><style>
+  .s1 .s1-glow { width: 1200px; height: 1200px; left: 360px; top: -130px; }
+  .s1 canvas.s1-particles { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+  .s1 .s1-stack { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+  .s1 .s1-count { font-size: 250px; }
+  .s1 .s1-unit { margin-top: 6px; font-family: var(--sans); font-weight: 700; font-size: 62px; letter-spacing: 0.02em; color: var(--ivory); }
+  .s1 .s1-per { margin-top: 16px; }
+  .s1 .s1-line { margin: 64px auto 0; max-width: 1300px; }
+  .v .s1 .s1-glow { left: -60px; top: 360px; }
+  .v .s1 .s1-stack { top: 540px; }
+  .v .s1 .s1-count { font-size: 230px; }
+  .v .s1 .s1-unit { font-size: 66px; }
+  .v .s1 .s1-line { max-width: 900px; font-size: 46px; }
+</style>
+<div class="scene s1">
+  <div class="bg"></div>
+  <div class="glow s1-glow"></div>
+  <canvas class="s1-particles"></canvas>
+  <div class="s1-stack">
+    <div class="s1-count t-hero"><span class="s1-num">2,35</span></div>
+    <div class="s1-unit">milliards USD</div>
+    <div class="s1-per t-label">par an</div>
+    <div class="s1-line t-body">C’est la valeur de l’or extrait chaque année à Kouroussa.</div>
+  </div>
+  <div class="vignette"></div>
+</div>
+</div><script>
+var c=document.querySelector('canvas.s1-particles');c.width=1080;c.height=1920;
+var f=FK.makeField(2600,11);
+FK.drawGenesis(c.getContext('2d'),f,7.0,{cx:540.0,cy:787.1999999999999,maxR:520,line:{x0:230,x1:930,y:540}});
+</script></body></html>

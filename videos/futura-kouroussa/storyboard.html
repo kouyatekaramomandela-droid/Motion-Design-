@@ -1,0 +1,87 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FUTURA-Kouroussa — storyboard v2</title>
+<style>
+@font-face{font-family:"Playfair Display";font-weight:700;src:url("assets/fonts/playfair-display-latin-700-normal.woff2")}
+@font-face{font-family:"Montserrat";font-weight:400;src:url("assets/fonts/montserrat-latin-400-normal.woff2")}
+@font-face{font-family:"Montserrat";font-weight:700;src:url("assets/fonts/montserrat-latin-700-normal.woff2")}
+:root{--night:#1A2A3A;--deep:#0F1A25;--raised:#22364A;--gold:#F5C518;--gold-deep:#B8860B;--ivory:#F3EEE3;--dim:#A9B3BC}
+body{margin:0;background:var(--deep);color:var(--ivory);font-family:Montserrat,sans-serif}
+header{padding:40px 48px 8px;display:flex;flex-wrap:wrap;align-items:baseline;gap:18px 28px}
+h1{margin:0;font-family:"Playfair Display",serif;font-size:44px;letter-spacing:-.01em}
+h1 small{font-family:Montserrat;font-size:16px;font-weight:700;color:var(--gold);letter-spacing:.14em;margin-left:10px}
+.dek{color:var(--dim);font-size:17px;max-width:760px;line-height:1.5}
+.tag{margin-left:auto;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:8px 14px;border-radius:999px}
+h2{margin:34px 48px 14px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;padding:0 48px}
+.grid.v{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:1100px){.grid{grid-template-columns:1fr} .grid.v{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cell{margin:0;background:var(--raised);border-radius:14px;overflow:hidden;border:1px solid rgba(184,134,11,.35)}
+.cell img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--night)}
+.cell.v img{aspect-ratio:9/16}
+figcaption{padding:14px 18px 18px}
+.lab{display:flex;justify-content:space-between;gap:12px;font-size:13px;letter-spacing:.08em}
+.lab b{color:var(--gold)} .lab span{color:var(--dim)}
+figcaption p{margin:10px 0 12px;font-size:14.5px;line-height:1.5;color:#DCD7CC}
+figcaption p b{color:var(--ivory)}
+.chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--gold);border:1.5px solid var(--gold-deep);border-radius:999px;padding:5px 11px}
+.panel{background:var(--raised);border-radius:14px;padding:22px 24px;border:1px solid rgba(184,134,11,.35);font-size:14.5px;line-height:1.55}
+.panel h3{margin:0 0 10px;font-family:"Playfair Display",serif;font-size:24px}
+.panel ol{margin:0;padding-left:0;list-style:none} .panel li{margin:6px 0} .panel li b{color:var(--gold);margin-right:8px}
+.sw{display:inline-flex;align-items:center;gap:8px;margin:4px 14px 4px 0} .sw i{width:22px;height:22px;border-radius:6px;display:inline-block;border:1px solid rgba(255,255,255,.2)}
+footer{padding:30px 48px 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<header><h1>FUTURA-Kouroussa — storyboard<small>v2</small></h1>
+<span class="tag">1920×1080 + 1080×1920 · 30 fps · 120 s · 8 scènes</span>
+<p class="dek">« L’or de Kouroussa doit servir Kouroussa. » Images fixes au moment clé de chaque scène, avec les vraies polices, couleurs, textes, sous-titres et le logo du client. Le mouvement arrive à l’étape suivante.</p></header>
+<h2>Master 16:9</h2>
+<div class="grid"><figure class="cell" id="frame-01">
+  <img src="sketches/png/01-h.jpg" alt="Scène 01 — L’accroche">
+  <figcaption><div class="lab"><b>01 · L’ACCROCHE</b><span>s1 · 0:00–0:10</span></div>
+  <p><b>D’abord :</b> une seule étincelle d’or au centre (0,8 s), puis des milliers en spirale ; le compteur monte jusqu’à 2,35 et tient 3,8 s.</p><span class="chip">→ morphing → les particules se rangent en trait doré</span></figcaption></figure><figure class="cell" id="frame-02a">
+  <img src="sketches/png/02a-h.jpg" alt="Scène 02a — Le territoire · carte">
+  <figcaption><div class="lab"><b>02a · LE TERRITOIRE · CARTE</b><span>s2 · 0:10–0:17</span></div>
+  <p><b>D’abord :</b> le trait doré dessine le contour de la préfecture et le Niger ; les trois mines s’allument une à une (tintements à 14,0 / 14,7 / 15,4 s).</p><span class="chip">→ plongée caméra vers le terrain</span></figcaption></figure><figure class="cell" id="frame-02b">
+  <img src="sketches/png/02b-h.jpg" alt="Scène 02b — Le territoire · le manque">
+  <figcaption><div class="lab"><b>02b · LE TERRITOIRE · LE MANQUE</b><span>s2 · 0:17–0:28</span></div>
+  <p><b>D’abord :</b> les trois vignettes se dessinent au trait gris, sans or, sur « l’eau potable », « des écoles », « des centres de santé ».</p><span class="chip">→ la carte revient, les mines émettent des lignes</span></figcaption></figure><figure class="cell" id="frame-03">
+  <img src="sketches/png/03-h.jpg" alt="Scène 03 — Le fil perdu">
+  <figcaption><div class="lab"><b>03 · LE FIL PERDU</b><span>s3 · 0:28–0:42</span></div>
+  <p><b>D’abord :</b> les lignes d’or quittent les mines et s’effacent vers l’horizon ; le point d’interrogation se forme dans le vide. Plan fixe 38,5–41,5 s.</p><span class="chip">→ une page glisse et recouvre le vide</span></figcaption></figure><figure class="cell" id="frame-04">
+  <img src="sketches/png/04-h.jpg" alt="Scène 04 — Le socle légal">
+  <figcaption><div class="lab"><b>04 · LE SOCLE LÉGAL</b><span>s4 · 0:42–0:58</span></div>
+  <p><b>D’abord :</b> le livre s’ouvre en 3D ; l’Article 130 s’illumine (« 1 % » lisible 8 s), puis l’Article 165 ; les lignes reviennent et convergent au centre.</p><span class="chip">→ tout converge en un point lumineux</span></figcaption></figure><figure class="cell" id="frame-05">
+  <img src="sketches/png/05-h.jpg" alt="Scène 05 — La naissance">
+  <figcaption><div class="lab"><b>05 · LA NAISSANCE</b><span>s5 · 0:58–1:15</span></div>
+  <p><b>D’abord :</b> le point éclate ; la pépite se pose, la main se dessine dessous, les cinq rayons jaillissent ; le nom s’écrit lettre par lettre ; badges sur « OHADA » et « mission parlementaire ».</p><span class="chip">→ le halo de la pépite devient l’anneau</span></figcaption></figure><figure class="cell" id="frame-06a">
+  <img src="sketches/png/06a-h.jpg" alt="Scène 06a — Gouvernance · collèges">
+  <figcaption><div class="lab"><b>06a · GOUVERNANCE · COLLÈGES</b><span>s6 · 1:15–1:21</span></div>
+  <p><b>D’abord :</b> l’anneau se divise en quatre arcs proportionnels ; la légende arrive ligne par ligne ; l’arc 40 % s’illumine sur « la majorité ».</p><span class="chip">→ la légende bascule, les cercles de contrôle s’allument</span></figcaption></figure><figure class="cell" id="frame-06b">
+  <img src="sketches/png/06b-h.jpg" alt="Scène 06b — Gouvernance · contrôles">
+  <figcaption><div class="lab"><b>06b · GOUVERNANCE · CONTRÔLES</b><span>s6 · 1:21–1:35</span></div>
+  <p><b>D’abord :</b> trois cercles s’allument sur « encadrée », « auditée », « publique » ; un jeton d’or franchit trois paliers « Validé » (88,6 / 90,1 / 91,6 s). Apogée musicale.</p><span class="chip">→ le jeton retombe sur le territoire</span></figcaption></figure><figure class="cell" id="frame-07">
+  <img src="sketches/png/07-h.jpg" alt="Scène 07 — Les résultats">
+  <figcaption><div class="lab"><b>07 · LES RÉSULTATS</b><span>s7 · 1:35–1:50</span></div>
+  <p><b>D’abord :</b> le triptyque revient aux places de la scène 2 et s’allume en or sur « l’eau », « les écoles », « les soins » ; puis il monte, le tableau de bord glisse dessous (tendances, aucune valeur).</p><span class="chip">→ les courbes s’aplanissent en ondes</span></figcaption></figure><figure class="cell" id="frame-08">
+  <img src="sketches/png/08-h.jpg" alt="Scène 08 — La signature">
+  <figcaption><div class="lab"><b>08 · LA SIGNATURE</b><span>s8 · 1:50–2:00</span></div>
+  <p><b>D’abord :</b> les ondes d’or se posent en bande rouge-jaune-vert ; le logo se reforme, centré ; la signature arrive à 113,9 s et tient jusqu’à 120 s.</p><span class="chip">→ fin — tenue sur le logo</span></figcaption></figure>
+<div class="panel"><h3>Carte des transitions</h3><ol><li><b>01</b> morphing → les particules se rangent en trait doré</li><li><b>02a</b> plongée caméra vers le terrain</li><li><b>02b</b> la carte revient, les mines émettent des lignes</li><li><b>03</b> une page glisse et recouvre le vide</li><li><b>04</b> tout converge en un point lumineux</li><li><b>05</b> le halo de la pépite devient l’anneau</li><li><b>06a</b> la légende bascule, les cercles de contrôle s’allument</li><li><b>06b</b> le jeton retombe sur le territoire</li><li><b>07</b> les courbes s’aplanissent en ondes</li><li><b>08</b> fin — tenue sur le logo</li></ol><p style="color:var(--dim);margin:12px 0 0">Aucune coupe sèche : chaque passage est un morphing du fil d’or.</p></div>
+<div class="panel"><h3>Charte</h3>
+<div><span class="sw"><i style="background:#1A2A3A"></i>#1A2A3A</span><span class="sw"><i style="background:#B8860B"></i>#B8860B</span><span class="sw"><i style="background:#F5C518"></i>#F5C518</span><span class="sw"><i style="background:#F3EEE3"></i>#F3EEE3</span><span class="sw"><i style="background:#CE1126"></i>#CE1126 (fin)</span><span class="sw"><i style="background:#009A44"></i>#009A44 (fin)</span></div>
+<p>Titres : Playfair Display 700/900 · Textes et sous-titres : Montserrat 400/700 · Logo : Roboto (fidèle au logo fourni).</p>
+<p style="color:var(--dim)">Interdits : visages, noms ou logos de sociétés, pelleteuses, foules, chiffres de résultats non cités, coupes sèches.</p></div>
+</div>
+<h2>Déclinaison verticale 9:16</h2>
+<div class="grid v"><figure class="cell v" id="frame-01-v"><img src="sketches/png/01-v.jpg" alt="Scène 01 vertical">
+  <figcaption><div class="lab"><b>01</b><span>0:00–0:10</span></div></figcaption></figure><figure class="cell v" id="frame-02a-v"><img src="sketches/png/02a-v.jpg" alt="Scène 02a vertical">
+  <figcaption><div class="lab"><b>02a</b><span>0:10–0:17</span></div></figcaption></figure><figure class="cell v" id="frame-02b-v"><img src="sketches/png/02b-v.jpg" alt="Scène 02b vertical">
+  <figcaption><div class="lab"><b>02b</b><span>0:17–0:28</span></div></figcaption></figure><figure class="cell v" id="frame-03-v"><img src="sketches/png/03-v.jpg" alt="Scène 03 vertical">
+  <figcaption><div class="lab"><b>03</b><span>0:28–0:42</span></div></figcaption></figure><figure class="cell v" id="frame-04-v"><img src="sketches/png/04-v.jpg" alt="Scène 04 vertical">
+  <figcaption><div class="lab"><b>04</b><span>0:42–0:58</span></div></figcaption></figure><figure class="cell v" id="frame-05-v"><img src="sketches/png/05-v.jpg" alt="Scène 05 vertical">
+  <figcaption><div class="lab"><b>05</b><span>0:58–1:15</span></div></figcaption></figure><figure class="cell v" id="frame-06a-v"><img src="sketches/png/06a-v.jpg" alt="Scène 06a vertical">
+  <figcaption><div class="lab"><b>06a</b><span>1:15–1:21</span></div></figcaption></figure><figure class="cell v" id="frame-06b-v"><img src="sketches/png/06b-v.jpg" alt="Scène 06b vertical">
+  <figcaption><div class="lab"><b>06b</b><span>1:21–1:35</span></div></figcaption></figure><figure class="cell v" id="frame-07-v"><img src="sketches/png/07-v.jpg" alt="Scène 07 vertical">
+  <figcaption><div class="lab"><b>07</b><span>1:35–1:50</span></div></figcaption></figure><figure class="cell v" id="frame-08-v"><img src="sketches/png/08-v.jpg" alt="Scène 08 vertical">
+  <figcaption><div class="lab"><b>08</b><span>1:50–2:00</span></div></figcaption></figure></div>
+<footer>Carte : silhouette stylisée, positions des trois mines indicatives. Logo : redessiné en vectoriel d’après l’image fournie (remplaçable par le fichier source). Projet : videos/futura-kouroussa.</footer>
+</body></html>

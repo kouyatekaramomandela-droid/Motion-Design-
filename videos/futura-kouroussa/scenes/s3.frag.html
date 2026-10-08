@@ -1,0 +1,26 @@
+<style>
+  .s3 .s3-map { position: absolute; left: 110px; top: 250px; width: 420px; opacity: .85; }
+  .s3 .s3-map svg { width: 100%; height: auto; display: block; }
+  .s3 svg.s3-lines { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .s3 .s3-horizon { position: absolute; left: 560px; right: 0; top: 560px; height: 2px;
+    background: linear-gradient(90deg, rgba(169,179,188,.35), rgba(169,179,188,0)); }
+  .s3 svg.s3-qmark { position: absolute; left: 1250px; top: 90px; width: 300px; height: 460px; overflow: visible; }
+  .s3 .s3-q { position: absolute; left: 960px; width: 860px; top: 600px; text-align: center; font-size: 84px; }
+  .v .s3 .s3-map { left: 80px; top: 140px; width: 560px; }
+  .v .s3 svg.s3-lines { width: 1080px; height: 1920px; }
+  .v .s3 .s3-horizon { left: 0; top: 1010px; }
+  .v .s3 svg.s3-qmark { left: 390px; top: 560px; width: 300px; height: 460px; }
+  .v .s3 .s3-q { left: 54px; width: 972px; top: 1080px; font-size: 80px; }
+</style>
+<div class="scene s3">
+  <div class="bg"></div>
+  <div class="s3-map">{{svg:map}}</div>
+  <div class="s3-horizon"></div>
+  {{lines:s3}}
+  <svg class="s3-qmark" viewBox="0 0 300 460" fill="none" stroke-linecap="round">
+    <path class="q-path" d="M62 128 C62 46 238 40 238 132 C238 206 150 214 150 300" stroke="#B8860B" stroke-width="16" stroke-dasharray="0 30"/>
+    <circle class="q-dot" cx="150" cy="392" r="12" fill="#F5C518"/>
+  </svg>
+  <div class="s3-q t-display">Où va la part des communautés&nbsp;?</div>
+  <div class="vignette"></div>
+</div>

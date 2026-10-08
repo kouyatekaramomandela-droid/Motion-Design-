@@ -1,0 +1,43 @@
+<style>
+  .s6 .s6-glow { width: 1100px; height: 1100px; left: 10px; top: -60px; }
+  .s6 svg.s6-ring { position: absolute; left: 160px; top: 90px; width: 800px; height: 800px; overflow: visible; }
+  .s6 .s6-legend { position: absolute; left: 1060px; top: 200px; width: 780px; }
+  .s6 .row { display: flex; align-items: center; gap: 30px; height: 132px; }
+  .s6 .row .pct { width: 230px; font-family: var(--serif); font-weight: 900; font-size: 84px; letter-spacing: -0.02em; }
+  .s6 .row .lab { font-weight: 700; font-size: 36px; line-height: 1.2; }
+  .s6 .ctl-row { display: flex; align-items: center; gap: 30px; height: 150px; }
+  .s6 .ctl-row .ico { width: 74px; height: 74px; flex: none; border-radius: 50%; border: 3px solid var(--gold); display: grid; place-items: center; }
+  .s6 .ctl-row .lab { font-weight: 700; font-size: 38px; }
+  .s6 .ctl-row .sub { margin-top: 6px; font-size: 28px; color: var(--ivory-dim); }
+  .s6 .ok { margin-left: auto; font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--night);
+    background: var(--gold); border-radius: 999px; padding: 10px 18px; }
+  .v .s6 .s6-glow { left: -10px; top: 120px; }
+  .v .s6 svg.s6-ring { left: 90px; top: 110px; width: 900px; height: 900px; }
+  .v .s6 .s6-legend { left: 54px; width: 972px; top: 1030px; }
+  .v .s6 .colleges { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  .v .s6 .row { height: 150px; gap: 18px; }
+  .v .s6 .row .pct { width: auto; font-size: 72px; }
+  .v .s6 .row .lab { font-size: 32px; }
+  .v .s6 .ctl-row { height: 110px; gap: 22px; }
+  .v .s6 .ctl-row .ico { width: 62px; height: 62px; }
+  .v .s6 .ctl-row .lab { font-size: 34px; }
+  .v .s6 .ctl-row .sub { font-size: 26px; }
+</style>
+<div class="scene s6">
+  <div class="bg"></div>
+  <div class="lattice"></div>
+  <div class="glow s6-glow"></div>
+  {{ring:s6}}
+  <div class="s6-legend colleges">
+    <div class="row r1"><span class="pct" style="color:#F5C518">40&#8239;%</span><span class="lab">Collectivités locales</span></div>
+    <div class="row r2"><span class="pct" style="color:#F8DF7A">25&#8239;%</span><span class="lab">Société civile</span></div>
+    <div class="row r3"><span class="pct" style="color:#D9A520">25&#8239;%</span><span class="lab">Partenaires institutionnels</span></div>
+    <div class="row r4"><span class="pct" style="color:#C9CFD4">10&#8239;%</span><span class="lab">Partenaires miniers</span></div>
+  </div>
+  <div class="s6-legend controls">
+    <div class="ctl-row c1"><span class="ico">{{icon:board}}</span><div><div class="lab">Conseil d’administration</div><div class="sub">Chaque décision encadrée</div></div><span class="ok">Validé</span></div>
+    <div class="ctl-row c2"><span class="ico">{{icon:audit}}</span><div><div class="lab">Comité d’audit</div><div class="sub">Chaque dépense auditée</div></div><span class="ok">Validé</span></div>
+    <div class="ctl-row c3"><span class="ico">{{icon:ledger}}</span><div><div class="lab">Commissaire aux comptes</div><div class="sub">Comptabilité publique</div></div><span class="ok">Validé</span></div>
+  </div>
+  <div class="vignette"></div>
+</div>

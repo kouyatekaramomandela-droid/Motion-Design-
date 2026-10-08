@@ -1,0 +1,135 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/film.css">
+<style>html,body{margin:0;background:#0F1A25} .frame{width:1920px;height:1080px} </style>
+<script src="../assets/particles.js"></script></head>
+<body><div class="frame fk h"><style>
+  .s7 .s7-glow { width: 1500px; height: 900px; left: 210px; top: -200px; }
+  .s7 .s7-tri { position: absolute; left: 210px; right: 210px; top: 50px; display: flex; justify-content: space-between; }
+  .s7 .tri { width: 400px; margin: 0; text-align: center; }
+  .s7 .tri svg { width: 100%; height: auto; display: block; }
+  .s7 .tri figcaption { margin-top: 12px; color: var(--gold); }
+  .s7 .s7-dash { position: absolute; left: 250px; right: 250px; top: 440px; height: 310px; padding: 30px 46px; border-radius: 18px;
+    background: rgba(34,54,74,.92); border: 2px solid rgba(184,134,11,.55); }
+  .s7 .dash-head { display: flex; align-items: center; justify-content: space-between; }
+  .s7 .chip { font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--night); background: var(--gold); border-radius: 999px; padding: 10px 20px; }
+  .s7 .dash-cols { margin-top: 26px; display: flex; gap: 46px; }
+  .s7 .kpi { flex: 1; }
+  .s7 .kpi .lab { font-weight: 700; font-size: 28px; }
+  .s7 .kpi svg { margin-top: 14px; width: 100%; height: 150px; display: block; overflow: visible; }
+  .s7 .s7-title { position: absolute; left: 96px; right: 96px; top: 790px; text-align: center; font-size: 64px; }
+  .v .s7 .s7-glow { left: -210px; top: 0; }
+  .v .s7 .s7-tri { left: 54px; right: 54px; top: 90px; flex-direction: column; gap: 22px; }
+  .v .s7 .tri { width: 100%; display: flex; align-items: center; gap: 32px; text-align: left; }
+  .v .s7 .tri svg { width: 330px; flex: none; }
+  .v .s7 .tri figcaption { margin-top: 0; font-size: 32px; }
+  .v .s7 .s7-dash { left: 54px; right: 54px; top: 900px; height: 300px; padding: 26px 30px; }
+  .v .s7 .dash-cols { gap: 26px; }
+  .v .s7 .kpi .lab { font-size: 24px; min-height: 60px; }
+  .v .s7 .kpi svg { height: 120px; }
+  .v .s7 .s7-title { left: 54px; right: 54px; top: 1225px; font-size: 62px; }
+</style>
+<div class="scene s7">
+  <div class="bg"></div>
+  <div class="glow s7-glow"></div>
+  <div class="s7-tri lit-state">
+    <figure class="tri tri1"><svg class="ill ill-forage" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <g class="ink" stroke="#A9B3BC">
+    <path class="ground" d="M24 262 H376"/>
+    <path class="apron" d="M112 262 L128 240 H272 L288 262"/>
+    <rect class="column" x="182" y="112" width="34" height="128" rx="5"/>
+    <rect class="pump-head" x="170" y="96" width="58" height="20" rx="6"/>
+    <path class="handle" d="M226 104 L320 72"/>
+    <circle class="grip" cx="325" cy="70" r="6"/>
+    <path class="spout" d="M182 150 H154 Q144 150 144 160 V168"/>
+    <path class="bucket" d="M118 206 L126 240 H164 L172 206"/>
+    <ellipse class="bucket-rim" cx="145" cy="206" rx="27" ry="6"/>
+    <path class="bucket-handle" d="M120 205 Q145 178 170 205"/>
+  </g>
+  <g class="ink figure" stroke="#A9B3BC">
+    <circle cx="300" cy="148" r="14"/>
+    <path d="M286 172 Q300 163 314 172 L328 250 H272 Z"/>
+    <path d="M287 186 L264 214"/>
+    <rect x="242" y="214" width="26" height="32" rx="4"/>
+  </g>
+  <g class="lit water" stroke="none">
+    <path class="stream" d="M140 170 C141 182 142 194 142 204 H148 C148 194 149 182 150 170 Z" fill="#F8DF7A"/>
+    <ellipse class="fill" cx="145" cy="207" rx="22" ry="4.5" fill="#F5C518"/>
+    <circle class="drop d1" cx="126" cy="226" r="3.5" fill="#F8DF7A"/>
+    <circle class="drop d2" cx="168" cy="222" r="3" fill="#F8DF7A"/>
+    <circle class="drop d3" cx="160" cy="236" r="2.5" fill="#F8DF7A"/>
+  </g>
+</svg>
+<figcaption class="t-label">Eau potable</figcaption></figure>
+    <figure class="tri tri2"><svg class="ill ill-classe" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <g class="ink" stroke="#A9B3BC">
+    <path class="ground" d="M24 262 H376"/>
+    <rect class="board" x="92" y="30" width="216" height="114" rx="6"/>
+    <path class="ledge" d="M100 152 H300"/>
+    <path class="desk1" d="M58 214 H182 M70 214 V262 M170 214 V262"/>
+    <path class="desk2" d="M218 214 H342 M230 214 V262 M330 214 V262"/>
+  </g>
+  <g class="ink figure" stroke="#A9B3BC">
+    <circle cx="118" cy="166" r="13"/>
+    <path d="M100 212 Q100 186 118 184 Q136 186 136 212"/>
+    <path class="arm-down" d="M134 196 L148 210"/>
+  </g>
+  <g class="lit chalk" stroke="#F8DF7A" stroke-width="4">
+    <path d="M118 62 H196"/><path d="M118 86 H250"/><path d="M118 110 H176"/>
+    <path d="M226 104 L246 120 L278 70"/>
+  </g>
+  <g class="lit kit" stroke="#F5C518" stroke-width="4">
+    <rect x="142" y="196" width="30" height="12" rx="2"/>
+    <rect x="146" y="184" width="26" height="12" rx="2"/>
+    <path d="M238 210 L262 200 L286 210 L262 214 Z"/>
+    <circle cx="316" cy="188" r="13"/><path d="M303 188 H329 M316 175 Q324 188 316 201 Q308 188 316 175"/>
+    <path d="M316 201 V212"/>
+  </g>
+  <g class="lit arm-up" stroke="#F8DF7A" stroke-width="5">
+    <path d="M134 194 L146 160"/>
+  </g>
+</svg>
+<figcaption class="t-label">École équipée</figcaption></figure>
+    <figure class="tri tri3"><svg class="ill ill-sante" viewBox="0 0 400 300" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <g class="lit solar" stroke="#F5C518" stroke-width="4">
+    <path d="M226 98 L240 74 H296 L282 98 Z"/><path d="M254 74 L240 98 M268 74 L254 98 M282 74 L268 98 M233 86 H289"/>
+  </g>
+  <g class="ink" stroke="#A9B3BC">
+    <path class="ground" d="M24 262 H376"/>
+    <rect class="roof" x="84" y="98" width="232" height="14" rx="3"/>
+    <rect class="wall" x="96" y="112" width="208" height="150"/>
+    <rect class="door" x="182" y="192" width="36" height="70" rx="2"/>
+    <rect class="win1" x="116" y="140" width="46" height="38" rx="2"/>
+    <rect class="win2" x="238" y="140" width="46" height="38" rx="2"/>
+    <circle class="sign" cx="200" cy="152" r="18"/>
+    <path class="cross" d="M200 142 V162 M190 152 H210"/>
+    <path class="lamp-arm" d="M174 196 H160 V204"/>
+    <circle class="bulb" cx="160" cy="212" r="7"/>
+  </g>
+  <g class="ink figure" stroke="#A9B3BC">
+    <circle cx="50" cy="194" r="12"/>
+    <path d="M37 214 Q50 205 63 214 L72 262 H28 Z"/>
+    <circle cx="80" cy="224" r="8"/>
+    <path d="M71 238 Q80 232 89 238 L90 262 H70 Z"/>
+  </g>
+  <g class="lit light" stroke="none">
+    <circle class="halo" cx="160" cy="212" r="26" fill="#F5C518" opacity="0.28"/>
+    <circle class="bulb-on" cx="160" cy="212" r="6" fill="#F8DF7A"/>
+    <rect class="win1-on" x="119" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
+    <rect class="win2-on" x="241" y="143" width="40" height="32" fill="#F5C518" opacity="0.55"/>
+    <path class="cross-on" d="M200 142 V162 M190 152 H210" stroke="#F5C518" stroke-width="5"/>
+  </g>
+</svg>
+<figcaption class="t-label">Centre de santé</figcaption></figure>
+  </div>
+  <div class="s7-dash">
+    <div class="dash-head"><span class="t-label">Tableau de bord</span><span class="chip">Suivi public</span></div>
+    <div class="dash-cols">
+      <div class="kpi k1"><div class="lab">Accès à l’eau</div><svg class="spark sp1" viewBox="0 0 300 150" preserveAspectRatio="none" fill="none"><path class="grid" d="M0 140 H300 M0 95 H300 M0 50 H300" stroke="#A9B3BC" stroke-width="1" opacity="0.25"/><path class="area" d="M0 118 L40 112 L80 104 L120 96 L160 78 L200 70 L240 48 L280 34 L280 140 L0 140 Z" fill="#F5C518" opacity="0.14"/><path class="line" d="M0 118 L40 112 L80 104 L120 96 L160 78 L200 70 L240 48 L280 34" stroke="#F5C518" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="arrow" d="M266 38 L284 28 L274 48" stroke="#F8DF7A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="kpi k2"><div class="lab">Équipement scolaire</div><svg class="spark sp2" viewBox="0 0 300 150" preserveAspectRatio="none" fill="none"><path class="grid" d="M0 140 H300 M0 95 H300 M0 50 H300" stroke="#A9B3BC" stroke-width="1" opacity="0.25"/><path class="area" d="M0 124 L40 120 L80 106 L120 100 L160 84 L200 66 L240 58 L280 38 L280 140 L0 140 Z" fill="#F5C518" opacity="0.14"/><path class="line" d="M0 124 L40 120 L80 106 L120 100 L160 84 L200 66 L240 58 L280 38" stroke="#F5C518" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="arrow" d="M266 42 L284 32 L274 52" stroke="#F8DF7A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="kpi k3"><div class="lab">Accès aux soins</div><svg class="spark sp3" viewBox="0 0 300 150" preserveAspectRatio="none" fill="none"><path class="grid" d="M0 140 H300 M0 95 H300 M0 50 H300" stroke="#A9B3BC" stroke-width="1" opacity="0.25"/><path class="area" d="M0 120 L40 116 L80 108 L120 88 L160 82 L200 62 L240 50 L280 30 L280 140 L0 140 Z" fill="#F5C518" opacity="0.14"/><path class="line" d="M0 120 L40 116 L80 108 L120 88 L160 82 L200 62 L240 50 L280 30" stroke="#F5C518" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="arrow" d="M266 34 L284 24 L274 44" stroke="#F8DF7A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+  </div>
+  <div class="s7-title t-display">Chaque franc suivi. <span class="gold">Chaque résultat visible.</span></div>
+  <div class="vignette"></div>
+</div>
+</div></body></html>
