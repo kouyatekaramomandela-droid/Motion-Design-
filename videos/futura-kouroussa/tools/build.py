@@ -149,7 +149,7 @@ def root_file(fmt, hosts):
       <div id="bg" class="clip" data-start="0" data-duration="{FILM}" data-track-index="0"></div>
 {chr(10).join(hosts)}
       <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-duration="{FILM}" data-track-index="10" data-volume="1"></audio>
-      <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="{FILM}" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="{FILM}" data-track-index="11" data-volume="0.8"></audio>
       <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="{FILM}" data-track-index="12" data-volume="0.6"></audio>
     </div>
     <script>
@@ -182,7 +182,7 @@ print("built:", [s for s in slots()])
 import subprocess
 CARVE = ROOT.parent.parent / ".claude/skills/hyperframes-audio/scripts/carve.mjs"
 if CARVE.exists() and (ROOT / "node_modules/@hyperframes/core").exists():
-    subprocess.run(["node", str(CARVE), "--comp", "index.html", "--bed", "music", "--voice", "vo"], cwd=ROOT, check=True,
+    subprocess.run(["node", str(CARVE), "--comp", "index.html", "--bed", "music", "--voice", "vo", "--strength", "0.5"], cwd=ROOT, check=True,
                    stdout=subprocess.DEVNULL)
     carved = re.search(r'<audio id="music"[^>]*></audio>', (ROOT / "index.html").read_text()).group(0)
     vidx = VPROJ / "index.html"
