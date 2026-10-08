@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "futura-kouroussa-60s"
+      ],
+      "updated_at": "2026-10-08T19:14:10.904Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "futura-kouroussa-60s"
+      ],
+      "updated_at": "2026-10-08T19:14:10.959Z"
+    },
+    "voice": {
+      "value": "elevenlabs:Vza9yt3uSx3RXnRx6YfI",
+      "confirmed_in": [
+        "futura-kouroussa-60s"
+      ],
+      "updated_at": "2026-10-08T19:14:11.011Z"
+    },
+    "language": {
+      "value": "fr",
+      "confirmed_in": [
+        "futura-kouroussa-60s"
+      ],
+      "updated_at": "2026-10-08T19:14:11.067Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "futura-kouroussa-60s"
+      ],
+      "updated_at": "2026-10-08T19:14:11.120Z"
+    }
+  },
+  "sightings": {}
+}

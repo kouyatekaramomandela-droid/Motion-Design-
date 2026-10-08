@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill ill-map" viewBox="0 0 600 520" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path class="hatch" d="M150 150 L470 150 M120 210 L500 210 M100 270 L510 270 M95 330 L505 330 M120 390 L470 390 M180 450 L390 450" stroke="#B8860B" stroke-width="1.5" opacity="0.25"/>
+  <path class="outline" d="M210 40 C260 30 300 58 332 48 C382 36 424 72 442 110 C470 152 522 170 526 222 C530 272 500 302 505 342 C510 392 470 430 420 446 C370 462 330 490 280 480 C230 470 208 440 170 430 C120 418 80 390 76 340 C72 290 96 260 90 220 C84 170 110 140 140 110 C165 84 172 50 210 40 Z" stroke="#F5C518" stroke-width="4"/>
+  <path class="river" d="M96 500 C150 440 196 392 236 352 C276 312 300 276 338 236 C376 196 420 150 486 70" stroke="#F8DF7A" stroke-width="3" opacity="0.8"/>
+  <g class="town"><rect x="279" y="267" width="12" height="12" fill="#F3EEE3" transform="rotate(45 285 273)"/></g>
+  <g class="mines" fill="#F5C518">
+    <circle class="mine m1" cx="186" cy="182" r="9"/>
+    <circle class="mine m2" cx="392" cy="176" r="9"/>
+    <circle class="mine m3" cx="366" cy="384" r="9"/>
+  </g>
+  <g class="mine-rings" stroke="#F5C518" stroke-width="2.5">
+    <circle class="ring r1" cx="186" cy="182" r="22" opacity="0.6"/>
+    <circle class="ring r2" cx="392" cy="176" r="22" opacity="0.6"/>
+    <circle class="ring r3" cx="366" cy="384" r="22" opacity="0.6"/>
+  </g>
+</svg>

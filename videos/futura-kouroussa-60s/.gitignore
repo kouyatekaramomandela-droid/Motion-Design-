@@ -1,0 +1,6 @@
+assets/audio/*.wav
+assets/audio/*.tmp.wav
+sketches/jobs.json
+node_modules/
+renders/
+.hyperframes/
