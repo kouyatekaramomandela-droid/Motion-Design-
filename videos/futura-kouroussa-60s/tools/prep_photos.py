@@ -1,29 +1,38 @@
 """Prepare the client photos for the 2.5D shots.
 
-For each photo: remove company markings (inpainted, so no blur smudge remains), upscale x2 (Lanczos +
-light unsharp), then split it into planes for parallax:
+For each photo: remove company markings and watermarks (inpainted, so no blur smudge remains; a sign's
+small print is blurred), upscale to ~2200 px wide (Lanczos + light unsharp), then split it into planes:
   <name>.jpg      cleaned full photo (upscaled)
   <name>-fg.png   nearest plane with soft alpha (GrabCut seeded by hand-drawn polygons: bridge,
                   machines, the well's basin, the two people at the meeting table)
   <name>-bg.jpg   clean plate: the subject region inpainted so the background can slide under it
 
-Usage: python tools/prep_photos.py   (from the project root; needs opencv-python-headless, numpy)
+Usage: python tools/prep_photos.py [NAME ...]   (from the project root; needs opencv-python-headless, numpy)
+       without names, every photo listed in POLYS is processed
 """
-import os
+import os, sys
 import cv2
 import numpy as np
 
 SRC, OUT, WORK = "assets/photos/src", "assets/photos", "assets/photos/work"
-SCALE = 2
+TARGET_W = 2200  # upscaled width of every photo
 
 # Company markings to erase, in source pixels: (x0, y0, x1, y1, mode)
-#   "dark" inpaints only the dark lettering inside the box, "all" inpaints the whole box.
+#   "dark" inpaints only the dark lettering inside the box, "all" inpaints the whole box (ellipse),
+#   "blur" makes the small print of a sign unreadable without removing the sign,
+#   ("patch", dx) covers the box with the same-size patch dx pixels away (uniform ground texture).
 MARKINGS = {
     "R-reunion": [(818, 362, 906, 390, "dark"),   # lettering on the hi-vis vest
                   (92, 248, 160, 298, "all")],    # badge on the white cap
     "C-mine": [(486, 248, 538, 272, "dark"),      # brand on the excavator boom
                (566, 272, 606, 300, "dark"),      # lettering on the arm
                (668, 338, 700, 362, "dark")],     # plate on the counterweight
+    "C2-usine": [(126, 843, 254, 967, "patch", 170),     # ministry seal watermark
+                 (683, 876, 862, 992, "patch", -200),    # programme logo watermark
+                 (1218, 863, 1374, 950, "patch", -180),  # « Guinée » logo watermark
+                 (900, 984, 1185, 1000, "patch", -330),  # coloured band of the source graphic
+                 (276, 626, 482, 774, "blur")],   # safety sign (small print)
+    "S-hopital": [(842, 429, 871, 453, "all")],   # motorbike number plate
 }
 
 # Nearest-plane seeds (source pixels) for GrabCut: one or more polygons per photo.
@@ -46,12 +55,35 @@ POLYS = {
                    (770, 520), (762, 470), (775, 410), (810, 385), (860, 378), (910, 390), (945, 430),
                    (950, 480), (940, 530), (915, 565), (905, 580), (960, 600), (1010, 635), (1020, 660),
                    (1020, 768)]],
+    # batch 2026-10-08: the foreground ground or field is the near plane, the rest slides behind it
+    "C2-usine": [[(0, 1000), (0, 846), (150, 838), (300, 845), (430, 850), (560, 845), (700, 850),
+                  (860, 855), (1000, 860), (1100, 880), (1200, 905), (1300, 925), (1400, 930),
+                  (1500, 940), (1500, 1000)]],
+    "B-village": [[(0, 721), (0, 560), (200, 532), (400, 512), (520, 506), (700, 496), (900, 472),
+                   (1100, 452), (1100, 721)]],
+    "S-hopital": [[(0, 810), (0, 505), (210, 528), (420, 506), (610, 492), (830, 490), (1100, 480),
+                   (1100, 810)]],
+    "K-classe": [[(0, 802), (0, 480), (120, 470), (230, 520), (330, 560), (420, 600), (520, 540),
+                  (700, 540), (930, 560), (1100, 520), (1100, 802)]],
 }
 
 
 def erase_markings(img, boxes):
     mask = np.zeros(img.shape[:2], np.uint8)
-    for x0, y0, x1, y1, mode in boxes:
+    img = img.copy()
+    for x0, y0, x1, y1, mode, *arg in boxes:
+        if mode == "patch":
+            dx, pad = arg[0], 14
+            h, w = img.shape[:2]
+            ya, yb, xa, xb = max(0, y0 - pad), min(h, y1 + pad), max(0, x0 - pad), min(w, x1 + pad)
+            m = np.zeros((yb - ya, xb - xa), np.float32)
+            cv2.ellipse(m, ((x0 + x1) // 2 - xa, (y0 + y1) // 2 - ya), ((x1 - x0) // 2 + 4, (y1 - y0) // 2 + 4), 0, 0, 360, 1, -1)
+            m = cv2.GaussianBlur(m, (0, 0), 6)[..., None]
+            src = img[ya:yb, xa + dx:xb + dx].astype(np.float32)
+            img[ya:yb, xa:xb] = (img[ya:yb, xa:xb] * (1 - m) + src * m).astype(np.uint8)
+    for x0, y0, x1, y1, mode, *arg in boxes:
+        if mode in ("blur", "patch"):
+            continue
         if mode == "all":
             cv2.ellipse(mask, ((x0 + x1) // 2, (y0 + y1) // 2), ((x1 - x0) // 2, (y1 - y0) // 2), 0, 0, 360, 255, -1)
         else:
@@ -59,6 +91,13 @@ def erase_markings(img, boxes):
             dark = (roi < np.percentile(roi, 60) - 18).astype(np.uint8) * 255
             mask[y0:y1, x0:x1] = cv2.dilate(dark, np.ones((3, 3), np.uint8), iterations=2)
     out = cv2.inpaint(img, mask, 6, cv2.INPAINT_TELEA)
+    for x0, y0, x1, y1, mode, *arg in boxes:
+        if mode == "blur":
+            soft = cv2.GaussianBlur(out, (0, 0), 4.5)
+            m = np.zeros(img.shape[:2], np.float32)
+            m[y0:y1, x0:x1] = 1
+            m = cv2.GaussianBlur(m, (0, 0), 3)[..., None]
+            out = (out * (1 - m) + soft * m).astype(np.uint8)
     # soften the repaired patches so the fill grain matches its surroundings
     soft = cv2.GaussianBlur(out, (0, 0), 1.6)
     m = cv2.GaussianBlur(cv2.dilate(mask, np.ones((5, 5), np.uint8)), (0, 0), 3)[..., None] / 255.0
@@ -66,7 +105,8 @@ def erase_markings(img, boxes):
 
 
 def upscale(img, interp=cv2.INTER_LANCZOS4):
-    big = cv2.resize(img, None, fx=SCALE, fy=SCALE, interpolation=interp)
+    k = max(1.0, TARGET_W / img.shape[1])
+    big = cv2.resize(img, None, fx=k, fy=k, interpolation=interp)
     if big.ndim == 3 and big.shape[2] == 3:
         blur = cv2.GaussianBlur(big, (0, 0), 1.4)
         big = cv2.addWeighted(big, 1.25, blur, -0.25, 0)
@@ -116,7 +156,7 @@ def clean_plate(img, alpha):
 
 def main():
     os.makedirs(WORK, exist_ok=True)
-    for name in ["A-pont-niger", "C-mine", "D-forage", "R-reunion"]:
+    for name in sys.argv[1:] or list(POLYS):
         img = cv2.imread(f"{SRC}/{name}.jpg")
         if name in MARKINGS:
             img = erase_markings(img, MARKINGS[name])
