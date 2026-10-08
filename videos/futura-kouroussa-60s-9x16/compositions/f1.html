@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="f1v">
+<style>
+/* FUTURA-Kouroussa 60 s — shared film styles. Three canvases: .h 1920x1080, .v 1080x1920, .s 1080x1080.
+   Rule: no text under 36 px on any canvas. */
+:root {
+  --black: #070C12;
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .scene { position: absolute; inset: 0; overflow: hidden; }
+.fk .fill { position: absolute; inset: 0; }
+.fk .black { position: absolute; inset: 0; background: var(--black); }
+.fk .navy { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 80% at 50% 42%, #1F3246 0%, #1A2A3A 52%, #0F1A25 100%); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk canvas.dust { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* photo plates (2.5D): a clean background plate under the detached nearest plane */
+.fk .plate { position: absolute; overflow: visible; }
+.fk .plate .pl { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+.fk .shot { position: absolute; inset: 0; overflow: hidden; }
+
+/* light sweep: a soft diagonal band of light crossing a shot (design element) */
+.fk .sweep { position: absolute; top: -20%; bottom: -20%; width: 34%; left: -40%; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(100deg, rgba(245,197,24,0) 0%, rgba(248,223,122,0.20) 45%, rgba(255,244,200,0.32) 50%, rgba(248,223,122,0.20) 55%, rgba(245,197,24,0) 100%);
+  transform: skewX(-14deg); }
+
+/* gold line used by the wipes between shots */
+.fk .wipe-line { position: absolute; background: linear-gradient(180deg, rgba(248,223,122,0), var(--gold-pale) 20%, var(--gold) 50%, var(--gold-pale) 80%, rgba(248,223,122,0));
+  box-shadow: 0 0 24px rgba(245,197,24,0.75), 0 0 6px rgba(255,244,200,0.9); }
+.fk .wipe-line.vert { top: -2%; bottom: -2%; width: 5px; left: 0; }
+.fk .wipe-line.horz { left: -2%; right: -2%; height: 5px; top: 0;
+  background: linear-gradient(90deg, rgba(248,223,122,0), var(--gold-pale) 20%, var(--gold) 50%, var(--gold-pale) 80%, rgba(248,223,122,0)); }
+
+/* type roles (all >= 36 px) */
+.fk .t-title { font-family: var(--serif); font-weight: 700; letter-spacing: -0.015em; line-height: 1.04; color: var(--ivory); }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums tabular-nums; }
+.fk .t-text { font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.25; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .gold { color: var(--gold); }
+.fk .rule { display: block; width: 120px; height: 5px; border-radius: 3px; background: var(--gold); margin-bottom: 26px; }
+.fk .shade { position: absolute; pointer-events: none; }
+
+/* illustration line style */
+.fk .ill { overflow: visible; display: block; width: 100%; height: auto; }
+.fk .dry .ill .ink, .fk .dry.ill .ink { stroke: var(--ivory-dim); }
+.fk .dry .lit { opacity: 0; }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; min-height: 76px; padding: 12px 34px; border: 3px solid var(--gold);
+  border-radius: 40px; font-family: var(--sans); font-weight: 700; font-size: 38px; line-height: 1.2; color: var(--gold);
+  background: rgba(15, 26, 37, 0.72); }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 50px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1480px; padding: 12px 30px 14px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 42px; line-height: 1.28; color: var(--ivory);
+  background: rgba(7, 12, 18, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 60px; right: 60px; bottom: auto; top: 1500px; }
+.v .fk-caption span { max-width: 960px; font-size: 46px; }
+.s .fk-caption { left: 50px; right: 50px; bottom: 36px; }
+.s .fk-caption span { max-width: 980px; font-size: 40px; }
+
+/* format switches: one composition, three canvases */
+.h .only-v, .h .only-s, .v .only-h, .v .only-s, .s .only-h, .s .only-v { display: none; }
+.h .not-h, .v .not-v, .s .not-s { display: none; }
+
+#f1v-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="f1v-root" data-composition-id="f1v" data-width="1080" data-height="1920" data-duration="5.6">
+<div class="fk v">
+<style>
+  .f1 .f1-shot { --r: 0%; -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 var(--r), rgba(0,0,0,0) calc(var(--r) + 28%));
+    mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 var(--r), rgba(0,0,0,0) calc(var(--r) + 28%)); }
+  .f1 .f1-spark { position: absolute; width: 420px; height: 420px; left: 750px; top: 330px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,250,230,1) 0%, rgba(248,223,122,0.95) 5%, rgba(245,197,24,0.5) 14%, rgba(245,197,24,0.12) 34%, rgba(245,197,24,0) 62%); }
+  .v .f1 .f1-spark { left: 330px; top: 750px; }
+  .s .f1 .f1-spark { left: 330px; top: 330px; }
+  .f1 .f1-title { position: absolute; left: 0; right: 0; top: 446px; text-align: center; white-space: nowrap;
+    filter: drop-shadow(0 6px 0 rgba(7,12,18,0.55)) drop-shadow(0 0 30px rgba(245,197,24,0.35)); }
+  .f1 .f1-word { font-family: var(--serif); font-weight: 900; font-size: 168px; letter-spacing: 0.06em; line-height: 1; }
+  .f1 .f1-word span { display: inline-block; color: transparent; -webkit-background-clip: text; background-clip: text;
+    background-image: linear-gradient(100deg, rgba(255,255,255,0) 40%, rgba(255,250,228,0.95) 50%, rgba(255,255,255,0) 60%),
+      linear-gradient(180deg, #FCEBA6 0%, #F5C518 46%, #B8860B 100%);
+    background-size: 400% 100%, 100% 100%; background-repeat: no-repeat; background-position: 130% 0%, 0% 0%; }
+  .v .f1 .f1-title { top: 896px; }
+  .v .f1 .f1-word { font-size: 124px; }
+  .s .f1 .f1-title { top: 474px; }
+  .s .f1 .f1-word { font-size: 128px; }
+</style>
+<div class="scene f1">
+  <div class="black"></div>
+  <div class="shot f1-shot">
+    <div class="fill cam">
+      <div class="plate a1" style="left:-310.4px;top:0.0px;width:1546.1px;height:1920.0px" data-ox="850.4" data-oy="864.0"><img class="pl pl-bg" src="assets/photos/graded/A-pont-niger.land-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/A-pont-niger.land-fg.png" alt=""></div>
+      <div class="fill dark"><div class="plate a1d" style="left:-310.4px;top:0.0px;width:1546.1px;height:1920.0px" data-ox="850.4" data-oy="864.0"><img class="pl pl-bg" src="assets/photos/graded/A-pont-niger.land-dark-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/A-pont-niger.land-dark-fg.png" alt=""></div></div>
+    </div>
+  </div>
+  <canvas class="dust"></canvas>
+  <div class="f1-spark"></div>
+  <div class="f1-title">
+    <div class="f1-word">KOUROUSSA</div>
+  </div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+/* FUTURA-Kouroussa — deterministic gold particle field.
+   Every draw is a pure function of (t, options): no Math.random, no clocks, seek-safe. */
+(function () {
+  var FK = (window.FK = window.FK || {});
+
+  FK.rng = function (seed) {
+    var s = seed >>> 0;
+    return function () {
+      s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  };
+
+  var GOLDS = ["245,197,24", "248,223,122", "184,134,11", "245,197,24", "243,238,227"];
+
+  function smooth(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function easeOut(x) { x = Math.max(0, Math.min(1, x)); return 1 - Math.pow(1 - x, 3); }
+
+  /* Build the particle table once (index-seeded). */
+  FK.makeField = function (n, seed) {
+    var r = FK.rng(seed || 7), out = [];
+    for (var i = 0; i < n; i++) {
+      out.push({
+        k: i / n,
+        ang: i * 2.39996323 + r() * 0.35,
+        rad: Math.sqrt(r()),
+        size: 0.7 + Math.pow(r(), 3) * 2.6,
+        tw: 0.6 + r() * 2.2,
+        ph: r() * 6.283,
+        col: GOLDS[(r() * GOLDS.length) | 0],
+        drift: 0.4 + r() * 1.2,
+        lx: r(),
+        ly: r() - 0.5
+      });
+    }
+    return out;
+  };
+
+  /* Scene 1: one spark (0.8 s) → thousands (1.6–4.6 s) → slow drift → collapse into a
+     horizontal gold thread (9.0–10.4 s) that becomes the map outline of scene 2.
+     o: {cx, cy, maxR, line:{x0,x1,y}} in canvas pixels. */
+  FK.drawGenesis = function (ctx, field, t, o) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    if (t < 0.8) return;
+    ctx.globalCompositeOperation = "lighter";
+    var n = field.length;
+    var born = t < 1.6 ? 1 : Math.max(1, Math.floor(n * Math.pow(Math.min(1, (t - 1.6) / 3.0), 1.7)));
+    var collapse = smooth((t - 9.0) / 1.3);
+    for (var i = 0; i < born; i++) {
+      var p = field[i];
+      var b = 1.6 + 3.0 * Math.pow(p.k, 1 / 1.7);
+      var age = Math.max(0, t - b);
+      var grow = easeOut(age / 2.2);
+      var ang = p.ang + 0.18 * grow + 0.012 * age * p.drift;
+      var rr = o.maxR * p.rad * grow + 7 * age * p.drift;
+      var x = o.cx + Math.cos(ang) * rr * 1.25;
+      var y = o.cy + Math.sin(ang) * rr * 0.82;
+      if (collapse > 0) {
+        var tx = o.line.x0 + (o.line.x1 - o.line.x0) * p.lx;
+        var ty = o.line.y + p.ly * 6 * (1 - collapse);
+        x += (tx - x) * collapse; y += (ty - y) * collapse;
+      }
+      var a = (0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * p.tw + p.ph))) * Math.min(1, age * 3 + (i === 0 ? 1 : 0));
+      var s = p.size * (i === 0 ? 1.8 : 1);
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, s, 0, 6.2832); ctx.fill();
+    }
+    // the first spark keeps a halo while it is alone
+    if (t < 3.2) {
+      var ha = t < 1.0 ? (t - 0.8) / 0.2 : 1 - smooth((t - 2.0) / 1.2);
+      var g = ctx.createRadialGradient(o.cx, o.cy, 0, o.cx, o.cy, 90);
+      g.addColorStop(0, "rgba(248,223,122," + (0.9 * ha).toFixed(3) + ")");
+      g.addColorStop(0.15, "rgba(245,197,24," + (0.45 * ha).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(245,197,24,0)");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(o.cx, o.cy, 90, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+
+  /* Ambient dust (any scene): slow drifting motes, pure function of t. */
+  FK.drawDust = function (ctx, field, t, alpha) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "lighter";
+    for (var i = 0; i < field.length; i++) {
+      var p = field[i];
+      var x = ((p.lx * W + t * 9 * p.drift) % (W + 40)) - 20;
+      var y = ((p.rad * H - t * 5 * p.drift) % H + H) % H;
+      var a = alpha * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * p.tw * 0.6 + p.ph)));
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, p.size * 0.8, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+})();
+const FMT = "v", W = 1080, H = 1920, T0 = 0.0, DUR = 5.6;
+const root = document.querySelector('[data-composition-id="f1v"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v, s) => (FMT === "h" ? h : FMT === "v" ? v : s === undefined ? v : s);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitWords(el) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap"; w.textContent = p;
+          frag.appendChild(w); out.push(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+// 2.5D camera on a photo plate: background and nearest plane scale/drift at different rates
+// around the plate's focus point. a/b = [scale, x, y] at start/end for the background; the
+// nearest plane gets the same move amplified by k (depth).
+function camera(plate, t0, dur, a, b, k, ease) {
+  const ox = plate.dataset.ox + "px " + plate.dataset.oy + "px";
+  const bg = plate.querySelector(".pl-bg"), fg = plate.querySelector(".pl-fg");
+  const fs = (s) => 1 + (s - 1) * k;
+  tl.fromTo(bg, { scale: a[0], x: a[1], y: a[2], transformOrigin: ox },
+    { scale: b[0], x: b[1], y: b[2], duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
+  tl.fromTo(fg, { scale: fs(a[0]), x: a[1] * k, y: a[2] * k, transformOrigin: ox },
+    { scale: fs(b[0]), x: b[1] * k, y: b[2] * k, duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
+}
+// F1 — Ouverture (0–5.6). Black, a gold spark (0.4 s), the bridge over the Niger opens out of it in a
+// slow plunge (2.5D: the bridge comes up faster than the water), KOUROUSSA is engraved in gold.
+const plate = $(".plate.a1"), dark = $(".plate.a1d");
+const spark = $(".f1-spark");
+tl.fromTo(spark, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }, at(0.4));
+tl.to(spark, { scale: 2.8, opacity: 0, duration: 1.3, ease: "power2.in" }, at(0.95));
+// the photo opens out of the spark through a soft-edged light (mask radius is a CSS variable)
+tl.fromTo($(".f1-shot"), { "--r": "0%" }, { "--r": "90%", duration: 2.0, ease: "power2.inOut" }, at(0.7));
+camera(plate, at(0.75), 4.85, [1.34, 0, -30], [1.04, 0, 0], 1.7, "power2.out");
+camera(dark, at(0.75), 4.85, [1.34, 0, -30], [1.04, 0, 0], 1.7, "power2.out");
+const po = plate.dataset.ox + "px " + plate.dataset.oy + "px";
+const cam = $(".cam"), co = (parseFloat(plate.style.left) + parseFloat(plate.dataset.ox)) + "px " + (parseFloat(plate.style.top) + parseFloat(plate.dataset.oy)) + "px";
+tl.fromTo(cam, { rotation: -4, transformOrigin: co }, { rotation: 0, duration: 4.85, ease: "power2.out", transformOrigin: co }, at(0.75));
+// the photo darkens under the title: cross-fade to the same grade at exposure -0.6 (baked)
+tl.fromTo($(".dark"), { opacity: 0 }, { opacity: 1, duration: 1.4, ease: "sine.inOut" }, at(1.4));
+
+// gold particles born from the spark
+const cv = $("canvas.dust"); cv.width = W; cv.height = H;
+const ctx = cv.getContext("2d");
+const field = FK.makeField(pick(1500, 1300, 1100), 5);
+const geo = { cx: W / 2, cy: H / 2, maxR: pick(760, 620, 560), line: { x0: 0, x1: W, y: H / 2 } };
+const P = { t: 0 };
+tl.fromTo(P, { t: 0 }, { t: DUR, duration: DUR, ease: "none", onUpdate: () => FK.drawGenesis(ctx, field, P.t + 0.4, geo) }, 0);
+tl.to(cv, { opacity: 0.4, duration: 1.6, ease: "sine.inOut" }, at(2.4));
+
+// KOUROUSSA: letters set in gold one by one, then a light sweep runs through them
+const toSpans = (el) => {
+  const txt = el.textContent; el.textContent = "";
+  return Array.from(txt).map((ch) => { const s = document.createElement("span"); s.textContent = ch; el.appendChild(s); return s; });
+};
+const letters = toSpans($(".f1-word"));
+tl.fromTo(letters, { opacity: 0, y: 26, scale: 1.25, filter: "blur(8px)" },
+  { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.7, ease: "power3.out", stagger: 0.07 }, at(1.5));
+tl.fromTo(letters, { backgroundPosition: "130% 0%, 0% 0%" }, { backgroundPosition: "-30% 0%, 0% 0%", duration: 0.7, ease: "sine.inOut", stagger: 0.08 }, at(2.6));
+tl.fromTo($(".f1-title"), { scale: 1, transformOrigin: "50% 50%" }, { scale: 1.04, duration: 3.6, ease: "none", transformOrigin: "50% 50%" }, at(2.0));
+
+window.__timelines["f1v"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

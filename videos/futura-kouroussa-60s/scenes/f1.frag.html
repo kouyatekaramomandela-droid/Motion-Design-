@@ -1,0 +1,33 @@
+<style>
+  .f1 .f1-shot { --r: 0%; -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 var(--r), rgba(0,0,0,0) calc(var(--r) + 28%));
+    mask-image: radial-gradient(circle at 50% 50%, #000 0%, #000 var(--r), rgba(0,0,0,0) calc(var(--r) + 28%)); }
+  .f1 .f1-spark { position: absolute; width: 420px; height: 420px; left: 750px; top: 330px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,250,230,1) 0%, rgba(248,223,122,0.95) 5%, rgba(245,197,24,0.5) 14%, rgba(245,197,24,0.12) 34%, rgba(245,197,24,0) 62%); }
+  .v .f1 .f1-spark { left: 330px; top: 750px; }
+  .s .f1 .f1-spark { left: 330px; top: 330px; }
+  .f1 .f1-title { position: absolute; left: 0; right: 0; top: 446px; text-align: center; white-space: nowrap;
+    filter: drop-shadow(0 6px 0 rgba(7,12,18,0.55)) drop-shadow(0 0 30px rgba(245,197,24,0.35)); }
+  .f1 .f1-word { font-family: var(--serif); font-weight: 900; font-size: 168px; letter-spacing: 0.06em; line-height: 1; }
+  .f1 .f1-word span { display: inline-block; color: transparent; -webkit-background-clip: text; background-clip: text;
+    background-image: linear-gradient(100deg, rgba(255,255,255,0) 40%, rgba(255,250,228,0.95) 50%, rgba(255,255,255,0) 60%),
+      linear-gradient(180deg, #FCEBA6 0%, #F5C518 46%, #B8860B 100%);
+    background-size: 400% 100%, 100% 100%; background-repeat: no-repeat; background-position: 130% 0%, 0% 0%; }
+  .v .f1 .f1-title { top: 896px; }
+  .v .f1 .f1-word { font-size: 124px; }
+  .s .f1 .f1-title { top: 474px; }
+  .s .f1 .f1-word { font-size: 128px; }
+</style>
+<div class="scene f1">
+  <div class="black"></div>
+  <div class="shot f1-shot">
+    <div class="fill cam">
+      {{plate:a1|A-pont-niger|land|h=0.56,0.42,1.0|v=0.55,0.45,1.0|s=0.56,0.45,1.0}}
+      <div class="fill dark">{{plate:a1d|A-pont-niger|land-dark|h=0.56,0.42,1.0|v=0.55,0.45,1.0|s=0.56,0.45,1.0}}</div>
+    </div>
+  </div>
+  <canvas class="dust"></canvas>
+  <div class="f1-spark"></div>
+  <div class="f1-title">
+    <div class="f1-word">KOUROUSSA</div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill ill-marche" viewBox="0 0 400 300" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g class="layer back">
+    <g class="ink" stroke="#B8860B" stroke-width="3">
+      <path class="awning1" d="M24 128 H156 L166 150 H14 Z"/>
+      <path class="awning1-scallop" d="M14 150 Q24 160 34 150 Q44 160 54 150 Q64 160 74 150 Q84 160 94 150 Q104 160 114 150 Q124 160 134 150 Q144 160 154 150 Q160 156 166 150"/>
+      <path class="awning2" d="M246 128 H378 L388 150 H236 Z"/>
+      <path class="awning2-scallop" d="M236 150 Q246 160 256 150 Q266 160 276 150 Q286 160 296 150 Q306 160 316 150 Q326 160 336 150 Q346 160 356 150 Q366 160 376 150 Q382 156 388 150"/>
+    </g>
+  </g>
+  <g class="layer mid">
+    <g class="ink" stroke="#F8DF7A">
+      <path class="ground" d="M8 262 H392"/>
+      <path class="stall1" d="M28 150 V262 M152 150 V262 M18 212 H162"/>
+      <path class="stall2" d="M250 150 V262 M374 150 V262 M240 212 H384"/>
+      <circle class="seller1-head" cx="90" cy="172" r="11"/>
+      <path class="seller1" d="M74 210 Q74 190 90 186 Q106 190 106 210"/>
+      <circle class="seller2-head" cx="318" cy="170" r="11"/>
+      <path class="seller2" d="M302 210 Q302 188 318 184 Q334 188 334 210"/>
+    </g>
+  </g>
+  <g class="lit produce" stroke="none">
+    <circle cx="40" cy="204" r="7" fill="#F5C518"/><circle cx="54" cy="204" r="7" fill="#F5C518"/><circle cx="47" cy="193" r="7" fill="#F8DF7A"/>
+    <circle cx="124" cy="204" r="7" fill="#F5C518"/><circle cx="138" cy="204" r="7" fill="#F8DF7A"/>
+    <rect x="258" y="196" width="22" height="14" rx="3" fill="#F5C518"/>
+    <circle cx="350" cy="204" r="7" fill="#F5C518"/><circle cx="364" cy="204" r="7" fill="#F8DF7A"/><circle cx="357" cy="193" r="7" fill="#F5C518"/>
+  </g>
+  <g class="layer front">
+    <g class="ink figure carrier" stroke="#F5C518">
+      <path class="basin" d="M180 126 H232 L224 140 H188 Z"/>
+      <path class="arm" d="M196 172 L192 142 M218 172 L222 142"/>
+      <circle cx="206" cy="156" r="12"/>
+      <path class="body" d="M190 176 Q206 166 222 176 L234 262 H178 Z"/>
+    </g>
+    <g class="ink figure child" stroke="#F5C518">
+      <circle cx="246" cy="212" r="8"/>
+      <path d="M236 230 Q246 223 256 230 L260 262 H232 Z"/>
+      <path d="M237 236 L226 222"/>
+    </g>
+  </g>
+</svg>

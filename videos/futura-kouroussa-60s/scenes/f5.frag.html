@@ -1,0 +1,54 @@
+<style>
+  .f5 .base { opacity: 0; }
+  .f5 .office { opacity: 0; }
+  .f5 svg.converge { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+  .f5 .lockup { position: absolute; left: 0; right: 0; top: 90px; text-align: center; }
+  .f5 .emb { width: 380px; margin: 0 auto; }
+  .f5 .emb svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .f5 .word { margin-top: 14px; font-size: 88px; line-height: 1.05; }
+  .f5 .badges { position: absolute; left: 80px; right: 80px; top: 650px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .f5 .cards { position: absolute; left: 110px; right: 110px; top: 470px; display: flex; justify-content: space-between; }
+  .f5 .card { width: 520px; padding: 34px 20px 30px; text-align: center; border-radius: 24px; background: rgba(7,12,18,0.72); }
+  .f5 .card .ic { width: 140px; height: 140px; margin: 0 auto 26px; border-radius: 50%; background: rgba(7,12,18,0.55); }
+  .f5 .card .ic svg { width: 100%; height: 100%; display: block; stroke: #A9B3BC; }
+  .f5 .card .lbl { font-family: var(--sans); font-weight: 700; font-size: 46px; line-height: 1.18; color: var(--ivory); }
+  .f5 .card .lbl span { display: block; }
+  .v .f5 .lockup { top: 250px; }
+  .v .f5 .emb { width: 560px; }
+  .v .f5 .word { font-size: 92px; }
+  .v .f5 .badges { left: 60px; right: 60px; top: 960px; flex-direction: column; align-items: center; gap: 24px; }
+  .v .f5 .badge { text-align: center; justify-content: center; max-width: 960px; }
+  .v .f5 .cards { left: 70px; right: 70px; top: 560px; flex-direction: column; justify-content: flex-start; gap: 60px; }
+  .v .f5 .card { width: auto; display: flex; align-items: center; gap: 40px; text-align: left; padding: 24px 30px; }
+  .v .f5 .card .ic { margin: 0; flex: 0 0 170px; width: 170px; height: 170px; }
+  .v .f5 .card .lbl { font-size: 54px; }
+  .s .f5 .lockup { top: 56px; }
+  .s .f5 .emb { width: 300px; }
+  .s .f5 .word { font-size: 72px; margin-top: 10px; }
+  .s .f5 .badges { left: 40px; right: 40px; top: 470px; flex-direction: column; align-items: center; gap: 22px; }
+  .s .f5 .badge { text-align: center; justify-content: center; max-width: 1000px; }
+  .s .f5 .cards { left: 100px; right: 100px; top: 290px; flex-direction: column; justify-content: flex-start; gap: 34px; }
+  .s .f5 .card { width: auto; display: flex; align-items: center; gap: 36px; text-align: left; padding: 14px 26px; }
+  .s .f5 .card .ic { margin: 0; flex: 0 0 140px; width: 140px; height: 140px; }
+  .s .f5 .card .lbl { font-size: 46px; }
+</style>
+<div class="scene f5">
+  <div class="navy base"></div>
+  <div class="shot office">
+    {{plate:r1|R-reunion|office|h=0.5,0.45,1.06|v=0.42,0.5,1.04|s=0.5,0.5,1.06}}
+  </div>
+  <svg class="converge"></svg>
+  <div class="lockup">
+    <div class="emb">{{svg:emblem}}</div>
+    <div class="word t-brand">FUTURA - Kouroussa</div>
+  </div>
+  <div class="badges">
+    <span class="badge b1">Issu du rapport de mission parlementaire</span>
+    <span class="badge b2">Société Anonyme OHADA</span>
+  </div>
+  <div class="cards">
+    <div class="card k1"><div class="ic">{{icon:suivi}}</div><div class="lbl"><span>Contributions</span><span>suivies</span></div></div>
+    <div class="card k2"><div class="ic">{{icon:audit}}</div><div class="lbl"><span>Comptes</span><span>audités</span></div></div>
+    <div class="card k3"><div class="ic">{{icon:communautes}}</div><div class="lbl"><span>Communautés</span><span>associées</span></div></div>
+  </div>
+</div>

@@ -1,0 +1,243 @@
+{
+ "chimes": [
+  {
+   "t": 0.4,
+   "label": "f1 spark"
+  },
+  {
+   "t": 18.9,
+   "label": "f3 mine 1"
+  },
+  {
+   "t": 19.4,
+   "label": "f3 mine 2"
+  },
+  {
+   "t": 19.9,
+   "label": "f3 mine 3"
+  },
+  {
+   "t": 23.3,
+   "label": "f3 counter lands"
+  },
+  {
+   "t": 42.0,
+   "label": "f5 logo complete"
+  },
+  {
+   "t": 46.98,
+   "label": "f5 contributions"
+  },
+  {
+   "t": 48.6,
+   "label": "f5 audits"
+  },
+  {
+   "t": 49.84,
+   "label": "f5 communities"
+  },
+  {
+   "t": 52.4,
+   "label": "f6 water"
+  },
+  {
+   "t": 53.2,
+   "label": "f6 school"
+  },
+  {
+   "t": 54.0,
+   "label": "f6 health post"
+  },
+  {
+   "t": 55.6,
+   "label": "f6 logo"
+  }
+ ],
+ "whooshes": [
+  {
+   "t": 4.5,
+   "label": "f1\u2192f2",
+   "reversed": false
+  },
+  {
+   "t": 7.6,
+   "label": "f2 river\u2192quarter",
+   "reversed": false
+  },
+  {
+   "t": 10.1,
+   "label": "f2 quarter\u2192market",
+   "reversed": false
+  },
+  {
+   "t": 14.5,
+   "label": "f2\u2192f3",
+   "reversed": false
+  },
+  {
+   "t": 27.4,
+   "label": "f3\u2192f4 gold lines leave",
+   "reversed": false
+  },
+  {
+   "t": 37.4,
+   "label": "f4\u2192f5 lines return",
+   "reversed": true
+  },
+  {
+   "t": 51.5,
+   "label": "f5\u2192f6",
+   "reversed": false
+  },
+  {
+   "t": 54.9,
+   "label": "f6 band",
+   "reversed": false
+  }
+ ],
+ "duck_db": -15.0,
+ "duck_segments": [
+  [
+   2.147,
+   3.094
+  ],
+  [
+   5.613,
+   7.361
+  ],
+  [
+   8.08,
+   9.517
+  ],
+  [
+   10.58,
+   14.261
+  ],
+  [
+   15.758,
+   18.261
+  ],
+  [
+   19.802,
+   20.906
+  ],
+  [
+   21.902,
+   24.828
+  ],
+  [
+   28.313,
+   52.006
+  ],
+  [
+   55.813,
+   58.783
+  ]
+ ],
+ "chords": [
+  {
+   "t": 0.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 5.0,
+   "chord": "F"
+  },
+  {
+   "t": 7.5,
+   "chord": "C"
+  },
+  {
+   "t": 10.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 12.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 15.0,
+   "chord": "F"
+  },
+  {
+   "t": 17.5,
+   "chord": "C"
+  },
+  {
+   "t": 20.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 22.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 25.0,
+   "chord": "F"
+  },
+  {
+   "t": 26.25,
+   "chord": "C"
+  },
+  {
+   "t": 28.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 30.5,
+   "chord": "Gm"
+  },
+  {
+   "t": 33.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 35.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 37.0,
+   "chord": "Asus"
+  },
+  {
+   "t": 38.0,
+   "chord": "F"
+  },
+  {
+   "t": 40.5,
+   "chord": "C"
+  },
+  {
+   "t": 43.0,
+   "chord": "Dm"
+  },
+  {
+   "t": 45.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 48.0,
+   "chord": "F"
+  },
+  {
+   "t": 50.5,
+   "chord": "C"
+  },
+  {
+   "t": 52.0,
+   "chord": "F"
+  },
+  {
+   "t": 54.5,
+   "chord": "Bb"
+  },
+  {
+   "t": 56.0,
+   "chord": "C"
+  },
+  {
+   "t": 57.5,
+   "chord": "F"
+  }
+ ]
+}

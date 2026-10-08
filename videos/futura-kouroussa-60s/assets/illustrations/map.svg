@@ -4,13 +4,13 @@
   <path class="river" d="M96 500 C150 440 196 392 236 352 C276 312 300 276 338 236 C376 196 420 150 486 70" stroke="#F8DF7A" stroke-width="3" opacity="0.8"/>
   <g class="town"><rect x="279" y="267" width="12" height="12" fill="#F3EEE3" transform="rotate(45 285 273)"/></g>
   <g class="mines" fill="#F5C518">
-    <circle class="mine m1" cx="186" cy="182" r="9"/>
-    <circle class="mine m2" cx="392" cy="176" r="9"/>
-    <circle class="mine m3" cx="366" cy="384" r="9"/>
+    <circle class="mine m1" cx="186" cy="182" r="14"/>
+    <circle class="mine m2" cx="392" cy="176" r="14"/>
+    <circle class="mine m3" cx="366" cy="384" r="14"/>
   </g>
-  <g class="mine-rings" stroke="#F5C518" stroke-width="2.5">
-    <circle class="ring r1" cx="186" cy="182" r="22" opacity="0.6"/>
-    <circle class="ring r2" cx="392" cy="176" r="22" opacity="0.6"/>
-    <circle class="ring r3" cx="366" cy="384" r="22" opacity="0.6"/>
+  <g class="mine-rings" stroke="#F5C518" stroke-width="4">
+    <circle class="ring r1" cx="186" cy="182" r="32" opacity="0.6"/>
+    <circle class="ring r2" cx="392" cy="176" r="32" opacity="0.6"/>
+    <circle class="ring r3" cx="366" cy="384" r="32" opacity="0.6"/>
   </g>
 </svg>

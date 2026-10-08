@@ -1,0 +1,39 @@
+<style>
+  .f2 .shot { clip-path: inset(0% 100% 0% 0%); }
+  .f2 .scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(7,12,18,0.74) 0%, rgba(7,12,18,0.38) 36%, rgba(7,12,18,0) 58%); }
+  .v .f2 .scrim { background: linear-gradient(180deg, rgba(7,12,18,0.72) 0%, rgba(7,12,18,0.3) 24%, rgba(7,12,18,0) 40%); }
+  .s .f2 .scrim { background: linear-gradient(180deg, rgba(7,12,18,0.72) 0%, rgba(7,12,18,0.3) 22%, rgba(7,12,18,0) 38%); }
+  .f2 .ttl { position: absolute; left: 120px; top: 400px; font-size: 112px; white-space: nowrap; }
+  .v .f2 .ttl { left: 70px; top: 220px; font-size: 104px; }
+  .s .f2 .ttl { left: 70px; top: 64px; font-size: 84px; }
+  .f2 .ill-glow { width: 1150px; height: 1150px; left: 720px; top: -60px; }
+  .v .f2 .ill-glow { left: -35px; top: 380px; }
+  .s .f2 .ill-glow { width: 1000px; height: 1000px; left: 40px; top: 120px; }
+  .f2 .ill-box { position: absolute; left: 880px; top: 170px; width: 940px; }
+  .v .f2 .ill-box { left: 50px; top: 560px; width: 980px; }
+  .s .f2 .ill-box { left: 150px; top: 230px; width: 780px; }
+</style>
+<div class="scene f2">
+  <div class="shot p1">
+    {{plate:a2|A-pont-niger|land|h=0.74,0.6,1.1|v=0.62,0.56,1.08|s=0.7,0.56,1.1}}
+    <canvas class="dust"></canvas>
+    <div class="scrim"></div>
+    <div class="ttl t1 t-title"><i class="rule"></i>Un fleuve.</div>
+  </div>
+  <div class="shot p2">
+    <div class="navy"></div>
+    <div class="glow ill-glow"></div>
+    <div class="ill-box">{{svg:quartier}}</div>
+    <div class="ttl t2 t-title"><i class="rule"></i>Des quartiers.</div>
+  </div>
+  <div class="shot p3">
+    <div class="navy"></div>
+    <div class="glow ill-glow"></div>
+    <div class="ill-box">{{svg:marche}}</div>
+    <div class="ttl t3 t-title"><i class="rule"></i>Des familles.</div>
+  </div>
+  <div class="wipe-line vert w1"></div>
+  <div class="wipe-line vert w2"></div>
+  <div class="wipe-line vert w3"></div>
+</div>

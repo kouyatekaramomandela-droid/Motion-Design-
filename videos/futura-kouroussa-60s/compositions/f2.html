@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="f2">
+<style>
+/* FUTURA-Kouroussa 60 s — shared film styles. Three canvases: .h 1920x1080, .v 1080x1920, .s 1080x1080.
+   Rule: no text under 36 px on any canvas. */
+:root {
+  --black: #070C12;
+  --night: #1A2A3A;
+  --night-deep: #0F1A25;
+  --night-raised: #22364A;
+  --gold-deep: #B8860B;
+  --gold: #F5C518;
+  --gold-pale: #F8DF7A;
+  --ivory: #F3EEE3;
+  --ivory-dim: #A9B3BC;
+  --flag-red: #CE1126;
+  --flag-green: #009A44;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Futura", sans-serif;
+  --brand: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.fk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.fk * { box-sizing: border-box; }
+.fk .scene { position: absolute; inset: 0; overflow: hidden; }
+.fk .fill { position: absolute; inset: 0; }
+.fk .black { position: absolute; inset: 0; background: var(--black); }
+.fk .navy { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 80% at 50% 42%, #1F3246 0%, #1A2A3A 52%, #0F1A25 100%); }
+.fk .glow { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.30) 0%, rgba(184, 134, 11, 0.12) 38%, rgba(26, 42, 58, 0) 70%); }
+.fk canvas.dust { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* photo plates (2.5D): a clean background plate under the detached nearest plane */
+.fk .plate { position: absolute; overflow: visible; }
+.fk .plate .pl { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+.fk .shot { position: absolute; inset: 0; overflow: hidden; }
+
+/* light sweep: a soft diagonal band of light crossing a shot (design element) */
+.fk .sweep { position: absolute; top: -20%; bottom: -20%; width: 34%; left: -40%; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(100deg, rgba(245,197,24,0) 0%, rgba(248,223,122,0.20) 45%, rgba(255,244,200,0.32) 50%, rgba(248,223,122,0.20) 55%, rgba(245,197,24,0) 100%);
+  transform: skewX(-14deg); }
+
+/* gold line used by the wipes between shots */
+.fk .wipe-line { position: absolute; background: linear-gradient(180deg, rgba(248,223,122,0), var(--gold-pale) 20%, var(--gold) 50%, var(--gold-pale) 80%, rgba(248,223,122,0));
+  box-shadow: 0 0 24px rgba(245,197,24,0.75), 0 0 6px rgba(255,244,200,0.9); }
+.fk .wipe-line.vert { top: -2%; bottom: -2%; width: 5px; left: 0; }
+.fk .wipe-line.horz { left: -2%; right: -2%; height: 5px; top: 0;
+  background: linear-gradient(90deg, rgba(248,223,122,0), var(--gold-pale) 20%, var(--gold) 50%, var(--gold-pale) 80%, rgba(248,223,122,0)); }
+
+/* type roles (all >= 36 px) */
+.fk .t-title { font-family: var(--serif); font-weight: 700; letter-spacing: -0.015em; line-height: 1.04; color: var(--ivory); }
+.fk .t-hero { font-family: var(--serif); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: var(--gold); font-variant-numeric: lining-nums tabular-nums; }
+.fk .t-text { font-family: var(--sans); font-weight: 700; font-size: 40px; line-height: 1.25; color: var(--ivory); }
+.fk .t-brand { font-family: var(--brand); font-weight: 700; letter-spacing: -0.005em; color: var(--ivory); }
+.fk .gold { color: var(--gold); }
+.fk .rule { display: block; width: 120px; height: 5px; border-radius: 3px; background: var(--gold); margin-bottom: 26px; }
+.fk .shade { position: absolute; pointer-events: none; }
+
+/* illustration line style */
+.fk .ill { overflow: visible; display: block; width: 100%; height: auto; }
+.fk .dry .ill .ink, .fk .dry.ill .ink { stroke: var(--ivory-dim); }
+.fk .dry .lit { opacity: 0; }
+.fk .lit-state .ill .ink { stroke: var(--gold-pale); }
+
+/* badges */
+.fk .badge { display: inline-flex; align-items: center; min-height: 76px; padding: 12px 34px; border: 3px solid var(--gold);
+  border-radius: 40px; font-family: var(--sans); font-weight: 700; font-size: 38px; line-height: 1.2; color: var(--gold);
+  background: rgba(15, 26, 37, 0.72); }
+
+/* captions (burned-in subtitles) */
+.fk-caption { position: absolute; left: 96px; right: 96px; bottom: 50px; display: flex; justify-content: center; pointer-events: none; }
+.fk-caption span { display: inline-block; max-width: 1480px; padding: 12px 30px 14px; border-radius: 12px; text-align: center;
+  font-family: var(--sans); font-weight: 700; font-size: 42px; line-height: 1.28; color: var(--ivory);
+  background: rgba(7, 12, 18, 0.72); text-wrap: balance; }
+.v .fk-caption { left: 60px; right: 60px; bottom: auto; top: 1500px; }
+.v .fk-caption span { max-width: 960px; font-size: 46px; }
+.s .fk-caption { left: 50px; right: 50px; bottom: 36px; }
+.s .fk-caption span { max-width: 980px; font-size: 40px; }
+
+/* format switches: one composition, three canvases */
+.h .only-v, .h .only-s, .v .only-h, .v .only-s, .s .only-h, .s .only-v { display: none; }
+.h .not-h, .v .not-v, .s .not-s { display: none; }
+
+#f2-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="f2-root" data-composition-id="f2" data-width="1920" data-height="1080" data-duration="11.2">
+<div class="fk h">
+<style>
+  .f2 .shot { clip-path: inset(0% 100% 0% 0%); }
+  .f2 .scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(7,12,18,0.74) 0%, rgba(7,12,18,0.38) 36%, rgba(7,12,18,0) 58%); }
+  .v .f2 .scrim { background: linear-gradient(180deg, rgba(7,12,18,0.72) 0%, rgba(7,12,18,0.3) 24%, rgba(7,12,18,0) 40%); }
+  .s .f2 .scrim { background: linear-gradient(180deg, rgba(7,12,18,0.72) 0%, rgba(7,12,18,0.3) 22%, rgba(7,12,18,0) 38%); }
+  .f2 .ttl { position: absolute; left: 120px; top: 400px; font-size: 112px; white-space: nowrap; }
+  .v .f2 .ttl { left: 70px; top: 220px; font-size: 104px; }
+  .s .f2 .ttl { left: 70px; top: 64px; font-size: 84px; }
+  .f2 .ill-glow { width: 1150px; height: 1150px; left: 720px; top: -60px; }
+  .v .f2 .ill-glow { left: -35px; top: 380px; }
+  .s .f2 .ill-glow { width: 1000px; height: 1000px; left: 40px; top: 120px; }
+  .f2 .ill-box { position: absolute; left: 880px; top: 170px; width: 940px; }
+  .v .f2 .ill-box { left: 50px; top: 560px; width: 980px; }
+  .s .f2 .ill-box { left: 150px; top: 230px; width: 780px; }
+</style>
+<div class="scene f2">
+  <div class="shot p1">
+    <div class="plate a2" style="left:-192.0px;top:-1033.6px;width:2112.0px;height:2622.7px" data-ox="1562.9" data-oy="1573.6"><img class="pl pl-bg" src="assets/photos/graded/A-pont-niger.land-bg.jpg" alt=""><img class="pl pl-fg" src="assets/photos/graded/A-pont-niger.land-fg.png" alt=""></div>
+    <canvas class="dust"></canvas>
+    <div class="scrim"></div>
+    <div class="ttl t1 t-title"><i class="rule"></i>Un fleuve.</div>
+  </div>
+  <div class="shot p2">
+    <div class="navy"></div>
+    <div class="glow ill-glow"></div>
+    <div class="ill-box"><svg class="ill ill-quartier" viewBox="0 0 400 300" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g class="layer back">
+    <g class="ink" stroke="#B8860B" stroke-width="3">
+      <path class="hills" d="M0 176 Q50 156 104 168 T214 160 T318 166 T400 158"/>
+      <path class="far-roofs" d="M120 168 L136 154 L152 168 M262 166 L274 156 L286 166 M300 166 V154 H322 V166"/>
+    </g>
+  </g>
+  <g class="layer mid">
+    <g class="ink" stroke="#F8DF7A">
+      <path class="ground" d="M8 262 H392"/>
+      <path class="house1-roof" d="M50 186 L96 150 L142 186"/>
+      <rect class="house1" x="60" y="186" width="72" height="62"/>
+      <rect class="house1-door" x="88" y="212" width="18" height="36" rx="2"/>
+      <path class="hut-roof" d="M154 202 L188 156 L222 202 Z"/>
+      <path class="hut-wall" d="M162 202 V248 M214 202 V248 M162 248 Q188 256 214 248"/>
+      <path class="hut-door" d="M182 248 V224 Q188 216 194 224 V248"/>
+      <path class="house2-roof" d="M236 172 H346"/>
+      <rect class="house2" x="242" y="172" width="98" height="76"/>
+      <rect class="house2-door" x="300" y="208" width="20" height="40" rx="2"/>
+      <path class="street" d="M150 262 L178 248 M262 262 L232 248"/>
+    </g>
+  </g>
+  <g class="lit windows" stroke="none">
+    <rect x="68" y="196" width="14" height="12" fill="#F5C518" opacity="0.8"/>
+    <rect x="112" y="196" width="14" height="12" fill="#F5C518" opacity="0.8"/>
+    <rect x="254" y="186" width="18" height="14" fill="#F5C518" opacity="0.8"/>
+    <rect x="254" y="214" width="18" height="14" fill="#F5C518" opacity="0.8"/>
+    <circle cx="188" cy="190" r="5" fill="#F8DF7A"/>
+  </g>
+  <g class="layer front">
+    <g class="ink" stroke="#F5C518">
+      <path class="tree1-trunk" d="M26 262 V206"/>
+      <path class="tree1" d="M26 210 C-4 210 -6 168 18 162 C20 138 52 134 58 156 C80 160 76 206 46 206 C40 212 32 212 26 210 Z"/>
+      <path class="tree2-trunk" d="M370 262 V214"/>
+      <path class="tree2" d="M370 216 C346 216 344 186 360 180 C360 160 388 158 392 176 C410 182 404 214 384 214 C380 218 374 218 370 216 Z"/>
+      <path class="walker" d="M216 262 L222 240 L228 262 M222 240 V222"/>
+      <circle class="walker-head" cx="222" cy="214" r="7"/>
+    </g>
+  </g>
+</svg>
+</div>
+    <div class="ttl t2 t-title"><i class="rule"></i>Des quartiers.</div>
+  </div>
+  <div class="shot p3">
+    <div class="navy"></div>
+    <div class="glow ill-glow"></div>
+    <div class="ill-box"><svg class="ill ill-marche" viewBox="0 0 400 300" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g class="layer back">
+    <g class="ink" stroke="#B8860B" stroke-width="3">
+      <path class="awning1" d="M24 128 H156 L166 150 H14 Z"/>
+      <path class="awning1-scallop" d="M14 150 Q24 160 34 150 Q44 160 54 150 Q64 160 74 150 Q84 160 94 150 Q104 160 114 150 Q124 160 134 150 Q144 160 154 150 Q160 156 166 150"/>
+      <path class="awning2" d="M246 128 H378 L388 150 H236 Z"/>
+      <path class="awning2-scallop" d="M236 150 Q246 160 256 150 Q266 160 276 150 Q286 160 296 150 Q306 160 316 150 Q326 160 336 150 Q346 160 356 150 Q366 160 376 150 Q382 156 388 150"/>
+    </g>
+  </g>
+  <g class="layer mid">
+    <g class="ink" stroke="#F8DF7A">
+      <path class="ground" d="M8 262 H392"/>
+      <path class="stall1" d="M28 150 V262 M152 150 V262 M18 212 H162"/>
+      <path class="stall2" d="M250 150 V262 M374 150 V262 M240 212 H384"/>
+      <circle class="seller1-head" cx="90" cy="172" r="11"/>
+      <path class="seller1" d="M74 210 Q74 190 90 186 Q106 190 106 210"/>
+      <circle class="seller2-head" cx="318" cy="170" r="11"/>
+      <path class="seller2" d="M302 210 Q302 188 318 184 Q334 188 334 210"/>
+    </g>
+  </g>
+  <g class="lit produce" stroke="none">
+    <circle cx="40" cy="204" r="7" fill="#F5C518"/><circle cx="54" cy="204" r="7" fill="#F5C518"/><circle cx="47" cy="193" r="7" fill="#F8DF7A"/>
+    <circle cx="124" cy="204" r="7" fill="#F5C518"/><circle cx="138" cy="204" r="7" fill="#F8DF7A"/>
+    <rect x="258" y="196" width="22" height="14" rx="3" fill="#F5C518"/>
+    <circle cx="350" cy="204" r="7" fill="#F5C518"/><circle cx="364" cy="204" r="7" fill="#F8DF7A"/><circle cx="357" cy="193" r="7" fill="#F5C518"/>
+  </g>
+  <g class="layer front">
+    <g class="ink figure carrier" stroke="#F5C518">
+      <path class="basin" d="M180 126 H232 L224 140 H188 Z"/>
+      <path class="arm" d="M196 172 L192 142 M218 172 L222 142"/>
+      <circle cx="206" cy="156" r="12"/>
+      <path class="body" d="M190 176 Q206 166 222 176 L234 262 H178 Z"/>
+    </g>
+    <g class="ink figure child" stroke="#F5C518">
+      <circle cx="246" cy="212" r="8"/>
+      <path d="M236 230 Q246 223 256 230 L260 262 H232 Z"/>
+      <path d="M237 236 L226 222"/>
+    </g>
+  </g>
+</svg>
+</div>
+    <div class="ttl t3 t-title"><i class="rule"></i>Des familles.</div>
+  </div>
+  <div class="wipe-line vert w1"></div>
+  <div class="wipe-line vert w2"></div>
+  <div class="wipe-line vert w3"></div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+/* FUTURA-Kouroussa — deterministic gold particle field.
+   Every draw is a pure function of (t, options): no Math.random, no clocks, seek-safe. */
+(function () {
+  var FK = (window.FK = window.FK || {});
+
+  FK.rng = function (seed) {
+    var s = seed >>> 0;
+    return function () {
+      s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  };
+
+  var GOLDS = ["245,197,24", "248,223,122", "184,134,11", "245,197,24", "243,238,227"];
+
+  function smooth(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function easeOut(x) { x = Math.max(0, Math.min(1, x)); return 1 - Math.pow(1 - x, 3); }
+
+  /* Build the particle table once (index-seeded). */
+  FK.makeField = function (n, seed) {
+    var r = FK.rng(seed || 7), out = [];
+    for (var i = 0; i < n; i++) {
+      out.push({
+        k: i / n,
+        ang: i * 2.39996323 + r() * 0.35,
+        rad: Math.sqrt(r()),
+        size: 0.7 + Math.pow(r(), 3) * 2.6,
+        tw: 0.6 + r() * 2.2,
+        ph: r() * 6.283,
+        col: GOLDS[(r() * GOLDS.length) | 0],
+        drift: 0.4 + r() * 1.2,
+        lx: r(),
+        ly: r() - 0.5
+      });
+    }
+    return out;
+  };
+
+  /* Scene 1: one spark (0.8 s) → thousands (1.6–4.6 s) → slow drift → collapse into a
+     horizontal gold thread (9.0–10.4 s) that becomes the map outline of scene 2.
+     o: {cx, cy, maxR, line:{x0,x1,y}} in canvas pixels. */
+  FK.drawGenesis = function (ctx, field, t, o) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    if (t < 0.8) return;
+    ctx.globalCompositeOperation = "lighter";
+    var n = field.length;
+    var born = t < 1.6 ? 1 : Math.max(1, Math.floor(n * Math.pow(Math.min(1, (t - 1.6) / 3.0), 1.7)));
+    var collapse = smooth((t - 9.0) / 1.3);
+    for (var i = 0; i < born; i++) {
+      var p = field[i];
+      var b = 1.6 + 3.0 * Math.pow(p.k, 1 / 1.7);
+      var age = Math.max(0, t - b);
+      var grow = easeOut(age / 2.2);
+      var ang = p.ang + 0.18 * grow + 0.012 * age * p.drift;
+      var rr = o.maxR * p.rad * grow + 7 * age * p.drift;
+      var x = o.cx + Math.cos(ang) * rr * 1.25;
+      var y = o.cy + Math.sin(ang) * rr * 0.82;
+      if (collapse > 0) {
+        var tx = o.line.x0 + (o.line.x1 - o.line.x0) * p.lx;
+        var ty = o.line.y + p.ly * 6 * (1 - collapse);
+        x += (tx - x) * collapse; y += (ty - y) * collapse;
+      }
+      var a = (0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * p.tw + p.ph))) * Math.min(1, age * 3 + (i === 0 ? 1 : 0));
+      var s = p.size * (i === 0 ? 1.8 : 1);
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, s, 0, 6.2832); ctx.fill();
+    }
+    // the first spark keeps a halo while it is alone
+    if (t < 3.2) {
+      var ha = t < 1.0 ? (t - 0.8) / 0.2 : 1 - smooth((t - 2.0) / 1.2);
+      var g = ctx.createRadialGradient(o.cx, o.cy, 0, o.cx, o.cy, 90);
+      g.addColorStop(0, "rgba(248,223,122," + (0.9 * ha).toFixed(3) + ")");
+      g.addColorStop(0.15, "rgba(245,197,24," + (0.45 * ha).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(245,197,24,0)");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(o.cx, o.cy, 90, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+
+  /* Ambient dust (any scene): slow drifting motes, pure function of t. */
+  FK.drawDust = function (ctx, field, t, alpha) {
+    var W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "lighter";
+    for (var i = 0; i < field.length; i++) {
+      var p = field[i];
+      var x = ((p.lx * W + t * 9 * p.drift) % (W + 40)) - 20;
+      var y = ((p.rad * H - t * 5 * p.drift) % H + H) % H;
+      var a = alpha * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * p.tw * 0.6 + p.ph)));
+      ctx.fillStyle = "rgba(" + p.col + "," + a.toFixed(3) + ")";
+      ctx.beginPath(); ctx.arc(x, y, p.size * 0.8, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+  };
+})();
+const FMT = "h", W = 1920, H = 1080, T0 = 4.4, DUR = 11.2;
+const root = document.querySelector('[data-composition-id="f2"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v, s) => (FMT === "h" ? h : FMT === "v" ? v : s === undefined ? v : s);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+function splitWords(el) {
+  const out = [];
+  const walk = (node) => {
+    Array.from(node.childNodes).forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((p) => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const w = document.createElement("span");
+          w.style.display = "inline-block"; w.style.whiteSpace = "nowrap"; w.textContent = p;
+          frag.appendChild(w); out.push(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(el);
+  return out;
+}
+// 2.5D camera on a photo plate: background and nearest plane scale/drift at different rates
+// around the plate's focus point. a/b = [scale, x, y] at start/end for the background; the
+// nearest plane gets the same move amplified by k (depth).
+function camera(plate, t0, dur, a, b, k, ease) {
+  const ox = plate.dataset.ox + "px " + plate.dataset.oy + "px";
+  const bg = plate.querySelector(".pl-bg"), fg = plate.querySelector(".pl-fg");
+  const fs = (s) => 1 + (s - 1) * k;
+  tl.fromTo(bg, { scale: a[0], x: a[1], y: a[2], transformOrigin: ox },
+    { scale: b[0], x: b[1], y: b[2], duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
+  tl.fromTo(fg, { scale: fs(a[0]), x: a[1] * k, y: a[2] * k, transformOrigin: ox },
+    { scale: fs(b[0]), x: b[1] * k, y: b[2] * k, duration: dur, ease: ease || "none", transformOrigin: ox }, t0);
+}
+// F2 — La terre et les gens (4.4–15.6). One shot per idea, each on its word, joined by a gold line
+// that sweeps the frame: the river (photo A, 2.5D), a quarter, a market (gold line illustrations).
+const shots = [$(".p1"), $(".p2"), $(".p3")], lines = $$(".wipe-line");
+const cuts = [4.6, 7.7, 10.2];
+shots.forEach((s, i) => {
+  tl.fromTo(s, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, at(cuts[i]));
+  tl.fromTo(lines[i], { x: -6, opacity: 1 }, { x: W, duration: 0.6, ease: "power2.inOut" }, at(cuts[i]));
+  tl.set(lines[i], { opacity: 0 }, at(cuts[i] + 0.62));
+});
+
+// shot 1 — the river: lateral parallax (the bridge edge slides faster than the water), glints on the water
+camera($(".plate.a2"), at(4.6), 3.8, [1.05, 36, 0], [1.1, -36, 0], 1.9, "sine.inOut");
+const cv = $(".p1 canvas.dust"); cv.width = W; cv.height = H;
+const ctx = cv.getContext("2d"), field = FK.makeField(pick(260, 260, 200), 23), D = { t: 0 };
+tl.fromTo(D, { t: 0 }, { t: 4, duration: 4, ease: "none", onUpdate: () => FK.drawDust(ctx, field, D.t, 0.55) }, at(4.6));
+
+// titles land on their word: « fleuve » 6.76, « quartiers » 8.36, « familles » 11.01
+[[".t1", 5.9], [".t2", 8.3], [".t3", 10.8]].forEach(([sel, t]) => {
+  const el = $(sel), rule = el.querySelector(".rule");
+  tl.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, at(t));
+  tl.fromTo(rule, { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.out", transformOrigin: "0% 50%" }, at(t + 0.1));
+});
+
+// shots 2 and 3 — the line art draws itself, its three planes drift at different speeds, windows and stalls light up
+function drawIll(box, t0, dur, hold) {
+  const strokes = Array.from(box.querySelectorAll(".ink > *"));
+  prepDraw(strokes);
+  const each = 0.7, stag = (dur - each) / Math.max(1, strokes.length - 1);
+  tl.fromTo(strokes, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: each, ease: "power2.inOut", stagger: stag }, at(t0));
+  tl.fromTo(Array.from(box.querySelectorAll(".lit")), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, at(t0 + dur));
+  const depth = { back: 8, mid: 16, front: 34 };
+  Object.keys(depth).forEach((k) => {
+    const g = box.querySelector(".layer." + k);
+    if (g) tl.fromTo(g, { x: depth[k] }, { x: -depth[k], duration: hold, ease: "none" }, at(t0));
+  });
+  tl.fromTo(box, { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.05, duration: hold, ease: "none", transformOrigin: "50% 60%" }, at(t0));
+}
+drawIll($(".p2 .ill-box"), 7.75, 1.3, 2.9);
+drawIll($(".p3 .ill-box"), 10.25, 1.5, 5.3);
+// the woman carrying the basin walks on, the child follows
+tl.fromTo($(".p3 .carrier"), { x: -14 }, { x: 10, duration: 5.2, ease: "sine.inOut" }, at(10.3));
+tl.fromTo($(".p3 .child"), { x: -8 }, { x: 8, duration: 5.2, ease: "sine.inOut" }, at(10.3));
+
+window.__timelines["f2"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>
