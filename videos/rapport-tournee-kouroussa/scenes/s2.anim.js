@@ -21,8 +21,8 @@ labels.forEach((l, i) => {
 });
 // counters
 tl.fromTo($(".counters"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, at(6.2));
-countUp($(".n-jours"), 0, 10, at(6.4), 1.0, "power1.out");
-countUp($(".n-loc"), 0, 15, at(T_PT), STEP * 15, "steps(15)");
+countUp($(".n-jours"), 0, 10, at(6.4), 1.0, "power1.out", [$(".n-jours + .t-label"), "jour", "jours"]);
+stepCount($(".n-loc"), 15, at(T_PT), STEP, [$(".n-loc + .t-label"), "localité", "localités"]);
 // photo card: each photo covers the previous one, with a slow 4 % push-in
 const KT = [5.4, 7.6, 9.6, 11.4, 13.4, 15.4, 18.6];
 $$(".card .ph").forEach((ph, i) => {

@@ -161,11 +161,26 @@ function prepDraw(els) {
     el.style.strokeDashoffset = "1";
   });
 }
-// seek-safe count-up: the DOM starts at `from`; the tween writes the rounded value on every render
-function countUp(el, from, to, t, dur, ease) {
-  el.textContent = String(from);
+// seek-safe count-up: the DOM starts at `from`; the tween writes the rounded value on every render.
+// unit = [labelEl, singular, plural]: the label agrees with the number (singular for 0 and 1).
+function countUp(el, from, to, t, dur, ease, unit) {
+  const show = (v) => {
+    el.textContent = String(v);
+    if (unit) unit[0].textContent = v <= 1 ? unit[1] : unit[2];
+  };
+  show(from);
   const o = { v: from };
-  tl.to(o, { v: to, duration: dur, ease: ease || "power1.out", onUpdate: () => { el.textContent = String(Math.round(o.v)); } }, t);
+  tl.to(o, { v: to, duration: dur, ease: ease || "power1.out", onUpdate: () => show(Math.round(o.v)) }, t);
+}
+// count of items revealed every `step` seconds from t0 (the first one at t0): 0 before t0, then 1, 2, … n
+function stepCount(el, n, t0, step, unit) {
+  const show = (v) => {
+    el.textContent = String(v);
+    if (unit) unit[0].textContent = v <= 1 ? unit[1] : unit[2];
+  };
+  show(0);
+  const o = { v: 0 };
+  tl.to(o, { v: n, duration: n * step, ease: "none", onUpdate: () => show(o.v <= 0 ? 0 : Math.min(n, Math.floor(o.v + 1e-6) + 1)) }, t0);
 }
 // S2 — La tournée (6–18). The prefecture outline draws in gold, the 15 localities light one by one in the
 // report's order (0.6 s apart, from 7.2 s), each name shown in turn; « 15 localités » counts the lit points;
@@ -190,8 +205,8 @@ labels.forEach((l, i) => {
 });
 // counters
 tl.fromTo($(".counters"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, at(6.2));
-countUp($(".n-jours"), 0, 10, at(6.4), 1.0, "power1.out");
-countUp($(".n-loc"), 0, 15, at(T_PT), STEP * 15, "steps(15)");
+countUp($(".n-jours"), 0, 10, at(6.4), 1.0, "power1.out", [$(".n-jours + .t-label"), "jour", "jours"]);
+stepCount($(".n-loc"), 15, at(T_PT), STEP, [$(".n-loc + .t-label"), "localité", "localités"]);
 // photo card: each photo covers the previous one, with a slow 4 % push-in
 const KT = [5.4, 7.6, 9.6, 11.4, 13.4, 15.4, 18.6];
 $$(".card .ph").forEach((ph, i) => {

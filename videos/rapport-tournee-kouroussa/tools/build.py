@@ -38,11 +38,26 @@ function prepDraw(els) {
     el.style.strokeDashoffset = "1";
   });
 }
-// seek-safe count-up: the DOM starts at `from`; the tween writes the rounded value on every render
-function countUp(el, from, to, t, dur, ease) {
-  el.textContent = String(from);
+// seek-safe count-up: the DOM starts at `from`; the tween writes the rounded value on every render.
+// unit = [labelEl, singular, plural]: the label agrees with the number (singular for 0 and 1).
+function countUp(el, from, to, t, dur, ease, unit) {
+  const show = (v) => {
+    el.textContent = String(v);
+    if (unit) unit[0].textContent = v <= 1 ? unit[1] : unit[2];
+  };
+  show(from);
   const o = { v: from };
-  tl.to(o, { v: to, duration: dur, ease: ease || "power1.out", onUpdate: () => { el.textContent = String(Math.round(o.v)); } }, t);
+  tl.to(o, { v: to, duration: dur, ease: ease || "power1.out", onUpdate: () => show(Math.round(o.v)) }, t);
+}
+// count of items revealed every `step` seconds from t0 (the first one at t0): 0 before t0, then 1, 2, … n
+function stepCount(el, n, t0, step, unit) {
+  const show = (v) => {
+    el.textContent = String(v);
+    if (unit) unit[0].textContent = v <= 1 ? unit[1] : unit[2];
+  };
+  show(0);
+  const o = { v: 0 };
+  tl.to(o, { v: n, duration: n * step, ease: "none", onUpdate: () => show(o.v <= 0 ? 0 : Math.min(n, Math.floor(o.v + 1e-6) + 1)) }, t0);
 }
 """
 
