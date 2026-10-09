@@ -77,7 +77,8 @@ def _ph(arg, fmt, t0=0.0, uid="x"):
     soft = " soft" if "soft" in flags else ""
     tag = ('<span class="illus-tag tx">Image d’illustration</span>'
            if key in ILLUSTRATION and "soft" not in flags and "notag" not in flags else "")
-    return f'<div class="ph {cls}{soft}" data-key="{key}">{el}{tag}</div>'
+    # the slow 3-5 % zooms push the media past its frame on purpose
+    return f'<div class="ph {cls}{soft}" data-key="{key}" data-layout-allow-overflow>{el}{tag}</div>'
 
 
 def _map():

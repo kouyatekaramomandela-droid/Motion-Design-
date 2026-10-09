@@ -56,6 +56,7 @@
 .rk .t-display { font-family: var(--serif); font-weight: 700; line-height: 1.06; letter-spacing: 0.005em; }
 .rk .t-num { font-family: var(--serif); font-weight: 900; line-height: 0.92; font-variant-numeric: lining-nums tabular-nums;
   background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rk .t-num > b, .rk .t-num > small { font-weight: inherit; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rk .t-label { font-family: var(--sans); font-weight: 600; letter-spacing: 0.01em; }
 .rk .gold-rule { display: block; width: 110px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--gold-1), var(--gold-3), var(--gold-2)); }
 
@@ -116,9 +117,9 @@
 </style>
 <div class="scene s5">
   <div class="bgs">
-    <div class="ph b1 soft" data-key="m03"><img src="assets/prep/m03-soft.jpg" alt="" style="object-position:50% 40%"></div>
-    <div class="ph b2 soft" data-key="m12"><img src="assets/prep/m12-soft.jpg" alt="" style="object-position:30% 40%"></div>
-    <div class="ph b3 soft" data-key="m13"><img src="assets/prep/m13-soft.jpg" alt="" style="object-position:50% 60%"></div>
+    <div class="ph b1 soft" data-key="m03" data-layout-allow-overflow><img src="assets/prep/m03-soft.jpg" alt="" style="object-position:50% 40%"></div>
+    <div class="ph b2 soft" data-key="m12" data-layout-allow-overflow><img src="assets/prep/m12-soft.jpg" alt="" style="object-position:30% 40%"></div>
+    <div class="ph b3 soft" data-key="m13" data-layout-allow-overflow><img src="assets/prep/m13-soft.jpg" alt="" style="object-position:50% 60%"></div>
   </div>
   <div class="veil"></div>
   <div class="head tx"><div class="t-display">Recommandations</div><i class="gold-rule"></i></div>

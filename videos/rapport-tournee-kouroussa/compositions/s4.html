@@ -56,6 +56,7 @@
 .rk .t-display { font-family: var(--serif); font-weight: 700; line-height: 1.06; letter-spacing: 0.005em; }
 .rk .t-num { font-family: var(--serif); font-weight: 900; line-height: 0.92; font-variant-numeric: lining-nums tabular-nums;
   background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rk .t-num > b, .rk .t-num > small { font-weight: inherit; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rk .t-label { font-family: var(--sans); font-weight: 600; letter-spacing: 0.01em; }
 .rk .gold-rule { display: block; width: 110px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--gold-1), var(--gold-3), var(--gold-2)); }
 
@@ -124,9 +125,9 @@
 </style>
 <div class="scene s4">
   <div class="ax ax1">
-    <div class="ph bgph soft" data-key="v-convoi"><video id="s4-bgph-v-convoi" class="clip" src="assets/prep/clips/v-convoi-soft.mp4" muted playsinline data-start="0.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div>
+    <div class="ph bgph soft" data-key="v-convoi" data-layout-allow-overflow><video id="s4-bgph-v-convoi" class="clip" src="assets/prep/clips/v-convoi-soft.mp4" muted playsinline data-start="0.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="v-convoi"><video id="s4-wph-v-convoi" class="clip" src="assets/prep/clips/v-convoi.mp4" muted playsinline data-start="0.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="v-convoi" data-layout-allow-overflow><video id="s4-wph-v-convoi" class="clip" src="assets/prep/clips/v-convoi.mp4" muted playsinline data-start="0.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">01</span><svg class="icon ic-routes" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="ic-s" d="M30 92 L44 14 M70 92 L56 14"/><path class="ic-s" d="M50 84 V72 M50 58 V48 M50 36 V28"/><path class="ic-s" d="M8 64 Q50 40 92 64"/><path class="ic-s" d="M18 58 V70 M82 58 V70"/></svg></div>
       <i class="gold-rule"></i>
@@ -135,9 +136,9 @@
     </div>
   </div>
   <div class="ax ax2">
-    <div class="ph bgph soft" data-key="i01"><img src="assets/prep/i01-soft.jpg" alt="" style="object-position:45% 62%"></div>
+    <div class="ph bgph soft" data-key="i01" data-layout-allow-overflow><img src="assets/prep/i01-soft.jpg" alt="" style="object-position:45% 62%"></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="i01"><img src="assets/prep/i01.jpg" alt="" style="object-position:45% 62%"><span class="illus-tag tx">Image d’illustration</span></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="i01" data-layout-allow-overflow><img src="assets/prep/i01.jpg" alt="" style="object-position:45% 62%"><span class="illus-tag tx">Image d’illustration</span></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">02</span><svg class="icon ic-eau" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="ic-s" d="M50 10 C50 10 22 44 22 62 A28 28 0 0 0 78 62 C78 44 50 10 50 10 Z"/><path class="ic-s" d="M36 64 A14 14 0 0 0 50 78"/></svg></div>
       <i class="gold-rule"></i>
@@ -146,9 +147,9 @@
     </div>
   </div>
   <div class="ax ax3">
-    <div class="ph bgph soft" data-key="i02"><img src="assets/prep/i02-soft.jpg" alt="" style="object-position:45% 50%"></div>
+    <div class="ph bgph soft" data-key="i02" data-layout-allow-overflow><img src="assets/prep/i02-soft.jpg" alt="" style="object-position:45% 50%"></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="i02"><img src="assets/prep/i02.jpg" alt="" style="object-position:45% 50%"><span class="illus-tag tx">Image d’illustration</span></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="i02" data-layout-allow-overflow><img src="assets/prep/i02.jpg" alt="" style="object-position:45% 50%"><span class="illus-tag tx">Image d’illustration</span></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">03</span><svg class="icon ic-sante" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="ic-s" x="10" y="10" width="80" height="80" rx="14"/><path class="ic-s" d="M40 24 H60 V40 H76 V60 H60 V76 H40 V60 H24 V40 H40 Z"/></svg></div>
       <i class="gold-rule"></i>
@@ -157,9 +158,9 @@
     </div>
   </div>
   <div class="ax ax4">
-    <div class="ph bgph soft" data-key="v-sankarani"><video id="s4-bgph-v-sankarani" class="clip" src="assets/prep/clips/v-sankarani-soft.mp4" muted playsinline data-start="9.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div>
+    <div class="ph bgph soft" data-key="v-sankarani" data-layout-allow-overflow><video id="s4-bgph-v-sankarani" class="clip" src="assets/prep/clips/v-sankarani-soft.mp4" muted playsinline data-start="9.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="v-sankarani"><video id="s4-wph-v-sankarani" class="clip" src="assets/prep/clips/v-sankarani.mp4" muted playsinline data-start="9.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="v-sankarani" data-layout-allow-overflow><video id="s4-wph-v-sankarani" class="clip" src="assets/prep/clips/v-sankarani.mp4" muted playsinline data-start="9.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:50% 55%"></video></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">04</span><svg class="icon ic-education" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="ic-s" d="M50 28 C38 20 22 18 8 20 V80 C22 78 38 80 50 88 C62 80 78 78 92 80 V20 C78 18 62 20 50 28 Z"/><path class="ic-s" d="M50 28 V88"/><path class="ic-s" d="M20 36 C28 36 36 38 42 42 M58 42 C64 38 72 36 80 36"/></svg></div>
       <i class="gold-rule"></i>
@@ -168,9 +169,9 @@
     </div>
   </div>
   <div class="ax ax5">
-    <div class="ph bgph soft" data-key="i03"><img src="assets/prep/i03-soft.jpg" alt="" style="object-position:50% 68%"></div>
+    <div class="ph bgph soft" data-key="i03" data-layout-allow-overflow><img src="assets/prep/i03-soft.jpg" alt="" style="object-position:50% 68%"></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="i03"><img src="assets/prep/i03.jpg" alt="" style="object-position:50% 68%"><span class="illus-tag tx">Image d’illustration</span></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="i03" data-layout-allow-overflow><img src="assets/prep/i03.jpg" alt="" style="object-position:50% 68%"><span class="illus-tag tx">Image d’illustration</span></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">05</span><svg class="icon ic-agriculture" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="ic-s" d="M50 92 V30"/><path class="ic-s" d="M50 62 C34 62 24 50 22 36 C38 36 48 46 50 62 Z"/><path class="ic-s" d="M50 50 C66 50 76 38 78 24 C62 24 52 34 50 50 Z"/><path class="ic-s" d="M50 30 C44 24 44 14 50 8 C56 14 56 24 50 30 Z"/><path class="ic-s" d="M14 92 H86"/></svg></div>
       <i class="gold-rule"></i>
@@ -179,9 +180,9 @@
     </div>
   </div>
   <div class="ax ax6">
-    <div class="ph bgph soft" data-key="v-jeunesse"><video id="s4-bgph-v-jeunesse" class="clip" src="assets/prep/clips/v-jeunesse-soft.mp4" muted playsinline data-start="15.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:45% 45%"></video></div>
+    <div class="ph bgph soft" data-key="v-jeunesse" data-layout-allow-overflow><video id="s4-bgph-v-jeunesse" class="clip" src="assets/prep/clips/v-jeunesse-soft.mp4" muted playsinline data-start="15.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:45% 45%"></video></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="v-jeunesse"><video id="s4-wph-v-jeunesse" class="clip" src="assets/prep/clips/v-jeunesse.mp4" muted playsinline data-start="15.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:45% 45%"></video></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="v-jeunesse" data-layout-allow-overflow><video id="s4-wph-v-jeunesse" class="clip" src="assets/prep/clips/v-jeunesse.mp4" muted playsinline data-start="15.2" data-duration="4.2" data-hf-media-start-basis="local" style="object-position:45% 45%"></video></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">06</span><svg class="icon ic-jeunesse" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="ic-s" cx="40" cy="26" r="12"/><path class="ic-s" d="M16 88 C16 64 26 52 40 52 C50 52 58 58 62 68"/><path class="ic-s" d="M66 92 V52 M54 64 L66 52 L78 64"/><path class="ic-s" d="M80 22 L84 30 L92 31 L86 37 L88 45 L80 41 L72 45 L74 37 L68 31 L76 30 Z"/></svg></div>
       <i class="gold-rule"></i>
@@ -190,9 +191,9 @@
     </div>
   </div>
   <div class="ax ax7">
-    <div class="ph bgph soft" data-key="m07"><img src="assets/prep/m07-soft.jpg" alt="" style="object-position:50% 50%"></div>
+    <div class="ph bgph soft" data-key="m07" data-layout-allow-overflow><img src="assets/prep/m07-soft.jpg" alt="" style="object-position:50% 50%"></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="m07"><img src="assets/prep/m07.jpg" alt="" style="object-position:50% 50%"></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="m07" data-layout-allow-overflow><img src="assets/prep/m07.jpg" alt="" style="object-position:50% 50%"></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">07</span><svg class="icon ic-femmes" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="ic-s" cx="50" cy="28" r="12"/><path class="ic-s" d="M34 26 C34 12 66 12 66 26"/><path class="ic-s" d="M28 90 L36 54 C40 46 60 46 64 54 L72 90 Z"/><circle class="ic-s" cx="18" cy="44" r="8"/><path class="ic-s" d="M6 82 C6 66 12 58 22 58"/><circle class="ic-s" cx="82" cy="44" r="8"/><path class="ic-s" d="M94 82 C94 66 88 58 78 58"/></svg></div>
       <i class="gold-rule"></i>
@@ -201,9 +202,9 @@
     </div>
   </div>
   <div class="ax ax8">
-    <div class="ph bgph soft" data-key="i04"><img src="assets/prep/i04-soft.jpg" alt="" style="object-position:42% 45%"></div>
+    <div class="ph bgph soft" data-key="i04" data-layout-allow-overflow><img src="assets/prep/i04-soft.jpg" alt="" style="object-position:42% 45%"></div>
     <div class="scrim"></div>
-    <div class="win frame-gold"><div class="ph wph" data-key="i04"><img src="assets/prep/i04.jpg" alt="" style="object-position:42% 45%"><span class="illus-tag tx">Image d’illustration</span></div></div>
+    <div class="win frame-gold"><div class="ph wph" data-key="i04" data-layout-allow-overflow><img src="assets/prep/i04.jpg" alt="" style="object-position:42% 45%"><span class="illus-tag tx">Image d’illustration</span></div></div>
     <div class="panel band">
       <div class="row"><span class="t-num tx">08</span><svg class="icon ic-electricite" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="ic-s" d="M52 8 L24 54 H46 L40 92 L72 40 H50 Z"/><path class="ic-s" d="M76 22 A18 18 0 0 1 76 48 M84 12 A30 30 0 0 1 84 58"/></svg></div>
       <i class="gold-rule"></i>
