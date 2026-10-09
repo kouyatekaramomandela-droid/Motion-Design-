@@ -1,0 +1,40 @@
+<style>
+  .s1 .duo { position: absolute; left: 900px; top: 0; width: 1020px; height: 1080px; }
+  .s1 .duo .ph { top: 0; height: 100%; width: 50%; }
+  .s1 .duo .d1 { left: 0; } .s1 .duo .d2 { left: 50%; border-left: 3px solid var(--gold-2); }
+  .s1 .duo-fade { position: absolute; left: 900px; top: 0; width: 360px; height: 1080px;
+    background: linear-gradient(90deg, var(--ivory) 0%, rgba(246,242,233,0.85) 30%, rgba(246,242,233,0) 100%); }
+  .s1 .duo-shade { position: absolute; left: 900px; right: 0; top: 0; height: 260px;
+    background: linear-gradient(180deg, rgba(0,41,26,0.45) 0%, rgba(0,41,26,0) 100%); }
+  .s1 .title-block { position: absolute; left: 154px; top: 262px; width: 760px; }
+  .s1 .kicker { font: 600 30px/1.2 var(--sans); color: var(--gold-1); letter-spacing: 0.16em; text-transform: uppercase; }
+  .s1 .gold-rule { margin: 22px 0 30px; }
+  .s1 .title { font-size: 74px; color: var(--green); }
+  .s1 .title span { display: block; white-space: nowrap; }
+  .s1 .sub { display: inline-block; margin-top: 40px; padding: 14px 30px 16px; font: 600 38px/1.2 var(--sans); white-space: nowrap; }
+  .v .s1 .duo { left: 0; width: 1080px; height: 1020px; }
+  .v .s1 .duo-fade { left: 0; top: 700px; width: 1080px; height: 330px;
+    background: linear-gradient(180deg, rgba(246,242,233,0) 0%, rgba(246,242,233,0.85) 70%, var(--ivory) 100%); }
+  .v .s1 .duo-shade { left: 0; height: 360px; }
+  .v .s1 .title-block { left: 86px; top: 950px; width: 908px; text-align: center; }
+  .v .s1 .gold-rule { margin: 20px auto 26px; }
+  .v .s1 .title { font-size: 76px; }
+  .v .s1 .sub { margin-top: 36px; font-size: 40px; }
+</style>
+<div class="scene s1">
+  <div class="ivory"></div>
+  <div class="ivory-sheen"></div>
+  <div class="duo">
+    {{ph:d1|m01|h=50,30|v=50,22}}
+    {{ph:d2|m02|h=46,30|v=46,24}}
+  </div>
+  <div class="duo-shade"></div>
+  <div class="duo-fade"></div>
+  <div class="sheen-band"></div>
+  <div class="title-block">
+    <div class="kicker tx">Assemblée Nationale</div>
+    <i class="gold-rule"></i>
+    <h1 class="title t-display tx"><span>RAPPORT</span><span>DE LA TOURNÉE</span><span>DES DÉPUTÉS</span></h1>
+    <div class="sub band tx">Kouroussa, 18 – 27 septembre 2026</div>
+  </div>
+</div>

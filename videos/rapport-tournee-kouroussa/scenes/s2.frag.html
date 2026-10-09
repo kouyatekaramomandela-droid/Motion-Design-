@@ -1,0 +1,45 @@
+<style>
+  .s2 .mapbox { position: absolute; left: 190px; top: 206px; width: 496px; height: 620px; }
+  .s2 .mapsvg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .s2 .mapsvg .units path { fill: #E3E6D8; stroke: #FFFFFF; stroke-width: 3; }
+  .s2 .mapsvg .outline { fill: none; stroke: var(--gold-2); stroke-width: 7; stroke-linejoin: round; }
+  .s2 .pt .halo { fill: rgba(201,164,76,0.28); }
+  .s2 .pt .ring { fill: var(--ivory); stroke: var(--gold-1); stroke-width: 4; }
+  .s2 .pt .dot { fill: var(--green); }
+  .s2 .plabels { position: absolute; inset: 0; }
+  .s2 .plabel { position: absolute; transform: translate(-50%, -100%); margin-top: -26px; white-space: nowrap; }
+  .s2 .plabel span { display: inline-block; padding: 6px 16px 8px; font: 600 32px/1.1 var(--sans); color: var(--ivory);
+    background: var(--green-deep); border: 2px solid var(--gold-2); border-radius: 4px; }
+  .s2 .plabel small { display: block; font: 500 22px/1.2 var(--sans); color: var(--gold-3); }
+  .s2 .map-credit { position: absolute; right: 154px; bottom: 96px; text-align: right; font: 500 18px/1.2 var(--sans); color: rgba(23,38,29,0.55); }
+  .s2 .card { position: absolute; left: 800px; top: 206px; width: 966px; height: 448px; overflow: hidden; }
+  .s2 .card .ph { inset: 0; }
+  .s2 .counters { position: absolute; left: 800px; top: 682px; width: 966px; height: 128px; display: flex; align-items: center; justify-content: center; gap: 0; }
+  .s2 .cnt { flex: 1; display: flex; align-items: baseline; justify-content: center; gap: 18px; }
+  .s2 .cnt + .cnt { border-left: 2px solid rgba(201,164,76,0.55); }
+  .s2 .cnt .t-num { font-size: 92px; }
+  .s2 .cnt .t-label { font-size: 40px; color: var(--ivory); }
+  .v .s2 .mapbox { left: 268px; top: 290px; width: 544px; height: 680px; }
+  .v .s2 .map-credit { left: 0; right: 0; bottom: auto; top: 978px; text-align: center; }
+  .v .s2 .counters { left: 86px; top: 1014px; width: 908px; height: 128px; }
+  .v .s2 .cnt .t-num { font-size: 88px; }
+  .v .s2 .card { left: 86px; top: 1166px; width: 908px; height: 372px; }
+</style>
+<div class="scene s2">
+  <div class="ivory"></div>
+  <div class="ivory-sheen"></div>
+  {{map}}
+  <div class="map-credit">Limites administratives : OCHA / PAM (geoBoundaries, CC BY 3.0 IGO)</div>
+  <div class="card frame-gold">
+    {{ph:k1|m09|h=50,45|v=50,45}}
+    {{ph:k2|m05|h=40,55|v=40,55}}
+    {{ph:k3|m08|h=50,40|v=50,40}}
+    {{ph:k4|v-foule|h=50,45|v=50,45}}
+    {{ph:k5|m10|h=55,45|v=55,45}}
+    {{ph:k6|m04|h=50,50|v=50,50}}
+  </div>
+  <div class="counters band tx">
+    <div class="cnt"><span class="t-num n-jours">10</span><span class="t-label">jours</span></div>
+    <div class="cnt"><span class="t-num n-loc">15</span><span class="t-label">localités</span></div>
+  </div>
+</div>

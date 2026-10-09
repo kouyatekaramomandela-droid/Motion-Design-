@@ -1,0 +1,186 @@
+{
+ "w": 799,
+ "h": 1000,
+ "points": [
+  {
+   "i": 1,
+   "name": "Kouroussa",
+   "sub": "Commune urbaine",
+   "x": 534.1,
+   "y": 413.4,
+   "kind": "town",
+   "lonlat": [
+    -9.8833,
+    10.65
+   ]
+  },
+  {
+   "i": 2,
+   "name": "Babila",
+   "sub": "",
+   "x": 612.8,
+   "y": 421.5,
+   "kind": "centroid",
+   "lonlat": [
+    -9.732,
+    10.6347
+   ]
+  },
+  {
+   "i": 3,
+   "name": "Balato",
+   "sub": "",
+   "x": 710.8,
+   "y": 370.4,
+   "kind": "centroid",
+   "lonlat": [
+    -9.5439,
+    10.7313
+   ]
+  },
+  {
+   "i": 4,
+   "name": "Banfélè",
+   "sub": "",
+   "x": 463.6,
+   "y": 669.9,
+   "kind": "centroid",
+   "lonlat": [
+    -10.0186,
+    10.1657
+   ]
+  },
+  {
+   "i": 5,
+   "name": "Baro",
+   "sub": "",
+   "x": 627.2,
+   "y": 503.9,
+   "kind": "centroid",
+   "lonlat": [
+    -9.7044,
+    10.4793
+   ]
+  },
+  {
+   "i": 6,
+   "name": "Fadoussaba",
+   "sub": "",
+   "x": 198.0,
+   "y": 229.4,
+   "kind": "town",
+   "lonlat": [
+    -10.5286,
+    10.9975
+   ]
+  },
+  {
+   "i": 7,
+   "name": "Cissela",
+   "sub": "",
+   "x": 129.8,
+   "y": 278.4,
+   "kind": "centroid",
+   "lonlat": [
+    -10.6595,
+    10.905
+   ]
+  },
+  {
+   "i": 8,
+   "name": "Douako",
+   "sub": "",
+   "x": 431.5,
+   "y": 853.1,
+   "kind": "centroid",
+   "lonlat": [
+    -10.0803,
+    9.8199
+   ]
+  },
+  {
+   "i": 9,
+   "name": "Doura",
+   "sub": "",
+   "x": 651.1,
+   "y": 299.6,
+   "kind": "centroid",
+   "lonlat": [
+    -9.6586,
+    10.865
+   ]
+  },
+  {
+   "i": 10,
+   "name": "Kanséréya",
+   "sub": "",
+   "x": 301.4,
+   "y": 439.9,
+   "kind": "indicative",
+   "lonlat": [
+    -10.33,
+    10.6
+   ]
+  },
+  {
+   "i": 11,
+   "name": "Kiniéro",
+   "sub": "",
+   "x": 531.5,
+   "y": 536.1,
+   "kind": "centroid",
+   "lonlat": [
+    -9.8882,
+    10.4183
+   ]
+  },
+  {
+   "i": 12,
+   "name": "Komola",
+   "sub": "",
+   "x": 339.2,
+   "y": 143.6,
+   "kind": "centroid",
+   "lonlat": [
+    -10.2574,
+    11.1596
+   ]
+  },
+  {
+   "i": 13,
+   "name": "Koumana",
+   "sub": "",
+   "x": 607.1,
+   "y": 356.9,
+   "kind": "centroid",
+   "lonlat": [
+    -9.7431,
+    10.7567
+   ]
+  },
+  {
+   "i": 14,
+   "name": "Kouroukoro",
+   "sub": "",
+   "x": 82.7,
+   "y": 270.4,
+   "kind": "town",
+   "lonlat": [
+    -10.75,
+    10.92
+   ]
+  },
+  {
+   "i": 15,
+   "name": "Sanguiana",
+   "sub": "",
+   "x": 391.1,
+   "y": 335.6,
+   "kind": "centroid",
+   "lonlat": [
+    -10.1578,
+    10.7969
+   ]
+  }
+ ]
+}

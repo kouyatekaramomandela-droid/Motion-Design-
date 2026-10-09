@@ -1,0 +1,56 @@
+<style>
+  .s5 .bgs .ph { inset: 0; }
+  .s5 .veil { position: absolute; inset: 0; background: rgba(246,242,233,0.80); }
+  .s5 .head { position: absolute; left: 154px; right: 154px; top: 206px; text-align: center; }
+  .s5 .head .t-display { font-size: 58px; color: var(--green); }
+  .s5 .head .gold-rule { margin: 16px auto 0; }
+  .s5 .cols { position: absolute; left: 154px; top: 318px; width: 1612px; height: 498px; display: flex; gap: 38px; }
+  .s5 .col { flex: 1; padding: 30px 34px 26px; }
+  .s5 .col h3 { margin: 0 0 20px; font: 700 44px/1.12 var(--serif); color: var(--gold-3); }
+  .s5 .col ul { margin: 0; padding: 0; list-style: none; }
+  .s5 .col li { position: relative; padding-left: 30px; margin: 0 0 14px; font: 500 34px/1.28 var(--sans); color: var(--ivory); }
+  .s5 .col li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold-2); }
+  .s5 .col li b { font-weight: 600; color: var(--gold-3); }
+  .v .s5 .head { left: 86px; right: 86px; top: 296px; }
+  .v .s5 .head .t-display { font-size: 60px; }
+  .v .s5 .cols { left: 86px; top: 410px; width: 908px; height: auto; flex-direction: column; gap: 24px; }
+  .v .s5 .col { padding: 26px 34px 14px; }
+  .v .s5 .col h3 { font-size: 44px; margin-bottom: 14px; }
+  .v .s5 .col li { font-size: 36px; margin-bottom: 10px; }
+  .v .s5 .col li::before { top: 15px; }
+</style>
+<div class="scene s5">
+  <div class="bgs">
+    {{ph:b1|m03|h=50,40|v=50,40|soft}}
+    {{ph:b2|m12|h=40,40|v=30,40|soft}}
+    {{ph:b3|m13|h=50,60|v=50,60|soft}}
+  </div>
+  <div class="veil"></div>
+  <div class="head tx"><div class="t-display">Recommandations</div><i class="gold-rule"></i></div>
+  <div class="cols">
+    <div class="col band c1 tx">
+      <h3>Mesures immédiates</h3>
+      <ul>
+        <li>Transmettre le rapport</li>
+        <li>Restituer aux communautés</li>
+        <li>Signaler les urgences&#8239;: <b>hôpital de Kouroussa, ponts de Diaragbéla et de Menindji</b></li>
+      </ul>
+    </div>
+    <div class="col band c2 tx">
+      <h3>À moyen terme</h3>
+      <ul>
+        <li>Feuille de route territoriale</li>
+        <li>Plaidoyer</li>
+        <li>Concertation avec les sociétés minières</li>
+      </ul>
+    </div>
+    <div class="col band c3 tx">
+      <h3>Suivi et redevabilité</h3>
+      <ul>
+        <li>Suivi périodique</li>
+        <li>Restitution aux populations</li>
+        <li>Permanences parlementaires</li>
+      </ul>
+    </div>
+  </div>
+</div>

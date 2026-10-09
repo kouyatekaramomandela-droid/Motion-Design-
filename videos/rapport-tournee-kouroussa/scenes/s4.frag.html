@@ -1,0 +1,119 @@
+<style>
+  .s4 .ax { position: absolute; inset: 0; }
+  .s4 .ax .bgph { inset: 0; }
+  .s4 .ax .scrim { background: linear-gradient(90deg, rgba(0,26,14,0.86) 0%, rgba(0,26,14,0.66) 46%, rgba(0,26,14,0.5) 100%); }
+  .s4 .win { position: absolute; left: 946px; top: 214px; width: 820px; height: 500px; overflow: hidden; }
+  .s4 .win .ph { inset: 0; }
+  .s4 .panel { position: absolute; left: 154px; top: 214px; width: 726px; height: 500px; padding: 34px 46px; display: flex; flex-direction: column; justify-content: center; }
+  .s4 .panel .row { display: flex; align-items: center; gap: 34px; }
+  .s4 .panel .t-num { font-size: 150px; }
+  .s4 .panel .icon { width: 116px; height: 116px; stroke: var(--gold-2); stroke-width: 4.5; }
+  .s4 .panel .gold-rule { margin: 26px 0 22px; }
+  .s4 .panel .ttl { font-size: 62px; color: var(--ivory); }
+  .s4 .panel .line { margin-top: 18px; font: 500 34px/1.3 var(--sans); color: var(--ivory-dim); }
+  .s4 .dots { position: absolute; left: 154px; top: 752px; width: 1612px; height: 40px; }
+  .s4 .dots .rail { position: absolute; left: 20px; right: 20px; top: 19px; height: 2px; background: rgba(246,242,233,0.3); }
+  .s4 .dots .rail-fill { position: absolute; left: 20px; top: 18px; height: 4px; width: 0; background: var(--gold-2); }
+  .s4 .dots .dt { position: absolute; top: 0; width: 40px; height: 40px; margin-left: -20px; border-radius: 50%;
+    border: 3px solid rgba(246,242,233,0.55); background: var(--green-ink); }
+  .s4 .dots .dt.on { border-color: var(--gold-3); background: var(--gold-2); }
+  .s4 .dots .dt.cur { box-shadow: 0 0 0 8px rgba(201,164,76,0.3); }
+  .v .s4 .ax .scrim { background: linear-gradient(180deg, rgba(0,26,14,0.55) 0%, rgba(0,26,14,0.7) 45%, rgba(0,26,14,0.88) 100%); }
+  .v .s4 .win { left: 86px; top: 300px; width: 908px; height: 580px; }
+  .v .s4 .panel { left: 86px; top: 910px; width: 908px; height: 520px; padding: 40px 48px; }
+  .v .s4 .panel .t-num { font-size: 150px; }
+  .v .s4 .panel .ttl { font-size: 66px; }
+  .v .s4 .panel .line { font-size: 38px; }
+  .v .s4 .dots { left: 106px; top: 1478px; width: 868px; }
+</style>
+<div class="scene s4">
+  <div class="ax ax1">
+    {{ph:bgph|v-convoi|h=50,55|v=50,55|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|v-convoi|h=50,55|v=50,55}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">01</span>{{icon:routes}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Désenclavement</div>
+      <div class="line tx">Routes, pistes, ponts</div>
+    </div>
+  </div>
+  <div class="ax ax2">
+    {{ph:bgph|i01|h=45,62|v=45,60|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|i01|h=45,62|v=45,60}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">02</span>{{icon:eau}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Eau potable</div>
+      <div class="line tx">Forages et adduction</div>
+    </div>
+  </div>
+  <div class="ax ax3">
+    {{ph:bgph|i02|h=45,50|v=45,50|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|i02|h=45,50|v=45,50}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">03</span>{{icon:sante}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Santé</div>
+      <div class="line tx">Structures, équipements, personnel, évacuations</div>
+    </div>
+  </div>
+  <div class="ax ax4">
+    {{ph:bgph|v-sankarani|h=50,55|v=52,55|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|v-sankarani|h=50,55|v=52,55}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">04</span>{{icon:education}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Éducation</div>
+      <div class="line tx">Écoles, enseignants, formation professionnelle</div>
+    </div>
+  </div>
+  <div class="ax ax5">
+    {{ph:bgph|i03|h=50,68|v=55,66|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|i03|h=50,68|v=55,66}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">05</span>{{icon:agriculture}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Agriculture et élevage</div>
+      <div class="line tx">Mécanisation, intrants, financement</div>
+    </div>
+  </div>
+  <div class="ax ax6">
+    {{ph:bgph|v-jeunesse|h=45,45|v=45,45|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|v-jeunesse|h=45,45|v=45,45}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">06</span>{{icon:jeunesse}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Jeunesse</div>
+      <div class="line tx">Formation, emploi, entrepreneuriat</div>
+    </div>
+  </div>
+  <div class="ax ax7">
+    {{ph:bgph|m07|h=50,50|v=45,50|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|m07|h=50,50|v=45,50}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">07</span>{{icon:femmes}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Femmes</div>
+      <div class="line tx">Groupements, transformation, accès au financement</div>
+    </div>
+  </div>
+  <div class="ax ax8">
+    {{ph:bgph|i04|h=42,45|v=42,45|soft}}
+    <div class="scrim"></div>
+    <div class="win frame-gold">{{ph:wph|i04|h=42,45|v=42,45}}</div>
+    <div class="panel band">
+      <div class="row"><span class="t-num tx">08</span>{{icon:electricite}}</div>
+      <i class="gold-rule"></i>
+      <div class="ttl t-display tx">Électricité et numérique</div>
+      <div class="line tx">Électrification rurale, éclairage public, téléphonie</div>
+    </div>
+  </div>
+  <div class="dots"><span class="rail"></span><span class="rail-fill"></span><i class="dt d1" style="left:calc(20px + (100% - 40px) * 0.00000)"></i><i class="dt d2" style="left:calc(20px + (100% - 40px) * 0.14286)"></i><i class="dt d3" style="left:calc(20px + (100% - 40px) * 0.28571)"></i><i class="dt d4" style="left:calc(20px + (100% - 40px) * 0.42857)"></i><i class="dt d5" style="left:calc(20px + (100% - 40px) * 0.57143)"></i><i class="dt d6" style="left:calc(20px + (100% - 40px) * 0.71429)"></i><i class="dt d7" style="left:calc(20px + (100% - 40px) * 0.85714)"></i><i class="dt d8" style="left:calc(20px + (100% - 40px) * 1.00000)"></i></div>
+</div>
