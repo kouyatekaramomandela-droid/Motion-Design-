@@ -248,6 +248,8 @@ axes.forEach((ax, i) => {
   const A = 28 + 3 * i;
   tl.fromTo(ax, { opacity: 0 }, { opacity: 1, duration: i === 0 ? 0.8 : 0.7, ease: "sine.inOut" }, at(i === 0 ? 27.4 : A - 0.4));
   if (i < axes.length - 1) tl.set(ax, { opacity: 0 }, at(A + 3.4));
+  const tag = ax.querySelector(".illus-tag");   // no two tags on screen during the crossfade
+  if (tag && i < axes.length - 1) tl.to(tag, { opacity: 0, duration: 0.25, ease: "sine.in" }, at(A + 2.3));
   tl.fromTo(ax.querySelector(".win"), { x: pick(36, 0), y: pick(0, 24) }, { x: 0, y: 0, duration: 0.9, ease: "power2.out" }, at(A - 0.4));
   tl.fromTo(ax.querySelector(".win img, .win video"), { scale: 1.0 }, { scale: 1.045, duration: 3.9, ease: "none" }, at(A - 0.4));
   tl.fromTo(ax.querySelector(".t-num"), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, at(A + 0.05));

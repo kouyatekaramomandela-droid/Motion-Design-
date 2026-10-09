@@ -5,3 +5,4 @@ assets/prep/clean/
 sketches/*.html
 sketches/jobs.json
 __pycache__/
+renders-log.txt
