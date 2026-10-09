@@ -1,0 +1,1 @@
+Version 9:16 du film « Rapport de la tournée des Députés » (75 s). Généré par ../rapport-tournee-kouroussa/tools/build.py ; ne pas éditer à la main. `assets/` et `audio/` pointent vers le projet 16:9.

@@ -1,0 +1,6 @@
+{
+  "warm": {"preset": "skin-soft", "intensity": 0.55,
+           "adjust": {"temperature": 0.17, "tint": 0.02, "highlights": -0.08, "shadows": 0.04, "blacks": -0.04, "vibrance": 0.03},
+           "wheels": {"midtones": {"hue": 36, "amount": 0.05, "level": 0}, "highlights": {"hue": 42, "amount": 0.13, "level": 0}},
+           "details": {"grain": 0, "vignette": 0}}
+}

@@ -1,3 +1,7 @@
 renders/
 .hyperframes/
 node_modules/
+assets/prep/clean/
+sketches/*.html
+sketches/jobs.json
+__pycache__/

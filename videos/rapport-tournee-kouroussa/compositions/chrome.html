@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="chrome">
+<style>
+/* Rapport de la tournée des Députés de Kouroussa — shared film styles.
+   Canvases: .h 1920x1080 (16:9), .v 1080x1920 (9:16). Textless build adds .nt (hides every .tx).
+   Safe area 8 %: h x 154–1766 / y 86–994 ; v x 86–994 / y 154–1766.
+   Rule: body text >= 30 px on h, >= 34 px on v; captions 40 / 46 px. */
+:root {
+  --ivory: #F6F2E9;
+  --ivory-2: #ECE5D5;
+  --ivory-dim: #D9D2C1;
+  --ink: #17261D;
+  --green: #006633;
+  --green-deep: #003D1F;
+  --green-ink: #00291A;
+  --gold-1: #8B6914;
+  --gold-2: #C9A44C;
+  --gold-3: #E6CC86;
+  --gold-grad: linear-gradient(180deg, #E6CC86 0%, #C9A44C 48%, #8B6914 100%);
+  --flag-red: #CE1126;
+  --flag-yellow: #FCD116;
+  --flag-green: #009460;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+.rk { position: absolute; inset: 0; overflow: hidden; color: var(--ivory); font-family: var(--sans); }
+.rk * { box-sizing: border-box; }
+.rk .scene { position: absolute; inset: 0; overflow: hidden; }
+.rk .fill { position: absolute; inset: 0; }
+.rk .ivory { position: absolute; inset: 0; background: var(--ivory); }
+.rk .ivory-sheen { position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 55% at 18% 22%, rgba(230, 204, 134, 0.34) 0%, rgba(230, 204, 134, 0) 70%),
+    radial-gradient(ellipse 50% 60% at 82% 88%, rgba(201, 164, 76, 0.22) 0%, rgba(201, 164, 76, 0) 70%),
+    radial-gradient(ellipse 120% 90% at 50% 50%, rgba(255, 255, 255, 0) 55%, rgba(139, 105, 20, 0.10) 100%); }
+.rk .sheen-band { position: absolute; top: -30%; bottom: -30%; width: 22%; left: -30%; pointer-events: none; mix-blend-mode: soft-light;
+  background: linear-gradient(100deg, rgba(230,204,134,0) 0%, rgba(230,204,134,0.55) 50%, rgba(230,204,134,0) 100%); transform: skewX(-16deg); }
+.rk .green-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 90% 85% at 50% 40%, #0A4A2A 0%, var(--green-deep) 55%, var(--green-ink) 100%); }
+
+/* photos: ratio kept (object-fit: cover), crop centred on the focus point given in object-position */
+.rk .ph { position: absolute; overflow: hidden; }
+.rk .ph > img, .rk .ph > video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.rk .scrim { position: absolute; inset: 0; pointer-events: none; }
+.rk .frame-gold { border: 3px solid var(--gold-2); box-shadow: 0 0 0 1px rgba(139, 105, 20, 0.6), 0 18px 50px rgba(0, 20, 10, 0.45); border-radius: 6px; }
+.rk .illus-tag { position: absolute; right: 12px; bottom: 10px; padding: 4px 10px 5px; border-radius: 4px; font: 500 22px/1.2 var(--sans);
+  color: var(--ivory); background: rgba(0, 41, 26, 0.72); letter-spacing: 0.01em; }
+
+/* text on dark-green bands edged with gold */
+.rk .band { position: relative; background: linear-gradient(180deg, rgba(0, 82, 41, 0.96) 0%, rgba(0, 61, 31, 0.96) 100%);
+  border: 2px solid var(--gold-2); box-shadow: inset 0 0 0 4px rgba(0, 61, 31, 0.96), inset 0 0 0 5px rgba(201, 164, 76, 0.45), 0 14px 40px rgba(0, 20, 10, 0.35);
+  border-radius: 4px; color: var(--ivory); }
+.rk .t-display { font-family: var(--serif); font-weight: 700; line-height: 1.06; letter-spacing: 0.005em; }
+.rk .t-num { font-family: var(--serif); font-weight: 900; line-height: 0.92; font-variant-numeric: lining-nums tabular-nums;
+  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rk .t-label { font-family: var(--sans); font-weight: 600; letter-spacing: 0.01em; }
+.rk .gold-rule { display: block; width: 110px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--gold-1), var(--gold-3), var(--gold-2)); }
+
+/* fixed elements: emblem + Assemblée Nationale at the top, flag + Simandou 2040 + « Guinée » at the bottom */
+.rk .chrome { position: absolute; inset: 0; pointer-events: none; }
+.rk .chrome .em-rg { position: absolute; left: 154px; top: 86px; height: 100px; filter: drop-shadow(0 3px 8px rgba(0, 20, 10, 0.35)); }
+.rk .chrome .em-an { position: absolute; right: 154px; top: 88px; height: 96px; filter: drop-shadow(0 3px 8px rgba(0, 20, 10, 0.35)); }
+.rk .chrome .plaque { position: absolute; left: 154px; bottom: 86px; height: 70px; display: flex; align-items: center; gap: 26px;
+  padding: 0 24px; background: rgba(246, 242, 233, 0.94); border: 1.5px solid var(--gold-2); border-radius: 6px;
+  box-shadow: 0 8px 26px rgba(0, 20, 10, 0.22); }
+.rk .chrome .flag { display: flex; width: 66px; height: 44px; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(23, 38, 29, 0.25); }
+.rk .chrome .flag i { flex: 1; } .rk .chrome .flag i:nth-child(1) { background: var(--flag-red); }
+.rk .chrome .flag i:nth-child(2) { background: var(--flag-yellow); } .rk .chrome .flag i:nth-child(3) { background: var(--flag-green); }
+.rk .chrome .lg-sim { height: 40px; } .rk .chrome .lg-gn { height: 46px; }
+.rk .chrome .sep { width: 1.5px; height: 40px; background: rgba(139, 105, 20, 0.45); }
+.v .chrome .em-rg { left: 86px; top: 154px; height: 112px; }
+.v .chrome .em-an { right: 86px; top: 158px; height: 104px; }
+.v .chrome .plaque { left: 0; right: 0; margin: 0 auto; width: fit-content; bottom: 154px; height: 76px; }
+
+.rk .chrome .fade-white { position: absolute; inset: 0; background: #FFFFFF; opacity: 0; }
+
+/* captions (burned-in subtitles) */
+.rk-caption { position: absolute; left: 154px; right: 154px; bottom: 168px; display: flex; justify-content: center; pointer-events: none; }
+.rk-caption span { display: inline-block; max-width: 1240px; padding: 10px 28px 12px; border-radius: 8px; text-align: center;
+  font-family: var(--sans); font-weight: 600; font-size: 40px; line-height: 1.28; color: var(--ivory);
+  background: rgba(0, 41, 26, 0.80); white-space: nowrap; }
+.v .rk-caption { left: 86px; right: 86px; bottom: 262px; }
+.v .rk-caption span { max-width: 908px; font-size: 46px; }
+
+/* format switches and the textless build */
+.h .only-v, .v .only-h { display: none !important; }
+.nt .tx, .nt .rk-caption { display: none !important; }
+
+#chrome-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="chrome-root" data-composition-id="chrome" data-width="1920" data-height="1080" data-duration="75.0">
+<div class="rk h">
+<div class="chrome">
+  <img class="em-rg" src="assets/logos/prep/republique-de-guinee-armoiries.png" alt="Emblème de la République de Guinée">
+  <img class="em-an" src="assets/logos/prep/assemblee-nationale-embleme.png" alt="Assemblée Nationale">
+  <div class="plaque">
+    <div class="flag" title="Drapeau de la Guinée"><i></i><i></i><i></i></div>
+    <span class="sep"></span>
+    <img class="lg-sim" src="assets/logos/prep/simandou-2040.png" alt="Programme Simandou 2040">
+    <span class="sep"></span>
+    <img class="lg-gn" src="assets/logos/prep/guinee-marque-nationale.png" alt="Guinée">
+  </div>
+  <div class="fade-white"></div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 0, DUR = 75.0;
+const root = document.querySelector('[data-composition-id="chrome"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (FMT === "h" ? h : v);
+const tl = gsap.timeline({ paused: true });
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => {
+    el.setAttribute("pathLength", "1");
+    el.style.strokeDasharray = "1 1";
+    el.style.strokeDashoffset = "1";
+  });
+}
+// seek-safe count-up: the DOM starts at `from`; the tween writes the rounded value on every render
+function countUp(el, from, to, t, dur, ease) {
+  el.textContent = String(from);
+  const o = { v: from };
+  tl.to(o, { v: to, duration: dur, ease: ease || "power1.out", onUpdate: () => { el.textContent = String(Math.round(o.v)); } }, t);
+}
+// Fixed elements (0–75): emblem and Assemblée Nationale at the top, flag + Simandou 2040 + « Guinée » at the
+// bottom; they settle in during the first second and stay. Fade to white over the last second (74–75).
+tl.fromTo($$(".em-rg, .em-an"), { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", stagger: 0.15 }, at(0.3));
+tl.fromTo($(".plaque"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, at(0.6));
+tl.fromTo($(".fade-white"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.inOut" }, at(74.0));
+
+window.__timelines["chrome"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

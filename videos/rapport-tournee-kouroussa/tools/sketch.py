@@ -23,7 +23,7 @@ def ax_css(k):
     on = ",".join(f".rk .s4 .dots .d{i}" for i in range(1, k + 1))
     return (f"{hide}{{display:none}} {on}{{border-color:var(--gold-3);background:var(--gold-2)}} "
             f".rk .s4 .dots .d{k}{{box-shadow:0 0 0 8px rgba(201,164,76,.3)}} "
-            f".rk .s4 .dots .rail-fill{{width:calc((100% - 40px) * {(k - 1) / 7:.4f})}}")
+            f".rk .s4 .dots .rail-fill{{transform:scaleX({(k - 1) / 7:.4f})}}")
 
 
 CELLS = [

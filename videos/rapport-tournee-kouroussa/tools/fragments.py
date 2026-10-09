@@ -1,10 +1,13 @@
 """Fragment expansion for the report film (one scene source, two canvases + the textless build).
 
 Placeholders in scenes/sN.frag.html:
-  {{ph:CLS|KEY|h=fx,fy|v=fx,fy[|soft]}}  a photo or clip slot: <div class="ph CLS"><img|video ...></div>.
+  {{ph:CLS|KEY|h=fx,fy|v=fx,fy[|soft][|t=START,DUR]}}
+                                         a photo or clip slot: <div class="ph CLS"><img|video ...></div>.
                                          KEY names a source in MEDIA; the cleaned, graded version in
                                          assets/prep/ is used when it exists. fx, fy (0-100) is the focus
                                          point kept in frame (object-position), so faces are never cut.
+                                         soft: the pre-blurred version (tools/soften.py). t: film time and
+                                         length of a clip (made local to the scene composition).
   {{map}}                                the prefecture map (assets/map) with its 15 points
   {{icon:NAME}}                          a gold line icon (the 8 axes)
   {{chrome}}                             the fixed logos (top and bottom)
@@ -47,24 +50,28 @@ MEDIA = {
 ILLUSTRATION = {"i01", "i02", "i03", "i04"}
 
 
-def media_src(key):
-    clip = ROOT / f"assets/prep/clips/{key}.mp4"
+def media_src(key, soft=False):
+    sfx = "-soft" if soft else ""
+    clip = ROOT / f"assets/prep/clips/{key}{sfx}.mp4"
     if key.startswith("v-") and clip.exists():
-        return "video", f"assets/prep/clips/{key}.mp4"
-    prep = ROOT / f"assets/prep/{key}.jpg"
-    return "img", (f"assets/prep/{key}.jpg" if prep.exists() else MEDIA[key])
+        return "video", f"assets/prep/clips/{key}{sfx}.mp4"
+    prep = ROOT / f"assets/prep/{key}{sfx}.jpg"
+    return "img", (f"assets/prep/{key}{sfx}.jpg" if prep.exists() else MEDIA[key])
 
 
-def _ph(arg, fmt):
+def _ph(arg, fmt, t0=0.0, uid="x"):
     parts = arg.split("|")
     cls, key = parts[0], parts[1]
     opts = dict(p.split("=") for p in parts[2:] if "=" in p)
     flags = [p for p in parts[2:] if "=" not in p]
     fx, fy = (opts.get(fmt) or opts.get("h") or "50,50").split(",")
-    kind, src = media_src(key)
+    kind, src = media_src(key, "soft" in flags)
     pos = f"object-position:{fx}% {fy}%"
     if kind == "video":
-        el = f'<video src="{src}" muted playsinline style="{pos}"></video>'
+        start, dur = (float(x) for x in opts["t"].split(","))
+        vid = f"{uid}-{cls.split()[0]}-{key}".replace(" ", "-")
+        el = (f'<video id="{vid}" class="clip" src="{src}" muted playsinline data-start="{round(start - t0, 3)}" '
+              f'data-duration="{dur}" data-hf-media-start-basis="local" style="{pos}"></video>')
     else:
         el = f'<img src="{src}" alt="" style="{pos}">'
     soft = " soft" if "soft" in flags else ""
@@ -112,10 +119,10 @@ def _chrome():
     return ((ROOT / "scenes/chrome.frag.html").read_text())
 
 
-def expand(fragment, uid, fmt):
+def expand(fragment, uid, fmt, t0=0.0):
     def rep(m):
         kind, arg = m.group(1), m.group(2)
-        if kind == "ph": return _ph(arg, fmt)
+        if kind == "ph": return _ph(arg, fmt, t0, uid)
         if kind == "icon": return _icon(arg)
         raise ValueError(m.group(0))
     fragment = fragment.replace("{{map}}", _map()).replace("{{chrome}}", _chrome())

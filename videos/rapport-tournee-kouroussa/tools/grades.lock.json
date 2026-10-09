@@ -1,0 +1,3434 @@
+{
+ "m13": {
+  "source": "6c311b26d31a5953",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "v-convoi": {
+  "source": "81b7e945c05f119b",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.04,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.13,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.13,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m01": {
+  "source": "7997f7b0fa2618af",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0.023,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.193,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.193,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m02": {
+  "source": "d194a3af88216eb3",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.121,
+   "tint": -0.029
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.049,
+    "tint": -0.009,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.049,
+    "tint": -0.009,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m03": {
+  "source": "80157447465e8ea6",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m04": {
+  "source": "9712bbbb3f29bcce",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m05": {
+  "source": "e58ab244e87e62e1",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m06": {
+  "source": "edc937c6d867df9e",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m07": {
+  "source": "75cad675dce1d779",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m08": {
+  "source": "00ba9c79d35ff45b",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.023,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.147,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.147,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m09": {
+  "source": "67b8bc4bb4651110",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m10": {
+  "source": "58779cc9807fc48c",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m12": {
+  "source": "b245d10a277bc080",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.036,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.134,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.134,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m14": {
+  "source": "1d090b8bdc8f3fcd",
+  "correction": {
+   "exposure": 0.102,
+   "contrast": 0.019,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0.026,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.196,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.102,
+    "contrast": 0.019,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0.102,
+    "contrast": 0.019,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.196,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "m18": {
+  "source": "b75e4fe0eaad232a",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "i01": {
+  "source": "263ad5acf92e6067",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "i02": {
+  "source": "bfb9d8de1716a060",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.052,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.118,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.118,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "i03": {
+  "source": "3c960981a0dd939a",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0.036
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.056,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.056,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "i04": {
+  "source": "a6ae109c55eb4169",
+  "correction": {
+   "exposure": 0.126,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.022,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.148,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.126,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0.126,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.148,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "v-jeunesse": {
+  "source": "58dd5837138f72e6",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.03,
+   "tint": -0.031
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.14,
+    "tint": -0.011,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.14,
+    "tint": -0.011,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "v-sankarani": {
+  "source": "5cd3e178e3afa56d",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": -0.03,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.14,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.14,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ },
+ "v-foule": {
+  "source": "93d02cdcf18945db",
+  "correction": {
+   "exposure": 0,
+   "contrast": 0,
+   "blacks": 0,
+   "whites": 0,
+   "temperature": 0,
+   "tint": 0
+  },
+  "diagnosis": [
+   "no obvious technical imbalance in sampled frames"
+  ],
+  "patch": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "temperature": 0.17,
+    "tint": 0.02,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "blacks": -0.04,
+    "vibrance": 0.03,
+    "exposure": 0.0,
+    "contrast": 0.0,
+    "whites": 0.0
+   },
+   "wheels": {
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   },
+   "details": {
+    "grain": 0,
+    "vignette": 0
+   }
+  },
+  "canonical": {
+   "preset": "skin-soft",
+   "intensity": 0.55,
+   "adjust": {
+    "exposure": 0,
+    "contrast": 0,
+    "highlights": -0.08,
+    "shadows": 0.04,
+    "whites": 0,
+    "blacks": -0.04,
+    "temperature": 0.17,
+    "tint": 0.02,
+    "vibrance": 0.03,
+    "saturation": 0.04
+   },
+   "details": {
+    "vignette": 0,
+    "vignetteMidpoint": 0.5,
+    "vignetteRoundness": 0,
+    "vignetteFeather": 0.65,
+    "grain": 0,
+    "grainSize": 0.25,
+    "grainRoughness": 0.5
+   },
+   "effects": {
+    "blur": 0,
+    "pixelate": 0,
+    "chromaBleed": 0,
+    "tapeDamage": 0,
+    "tapeTracking": 0,
+    "tapeNoise": 1,
+    "tapeSpeed": 0.5,
+    "filmArtifacts": 0,
+    "halftone": 0,
+    "halftoneSize": 0,
+    "twoInkPrint": 0,
+    "twoInkPrintSize": 0,
+    "ascii": 0,
+    "asciiSize": 0.06578947368421052,
+    "asciiInvert": 0,
+    "asciiStyle": 0,
+    "asciiColor": 1,
+    "asciiRotation": 0,
+    "dither": 0,
+    "ditherSize": 0,
+    "bloom": 0,
+    "bloomRadius": 8,
+    "monoScreen": 0,
+    "monoScreenSize": 0,
+    "monoScreenAngle": 0,
+    "monoScreenSpread": 0,
+    "monoScreenShape": 0,
+    "monoScreenInvert": 0,
+    "scanlines": 0,
+    "scanlineCount": 0,
+    "scanlineSoftness": 0,
+    "chromaticAberration": 0,
+    "chromaticAngle": 0,
+    "crtCurvature": 0,
+    "digitalGlitch": 0,
+    "digitalGlitchColorSplit": 0,
+    "digitalGlitchLineTear": 0,
+    "digitalGlitchPixelate": 0,
+    "digitalGlitchBlockAmount": 0,
+    "digitalGlitchBlockDisplacement": 0,
+    "digitalGlitchBlockOpacity": 0,
+    "digitalGlitchSpeed": 0,
+    "engraving": 0,
+    "engravingSpacing": 0.4117647058823529,
+    "engravingMinThickness": 0.2,
+    "engravingMaxThickness": 0.4571428571428572,
+    "engravingAngle": 0.25,
+    "engravingContrast": 0.4666666666666667,
+    "engravingSharpness": 0.59,
+    "engravingWave": 0.2,
+    "engravingWaveFrequency": 0.2222222222222222,
+    "crosshatch": 0,
+    "crosshatchSpacing": 0.28,
+    "crosshatchThickness": 0.25,
+    "crosshatchAngle": 0.25,
+    "crosshatchContrast": 0.3333333333333333,
+    "crosshatchEdges": 0.5,
+    "crosshatchLineWeight": 0,
+    "crosshatchWave": 0.33,
+    "crosshatchWaveFrequency": 0.2222222222222222,
+    "kuwahara": 0,
+    "kuwaharaRadius": 0.14285714285714285,
+    "kuwaharaSharpness": 0.3125,
+    "kuwaharaSaturation": 0.5
+   },
+   "lut": null,
+   "colorSpace": "rec709",
+   "wheels": {
+    "shadows": {
+     "hue": 0,
+     "amount": 0,
+     "level": 0
+    },
+    "midtones": {
+     "hue": 36,
+     "amount": 0.05,
+     "level": 0
+    },
+    "highlights": {
+     "hue": 42,
+     "amount": 0.13,
+     "level": 0
+    }
+   }
+  },
+  "look": "warm"
+ }
+}
