@@ -13,32 +13,32 @@ des 8 points en S4. Plan tenu : la signature finale (1:11–1:15).
 
 ## Still open
 
-- Planche v1 à valider.
+- Rien : planche v1 validée par le client, film livré.
 
 ## Frame 1 — Ouverture
 - duration: 6s
-- status: built
+- status: animated
 - src: scenes/s1.frag.html
 - voiceover: "Du 18 au 27 septembre, nous sommes allés à la rencontre de Kouroussa."
 Photos 01 (Hon. KOUYATÉ) et 02 (Hon. KEITA) du flou au net, titre et date.
 
 ## Frame 2 — La tournée
 - duration: 12s
-- status: built
+- status: animated
 - src: scenes/s2.frag.html
 - voiceover: "Quinze localités. Des centaines de voix."
 Carte réelle (OCHA/PAM), 15 points dans l'ordre du rapport ; photos 09, 05, 08, vidéo 20 (foule), 10, 04 ; « 10 jours », « 15 localités ».
 
 ## Frame 3 — Les urgences
 - duration: 10s
-- status: built
+- status: animated
 - src: scenes/s3.frag.html
 - voiceover: "Partout, trois urgences reviennent : l'eau potable, la santé, l'agriculture. De ces échanges sont nées huit priorités :"
 15/15 ×3 sur leurs mots, puis 14/15 ×2. Fonds 13, 09, 06 assombris.
 
 ## Frame 4 — Les 8 axes
 - duration: 24s
-- status: built
+- status: animated
 - src: scenes/s4.frag.html
 - voiceover: "désenclavement, eau, santé, éducation, agriculture, jeunesse, femmes, électricité et numérique."
 3 s par axe, chaque mot calé sur son axe. Images : vidéo 20 convoi, illustr. eau, illustr. santé, vidéo 20 Sankarani,
@@ -46,14 +46,14 @@ illustr. champ, vidéo 20 jeunes, 07 femmes, illustr. enfant à la bougie (menti
 
 ## Frame 5 — Recommandations
 - duration: 14s
-- status: built
+- status: animated
 - src: scenes/s5.frag.html
 - voiceover: "Elles guideront notre action : transmettre, plaider, suivre, et rendre compte."
 Trois colonnes en cascade sur fonds très doux 03, 12, 13.
 
 ## Frame 6 — Kouroussa a parlé / signature
 - duration: 9s
-- status: built
+- status: animated
 - src: scenes/s6.frag.html
 - voiceover: "Kouroussa a parlé. Nous portons sa voix."
 06 en léger zoom, la phrase sur sa bande ; puis portraits 14 et 18, noms, « Députés de Kouroussa » ; fondu au blanc.
