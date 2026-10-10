@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s1v">
+<style>
+/* MADINA DIGITAL — film de présentation 75 s. Canvases: .h 1920x1080, .v 1080x1920.
+   Studio keynote look: night-blue to electric-blue gradient, soft light from the top left, orange/gold
+   particles; the supplied screens float in a neutral device frame (no text added to the frame). */
+:root {
+  --night: #0A1A4A;
+  --night-2: #0E2366;
+  --blue: #1E3FD9;
+  --blue-ui: #1565E8;
+  --navy: #0B2A78;
+  --orange: #FF8A1E;
+  --orange-2: #FF5F1F;
+  --white: #FFFFFF;
+  --green-ok: #22C55E;
+  --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --script: "Kaushan Script", "Brush Script MT", cursive;
+}
+
+.md { position: absolute; inset: 0; overflow: hidden; color: var(--white); font-family: var(--sans); }
+.md * { box-sizing: border-box; }
+.md .scene { position: absolute; inset: 0; overflow: hidden; }
+
+/* studio background (persistent layer) */
+.md .studio { position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 14% 6%, rgba(120, 160, 255, 0.30) 0%, rgba(120, 160, 255, 0) 60%),
+    radial-gradient(ellipse 80% 70% at 85% 100%, rgba(30, 63, 217, 0.55) 0%, rgba(30, 63, 217, 0) 70%),
+    linear-gradient(155deg, #0A1A4A 0%, #0E2366 45%, #1A35B8 85%, #1E3FD9 100%); }
+.md .studio-floor { position: absolute; left: -10%; right: -10%; bottom: -30%; height: 60%;
+  background: radial-gradient(ellipse 50% 40% at 50% 30%, rgba(30, 63, 217, 0.45) 0%, rgba(10, 26, 74, 0) 70%); }
+.md .pt { position: absolute; border-radius: 50%; pointer-events: none; }
+.md .pool { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 46% 52% at 50% 46%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 34%, rgba(150, 175, 255, 0.35) 62%, rgba(30, 63, 217, 0) 82%); }
+.v .pool { background: radial-gradient(ellipse 72% 34% at 50% 42%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 36%, rgba(150, 175, 255, 0.35) 64%, rgba(30, 63, 217, 0) 84%); }
+
+/* device frame: a neutral floating browser window around the supplied screen (no address text) */
+.md .stage { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 40%; }
+.md .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.md .win { position: absolute; left: 0; top: 0; width: 1552px; height: 1066px; border-radius: 22px; background: #F4F7FD;
+  box-shadow: 0 60px 140px rgba(2, 8, 30, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform-style: preserve-3d; overflow: hidden; }
+.md .win .bar { position: absolute; left: 0; top: 0; right: 0; height: 34px; background: linear-gradient(180deg, #FFFFFF, #EEF2FA); border-bottom: 1px solid #DCE3F0; }
+.md .win .bar i { position: absolute; top: 12px; width: 11px; height: 11px; border-radius: 50%; }
+.md .win .bar i:nth-child(1) { left: 16px; background: #FF5F57; } .md .win .bar i:nth-child(2) { left: 34px; background: #FEBC2E; }
+.md .win .bar i:nth-child(3) { left: 52px; background: #28C840; }
+.md .win .bar b { position: absolute; left: 50%; top: 8px; width: 420px; height: 18px; margin-left: -210px; border-radius: 9px; background: #E3E9F4; }
+.md .win .scr { position: absolute; left: 8px; top: 34px; width: 1536px; height: 1024px; overflow: hidden; }
+.md .win .scr > img.shot { position: absolute; left: 0; top: 0; width: 1536px; height: 1024px; display: block; }
+.md .sheen { position: absolute; top: -20%; bottom: -20%; width: 26%; left: -40%; pointer-events: none;
+  background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 48%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0.22) 52%, rgba(255,255,255,0) 100%);
+  transform: skewX(-14deg); }
+
+/* overlays drawn in screen pixels (they ride the camera with the screen) */
+.md .ov { position: absolute; }
+.md .patch { position: absolute; background: #FFFFFF; }
+.md .typed { position: absolute; font: 400 13.5px/1 var(--sans); color: #18233F; white-space: nowrap; }
+.md .typed .caret { display: inline-block; width: 1.2px; height: 15px; margin-left: 1px; vertical-align: -3px; background: #1565E8; }
+.md .focus { position: absolute; border-radius: 6px; box-shadow: 0 0 0 2px rgba(21, 101, 232, 0.85), 0 0 14px 4px rgba(21, 101, 232, 0.35); opacity: 0; }
+.md .cursor { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%;
+  background: radial-gradient(circle, #FFF4E6 0%, #FFB15C 35%, #FF8A1E 60%, rgba(255, 95, 31, 0) 100%);
+  box-shadow: 0 0 14px 6px rgba(255, 138, 30, 0.55); }
+.md .step { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #1565E8;
+  color: #fff; font: 600 19px/38px var(--sans); text-align: center; opacity: 0; box-shadow: 0 4px 12px rgba(21, 101, 232, 0.4); }
+.md .pulse { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; border: 2px solid rgba(21, 101, 232, 0.7); opacity: 0; }
+.md .press { position: absolute; transform-origin: 50% 50%; }
+.md .press img { display: block; width: 100%; height: 100%; border-radius: 24px; }
+.md .okcheck { position: absolute; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--green-ok);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5); opacity: 0; }
+.md .okcheck svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* type */
+.md .t-over { font: 600 52px/1.15 var(--sans); color: var(--white); text-shadow: 0 6px 30px rgba(2, 8, 30, 0.6); }
+.md .t-over em { font-style: normal; color: var(--orange); }
+.md .t-script { font-family: var(--script); font-weight: 400; }
+
+/* photo cards and bubbles */
+.md .card { position: absolute; overflow: hidden; border-radius: 26px; box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255,255,255,0.25); }
+.md .card img, .md .bubble img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.md .bubble { position: absolute; overflow: hidden; border-radius: 50%; border: 5px solid #FFFFFF;
+  box-shadow: 0 24px 60px rgba(2, 8, 30, 0.55), 0 0 0 10px rgba(255, 138, 30, 0.25); }
+.md .tile { position: absolute; overflow: visible; }
+.md .tile img { display: block; width: 100%; height: 100%; border-radius: 14px; }
+.md .tile .glow { position: absolute; inset: -6px; border-radius: 18px; box-shadow: 0 0 0 3px rgba(255, 138, 30, 0.95), 0 0 34px 10px rgba(255, 138, 30, 0.45); opacity: 0; }
+
+.h .only-v, .v .only-h { display: none !important; }
+
+#s1v-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s1v-root" data-composition-id="s1v" data-width="1080" data-height="1920" data-duration="6.6">
+<div class="md v">
+<style>
+  .s1 .lockup { position: absolute; left: 646px; top: 168px; width: 627px; height: 440px; }
+  .v .s1 .lockup { left: 113px; top: 520px; width: 854px; height: 599px; }
+  .s1 .lockup img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+  .s1 .msheen { position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    -webkit-mask-image: url("assets/logo/layers/m.png"); mask-image: url("assets/logo/layers/m.png");
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%; overflow: hidden; }
+  .s1 .msheen i { position: absolute; top: -10%; bottom: -10%; width: 22%; left: -30%;
+    background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); }
+  .s1 .slogan { position: absolute; left: 0; right: 0; top: 650px; text-align: center; font-size: 60px; line-height: 1.2; color: var(--navy); white-space: nowrap; }
+  .s1 .pool { background: radial-gradient(ellipse 62% 60% at 50% 48%, rgba(255,255,255,0.98) 0%, rgba(236,242,255,0.92) 40%, rgba(150,175,255,0.35) 66%, rgba(30,63,217,0) 84%); }
+  .v .s1 .pool { background: radial-gradient(ellipse 80% 40% at 50% 46%, rgba(255,255,255,0.98) 0%, rgba(236,242,255,0.92) 40%, rgba(150,175,255,0.35) 66%, rgba(30,63,217,0) 84%); }
+  .s1 .slogan span { display: inline-block; }
+  .v .s1 .slogan { top: 1190px; font-size: 64px; }
+  .v .s1 .slogan span { display: block; }
+</style>
+<div class="scene s1">
+  <div class="pool"></div>
+  <div class="lockup">
+    <img class="lg lg-m" src="assets/logo/layers/m.png" alt="">
+    <div class="msheen"><i></i></div>
+    <img class="lg lg-chevron" src="assets/logo/layers/chevron.png" alt="">
+    <img class="lg lg-dot-l" src="assets/logo/layers/dot-l.png" alt="">
+    <img class="lg lg-dot-r" src="assets/logo/layers/dot-r.png" alt="">
+    <img class="lg lg-madina" src="assets/logo/layers/madina.png" alt="">
+    <img class="lg lg-digital" src="assets/logo/layers/digital.png" alt="">
+  </div>
+  <div class="slogan t-script"><span class="l1">Commander, recevoir, vivre mieux,</span> <span class="l2">partout en Guinée</span></div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "v", W = 1080, H = 1920, T0 = 0.0, DUR = 6.6;
+const root = document.querySelector('[data-composition-id="s1v"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (FMT === "h" ? h : v);
+const tl = gsap.timeline({ paused: true });
+// camera on a floating window: frame the screen rect [x0,y0,x1,y1] (screen px) inside the canvas box [x,y,w,h]
+const WB = 8, WBAR = 34;
+function camState(rect, box) {
+  const rw = rect[2] - rect[0], rh = rect[3] - rect[1];
+  const s = Math.min(box[2] / rw, box[3] / rh);
+  return { scale: s, x: box[0] + (box[2] - s * rw) / 2 - s * (WB + rect[0]), y: box[1] + (box[3] - s * rh) / 2 - s * (WBAR + rect[1]) };
+}
+function camSet(el, rect, box, t) { tl.set(el, { ...camState(rect, box), transformOrigin: "0 0" }, t); }
+function camTo(el, rectA, rectB, box, t, dur, ease) {
+  tl.fromTo(el, { ...camState(rectA, box), transformOrigin: "0 0" },
+    { ...camState(rectB, box), duration: dur, ease: ease || "power2.inOut", transformOrigin: "0 0" }, t);
+}
+// seek-safe typing: the DOM starts empty, the tween writes the visible prefix (and a caret) on every render
+function typeText(el, text, t, dur, keepCaret) {
+  el.innerHTML = "";
+  const chars = Array.from(text);
+  const o = { n: 0 };
+  tl.to(o, { n: chars.length, duration: dur, ease: "none", onUpdate: () => {
+    const k = Math.round(o.n);
+    el.innerHTML = chars.slice(0, k).join("") + (k < chars.length || keepCaret ? '<i class="caret"></i>' : "");
+  } }, t);
+}
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => { el.setAttribute("pathLength", "1"); el.style.strokeDasharray = "1 1"; el.style.strokeDashoffset = "1"; });
+}
+// seek-safe count-up with a formatter
+function countUp(el, from, to, t, dur, fmt) {
+  const f = fmt || ((v) => String(v));
+  el.textContent = f(from);
+  const o = { v: from };
+  tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = f(Math.round(o.v)); } }, t);
+}
+// S1 — Logo (0–6). The light pool opens; the M ribbon unfolds in space from left to right with a metallic
+// glint; the chevron folds in (bell when the M closes, ~2.2 s); the two dots drop; MADINA and DIGITAL come
+// forward from depth; the slogan writes itself in navy script, left to right.
+tl.fromTo($(".pool"), { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, at(0));
+const lk = $(".lockup");
+tl.fromTo(lk, { rotationY: -28, rotationX: 8, scale: 0.92, transformPerspective: 1400, transformOrigin: "50% 40%" },
+  { rotationY: 0, rotationX: 0, scale: 1, duration: 3.2, ease: "power3.out", transformPerspective: 1400, transformOrigin: "50% 40%" }, at(0.2));
+// the M unfolds: a soft-edged wipe from the left leg to the right leg
+tl.fromTo($(".lg-m"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: "power2.inOut" }, at(0.4));
+tl.fromTo($(".msheen i"), { x: 0 }, { x: pick(900, 1220), duration: 1.4, ease: "power2.inOut" }, at(1.9));
+tl.fromTo($(".lg-chevron"), { opacity: 0, y: -40, scale: 0.6, transformOrigin: "50% 40%" }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(2)", transformOrigin: "50% 40%" }, at(1.7));
+tl.fromTo([$(".lg-dot-l"), $(".lg-dot-r")], { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out", stagger: 0.12 }, at(2.2));
+tl.fromTo($(".lg-madina"), { opacity: 0, scale: 1.18, y: 18, transformOrigin: "50% 75%" }, { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out", transformOrigin: "50% 75%" }, at(2.6));
+tl.fromTo($(".lg-digital"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, at(3.0));
+// handwriting: the line is revealed left to right like a pen stroke
+tl.fromTo($(".slogan .l1"), { clipPath: "inset(-20% 100% -20% 0%)" }, { clipPath: "inset(-20% 0% -20% 0%)", duration: 1.15, ease: "none" }, at(3.6));
+tl.fromTo($(".slogan .l2"), { clipPath: "inset(-20% 100% -20% 0%)" }, { clipPath: "inset(-20% 0% -20% 0%)", duration: 0.75, ease: "none" }, at(4.75));
+// exit: the lockup recedes and the light pool closes before the context shot
+tl.to([lk, $(".slogan")], { opacity: 0, scale: 0.94, duration: 0.7, ease: "power2.in", transformOrigin: "50% 50%" }, at(5.5));
+tl.to($(".pool"), { opacity: 0, duration: 0.8, ease: "sine.in" }, at(5.6));
+
+window.__timelines["s1v"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

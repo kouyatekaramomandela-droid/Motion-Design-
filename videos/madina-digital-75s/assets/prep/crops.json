@@ -1,0 +1,437 @@
+{
+ "hero-guinee": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   335,
+   360,
+   662,
+   884
+  ]
+ },
+ "photo-alimentation": {
+  "src": "03_accueil.webp",
+  "box": [
+   705,
+   726,
+   857,
+   808
+  ]
+ },
+ "photo-pharmacie": {
+  "src": "03_accueil.webp",
+  "box": [
+   872,
+   726,
+   1010,
+   808
+  ]
+ },
+ "photo-transport": {
+  "src": "03_accueil.webp",
+  "box": [
+   1342,
+   726,
+   1495,
+   808
+  ]
+ },
+ "photo-marketplace": {
+  "src": "03_accueil.webp",
+  "box": [
+   352,
+   694,
+   518,
+   842
+  ]
+ },
+ "module-strip": {
+  "src": "03_accueil.webp",
+  "box": [
+   35,
+   524,
+   1512,
+   668
+  ]
+ },
+ "panel-12-modules": {
+  "src": "03_accueil.webp",
+  "box": [
+   1268,
+   120,
+   1505,
+   207
+  ]
+ },
+ "badge-paiement": {
+  "src": "03_accueil.webp",
+  "box": [
+   1272,
+   218,
+   1506,
+   267
+  ]
+ },
+ "badge-livraison": {
+  "src": "03_accueil.webp",
+  "box": [
+   1272,
+   273,
+   1506,
+   322
+  ]
+ },
+ "badge-service": {
+  "src": "03_accueil.webp",
+  "box": [
+   1272,
+   329,
+   1506,
+   378
+  ]
+ },
+ "badge-experience": {
+  "src": "03_accueil.webp",
+  "box": [
+   1272,
+   384,
+   1506,
+   433
+  ]
+ },
+ "band": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   0,
+   897,
+   1536,
+   1024
+  ]
+ },
+ "band-explorer": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   1266,
+   922,
+   1498,
+   969
+  ]
+ },
+ "band-figures": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   480,
+   897,
+   1530,
+   1024
+  ]
+ },
+ "band-users": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   500,
+   915,
+   680,
+   975
+  ]
+ },
+ "band-modules": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   722,
+   915,
+   880,
+   975
+  ]
+ },
+ "band-secure": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   915,
+   915,
+   1030,
+   975
+  ]
+ },
+ "band-partout": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   1080,
+   915,
+   1200,
+   975
+  ]
+ },
+ "btn-signup": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   687,
+   676,
+   1191,
+   725
+  ]
+ },
+ "btn-login": {
+  "src": "02_connexion.webp",
+  "box": [
+   834,
+   547,
+   1311,
+   601
+  ]
+ },
+ "phone": {
+  "src": "03_accueil.webp",
+  "box": [
+   995,
+   140,
+   1205,
+   516
+  ]
+ },
+ "tile-makiti": {
+  "src": "03_accueil.webp",
+  "box": [
+   35,
+   524,
+   158,
+   668
+  ]
+ },
+ "icon-makiti": {
+  "src": "03_accueil.webp",
+  "box": [
+   62,
+   528,
+   130,
+   597
+  ]
+ },
+ "tile-pharmacie": {
+  "src": "03_accueil.webp",
+  "box": [
+   160,
+   524,
+   289,
+   668
+  ]
+ },
+ "icon-pharmacie": {
+  "src": "03_accueil.webp",
+  "box": [
+   190,
+   528,
+   258,
+   597
+  ]
+ },
+ "tile-services": {
+  "src": "03_accueil.webp",
+  "box": [
+   290,
+   524,
+   419,
+   668
+  ]
+ },
+ "icon-services": {
+  "src": "03_accueil.webp",
+  "box": [
+   320,
+   528,
+   388,
+   597
+  ]
+ },
+ "tile-makeup": {
+  "src": "03_accueil.webp",
+  "box": [
+   420,
+   524,
+   551,
+   668
+  ]
+ },
+ "icon-makeup": {
+  "src": "03_accueil.webp",
+  "box": [
+   451,
+   528,
+   519,
+   597
+  ]
+ },
+ "tile-tontine": {
+  "src": "03_accueil.webp",
+  "box": [
+   552,
+   524,
+   676,
+   668
+  ]
+ },
+ "icon-tontine": {
+  "src": "03_accueil.webp",
+  "box": [
+   580,
+   528,
+   648,
+   597
+  ]
+ },
+ "tile-marketplace": {
+  "src": "03_accueil.webp",
+  "box": [
+   677,
+   524,
+   806,
+   668
+  ]
+ },
+ "icon-marketplace": {
+  "src": "03_accueil.webp",
+  "box": [
+   707,
+   528,
+   775,
+   597
+  ]
+ },
+ "tile-bank": {
+  "src": "03_accueil.webp",
+  "box": [
+   807,
+   524,
+   931,
+   668
+  ]
+ },
+ "icon-bank": {
+  "src": "03_accueil.webp",
+  "box": [
+   835,
+   528,
+   903,
+   597
+  ]
+ },
+ "tile-agritech": {
+  "src": "03_accueil.webp",
+  "box": [
+   932,
+   524,
+   1053,
+   668
+  ]
+ },
+ "icon-agritech": {
+  "src": "03_accueil.webp",
+  "box": [
+   958,
+   528,
+   1026,
+   597
+  ]
+ },
+ "tile-immo": {
+  "src": "03_accueil.webp",
+  "box": [
+   1054,
+   524,
+   1173,
+   668
+  ]
+ },
+ "icon-immo": {
+  "src": "03_accueil.webp",
+  "box": [
+   1079,
+   528,
+   1147,
+   597
+  ]
+ },
+ "tile-sante": {
+  "src": "03_accueil.webp",
+  "box": [
+   1174,
+   524,
+   1291,
+   668
+  ]
+ },
+ "icon-sante": {
+  "src": "03_accueil.webp",
+  "box": [
+   1198,
+   528,
+   1266,
+   597
+  ]
+ },
+ "tile-edutech": {
+  "src": "03_accueil.webp",
+  "box": [
+   1292,
+   524,
+   1406,
+   668
+  ]
+ },
+ "icon-edutech": {
+  "src": "03_accueil.webp",
+  "box": [
+   1315,
+   528,
+   1383,
+   597
+  ]
+ },
+ "tile-move": {
+  "src": "03_accueil.webp",
+  "box": [
+   1407,
+   524,
+   1512,
+   668
+  ]
+ },
+ "icon-move": {
+  "src": "03_accueil.webp",
+  "box": [
+   1425,
+   528,
+   1493,
+   597
+  ]
+ },
+ "figure-users": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   566,
+   926,
+   632,
+   948
+  ],
+  "bg": "#014E9D"
+ },
+ "figure-modules": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   779,
+   926,
+   802,
+   948
+  ],
+  "bg": "#024F9D"
+ },
+ "figure-secure": {
+  "src": "01_creer-un-compte.webp",
+  "box": [
+   971,
+   926,
+   1012,
+   948
+  ],
+  "bg": "#004F9E"
+ }
+}

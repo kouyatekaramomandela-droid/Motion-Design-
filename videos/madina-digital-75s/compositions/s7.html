@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s7">
+<style>
+/* MADINA DIGITAL — film de présentation 75 s. Canvases: .h 1920x1080, .v 1080x1920.
+   Studio keynote look: night-blue to electric-blue gradient, soft light from the top left, orange/gold
+   particles; the supplied screens float in a neutral device frame (no text added to the frame). */
+:root {
+  --night: #0A1A4A;
+  --night-2: #0E2366;
+  --blue: #1E3FD9;
+  --blue-ui: #1565E8;
+  --navy: #0B2A78;
+  --orange: #FF8A1E;
+  --orange-2: #FF5F1F;
+  --white: #FFFFFF;
+  --green-ok: #22C55E;
+  --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --script: "Kaushan Script", "Brush Script MT", cursive;
+}
+
+.md { position: absolute; inset: 0; overflow: hidden; color: var(--white); font-family: var(--sans); }
+.md * { box-sizing: border-box; }
+.md .scene { position: absolute; inset: 0; overflow: hidden; }
+
+/* studio background (persistent layer) */
+.md .studio { position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 14% 6%, rgba(120, 160, 255, 0.30) 0%, rgba(120, 160, 255, 0) 60%),
+    radial-gradient(ellipse 80% 70% at 85% 100%, rgba(30, 63, 217, 0.55) 0%, rgba(30, 63, 217, 0) 70%),
+    linear-gradient(155deg, #0A1A4A 0%, #0E2366 45%, #1A35B8 85%, #1E3FD9 100%); }
+.md .studio-floor { position: absolute; left: -10%; right: -10%; bottom: -30%; height: 60%;
+  background: radial-gradient(ellipse 50% 40% at 50% 30%, rgba(30, 63, 217, 0.45) 0%, rgba(10, 26, 74, 0) 70%); }
+.md .pt { position: absolute; border-radius: 50%; pointer-events: none; }
+.md .pool { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 46% 52% at 50% 46%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 34%, rgba(150, 175, 255, 0.35) 62%, rgba(30, 63, 217, 0) 82%); }
+.v .pool { background: radial-gradient(ellipse 72% 34% at 50% 42%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 36%, rgba(150, 175, 255, 0.35) 64%, rgba(30, 63, 217, 0) 84%); }
+
+/* device frame: a neutral floating browser window around the supplied screen (no address text) */
+.md .stage { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 40%; }
+.md .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.md .win { position: absolute; left: 0; top: 0; width: 1552px; height: 1066px; border-radius: 22px; background: #F4F7FD;
+  box-shadow: 0 60px 140px rgba(2, 8, 30, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform-style: preserve-3d; overflow: hidden; }
+.md .win .bar { position: absolute; left: 0; top: 0; right: 0; height: 34px; background: linear-gradient(180deg, #FFFFFF, #EEF2FA); border-bottom: 1px solid #DCE3F0; }
+.md .win .bar i { position: absolute; top: 12px; width: 11px; height: 11px; border-radius: 50%; }
+.md .win .bar i:nth-child(1) { left: 16px; background: #FF5F57; } .md .win .bar i:nth-child(2) { left: 34px; background: #FEBC2E; }
+.md .win .bar i:nth-child(3) { left: 52px; background: #28C840; }
+.md .win .bar b { position: absolute; left: 50%; top: 8px; width: 420px; height: 18px; margin-left: -210px; border-radius: 9px; background: #E3E9F4; }
+.md .win .scr { position: absolute; left: 8px; top: 34px; width: 1536px; height: 1024px; overflow: hidden; }
+.md .win .scr > img.shot { position: absolute; left: 0; top: 0; width: 1536px; height: 1024px; display: block; }
+.md .sheen { position: absolute; top: -20%; bottom: -20%; width: 26%; left: -40%; pointer-events: none;
+  background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 48%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0.22) 52%, rgba(255,255,255,0) 100%);
+  transform: skewX(-14deg); }
+
+/* overlays drawn in screen pixels (they ride the camera with the screen) */
+.md .ov { position: absolute; }
+.md .patch { position: absolute; background: #FFFFFF; }
+.md .typed { position: absolute; font: 400 13.5px/1 var(--sans); color: #18233F; white-space: nowrap; }
+.md .typed .caret { display: inline-block; width: 1.2px; height: 15px; margin-left: 1px; vertical-align: -3px; background: #1565E8; }
+.md .focus { position: absolute; border-radius: 6px; box-shadow: 0 0 0 2px rgba(21, 101, 232, 0.85), 0 0 14px 4px rgba(21, 101, 232, 0.35); opacity: 0; }
+.md .cursor { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%;
+  background: radial-gradient(circle, #FFF4E6 0%, #FFB15C 35%, #FF8A1E 60%, rgba(255, 95, 31, 0) 100%);
+  box-shadow: 0 0 14px 6px rgba(255, 138, 30, 0.55); }
+.md .step { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #1565E8;
+  color: #fff; font: 600 19px/38px var(--sans); text-align: center; opacity: 0; box-shadow: 0 4px 12px rgba(21, 101, 232, 0.4); }
+.md .pulse { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; border: 2px solid rgba(21, 101, 232, 0.7); opacity: 0; }
+.md .press { position: absolute; transform-origin: 50% 50%; }
+.md .press img { display: block; width: 100%; height: 100%; border-radius: 24px; }
+.md .okcheck { position: absolute; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--green-ok);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5); opacity: 0; }
+.md .okcheck svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* type */
+.md .t-over { font: 600 52px/1.15 var(--sans); color: var(--white); text-shadow: 0 6px 30px rgba(2, 8, 30, 0.6); }
+.md .t-over em { font-style: normal; color: var(--orange); }
+.md .t-script { font-family: var(--script); font-weight: 400; }
+
+/* photo cards and bubbles */
+.md .card { position: absolute; overflow: hidden; border-radius: 26px; box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255,255,255,0.25); }
+.md .card img, .md .bubble img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.md .bubble { position: absolute; overflow: hidden; border-radius: 50%; border: 5px solid #FFFFFF;
+  box-shadow: 0 24px 60px rgba(2, 8, 30, 0.55), 0 0 0 10px rgba(255, 138, 30, 0.25); }
+.md .tile { position: absolute; overflow: visible; }
+.md .tile img { display: block; width: 100%; height: 100%; border-radius: 14px; }
+.md .tile .glow { position: absolute; inset: -6px; border-radius: 18px; box-shadow: 0 0 0 3px rgba(255, 138, 30, 0.95), 0 0 34px 10px rgba(255, 138, 30, 0.45); opacity: 0; }
+
+.h .only-v, .v .only-h { display: none !important; }
+
+#s7-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="9.6">
+<div class="md h">
+<style>
+  .s7 .lockup { position: absolute; left: 697px; top: 96px; width: 527px; height: 370px; }
+  .v .s7 .lockup { left: 113px; top: 300px; width: 854px; height: 599px; }
+  .s7 .lockup img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .s7 .band { position: absolute; left: 435px; top: 635px; width: 1050px; height: 127px; transform-origin: 50% 50%; }
+  .s7 .band > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 10px; box-shadow: 0 30px 80px rgba(2,8,30,0.55); }
+  .s7 .fig { position: absolute; height: 22px; background: #014E9D; }
+  .s7 .fig b { position: absolute; left: 2px; top: 1px; font: 500 14.5px/20px var(--sans); color: #FFFFFF; white-space: nowrap; }
+  .s7 .explorer { position: absolute; transform-origin: 50% 50%; }
+  .s7 .explorer img { display: block; width: 100%; height: 100%; }
+  .s7 .blk { position: absolute; transform-origin: 0 0; }
+  .s7 .blk > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px; }
+  .s7 .black { position: absolute; inset: 0; background: #000; opacity: 0; }
+  .s7 .halo { position: absolute; left: 50%; top: 50%; width: 1100px; height: 1100px; margin: -550px 0 0 -550px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(235,241,255,0.8) 30%, rgba(255,255,255,0) 66%); }
+  .s7 .ember { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, rgba(255,138,30,0.55) 0%, rgba(255,95,31,0.25) 35%, rgba(255,95,31,0) 68%); }
+</style>
+<div class="scene s7">
+  <div class="pool"></div>
+  <div class="black"></div>
+  <div class="ember"></div>
+  <div class="halo"></div>
+  <div class="lockup"><img src="assets/logo/layers/lockup.png" alt=""></div>
+  <div class="band only-h">
+    <img src="assets/prep/band-figures.png" alt="">
+    <div class="fig fu" style="left:86px;top:29px;width:66px"><b>+100 000</b></div>
+    <div class="fig fm" style="left:299px;top:29px;width:23px"><b>12</b></div>
+    <div class="fig fs" style="left:491px;top:29px;width:41px"><b>100%</b></div>
+    <div class="explorer" style="left:786px;top:25px;width:232px;height:47px"><img src="assets/prep/band-explorer.png" alt=""></div>
+  </div>
+  <div class="blk only-v bu" style="left:72px;top:1010px;width:180px;height:60px"><img src="assets/prep/band-users.png" alt=""><div class="fig fu" style="left:66px;top:11px;width:66px"><b>+100 000</b></div></div>
+  <div class="blk only-v bm" style="left:560px;top:1010px;width:158px;height:60px"><img src="assets/prep/band-modules.png" alt=""><div class="fig fm" style="left:57px;top:11px;width:23px"><b>12</b></div></div>
+  <div class="blk only-v bs" style="left:110px;top:1210px;width:115px;height:60px"><img src="assets/prep/band-secure.png" alt=""><div class="fig fs" style="left:56px;top:11px;width:41px"><b>100%</b></div></div>
+  <div class="blk only-v bp" style="left:600px;top:1210px;width:120px;height:60px"><img src="assets/prep/band-partout.png" alt=""></div>
+  <div class="explorer only-v ev" style="left:238px;top:1430px;width:603px;height:122px;border-radius:61px;overflow:hidden;background:url('assets/prep/band-explorer.png') center/100% 100% no-repeat"></div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 65.4, DUR = 9.6;
+const root = document.querySelector('[data-composition-id="s7"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (FMT === "h" ? h : v);
+const tl = gsap.timeline({ paused: true });
+// camera on a floating window: frame the screen rect [x0,y0,x1,y1] (screen px) inside the canvas box [x,y,w,h]
+const WB = 8, WBAR = 34;
+function camState(rect, box) {
+  const rw = rect[2] - rect[0], rh = rect[3] - rect[1];
+  const s = Math.min(box[2] / rw, box[3] / rh);
+  return { scale: s, x: box[0] + (box[2] - s * rw) / 2 - s * (WB + rect[0]), y: box[1] + (box[3] - s * rh) / 2 - s * (WBAR + rect[1]) };
+}
+function camSet(el, rect, box, t) { tl.set(el, { ...camState(rect, box), transformOrigin: "0 0" }, t); }
+function camTo(el, rectA, rectB, box, t, dur, ease) {
+  tl.fromTo(el, { ...camState(rectA, box), transformOrigin: "0 0" },
+    { ...camState(rectB, box), duration: dur, ease: ease || "power2.inOut", transformOrigin: "0 0" }, t);
+}
+// seek-safe typing: the DOM starts empty, the tween writes the visible prefix (and a caret) on every render
+function typeText(el, text, t, dur, keepCaret) {
+  el.innerHTML = "";
+  const chars = Array.from(text);
+  const o = { n: 0 };
+  tl.to(o, { n: chars.length, duration: dur, ease: "none", onUpdate: () => {
+    const k = Math.round(o.n);
+    el.innerHTML = chars.slice(0, k).join("") + (k < chars.length || keepCaret ? '<i class="caret"></i>' : "");
+  } }, t);
+}
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => { el.setAttribute("pathLength", "1"); el.style.strokeDasharray = "1 1"; el.style.strokeDashoffset = "1"; });
+}
+// seek-safe count-up with a formatter
+function countUp(el, from, to, t, dur, fmt) {
+  const f = fmt || ((v) => String(v));
+  el.textContent = f(from);
+  const o = { v: from };
+  tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = f(Math.round(o.v)); } }, t);
+}
+// S7 — Signature (66–75). Back to the logo in the light pool; the key-figures band of the screens unfolds below it
+// and its figures count up (+100 000 users, 12 modules, 100 % secure); « Explorer tous les modules » pulses once.
+// Then the band leaves, the logo stays alone in the centre, the studio goes to black and the orange light fades last.
+tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(65.4));
+const lk = $(".lockup");
+tl.fromTo(lk, { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 1.0, ease: "power3.out", transformOrigin: "50% 50%" }, at(65.8));
+const fmt = (v) => "+" + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+if (FMT === "h") {
+  const band = $(".band");
+  tl.fromTo(band, { opacity: 0, scaleY: 0.02, scaleX: 1.55, transformOrigin: "50% 50%" }, { opacity: 1, scaleY: 1.55, scaleX: 1.55, duration: 0.8, ease: "power3.out", transformOrigin: "50% 50%" }, at(66.5));
+} else {
+  const blks = $$(".blk");
+  blks.forEach((b) => tl.set(b, { scale: 2.6, transformOrigin: "0 0" }, 0));
+  tl.fromTo(blks, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", stagger: 0.12 }, at(66.5));
+  tl.fromTo($(".ev"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, at(67.1));
+}
+$$(".fu b").forEach((e) => countUp(e, 0, 100000, at(66.9), 1.6, fmt));
+$$(".fm b").forEach((e) => countUp(e, 0, 12, at(67.1), 1.2));
+$$(".fs b").forEach((e) => countUp(e, 0, 100, at(67.3), 1.2, (v) => v + "%"));
+tl.fromTo($$(".explorer"), { scale: 1 }, { scale: 1.08, duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "50% 50%" }, at(70.2));
+// the band leaves, the logo comes to the centre alone
+tl.to(pick([$(".band")], [...$$(".blk"), $(".ev")]), { opacity: 0, y: 30, duration: 0.6, ease: "power2.in" }, at(72.2));
+tl.to(lk, { y: pick(265, 360), scale: pick(1.25, 1.0), duration: 1.2, ease: "power2.inOut", transformOrigin: "50% 50%" }, at(72.4));
+tl.fromTo($(".halo"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(72.6));
+tl.fromTo($(".ember"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(72.8));
+tl.fromTo($(".black"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.inOut" }, at(73.0));
+tl.to([lk, $(".halo")], { opacity: 0, duration: 0.7, ease: "sine.in" }, at(74.0));
+tl.to($(".ember"), { opacity: 0, duration: 0.6, ease: "sine.in" }, at(74.35));
+
+window.__timelines["s7"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

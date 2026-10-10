@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"></head>
+<body>
+<template id="s2">
+<style>
+/* MADINA DIGITAL — film de présentation 75 s. Canvases: .h 1920x1080, .v 1080x1920.
+   Studio keynote look: night-blue to electric-blue gradient, soft light from the top left, orange/gold
+   particles; the supplied screens float in a neutral device frame (no text added to the frame). */
+:root {
+  --night: #0A1A4A;
+  --night-2: #0E2366;
+  --blue: #1E3FD9;
+  --blue-ui: #1565E8;
+  --navy: #0B2A78;
+  --orange: #FF8A1E;
+  --orange-2: #FF5F1F;
+  --white: #FFFFFF;
+  --green-ok: #22C55E;
+  --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --script: "Kaushan Script", "Brush Script MT", cursive;
+}
+
+.md { position: absolute; inset: 0; overflow: hidden; color: var(--white); font-family: var(--sans); }
+.md * { box-sizing: border-box; }
+.md .scene { position: absolute; inset: 0; overflow: hidden; }
+
+/* studio background (persistent layer) */
+.md .studio { position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 14% 6%, rgba(120, 160, 255, 0.30) 0%, rgba(120, 160, 255, 0) 60%),
+    radial-gradient(ellipse 80% 70% at 85% 100%, rgba(30, 63, 217, 0.55) 0%, rgba(30, 63, 217, 0) 70%),
+    linear-gradient(155deg, #0A1A4A 0%, #0E2366 45%, #1A35B8 85%, #1E3FD9 100%); }
+.md .studio-floor { position: absolute; left: -10%; right: -10%; bottom: -30%; height: 60%;
+  background: radial-gradient(ellipse 50% 40% at 50% 30%, rgba(30, 63, 217, 0.45) 0%, rgba(10, 26, 74, 0) 70%); }
+.md .pt { position: absolute; border-radius: 50%; pointer-events: none; }
+.md .pool { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 46% 52% at 50% 46%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 34%, rgba(150, 175, 255, 0.35) 62%, rgba(30, 63, 217, 0) 82%); }
+.v .pool { background: radial-gradient(ellipse 72% 34% at 50% 42%, rgba(255, 255, 255, 0.98) 0%, rgba(236, 242, 255, 0.92) 36%, rgba(150, 175, 255, 0.35) 64%, rgba(30, 63, 217, 0) 84%); }
+
+/* device frame: a neutral floating browser window around the supplied screen (no address text) */
+.md .stage { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 40%; }
+.md .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.md .win { position: absolute; left: 0; top: 0; width: 1552px; height: 1066px; border-radius: 22px; background: #F4F7FD;
+  box-shadow: 0 60px 140px rgba(2, 8, 30, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform-style: preserve-3d; overflow: hidden; }
+.md .win .bar { position: absolute; left: 0; top: 0; right: 0; height: 34px; background: linear-gradient(180deg, #FFFFFF, #EEF2FA); border-bottom: 1px solid #DCE3F0; }
+.md .win .bar i { position: absolute; top: 12px; width: 11px; height: 11px; border-radius: 50%; }
+.md .win .bar i:nth-child(1) { left: 16px; background: #FF5F57; } .md .win .bar i:nth-child(2) { left: 34px; background: #FEBC2E; }
+.md .win .bar i:nth-child(3) { left: 52px; background: #28C840; }
+.md .win .bar b { position: absolute; left: 50%; top: 8px; width: 420px; height: 18px; margin-left: -210px; border-radius: 9px; background: #E3E9F4; }
+.md .win .scr { position: absolute; left: 8px; top: 34px; width: 1536px; height: 1024px; overflow: hidden; }
+.md .win .scr > img.shot { position: absolute; left: 0; top: 0; width: 1536px; height: 1024px; display: block; }
+.md .sheen { position: absolute; top: -20%; bottom: -20%; width: 26%; left: -40%; pointer-events: none;
+  background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 48%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0.22) 52%, rgba(255,255,255,0) 100%);
+  transform: skewX(-14deg); }
+
+/* overlays drawn in screen pixels (they ride the camera with the screen) */
+.md .ov { position: absolute; }
+.md .patch { position: absolute; background: #FFFFFF; }
+.md .typed { position: absolute; font: 400 13.5px/1 var(--sans); color: #18233F; white-space: nowrap; }
+.md .typed .caret { display: inline-block; width: 1.2px; height: 15px; margin-left: 1px; vertical-align: -3px; background: #1565E8; }
+.md .focus { position: absolute; border-radius: 6px; box-shadow: 0 0 0 2px rgba(21, 101, 232, 0.85), 0 0 14px 4px rgba(21, 101, 232, 0.35); opacity: 0; }
+.md .cursor { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%;
+  background: radial-gradient(circle, #FFF4E6 0%, #FFB15C 35%, #FF8A1E 60%, rgba(255, 95, 31, 0) 100%);
+  box-shadow: 0 0 14px 6px rgba(255, 138, 30, 0.55); }
+.md .step { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #1565E8;
+  color: #fff; font: 600 19px/38px var(--sans); text-align: center; opacity: 0; box-shadow: 0 4px 12px rgba(21, 101, 232, 0.4); }
+.md .pulse { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; border: 2px solid rgba(21, 101, 232, 0.7); opacity: 0; }
+.md .press { position: absolute; transform-origin: 50% 50%; }
+.md .press img { display: block; width: 100%; height: 100%; border-radius: 24px; }
+.md .okcheck { position: absolute; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--green-ok);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.5); opacity: 0; }
+.md .okcheck svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* type */
+.md .t-over { font: 600 52px/1.15 var(--sans); color: var(--white); text-shadow: 0 6px 30px rgba(2, 8, 30, 0.6); }
+.md .t-over em { font-style: normal; color: var(--orange); }
+.md .t-script { font-family: var(--script); font-weight: 400; }
+
+/* photo cards and bubbles */
+.md .card { position: absolute; overflow: hidden; border-radius: 26px; box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255,255,255,0.25); }
+.md .card img, .md .bubble img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.md .bubble { position: absolute; overflow: hidden; border-radius: 50%; border: 5px solid #FFFFFF;
+  box-shadow: 0 24px 60px rgba(2, 8, 30, 0.55), 0 0 0 10px rgba(255, 138, 30, 0.25); }
+.md .tile { position: absolute; overflow: visible; }
+.md .tile img { display: block; width: 100%; height: 100%; border-radius: 14px; }
+.md .tile .glow { position: absolute; inset: -6px; border-radius: 18px; box-shadow: 0 0 0 3px rgba(255, 138, 30, 0.95), 0 0 34px 10px rgba(255, 138, 30, 0.45); opacity: 0; }
+
+.h .only-v, .v .only-h { display: none !important; }
+
+#s2-root { position: absolute; inset: 0; overflow: hidden; }
+</style>
+<div id="s2-root" data-composition-id="s2" data-width="1920" data-height="1080" data-duration="7.2">
+<div class="md h">
+<style>
+  .s2 .hero { left: 714px; top: 84px; width: 492px; height: 788px; }
+  .v .s2 .hero { left: 150px; top: 230px; width: 780px; height: 1250px; }
+  .s2 .hero img { object-position: 50% 50%; }
+  .s2 .over { position: absolute; left: 0; right: 0; top: 890px; text-align: center; }
+  .v .s2 .over { top: 1540px; }
+  .v .s2 .over .t-over { font-size: 60px; }
+</style>
+<div class="scene s2">
+  <div class="stage">
+    <div class="card hero"><img src="assets/prep/hero-guinee.png" alt=""></div>
+  </div>
+  <div class="over"><div class="t-over">La Guinée <em>à portée de main</em></div></div>
+</div>
+
+</div>
+</div>
+<script>
+(function () {
+const FMT = "h", W = 1920, H = 1080, T0 = 5.4, DUR = 7.2;
+const root = document.querySelector('[data-composition-id="s2"]');
+const $ = (s) => root.querySelector(s);
+const $$ = (s) => Array.from(root.querySelectorAll(s));
+const at = (g) => Math.max(0, Math.round((g - T0) * 1000) / 1000);
+const pick = (h, v) => (FMT === "h" ? h : v);
+const tl = gsap.timeline({ paused: true });
+// camera on a floating window: frame the screen rect [x0,y0,x1,y1] (screen px) inside the canvas box [x,y,w,h]
+const WB = 8, WBAR = 34;
+function camState(rect, box) {
+  const rw = rect[2] - rect[0], rh = rect[3] - rect[1];
+  const s = Math.min(box[2] / rw, box[3] / rh);
+  return { scale: s, x: box[0] + (box[2] - s * rw) / 2 - s * (WB + rect[0]), y: box[1] + (box[3] - s * rh) / 2 - s * (WBAR + rect[1]) };
+}
+function camSet(el, rect, box, t) { tl.set(el, { ...camState(rect, box), transformOrigin: "0 0" }, t); }
+function camTo(el, rectA, rectB, box, t, dur, ease) {
+  tl.fromTo(el, { ...camState(rectA, box), transformOrigin: "0 0" },
+    { ...camState(rectB, box), duration: dur, ease: ease || "power2.inOut", transformOrigin: "0 0" }, t);
+}
+// seek-safe typing: the DOM starts empty, the tween writes the visible prefix (and a caret) on every render
+function typeText(el, text, t, dur, keepCaret) {
+  el.innerHTML = "";
+  const chars = Array.from(text);
+  const o = { n: 0 };
+  tl.to(o, { n: chars.length, duration: dur, ease: "none", onUpdate: () => {
+    const k = Math.round(o.n);
+    el.innerHTML = chars.slice(0, k).join("") + (k < chars.length || keepCaret ? '<i class="caret"></i>' : "");
+  } }, t);
+}
+function prepDraw(els) {
+  (Array.isArray(els) ? els : [els]).forEach((el) => { el.setAttribute("pathLength", "1"); el.style.strokeDasharray = "1 1"; el.style.strokeDashoffset = "1"; });
+}
+// seek-safe count-up with a formatter
+function countUp(el, from, to, t, dur, fmt) {
+  const f = fmt || ((v) => String(v));
+  el.textContent = f(from);
+  const o = { v: from };
+  tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = f(Math.round(o.v)); } }, t);
+}
+// S2 — Contexte Guinée (6–12). Over the logo, the studio comes back; the photo of the sign-up screen (lighthouse,
+// sea, city, the woman on her phone) floats in. The camera starts close on the lighthouse and the city, then pulls
+// back and arcs to reveal the woman smiling at her phone. Caption at the bottom.
+tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(5.8));
+const card = $(".hero"), img = $(".hero img");
+tl.fromTo(card, { rotationY: -14, rotationX: 4, z: -120, transformOrigin: "50% 50%" },
+  { rotationY: 6, rotationX: 0, z: 0, duration: 6.6, ease: "power1.inOut", transformOrigin: "50% 50%" }, at(5.6));
+// close on the lighthouse (upper left of the photo), then the whole picture
+tl.fromTo(img, { scale: 1.8, xPercent: 40, yPercent: 30, transformOrigin: "50% 50%" },
+  { scale: 1.0, xPercent: 0, yPercent: 0, duration: 4.4, ease: "power2.inOut", transformOrigin: "50% 50%" }, at(6.8));
+tl.fromTo($(".over .t-over"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, at(8.6));
+
+window.__timelines["s2"] = tl;
+})();
+</script>
+</template>
+</body>
+</html>

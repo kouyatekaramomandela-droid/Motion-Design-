@@ -1,0 +1,45 @@
+<style>
+  .s5 .dim { position: absolute; inset: 0; background: rgba(8, 20, 60, 0.72); opacity: 0; }
+  .s5 .tiles { position: absolute; inset: 0; }
+  .s5 .tile { opacity: 0; }
+  .s5 .tile img { box-shadow: 0 18px 40px rgba(2, 8, 30, 0.35); }
+  .s5 .bubble { width: 290px; height: 290px; opacity: 0; }
+  .v .s5 .bubble { width: 270px; height: 270px; }
+  .s5 .bubble.iconb { background: #FFFFFF; }
+  .s5 .bubble.iconb img { object-fit: contain; padding: 46px; }
+  .s5 .panel { position: absolute; left: 120px; top: 92px; width: 403px; height: 148px; border-radius: 18px; overflow: hidden; opacity: 0;
+    box-shadow: 0 24px 60px rgba(2, 8, 30, 0.45); }
+  .v .s5 .panel { left: 350px; top: 168px; width: 379px; height: 139px; }
+  .s5 .panel img { display: block; width: 100%; height: 100%; }
+</style>
+<div class="scene s5">
+  <div class="stage home">
+    <div class="cam">
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><b></b></div>
+        <div class="scr"><img class="shot" src="assets/ecrans/03_accueil.webp" alt=""></div>
+      </div>
+    </div>
+  </div>
+  <div class="dim"></div>
+  <div class="panel"><img src="{{crop:panel-12-modules}}" alt=""></div>
+  <div class="tiles">
+    <div class="tile k0" data-l="35" data-r="158"><img src="{{crop:tile-makiti}}" alt=""><i class="glow"></i></div>
+    <div class="tile k1" data-l="160" data-r="289"><img src="{{crop:tile-pharmacie}}" alt=""><i class="glow"></i></div>
+    <div class="tile k2" data-l="290" data-r="419"><img src="{{crop:tile-services}}" alt=""><i class="glow"></i></div>
+    <div class="tile k3" data-l="420" data-r="551"><img src="{{crop:tile-makeup}}" alt=""><i class="glow"></i></div>
+    <div class="tile k4" data-l="552" data-r="676"><img src="{{crop:tile-tontine}}" alt=""><i class="glow"></i></div>
+    <div class="tile k5" data-l="677" data-r="806"><img src="{{crop:tile-marketplace}}" alt=""><i class="glow"></i></div>
+    <div class="tile k6" data-l="807" data-r="931"><img src="{{crop:tile-bank}}" alt=""><i class="glow"></i></div>
+    <div class="tile k7" data-l="932" data-r="1053"><img src="{{crop:tile-agritech}}" alt=""><i class="glow"></i></div>
+    <div class="tile k8" data-l="1054" data-r="1173"><img src="{{crop:tile-immo}}" alt=""><i class="glow"></i></div>
+    <div class="tile k9" data-l="1174" data-r="1291"><img src="{{crop:tile-sante}}" alt=""><i class="glow"></i></div>
+    <div class="tile k10" data-l="1292" data-r="1406"><img src="{{crop:tile-edutech}}" alt=""><i class="glow"></i></div>
+    <div class="tile k11" data-l="1407" data-r="1512"><img src="{{crop:tile-move}}" alt=""><i class="glow"></i></div>
+  </div>
+    <div class="bubble b0"><img src="{{crop:photo-alimentation}}" alt=""></div>
+    <div class="bubble b1"><img src="{{crop:photo-pharmacie}}" alt=""></div>
+    <div class="bubble b4 iconb"><img src="{{crop:icon-tontine}}" alt=""></div>
+    <div class="bubble b5"><img src="{{crop:photo-marketplace}}" alt=""></div>
+    <div class="bubble b11"><img src="{{crop:photo-transport}}" alt=""></div>
+</div>

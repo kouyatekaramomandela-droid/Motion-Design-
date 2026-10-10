@@ -1,0 +1,41 @@
+<style>
+  .s4 .wipe { position: absolute; top: -5%; bottom: -5%; width: 120%; left: -125%; }
+  .s4 .wipe.w1 { background: linear-gradient(90deg, #1E3FD9, #2F5BFF); }
+  .s4 .wipe.w2 { background: linear-gradient(90deg, #FF5F1F, #FF8A1E); }
+  .s4 .home .focus.fs { border-radius: 24px; }
+</style>
+<div class="scene s4">
+  <div class="stage login">
+    <div class="cam">
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><b></b></div>
+        <div class="scr">
+          <img class="shot" src="assets/ecrans/02_connexion.webp" alt="">
+          <div class="patch" style="left:888px;top:333px;width:402px;height:35px"></div>
+          <div class="patch" style="left:888px;top:437px;width:377px;height:35px"></div>
+          <div class="focus g1" style="left:834px;top:326px;width:476px;height:49px"></div>
+          <div class="focus g2" style="left:834px;top:430px;width:476px;height:49px"></div>
+          <div class="typed u1" style="left:893px;top:344px"></div>
+          <div class="typed u2" style="left:893px;top:448px"></div>
+          <div class="press" style="left:834px;top:547px;width:477px;height:54px"><img src="{{crop:btn-login}}" alt=""></div>
+          <div class="cursor" style="left:1200px;top:250px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stage home">
+    <div class="cam">
+      <div class="win">
+        <div class="bar"><i></i><i></i><i></i><b></b></div>
+        <div class="scr">
+          <img class="shot" src="assets/ecrans/03_accueil.webp" alt="">
+          <div class="focus fs" style="left:50px;top:372px;width:505px;height:45px"></div>
+          <div class="typed caretonly" style="left:99px;top:388px"><i class="caret"></i></div>
+        </div>
+        <div class="sheen"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wipe w1"></div>
+  <div class="wipe w2"></div>
+</div>

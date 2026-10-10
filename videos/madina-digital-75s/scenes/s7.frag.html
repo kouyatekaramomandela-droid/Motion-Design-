@@ -1,0 +1,37 @@
+<style>
+  .s7 .lockup { position: absolute; left: 697px; top: 96px; width: 527px; height: 370px; }
+  .v .s7 .lockup { left: 113px; top: 300px; width: 854px; height: 599px; }
+  .s7 .lockup img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .s7 .band { position: absolute; left: 435px; top: 635px; width: 1050px; height: 127px; transform-origin: 50% 50%; }
+  .s7 .band > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 10px; box-shadow: 0 30px 80px rgba(2,8,30,0.55); }
+  .s7 .fig { position: absolute; height: 22px; background: #014E9D; }
+  .s7 .fig b { position: absolute; left: 2px; top: 1px; font: 500 14.5px/20px var(--sans); color: #FFFFFF; white-space: nowrap; }
+  .s7 .explorer { position: absolute; transform-origin: 50% 50%; }
+  .s7 .explorer img { display: block; width: 100%; height: 100%; }
+  .s7 .blk { position: absolute; transform-origin: 0 0; }
+  .s7 .blk > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px; }
+  .s7 .black { position: absolute; inset: 0; background: #000; opacity: 0; }
+  .s7 .halo { position: absolute; left: 50%; top: 50%; width: 1100px; height: 1100px; margin: -550px 0 0 -550px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(235,241,255,0.8) 30%, rgba(255,255,255,0) 66%); }
+  .s7 .ember { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, rgba(255,138,30,0.55) 0%, rgba(255,95,31,0.25) 35%, rgba(255,95,31,0) 68%); }
+</style>
+<div class="scene s7">
+  <div class="pool"></div>
+  <div class="black"></div>
+  <div class="ember"></div>
+  <div class="halo"></div>
+  <div class="lockup"><img src="assets/logo/layers/lockup.png" alt=""></div>
+  <div class="band only-h">
+    <img src="{{crop:band-figures}}" alt="">
+    <div class="fig fu" style="left:86px;top:29px;width:66px"><b>+100 000</b></div>
+    <div class="fig fm" style="left:299px;top:29px;width:23px"><b>12</b></div>
+    <div class="fig fs" style="left:491px;top:29px;width:41px"><b>100%</b></div>
+    <div class="explorer" style="left:786px;top:25px;width:232px;height:47px"><img src="{{crop:band-explorer}}" alt=""></div>
+  </div>
+  <div class="blk only-v bu" style="left:72px;top:1010px;width:180px;height:60px"><img src="{{crop:band-users}}" alt=""><div class="fig fu" style="left:66px;top:11px;width:66px"><b>+100 000</b></div></div>
+  <div class="blk only-v bm" style="left:560px;top:1010px;width:158px;height:60px"><img src="{{crop:band-modules}}" alt=""><div class="fig fm" style="left:57px;top:11px;width:23px"><b>12</b></div></div>
+  <div class="blk only-v bs" style="left:110px;top:1210px;width:115px;height:60px"><img src="{{crop:band-secure}}" alt=""><div class="fig fs" style="left:56px;top:11px;width:41px"><b>100%</b></div></div>
+  <div class="blk only-v bp" style="left:600px;top:1210px;width:120px;height:60px"><img src="{{crop:band-partout}}" alt=""></div>
+  <div class="explorer only-v ev" style="left:238px;top:1430px;width:603px;height:122px;border-radius:61px;overflow:hidden;background:url('{{crop:band-explorer}}') center/100% 100% no-repeat"></div>
+</div>

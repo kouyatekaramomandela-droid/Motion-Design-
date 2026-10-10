@@ -1,0 +1,7 @@
+renders/
+.hyperframes/
+node_modules/
+__pycache__/
+renders-log.txt
+sketches/*.html
+sketches/jobs.json
