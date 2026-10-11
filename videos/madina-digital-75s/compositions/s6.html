@@ -94,23 +94,46 @@
 <div id="s6-root" data-composition-id="s6" data-width="1920" data-height="1080" data-duration="10.2">
 <div class="md h">
 <style>
-  .s6 .dimbg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(30,63,217,0.35), rgba(10,26,74,0) 70%); }
+  /* one illustration per benefit behind the trust badges: full frame in 16:9; in 9:16 a photo card at the top */
+  .s6 .pbg { position: absolute; inset: 0; }
+  .s6 .pbg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .s6 .pcard { position: absolute; inset: 0; overflow: hidden; }
+  .v .s6 .pcard { inset: auto; left: 60px; top: 140px; width: 960px; height: 600px; border-radius: 28px;
+    box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25); }
+  .s6 .ph { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+  .s6 .ph img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .s6 .shade { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 52% 40% at 50% 40%, rgba(10, 26, 74, 0.5) 0%, rgba(10, 26, 74, 0.2) 100%),
+      linear-gradient(0deg, rgba(10, 26, 74, 0.9) 0%, rgba(10, 26, 74, 0) 48%); }
+  .v .s6 .shade { background: linear-gradient(0deg, rgba(10, 26, 74, 0.55) 0%, rgba(10, 26, 74, 0) 40%); }
+  .s6 .shade2 { position: absolute; inset: 0; background: rgba(10, 26, 74, 0.45); opacity: 0; pointer-events: none; }
   .s6 .badge { position: absolute; width: 562px; height: 118px; border-radius: 22px; overflow: hidden; opacity: 0;
     box-shadow: 0 30px 70px rgba(2, 8, 30, 0.5), 0 0 0 1px rgba(255,255,255,0.4); }
   .s6 .badge img { display: block; width: 100%; height: 100%; }
   .s6 .bd1 { left: 365px; top: 300px; } .s6 .bd2 { left: 993px; top: 300px; }
   .s6 .bd3 { left: 365px; top: 470px; } .s6 .bd4 { left: 993px; top: 470px; }
-  .v .s6 .badge { width: 842px; height: 176px; left: 119px; border-radius: 30px; }
-  .v .s6 .bd1 { top: 330px; } .v .s6 .bd2 { top: 556px; } .v .s6 .bd3 { top: 782px; } .v .s6 .bd4 { top: 1008px; }
+  .v .s6 .badge { width: 720px; height: 151px; left: 180px; border-radius: 26px; }
+  .v .s6 .bd1 { top: 800px; } .v .s6 .bd2 { top: 979px; } .v .s6 .bd3 { top: 1158px; } .v .s6 .bd4 { top: 1337px; }
   .s6 .vie { position: absolute; left: 0; right: 0; top: 660px; text-align: center; font-size: 110px; line-height: 1.15; white-space: nowrap; }
-  .v .s6 .vie { top: 1270px; font-size: 104px; }
+  .v .s6 .vie { top: 1520px; font-size: 100px; }
   .s6 .vie span { display: inline-block; }
   .v .s6 .vie span { display: block; }
   .s6 .vie span { background: linear-gradient(180deg, #FFB25C 0%, #FF8A1E 45%, #FF5F1F 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 6px 18px rgba(255, 95, 31, 0.35)); padding: 0 24px; }
+    filter: drop-shadow(0 6px 18px rgba(2, 8, 30, 0.55)); padding: 0 24px; }
 </style>
 <div class="scene s6">
-  <div class="dimbg"></div>
+  <div class="pbg only-v">
+    <img class="bk0" src="assets/generated/blur/b-paiement.jpg" alt=""><img class="bk1" src="assets/generated/blur/b-livraison.jpg" alt="">
+    <img class="bk2" src="assets/generated/blur/b-service.jpg" alt=""><img class="bk3" src="assets/generated/blur/b-experience.jpg" alt="">
+  </div>
+  <div class="pcard">
+    <div data-layout-allow-overflow class="ph p0"><img src="assets/generated/b-paiement.jpg" style="object-position:60% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p1"><img src="assets/generated/b-livraison.jpg" style="object-position:50% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p2"><img src="assets/generated/b-service.jpg" style="object-position:45% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p3"><img src="assets/generated/b-experience.jpg" style="object-position:50% 40%" alt=""></div>
+  </div>
+  <div class="shade"></div>
+  <div class="shade2"></div>
   <div class="badge bd1"><img src="assets/prep/badge-paiement.png" alt=""></div>
   <div class="badge bd2"><img src="assets/prep/badge-livraison.png" alt=""></div>
   <div class="badge bd3"><img src="assets/prep/badge-service.png" alt=""></div>
@@ -161,19 +184,44 @@ function countUp(el, from, to, t, dur, fmt) {
   const o = { v: from };
   tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = f(Math.round(o.v)); } }, t);
 }
-// S6 — Bénéfices (57–66). The four trust badges of the home page flip in as 3D cards, each on its words
-// (« Paiement sécurisé » 57.4, « Livraison rapide » 59.0, « service client » 60.6, « expérience unique » 62.8);
-// then « Votre vie, plus simple ! » traces itself in orange script.
-tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, at(56.4));
-[57.3, 58.9, 60.5, 62.7].forEach((t, i) => {
+// S6 — Bénéfices (57–66). Each benefit has its picture (paying with the phone, a parcel handed over at the door,
+// the support agent, a family around a phone) and the matching trust badge of the home page flips in as a 3D card
+// on its words (57.3, 58.9, 60.5, 62.7); then « Votre vie, plus simple ! » traces itself in orange script over the
+// family. Everything fades before the signature so the studio light comes back clean.
+tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.inOut" }, at(56.75));
+const TS = [57.3, 58.9, 60.5, 62.7];
+const phs = $$(".ph"), bks = $$(".pbg img");
+phs.forEach((ph, i) => {
+  const tin = i === 0 ? 56.75 : TS[i] - 0.3, img = ph.querySelector("img");
+  if (i === 0) tl.set(ph, { opacity: 1 }, at(tin));
+  else if (i === 2) {
+    tl.fromTo(ph, { opacity: 0, scale: 1.2, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", transformOrigin: "50% 50%" }, at(tin));
+  } else {
+    tl.set(ph, { opacity: 1 }, at(tin));
+    tl.fromTo(ph, { xPercent: 100 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut" }, at(tin));
+    tl.to(phs[i - 1], { xPercent: -30, duration: 0.6, ease: "power3.inOut" }, at(tin));
+  }
+  if (i > 0) tl.set(phs[i - 1], { autoAlpha: 0 }, at(tin + 0.75));
+  const end = i < 3 ? TS[i + 1] - 0.3 + 0.75 : 66.0;
+  tl.fromTo(img, { scale: i % 2 ? 1.12 : 1.03, xPercent: i % 2 ? 1.5 : -1.5, transformOrigin: "50% 50%" },
+    { scale: i % 2 ? 1.03 : 1.12, xPercent: i % 2 ? -1.5 : 1.5, duration: end - tin, ease: "none", transformOrigin: "50% 50%" }, at(tin));
+  if (FMT === "v") {
+    tl.fromTo(bks[i], { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, at(tin));
+    if (i > 0) tl.set(bks[i - 1], { autoAlpha: 0 }, at(tin + 0.75));
+  }
+});
+TS.forEach((t, i) => {
   const b = $(`.bd${i + 1}`);
   tl.fromTo(b, { opacity: 0, rotationY: -100, z: -80, transformPerspective: 1300, transformOrigin: "50% 50%" },
     { opacity: 1, rotationY: 0, z: 0, duration: 0.9, ease: "power3.out", transformPerspective: 1300, transformOrigin: "50% 50%" }, at(t));
   tl.fromTo(b, { boxShadow: "0 6px 14px rgba(2,8,30,0.2)" }, { boxShadow: "0 30px 70px rgba(2,8,30,0.5)", duration: 0.9, ease: "power2.out" }, at(t));
 });
 tl.to($$(".badge"), { y: pick(-40, -20), duration: 0.8, ease: "power2.inOut" }, at(63.8));
+tl.fromTo($(".shade2"), { opacity: 0 }, { opacity: pick(1, 0.6), duration: 0.8, ease: "sine.inOut" }, at(63.8));
 tl.fromTo($(".vie .l1"), { clipPath: "inset(-30% 100% -30% 0%)" }, { clipPath: "inset(-30% 0% -30% 0%)", duration: 0.7, ease: "none" }, at(64.1));
 tl.fromTo($(".vie .l2"), { clipPath: "inset(-30% 100% -30% 0%)" }, { clipPath: "inset(-30% 0% -30% 0%)", duration: 0.8, ease: "none" }, at(64.8));
+// clear the stage for the signature: the studio and its light pool come back under the logo
+tl.to($(".scene"), { opacity: 0, duration: 0.6, ease: "sine.inOut" }, at(65.7));
 
 window.__timelines["s6"] = tl;
 })();

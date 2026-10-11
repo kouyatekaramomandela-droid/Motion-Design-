@@ -105,6 +105,7 @@
   .s7 .explorer img { display: block; width: 100%; height: 100%; }
   .s7 .blk { position: absolute; transform-origin: 0 0; }
   .s7 .blk > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px; }
+  .s7 .city { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
   .s7 .black { position: absolute; inset: 0; background: #000; opacity: 0; }
   .s7 .halo { position: absolute; left: 50%; top: 50%; width: 1100px; height: 1100px; margin: -550px 0 0 -550px; border-radius: 50%; opacity: 0;
     background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(235,241,255,0.8) 30%, rgba(255,255,255,0) 66%); }
@@ -112,6 +113,8 @@
     background: radial-gradient(circle, rgba(255,138,30,0.55) 0%, rgba(255,95,31,0.25) 35%, rgba(255,95,31,0) 68%); }
 </style>
 <div class="scene s7">
+  <img data-layout-allow-overflow class="city only-h" src="assets/generated/tint/conakry-nuit-h.jpg" alt="">
+  <img data-layout-allow-overflow class="city only-v" src="assets/generated/tint/conakry-nuit-v.jpg" alt="">
   <div class="pool"></div>
   <div class="black"></div>
   <div class="ember"></div>
@@ -174,11 +177,13 @@ function countUp(el, from, to, t, dur, fmt) {
   const o = { v: from };
   tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = f(Math.round(o.v)); } }, t);
 }
-// S7 — Signature (66–75). Back to the logo in the light pool; the key-figures band of the screens unfolds below it
+// S7 — Signature (66–75). Back to the logo in the light pool, Conakry by night in blue far behind it; the key-figures band of the screens unfolds below it
 // and its figures count up (+100 000 users, 12 modules, 100 % secure); « Explorer tous les modules » pulses once.
 // Then the band leaves, the logo stays alone in the centre, the studio goes to black and the orange light fades last.
 tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(65.4));
 const lk = $(".lockup");
+// « … partout en Guinée » : the city stays in the background of the signature until the black
+tl.fromTo($$(".city"), { opacity: 0, scale: 1.0, transformOrigin: "40% 50%" }, { opacity: 0.55, scale: 1.08, duration: 7.4, ease: "none", transformOrigin: "40% 50%" }, at(65.6));
 tl.fromTo(lk, { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 1.0, ease: "power3.out", transformOrigin: "50% 50%" }, at(65.8));
 const fmt = (v) => "+" + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 if (FMT === "h") {

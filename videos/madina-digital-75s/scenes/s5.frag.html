@@ -2,15 +2,23 @@
   .s5 .dim { position: absolute; inset: 0; background: rgba(8, 20, 60, 0.72); opacity: 0; }
   .s5 .tiles { position: absolute; inset: 0; }
   .s5 .tile { opacity: 0; }
-  .s5 .tile img { box-shadow: 0 18px 40px rgba(2, 8, 30, 0.35); }
-  .s5 .bubble { width: 290px; height: 290px; opacity: 0; }
-  .v .s5 .bubble { width: 270px; height: 270px; }
-  .s5 .bubble.iconb { background: #FFFFFF; }
-  .s5 .bubble.iconb img { object-fit: contain; padding: 46px; }
+  .s5 .tile img { box-shadow: 0 18px 40px rgba(2, 8, 30, 0.45); }
   .s5 .panel { position: absolute; left: 120px; top: 92px; width: 403px; height: 148px; border-radius: 18px; overflow: hidden; opacity: 0;
     box-shadow: 0 24px 60px rgba(2, 8, 30, 0.45); }
   .v .s5 .panel { left: 350px; top: 168px; width: 379px; height: 139px; }
   .s5 .panel img { display: block; width: 100%; height: 100%; }
+  /* one illustration per module: full frame in 16:9; in 9:16 a photo card over its own blurred backdrop */
+  .s5 .pbg { position: absolute; inset: 0; }
+  .s5 .pbg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .s5 .pcard { position: absolute; inset: 0; overflow: hidden; }
+  .v .s5 .pcard { inset: auto; left: 60px; top: 150px; width: 960px; height: 1200px; border-radius: 28px; opacity: 0;
+    box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25); }
+  .s5 .ph { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+  .s5 .ph img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .s5 .pgrad { position: absolute; inset: 0; opacity: 0; pointer-events: none;
+    background: linear-gradient(0deg, rgba(10, 26, 74, 0.92) 0%, rgba(10, 26, 74, 0.55) 17%, rgba(10, 26, 74, 0) 40%),
+      linear-gradient(180deg, rgba(10, 26, 74, 0.35) 0%, rgba(10, 26, 74, 0) 22%); }
+  .v .s5 .pgrad { background: linear-gradient(0deg, rgba(10, 26, 74, 0.5) 0%, rgba(10, 26, 74, 0) 30%); }
 </style>
 <div class="scene s5">
   <div class="stage home">
@@ -22,6 +30,29 @@
     </div>
   </div>
   <div class="dim"></div>
+  <div class="pbg only-v">
+    <img class="bk0" src="assets/generated/blur/makiti.jpg" alt=""><img class="bk1" src="assets/generated/blur/pharmacie.jpg" alt="">
+    <img class="bk2" src="assets/generated/blur/services.jpg" alt=""><img class="bk3" src="assets/generated/blur/makeup.jpg" alt="">
+    <img class="bk4" src="assets/generated/blur/tontine.jpg" alt=""><img class="bk5" src="assets/generated/blur/marketplace.jpg" alt="">
+    <img class="bk6" src="assets/generated/blur/bank.jpg" alt=""><img class="bk7" src="assets/generated/blur/agritech.jpg" alt="">
+    <img class="bk8" src="assets/generated/blur/immo.jpg" alt=""><img class="bk9" src="assets/generated/blur/sante.jpg" alt="">
+    <img class="bk10" src="assets/generated/blur/edutech.jpg" alt=""><img class="bk11" src="assets/generated/blur/move.jpg" alt="">
+  </div>
+  <div class="pcard">
+    <div data-layout-allow-overflow class="ph p0"><img src="assets/generated/makiti.jpg" style="object-position:35% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p1"><img src="assets/generated/pharmacie.jpg" style="object-position:40% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p2"><img src="assets/generated/services.jpg" style="object-position:52% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p3"><img src="assets/generated/makeup.jpg" style="object-position:58% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p4"><img src="assets/generated/tontine.jpg" style="object-position:45% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p5"><img src="assets/generated/marketplace.jpg" style="object-position:42% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p6"><img src="assets/generated/bank.jpg" style="object-position:35% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p7"><img src="assets/generated/agritech.jpg" style="object-position:70% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p8"><img src="assets/generated/immo.jpg" style="object-position:50% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p9"><img src="assets/generated/sante.jpg" style="object-position:35% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p10"><img src="assets/generated/edutech.jpg" style="object-position:50% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p11"><img src="assets/generated/move.jpg" style="object-position:45% 50%" alt=""></div>
+  </div>
+  <div class="pgrad"></div>
   <div class="panel"><img src="{{crop:panel-12-modules}}" alt=""></div>
   <div class="tiles">
     <div class="tile k0" data-l="35" data-r="158"><img src="{{crop:tile-makiti}}" alt=""><i class="glow"></i></div>
@@ -37,9 +68,4 @@
     <div class="tile k10" data-l="1292" data-r="1406"><img src="{{crop:tile-edutech}}" alt=""><i class="glow"></i></div>
     <div class="tile k11" data-l="1407" data-r="1512"><img src="{{crop:tile-move}}" alt=""><i class="glow"></i></div>
   </div>
-    <div class="bubble b0"><img src="{{crop:photo-alimentation}}" alt=""></div>
-    <div class="bubble b1"><img src="{{crop:photo-pharmacie}}" alt=""></div>
-    <div class="bubble b4 iconb"><img src="{{crop:icon-tontine}}" alt=""></div>
-    <div class="bubble b5"><img src="{{crop:photo-marketplace}}" alt=""></div>
-    <div class="bubble b11"><img src="{{crop:photo-transport}}" alt=""></div>
 </div>

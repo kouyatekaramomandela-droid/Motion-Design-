@@ -1,0 +1,114 @@
+{
+  "note": "Illustrations générées par IA dans Canva (generate-image, 16:9, 1680x944) pour la v2 du film, validées par le client sur planche. Fichiers pleine résolution exportés du design de travail Canva DAHXuHtC-R4 (« MADINA DIGITAL — images du film v2 (travail) »). blur/ et tint/ : dérivés faits par tools/prep_photos.py.",
+  "canva_design": "DAHXuHtC-R4",
+  "images": {
+    "conakry-aerien": {
+      "file": "conakry-aerien.jpg",
+      "canva_media_id": "MAHXuITRFlQ",
+      "used_in": "S2 plan 1",
+      "prompt": "Photoréaliste, qualité publicitaire : vue aérienne par drone au lever du soleil au-dessus de Conakry, en Guinée. La presqu'île de Kaloum, ses toits de tôle et ses immeubles, le bord de mer de l'océan Atlantique, un phare blanc en silhouette sur la côte. Lumière dorée douce venant de la gauche, légère brume matinale, couleurs chaudes. Aucun texte, aucun logo."
+    },
+    "phare": {
+      "file": "phare.jpg",
+      "canva_media_id": "MAHXuAxW3fY",
+      "used_in": "S2 plan 2",
+      "prompt": "Photographie publicitaire photoréaliste au lever du soleil : le phare blanc de Kaloum à Conakry (Guinée) sur la côte rocheuse, l'océan Atlantique calme, ciel doré et orangé, quelques bateaux de pêche, lumière douce venant de la gauche. Aucun texte, aucun logo."
+    },
+    "makiti": {
+      "file": "makiti.jpg",
+      "canva_media_id": "MAHXuDx7c8o",
+      "used_in": "S5 module 01",
+      "prompt": "Photographie publicitaire photoréaliste, lumière chaude naturelle : sur un marché de Conakry (Guinée), une femme guinéenne souriante en tenue wax tient un panier rempli de produits frais (tomates, mangues, piments, légumes verts), étals colorés en arrière-plan flou. Aucun texte, aucun logo."
+    },
+    "pharmacie": {
+      "file": "pharmacie.jpg",
+      "canva_media_id": "MAHXuJ0r2hg",
+      "used_in": "S5 module 02",
+      "prompt": "Photographie publicitaire photoréaliste : intérieur d'une pharmacie moderne et lumineuse à Conakry (Guinée), une pharmacienne guinéenne souriante en blouse blanche tend un sachet de médicaments à un client, étagères bien rangées en arrière-plan flou, lumière douce. Aucun texte lisible, aucun logo."
+    },
+    "services": {
+      "file": "services.jpg",
+      "canva_media_id": "MAHXuICX3Vg",
+      "used_in": "S5 module 03",
+      "prompt": "Photographie publicitaire photoréaliste : un technicien guinéen souriant en tenue de travail répare un climatiseur dans un salon moderne d'un appartement de Conakry, une cliente le remercie en arrière-plan, lumière naturelle chaude. Aucun texte, aucun logo."
+    },
+    "makeup": {
+      "file": "makeup.jpg",
+      "canva_media_id": "MAHXuFfzQ0M",
+      "used_in": "S5 module 04",
+      "prompt": "Photorealistic photo, a young Guinean make-up artist applying make-up to a smiling West African woman client in a bright modern beauty salon in Conakry, soft warm light, shallow depth of field, cinematic, high detail, no text, no logos"
+    },
+    "tontine": {
+      "file": "tontine.jpg",
+      "canva_media_id": "MAHXuFBiRZI",
+      "used_in": "S5 module 05",
+      "prompt": "Photorealistic photo, a group of smiling Guinean women in colourful wax-print dresses sitting together in a courtyard in Conakry, one holding a smartphone showing a savings app, friendly community savings meeting (tontine), warm afternoon light, cinematic, shallow depth of field, no banknotes, no text, no logos"
+    },
+    "marketplace": {
+      "file": "marketplace.jpg",
+      "canva_media_id": "MAHXuMQGueA",
+      "used_in": "S5 module 06",
+      "prompt": "Photorealistic photo, a young Guinean entrepreneur woman packing online orders in a small bright shop in Conakry, cardboard parcels, clothes and handbags on shelves, smiling, smartphone on the table, warm natural light, cinematic, shallow depth of field, no text, no logos"
+    },
+    "bank": {
+      "file": "bank.jpg",
+      "canva_media_id": "MAHXuON9oZc",
+      "used_in": "S5 module 07",
+      "prompt": "Photorealistic photo, a smiling young Guinean man in a modern street of Conakry sending money with his smartphone, close on his hands and phone with a blurred city background, golden hour light, cinematic, shallow depth of field, phone screen blurred and unreadable, no text, no logos"
+    },
+    "agritech": {
+      "file": "agritech.jpg",
+      "canva_media_id": "MAHXuEfg2YI",
+      "used_in": "S5 module 08",
+      "prompt": "Photorealistic photo, a Guinean farmer in a green rice field in the Guinean countryside checking his smartphone, lush green fields and hills, morning light, cinematic, shallow depth of field, phone screen not visible, no text, no logos"
+    },
+    "immo": {
+      "file": "immo.jpg",
+      "canva_media_id": "MAHXuEu3wOs",
+      "used_in": "S5 module 09",
+      "prompt": "Photorealistic photo, a modern white two-storey house with a garden and palm trees in a residential district of Conakry, Guinea, a happy young West African couple holding keys at the gate, golden hour light, cinematic real-estate photography, no text, no logos"
+    },
+    "sante": {
+      "file": "sante.jpg",
+      "canva_media_id": "MAHXuM_ug_I",
+      "used_in": "S5 module 10",
+      "prompt": "Photorealistic photo, a Guinean mother at home holding a smartphone during a video teleconsultation, the phone screen shows a smiling West African female doctor in a white coat, cosy living room, soft natural light, cinematic, shallow depth of field, no text, no logos"
+    },
+    "edutech": {
+      "file": "edutech.jpg",
+      "canva_media_id": "MAHXuPdxNhY",
+      "used_in": "S5 module 11",
+      "prompt": "Photorealistic photo, a Guinean secondary-school student girl in uniform studying with a tablet at a desk at home in Conakry, focused and smiling, notebooks beside her, warm evening lamp light, cinematic, shallow depth of field, tablet screen not readable, no text, no logos"
+    },
+    "move": {
+      "file": "move.jpg",
+      "canva_media_id": "MAHXuCH_f8A",
+      "used_in": "S5 module 12",
+      "prompt": "Photorealistic photo, a young Guinean delivery rider on a motorbike with a delivery box on the back, wearing a helmet and an orange jacket, riding on a busy avenue in Conakry with the city in soft focus, motion feeling, golden hour light, cinematic, no text, no logos"
+    },
+    "b-paiement": {
+      "file": "b-paiement.jpg",
+      "canva_media_id": "MAHXuPUfb7c",
+      "used_in": "S6 Paiement sécurisé",
+      "prompt": "Photorealistic photo, close-up of a West African woman's hand holding a smartphone and paying securely by tapping it on a payment terminal at a modern shop counter in Conakry, soft bokeh background, warm light, cinematic, screen not readable, no text, no logos"
+    },
+    "b-livraison": {
+      "file": "b-livraison.jpg",
+      "canva_media_id": "MAHXuJ49lds",
+      "used_in": "S6 Livraison rapide",
+      "prompt": "Photorealistic photo, a smiling Guinean delivery man in an orange jacket handing a cardboard parcel to a happy young woman at the door of her home in Conakry, warm afternoon light, cinematic, shallow depth of field, no text, no logos"
+    },
+    "b-service": {
+      "file": "b-service.jpg",
+      "canva_media_id": "MAHXuE8ccwY",
+      "used_in": "S6 Service client 24/7",
+      "prompt": "Photorealistic photo, a friendly young Guinean customer support agent woman wearing a headset, smiling in a bright modern call centre in Conakry at night, screens in soft focus behind her, cool blue and warm orange light, cinematic, shallow depth of field, no text, no logos"
+    },
+    "b-experience": {
+      "file": "b-experience.jpg",
+      "canva_media_id": "MAHXuI6ltM8",
+      "used_in": "S6 Expérience unique + « Votre vie, plus simple ! »",
+      "prompt": "Photorealistic photo, a happy Guinean family, parents and two children, sitting together on a sofa in a modern living room in Conakry, laughing while looking at a smartphone, warm evening light, cinematic, shallow depth of field, phone screen not visible, no text, no logos"
+    }
+  }
+}

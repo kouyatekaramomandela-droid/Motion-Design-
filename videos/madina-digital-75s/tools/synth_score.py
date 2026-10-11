@@ -178,6 +178,10 @@ def sfx():
     for i in range(18): add(click(0.35), 66.9 + i * 0.09, 0.2, "compteur" if i == 0 else "")
     add(bell(1318.5, 0.5, 1.6), 70.2, 0, "Explorer")
     add(bell(698.5, 0.7, 3.2), 72.4, 0, "logo final")
+    # v2 photo transitions (added last so the noise of the earlier sounds stays the same)
+    add(whoosh(0.6, 0.55), 8.2, -0.2, "plan phare")
+    add(whoosh(0.9, 0.5), 8.95, 0.1, "cadre vers carte")
+    for k in range(1, 12): add(whoosh(0.5, 0.22), 32.4 + 2 * k - 0.4, [0.25, -0.25][k % 2], "photo module" if k == 1 else "")
     return reverb(out, 0.3), [c for c in cues if c["label"]]
 
 

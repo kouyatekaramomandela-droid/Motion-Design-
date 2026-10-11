@@ -1,5 +1,17 @@
 <style>
-  .s2 .hero { left: 714px; top: 84px; width: 492px; height: 788px; }
+  /* drone shots: full frame in 16:9; in 9:16 a large photo card over its own blurred backdrop */
+  .s2 .pbg, .s2 .pbg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .s2 .frame { position: absolute; inset: 0; overflow: hidden; }
+  .v .s2 .frame { inset: auto; left: 60px; top: 230px; width: 960px; height: 1250px; clip-path: inset(30px 0px 20px 0px round 28px); }
+  .s2 .fshadow { position: absolute; left: 60px; top: 260px; width: 960px; height: 1200px; border-radius: 28px;
+    box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25); }
+  .s2 .frame img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .s2 .frame .aer { object-position: 40% 50%; } .s2 .frame .pha { object-position: 68% 50%; }
+  .v .s2 .frame .aer { object-position: 18% 50%; }
+  .s2 .shade { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(0deg, rgba(10, 26, 74, 0.55) 0%, rgba(10, 26, 74, 0) 34%),
+      radial-gradient(ellipse 80% 70% at 50% 45%, rgba(10, 26, 74, 0) 55%, rgba(10, 26, 74, 0.45) 100%); }
+  .s2 .hero { left: 714px; top: 84px; width: 492px; height: 788px; opacity: 0; }
   .v .s2 .hero { left: 150px; top: 230px; width: 780px; height: 1250px; }
   .s2 .hero img { object-position: 50% 50%; }
   .s2 .over { position: absolute; left: 0; right: 0; top: 890px; text-align: center; }
@@ -7,6 +19,13 @@
   .v .s2 .over .t-over { font-size: 60px; }
 </style>
 <div class="scene s2">
+  <div class="pbg only-v"><img class="bl-aer" src="assets/generated/blur/conakry-aerien.jpg" alt=""><img class="bl-pha" src="assets/generated/blur/phare.jpg" alt=""></div>
+  <div class="fshadow only-v"></div>
+  <div class="frame">
+    <img data-layout-allow-overflow class="aer" src="assets/generated/conakry-aerien.jpg" alt="">
+    <img data-layout-allow-overflow class="pha" src="assets/generated/phare.jpg" alt="">
+    <div class="shade"></div>
+  </div>
   <div class="stage">
     <div class="card hero"><img src="{{crop:hero-guinee}}" alt=""></div>
   </div>

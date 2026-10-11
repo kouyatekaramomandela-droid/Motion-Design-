@@ -25,10 +25,12 @@ signature finale.
 - Durée 75 s : les séquences du brief sont gardées, la séquence des 12 modules passe à ~2 s par module et la
   signature s'allonge.
 - Formats : 16:9 + 9:16 (recomposé).
-- Photos « photoréalistes » : uniquement celles des écrans fournis (fond de ville et phare, photos des catégories,
-  panier de la bannière promo). Tontine : son icône. Rien de généré.
-- Voix off en « français guinéen » : voix ElevenLabs **Amadou** (8R6pzcy1HIr4WcoApmzw, accent ouest-africain ;
-  aucune voix à l'accent spécifiquement guinéen dans la bibliothèque).
+- v1 : photos « photoréalistes » uniquement celles des écrans fournis.
+- v2 (« Refais le film, tu vas au delà des images que je t'ai donné ») : 18 illustrations générées par IA dans
+  Canva (Conakry vue du ciel, phare, une par module, une par bénéfice), validées par le client sur planche.
+  Pas d'images Pinterest (droits d'auteur). Les interfaces restent les écrans fournis, sans modification.
+- Voix off en « français guinéen » : d'abord prévue avec la voix ElevenLabs Amadou (crédits insuffisants), faite
+  avec **Gemini TTS, voix Puck** (style : homme guinéen, accent de Conakry), validée par le client.
 - Nombre d'utilisateurs : **+100 000** (le « +1 000 000 » du pied de page de l'accueil reste hors champ).
 - Validation : plan en chat (fait), puis planche d'esquisses, puis montage.
 
@@ -59,4 +61,4 @@ modules, synthé ascendant à la validation : tout généré localement (libre d
 
 ## Notes
 
-- Crédits ElevenLabs : une prise = 869 crédits ; il en restait 252. Recharge nécessaire avant la voix.
+- Crédits ElevenLabs : une prise = 869 crédits ; il en restait 252 (d'où le passage à Gemini TTS).

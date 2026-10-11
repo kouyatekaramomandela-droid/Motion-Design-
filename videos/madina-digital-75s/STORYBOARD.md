@@ -12,8 +12,11 @@ Fil conducteur : la lumière orange (curseur, particules, halos) qui guide l'œi
 
 ## Still open
 
-- Planche v1 envoyée ; film livré.
+- Planche v1 envoyée ; film v1 livré.
 - Voix off : Gemini TTS (voix Puck), validée par le client.
+- v2 (demande du client : « aller au-delà des images fournies ») : 18 illustrations générées dans Canva, validées
+  sur planche (`renders/apercus/planche_images_v2.jpg`, liste et prompts dans `assets/generated/canva_media.json`).
+  S2, S5, S6 et S7 refaits avec elles ; voix et musique inchangées.
 
 ## Frame 1 — Logo
 - duration: 6s
@@ -26,6 +29,8 @@ Fil conducteur : la lumière orange (curseur, particules, halos) qui guide l'œi
 - status: animated
 - src: scenes/s2.frag.html
 - voiceover: "En Guinée, tout va vite. Avec Madina Digital, tout est à portée de main."
+- v2: plan drone sur Conakry au lever du soleil (poussée vers le phare), coupe rapide sur le phare de Kaloum
+  (« tout va vite »), puis le cadre se referme sur la photo de l'écran d'inscription (« Avec Madina Digital »).
 
 ## Frame 3 — Inscription
 - duration: 10s
@@ -44,15 +49,20 @@ Fil conducteur : la lumière orange (curseur, particules, halos) qui guide l'œi
 - status: animated
 - src: scenes/s5.frag.html
 - voiceover: "Douze modules, une seule application. Makiti pour vos courses, … et Move, pour vous déplacer et vous faire livrer."
+- v2: les 12 tuiles sortent de l'accueil et forment un rail (une rangée en 16:9, deux rangées de six en 9:16) ;
+  chaque module ouvre sa photo (plein cadre en 16:9, carte sur fond flouté en 9:16) par un cercle, une poussée ou
+  un zoom, pendant que sa tuile se soulève et s'allume.
 
 ## Frame 6 — Bénéfices
 - duration: 9s
 - status: animated
 - src: scenes/s6.frag.html
 - voiceover: "Paiement sécurisé. Livraison rapide. Un service client vingt-quatre heures sur vingt-quatre. Une expérience unique. Votre vie, plus simple !"
+- v2: une photo par bénéfice derrière les badges (paiement sans contact, colis livré, conseillère, famille).
 
 ## Frame 7 — Signature
 - duration: 9s
 - status: animated
 - src: scenes/s7.frag.html
 - voiceover: "Madina Digital : commander, recevoir, vivre mieux… partout en Guinée."
+- v2: Conakry en bleu nuit, très discrète, derrière le logo et les chiffres.

@@ -1,21 +1,44 @@
 <style>
-  .s6 .dimbg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(30,63,217,0.35), rgba(10,26,74,0) 70%); }
+  /* one illustration per benefit behind the trust badges: full frame in 16:9; in 9:16 a photo card at the top */
+  .s6 .pbg { position: absolute; inset: 0; }
+  .s6 .pbg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .s6 .pcard { position: absolute; inset: 0; overflow: hidden; }
+  .v .s6 .pcard { inset: auto; left: 60px; top: 140px; width: 960px; height: 600px; border-radius: 28px;
+    box-shadow: 0 50px 120px rgba(2, 8, 30, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25); }
+  .s6 .ph { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+  .s6 .ph img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .s6 .shade { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 52% 40% at 50% 40%, rgba(10, 26, 74, 0.5) 0%, rgba(10, 26, 74, 0.2) 100%),
+      linear-gradient(0deg, rgba(10, 26, 74, 0.9) 0%, rgba(10, 26, 74, 0) 48%); }
+  .v .s6 .shade { background: linear-gradient(0deg, rgba(10, 26, 74, 0.55) 0%, rgba(10, 26, 74, 0) 40%); }
+  .s6 .shade2 { position: absolute; inset: 0; background: rgba(10, 26, 74, 0.45); opacity: 0; pointer-events: none; }
   .s6 .badge { position: absolute; width: 562px; height: 118px; border-radius: 22px; overflow: hidden; opacity: 0;
     box-shadow: 0 30px 70px rgba(2, 8, 30, 0.5), 0 0 0 1px rgba(255,255,255,0.4); }
   .s6 .badge img { display: block; width: 100%; height: 100%; }
   .s6 .bd1 { left: 365px; top: 300px; } .s6 .bd2 { left: 993px; top: 300px; }
   .s6 .bd3 { left: 365px; top: 470px; } .s6 .bd4 { left: 993px; top: 470px; }
-  .v .s6 .badge { width: 842px; height: 176px; left: 119px; border-radius: 30px; }
-  .v .s6 .bd1 { top: 330px; } .v .s6 .bd2 { top: 556px; } .v .s6 .bd3 { top: 782px; } .v .s6 .bd4 { top: 1008px; }
+  .v .s6 .badge { width: 720px; height: 151px; left: 180px; border-radius: 26px; }
+  .v .s6 .bd1 { top: 800px; } .v .s6 .bd2 { top: 979px; } .v .s6 .bd3 { top: 1158px; } .v .s6 .bd4 { top: 1337px; }
   .s6 .vie { position: absolute; left: 0; right: 0; top: 660px; text-align: center; font-size: 110px; line-height: 1.15; white-space: nowrap; }
-  .v .s6 .vie { top: 1270px; font-size: 104px; }
+  .v .s6 .vie { top: 1520px; font-size: 100px; }
   .s6 .vie span { display: inline-block; }
   .v .s6 .vie span { display: block; }
   .s6 .vie span { background: linear-gradient(180deg, #FFB25C 0%, #FF8A1E 45%, #FF5F1F 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 6px 18px rgba(255, 95, 31, 0.35)); padding: 0 24px; }
+    filter: drop-shadow(0 6px 18px rgba(2, 8, 30, 0.55)); padding: 0 24px; }
 </style>
 <div class="scene s6">
-  <div class="dimbg"></div>
+  <div class="pbg only-v">
+    <img class="bk0" src="assets/generated/blur/b-paiement.jpg" alt=""><img class="bk1" src="assets/generated/blur/b-livraison.jpg" alt="">
+    <img class="bk2" src="assets/generated/blur/b-service.jpg" alt=""><img class="bk3" src="assets/generated/blur/b-experience.jpg" alt="">
+  </div>
+  <div class="pcard">
+    <div data-layout-allow-overflow class="ph p0"><img src="assets/generated/b-paiement.jpg" style="object-position:60% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p1"><img src="assets/generated/b-livraison.jpg" style="object-position:50% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p2"><img src="assets/generated/b-service.jpg" style="object-position:45% 50%" alt=""></div>
+    <div data-layout-allow-overflow class="ph p3"><img src="assets/generated/b-experience.jpg" style="object-position:50% 40%" alt=""></div>
+  </div>
+  <div class="shade"></div>
+  <div class="shade2"></div>
   <div class="badge bd1"><img src="{{crop:badge-paiement}}" alt=""></div>
   <div class="badge bd2"><img src="{{crop:badge-livraison}}" alt=""></div>
   <div class="badge bd3"><img src="{{crop:badge-service}}" alt=""></div>

@@ -1,8 +1,10 @@
-// S7 — Signature (66–75). Back to the logo in the light pool; the key-figures band of the screens unfolds below it
+// S7 — Signature (66–75). Back to the logo in the light pool, Conakry by night in blue far behind it; the key-figures band of the screens unfolds below it
 // and its figures count up (+100 000 users, 12 modules, 100 % secure); « Explorer tous les modules » pulses once.
 // Then the band leaves, the logo stays alone in the centre, the studio goes to black and the orange light fades last.
 tl.fromTo($(".scene"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.inOut" }, at(65.4));
 const lk = $(".lockup");
+// « … partout en Guinée » : the city stays in the background of the signature until the black
+tl.fromTo($$(".city"), { opacity: 0, scale: 1.0, transformOrigin: "40% 50%" }, { opacity: 0.55, scale: 1.08, duration: 7.4, ease: "none", transformOrigin: "40% 50%" }, at(65.6));
 tl.fromTo(lk, { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 1.0, ease: "power3.out", transformOrigin: "50% 50%" }, at(65.8));
 const fmt = (v) => "+" + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 if (FMT === "h") {
