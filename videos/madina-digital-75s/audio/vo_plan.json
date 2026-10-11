@@ -1,0 +1,158 @@
+[
+ {
+  "id": "l01",
+  "at": 0.9,
+  "max": 4.0,
+  "text": "Madina Digital."
+ },
+ {
+  "id": "l02",
+  "at": 6.4,
+  "max": 5.4,
+  "text": "En Guinée, tout va vite. Avec Madina Digital, tout est à portée de main."
+ },
+ {
+  "id": "l03",
+  "at": 12.3,
+  "max": 1.9,
+  "text": "Créer votre compte ? Quelques secondes suffisent."
+ },
+ {
+  "id": "l04",
+  "at": 14.3,
+  "max": 5.2,
+  "text": "Votre nom, votre numéro, votre e-mail, un mot de passe…"
+ },
+ {
+  "id": "l05",
+  "at": 19.7,
+  "max": 2.2,
+  "text": "et c'est validé !"
+ },
+ {
+  "id": "l06",
+  "at": 22.3,
+  "max": 2.6,
+  "text": "Connectez-vous…"
+ },
+ {
+  "id": "l07",
+  "at": 25.4,
+  "max": 4.8,
+  "text": "et tout s'ouvre à vous : plus qu'une super-application, une vie plus simple !"
+ },
+ {
+  "id": "l08",
+  "at": 30.0,
+  "max": 2.3,
+  "text": "Douze modules, une seule application."
+ },
+ {
+  "id": "m01",
+  "at": 32.4,
+  "max": 1.95,
+  "text": "Makiti pour vos courses,"
+ },
+ {
+  "id": "m02",
+  "at": 34.4,
+  "max": 1.95,
+  "text": "Pharmacie pour vos médicaments,"
+ },
+ {
+  "id": "m03",
+  "at": 36.4,
+  "max": 1.95,
+  "text": "des Services à domicile,"
+ },
+ {
+  "id": "m04",
+  "at": 38.4,
+  "max": 1.95,
+  "text": "Make-up pour la beauté,"
+ },
+ {
+  "id": "m05",
+  "at": 40.4,
+  "max": 1.95,
+  "text": "la Tontine pour épargner,"
+ },
+ {
+  "id": "m06",
+  "at": 42.4,
+  "max": 1.95,
+  "text": "la Marketplace pour acheter et vendre,"
+ },
+ {
+  "id": "m07",
+  "at": 44.4,
+  "max": 1.95,
+  "text": "Bank pour vos transferts,"
+ },
+ {
+  "id": "m08",
+  "at": 46.4,
+  "max": 1.95,
+  "text": "AgriTech pour les producteurs,"
+ },
+ {
+  "id": "m09",
+  "at": 48.4,
+  "max": 1.95,
+  "text": "Immo pour se loger,"
+ },
+ {
+  "id": "m10",
+  "at": 50.4,
+  "max": 1.95,
+  "text": "Santé,"
+ },
+ {
+  "id": "m11",
+  "at": 52.4,
+  "max": 1.95,
+  "text": "EduTech…"
+ },
+ {
+  "id": "m12",
+  "at": 54.4,
+  "max": 2.8,
+  "text": "et Move, pour vous déplacer et vous faire livrer."
+ },
+ {
+  "id": "b01",
+  "at": 57.3,
+  "max": 1.55,
+  "text": "Paiement sécurisé."
+ },
+ {
+  "id": "b02",
+  "at": 58.9,
+  "max": 1.55,
+  "text": "Livraison rapide."
+ },
+ {
+  "id": "b03",
+  "at": 60.5,
+  "max": 2.15,
+  "text": "Un service client vingt-quatre heures sur vingt-quatre."
+ },
+ {
+  "id": "b04",
+  "at": 62.7,
+  "max": 1.35,
+  "text": "Une expérience unique."
+ },
+ {
+  "id": "b05",
+  "at": 64.1,
+  "max": 2.4,
+  "text": "Votre vie, plus simple !"
+ },
+ {
+  "id": "e01",
+  "at": 67.0,
+  "max": 7.0,
+  "text": "Madina Digital : commander, recevoir, vivre mieux… partout en Guinée."
+ }
+]

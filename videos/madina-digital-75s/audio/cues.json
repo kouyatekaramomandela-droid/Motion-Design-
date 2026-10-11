@@ -1,0 +1,150 @@
+{
+ "bpm": 120,
+ "bar_s": 2.0,
+ "downbeat_offset": 0.4,
+ "duck_source": "vo_plan",
+ "duck_segments": [
+  [
+   0.78,
+   4.75
+  ],
+  [
+   6.28,
+   11.51
+  ],
+  [
+   12.18,
+   73.55
+  ]
+ ],
+ "sfx": [
+  {
+   "t": 2.2,
+   "label": "M se referme"
+  },
+  {
+   "t": 13.3,
+   "label": "frappe"
+  },
+  {
+   "t": 14.6,
+   "label": "frappe"
+  },
+  {
+   "t": 15.9,
+   "label": "frappe"
+  },
+  {
+   "t": 17.0,
+   "label": "frappe"
+  },
+  {
+   "t": 17.7,
+   "label": "frappe"
+  },
+  {
+   "t": 22.6,
+   "label": "frappe"
+  },
+  {
+   "t": 23.8,
+   "label": "frappe"
+  },
+  {
+   "t": 19.4,
+   "label": "bouton"
+  },
+  {
+   "t": 24.65,
+   "label": "bouton"
+  },
+  {
+   "t": 19.75,
+   "label": "validation"
+  },
+  {
+   "t": 20.0,
+   "label": "coche"
+  },
+  {
+   "t": 25.0,
+   "label": "volet"
+  },
+  {
+   "t": 32.4,
+   "label": "module 1"
+  },
+  {
+   "t": 34.4,
+   "label": "module 2"
+  },
+  {
+   "t": 36.4,
+   "label": "module 3"
+  },
+  {
+   "t": 38.4,
+   "label": "module 4"
+  },
+  {
+   "t": 40.4,
+   "label": "module 5"
+  },
+  {
+   "t": 42.4,
+   "label": "module 6"
+  },
+  {
+   "t": 44.4,
+   "label": "module 7"
+  },
+  {
+   "t": 46.4,
+   "label": "module 8"
+  },
+  {
+   "t": 48.4,
+   "label": "module 9"
+  },
+  {
+   "t": 50.4,
+   "label": "module 10"
+  },
+  {
+   "t": 52.4,
+   "label": "module 11"
+  },
+  {
+   "t": 54.4,
+   "label": "module 12"
+  },
+  {
+   "t": 57.3,
+   "label": "carte"
+  },
+  {
+   "t": 58.9,
+   "label": "carte"
+  },
+  {
+   "t": 60.5,
+   "label": "carte"
+  },
+  {
+   "t": 62.7,
+   "label": "carte"
+  },
+  {
+   "t": 66.9,
+   "label": "compteur"
+  },
+  {
+   "t": 70.2,
+   "label": "Explorer"
+  },
+  {
+   "t": 72.4,
+   "label": "logo final"
+  }
+ ]
+}

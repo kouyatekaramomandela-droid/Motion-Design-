@@ -1,0 +1,116 @@
+{
+ "provider": "gemini",
+ "tts_model": "gemini-3.8-flash-tts",
+ "voice": "Puck",
+ "lang": "fr",
+ "style": "Homme guinéen d'une trentaine d'années. Français parlé avec l'accent de Conakry, en Guinée. Voix claire, énergique et souriante, ton chaleureux et confiant de publicité. Diction articulée, rythme dynamique mais jamais précipité, petites pauses aux virgules.",
+ "lines": [
+  {
+   "id": "l01",
+   "text": "Madina Digital."
+  },
+  {
+   "id": "l02",
+   "text": "En Guinée, tout va vite. Avec Madina Digital, tout est à portée de main."
+  },
+  {
+   "id": "l03",
+   "text": "Créer votre compte ? Quelques secondes suffisent."
+  },
+  {
+   "id": "l04",
+   "text": "Votre nom, votre numéro, votre e-mail, un mot de passe…"
+  },
+  {
+   "id": "l05",
+   "text": "et c'est validé !"
+  },
+  {
+   "id": "l06",
+   "text": "Connectez-vous…"
+  },
+  {
+   "id": "l07",
+   "text": "et tout s'ouvre à vous : plus qu'une super-application, une vie plus simple !"
+  },
+  {
+   "id": "l08",
+   "text": "Douze modules, une seule application."
+  },
+  {
+   "id": "m01",
+   "text": "Makiti pour vos courses,"
+  },
+  {
+   "id": "m02",
+   "text": "Pharmacie pour vos médicaments,"
+  },
+  {
+   "id": "m03",
+   "text": "des Services à domicile,"
+  },
+  {
+   "id": "m04",
+   "text": "Make-up pour la beauté,"
+  },
+  {
+   "id": "m05",
+   "text": "la Tontine pour épargner,"
+  },
+  {
+   "id": "m06",
+   "text": "la Marketplace pour acheter et vendre,"
+  },
+  {
+   "id": "m07",
+   "text": "Bank pour vos transferts,"
+  },
+  {
+   "id": "m08",
+   "text": "AgriTech pour les producteurs,"
+  },
+  {
+   "id": "m09",
+   "text": "Immo pour se loger,"
+  },
+  {
+   "id": "m10",
+   "text": "Santé,"
+  },
+  {
+   "id": "m11",
+   "text": "EduTech…"
+  },
+  {
+   "id": "m12",
+   "text": "et Move, pour vous déplacer et vous faire livrer."
+  },
+  {
+   "id": "b01",
+   "text": "Paiement sécurisé."
+  },
+  {
+   "id": "b02",
+   "text": "Livraison rapide."
+  },
+  {
+   "id": "b03",
+   "text": "Un service client vingt-quatre heures sur vingt-quatre."
+  },
+  {
+   "id": "b04",
+   "text": "Une expérience unique."
+  },
+  {
+   "id": "b05",
+   "text": "Votre vie, plus simple !"
+  },
+  {
+   "id": "e01",
+   "text": "Madina Digital : commander, recevoir, vivre mieux… partout en Guinée."
+  }
+ ],
+ "bgm": {
+  "mode": "none"
+ }
+}
