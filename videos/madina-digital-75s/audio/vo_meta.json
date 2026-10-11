@@ -1,0 +1,187 @@
+{
+ "source": "Gemini TTS (gemini-3.1-flash-tts-preview), voix Puck, une prise découpée (tools/align_take.py)",
+ "units": [
+  {
+   "id": "l01",
+   "text": "Madina Digital.",
+   "start": 0.9,
+   "end": 2.43,
+   "tempo": 1.0
+  },
+  {
+   "id": "l02",
+   "text": "En Guinée, tout va vite. Avec Madina Digital, tout est à portée de main.",
+   "start": 6.4,
+   "end": 11.51,
+   "tempo": 1.0
+  },
+  {
+   "id": "l03",
+   "text": "Créer votre compte ? Quelques secondes suffisent.",
+   "start": 11.85,
+   "end": 14.31,
+   "tempo": 1.0
+  },
+  {
+   "id": "l04",
+   "text": "Votre nom, votre numéro, votre e-mail, un mot de passe…",
+   "start": 14.45,
+   "end": 17.95,
+   "tempo": 1.0
+  },
+  {
+   "id": "l05",
+   "text": "et c'est validé !",
+   "start": 19.7,
+   "end": 20.53,
+   "tempo": 1.0
+  },
+  {
+   "id": "l06",
+   "text": "Connectez-vous…",
+   "start": 22.3,
+   "end": 23.51,
+   "tempo": 1.0
+  },
+  {
+   "id": "l07",
+   "text": "et tout s'ouvre à vous : plus qu'une super-application, une vie plus simple !",
+   "start": 25.4,
+   "end": 29.82,
+   "tempo": 1.0
+  },
+  {
+   "id": "l08",
+   "text": "Douze modules, une seule application.",
+   "start": 30.0,
+   "end": 32.21,
+   "tempo": 1.0
+  },
+  {
+   "id": "m01",
+   "text": "Makiti pour vos courses,",
+   "start": 32.4,
+   "end": 33.78,
+   "tempo": 1.0
+  },
+  {
+   "id": "m02",
+   "text": "Pharmacie pour vos médicaments,",
+   "start": 34.4,
+   "end": 35.85,
+   "tempo": 1.0
+  },
+  {
+   "id": "m03",
+   "text": "des Services à domicile,",
+   "start": 36.4,
+   "end": 37.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "m04",
+   "text": "Make-up pour la beauté,",
+   "start": 38.4,
+   "end": 39.67,
+   "tempo": 1.0
+  },
+  {
+   "id": "m05",
+   "text": "la Tontine pour épargner,",
+   "start": 40.4,
+   "end": 41.73,
+   "tempo": 1.0
+  },
+  {
+   "id": "m06",
+   "text": "la Marketplace pour acheter et vendre,",
+   "start": 42.4,
+   "end": 44.29,
+   "tempo": 1.0
+  },
+  {
+   "id": "m07",
+   "text": "Bank pour vos transferts,",
+   "start": 44.4,
+   "end": 45.79,
+   "tempo": 1.0
+  },
+  {
+   "id": "m08",
+   "text": "AgriTech pour les producteurs,",
+   "start": 46.4,
+   "end": 48.09,
+   "tempo": 1.0
+  },
+  {
+   "id": "m09",
+   "text": "Immo pour se loger,",
+   "start": 48.4,
+   "end": 49.48,
+   "tempo": 1.0
+  },
+  {
+   "id": "m10",
+   "text": "Santé,",
+   "start": 50.4,
+   "end": 51.12,
+   "tempo": 1.0
+  },
+  {
+   "id": "m11",
+   "text": "EduTech…",
+   "start": 52.4,
+   "end": 53.09,
+   "tempo": 1.0
+  },
+  {
+   "id": "m12",
+   "text": "et Move, pour vous déplacer et vous faire livrer.",
+   "start": 54.4,
+   "end": 56.93,
+   "tempo": 1.0
+  },
+  {
+   "id": "b01",
+   "text": "Paiement sécurisé.",
+   "start": 57.3,
+   "end": 58.35,
+   "tempo": 1.0
+  },
+  {
+   "id": "b02",
+   "text": "Livraison rapide.",
+   "start": 58.9,
+   "end": 59.88,
+   "tempo": 1.0
+  },
+  {
+   "id": "b03",
+   "text": "Un service client vingt-quatre heures sur vingt-quatre.",
+   "start": 60.5,
+   "end": 62.692,
+   "tempo": 1.014
+  },
+  {
+   "id": "b04",
+   "text": "Une expérience unique.",
+   "start": 62.7,
+   "end": 64.048,
+   "tempo": 1.044
+  },
+  {
+   "id": "b05",
+   "text": "Votre vie, plus simple !",
+   "start": 64.1,
+   "end": 65.55,
+   "tempo": 1.0
+  },
+  {
+   "id": "e01",
+   "text": "Madina Digital : commander, recevoir, vivre mieux… partout en Guinée.",
+   "start": 67.0,
+   "end": 72.12,
+   "tempo": 1.0
+  }
+ ]
+}

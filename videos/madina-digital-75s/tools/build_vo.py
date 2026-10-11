@@ -62,7 +62,7 @@ def main():
                     "highpass=f=70,acompressor=threshold=-24dB:ratio=2.2:attack=8:release=160:makeup=3dB,alimiter=limit=0.85,loudnorm=I=-16:TP=-1.5:LRA=9",
                     "-ar", str(SR), "-ac", "1", str(ROOT / "audio/vo.wav")], check=True)
     (ROOT / "audio/vo.raw.wav").unlink()
-    (ROOT / "audio/vo_meta.json").write_text(json.dumps({"source": "Gemini TTS (gemini-3.8-flash-tts), voix Puck", "units": meta}, ensure_ascii=False, indent=1) + "\n")
+    (ROOT / "audio/vo_meta.json").write_text(json.dumps({"source": "Gemini TTS (gemini-3.1-flash-tts-preview), voix Puck, une prise découpée (tools/align_take.py)", "units": meta}, ensure_ascii=False, indent=1) + "\n")
     (ROOT / "exports").mkdir(exist_ok=True)
     with open(ROOT / "exports/madina_digital.srt", "w") as fh:
         for k, m in enumerate(meta, 1):

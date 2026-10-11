@@ -13,13 +13,13 @@
  },
  {
   "id": "l03",
-  "at": 12.3,
-  "max": 1.9,
+  "at": 11.85,
+  "max": 2.5,
   "text": "Créer votre compte ? Quelques secondes suffisent."
  },
  {
   "id": "l04",
-  "at": 14.3,
+  "at": 14.45,
   "max": 5.2,
   "text": "Votre nom, votre numéro, votre e-mail, un mot de passe…"
  },
@@ -134,7 +134,7 @@
  {
   "id": "b03",
   "at": 60.5,
-  "max": 2.15,
+  "max": 2.2,
   "text": "Un service client vingt-quatre heures sur vingt-quatre."
  },
  {

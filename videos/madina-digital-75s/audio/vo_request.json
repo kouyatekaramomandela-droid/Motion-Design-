@@ -112,5 +112,7 @@
  ],
  "bgm": {
   "mode": "none"
- }
+ },
+ "take_model": "gemini-3.1-flash-tts-preview",
+ "take_style": "Homme guinéen d'une trentaine d'années. Français parlé avec l'accent de Conakry, en Guinée. Voix claire, énergique et souriante, ton chaleureux et confiant de publicité. Diction articulée, rythme dynamique mais jamais précipité, petites pauses aux virgules. Chaque ligne du texte est une réplique séparée : marque une pause nette d'environ une seconde entre deux lignes, et seulement de courtes respirations à l'intérieur d'une ligne."
 }
